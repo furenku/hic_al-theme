@@ -1,0 +1,134 @@
+
+#site_header {
+
+   &, &>div {
+
+      @extend .row;
+      @extend .container-fluid;
+
+   }
+
+}
+
+#mini_menu-container {
+
+   height: $spacing;
+
+   nav {
+
+      &, ul {
+         @extend .row;
+         text-align: right;
+      }
+
+      li {
+
+         &:first-child {
+            @extend .col-md-offset-8;
+         }
+
+         @extend .col-md-2;
+
+         text-align: right;
+
+         padding-right: $spacing * 2;
+
+      }
+
+   }
+
+}
+
+#main_menu-container {
+
+   @extend .container-fluid;
+
+   height: $spacing * 2;
+
+   #logo, nav {
+      height: 100%;
+   }
+   #logo {
+
+      @extend .col-md-2;
+      @extend .col-lg-1;
+
+   }
+
+   #main_menu {
+
+      @extend .col-md-5;
+      @extend .col-lg-7;
+
+      ul{
+
+         width: 100%;
+
+         li {
+            @extend .col-md-2;
+            width: 20%;
+            @extend .text-center;
+         }
+
+      }
+
+   }
+
+   form {
+
+      input, button {
+         display: inline-block;
+         margin: 0;
+      }
+      input {
+         @extend .col-xs-9;
+      }
+
+      button {
+
+         @extend .col-xs-3;
+
+         i {
+            @extend .fa;
+            @extend .fa-search;
+         }
+
+      }
+
+      @extend .col-md-2;
+
+   }
+
+   #social_media_links {
+
+      @extend .col-md-2;
+
+      ul {
+
+         width: 100%;
+
+         li{
+            @extend .col-xs-4;
+         }
+
+      }
+
+   }
+
+   a i {
+      @extend .fa;
+   }
+
+   a[network=facebook] i {
+      @extend .fa-facebook;
+   }
+
+   a[network=twitter] i {
+      @extend .fa-twitter;
+   }
+
+   a[network=youtube] i {
+      @extend .fa-youtube;
+   }
+
+}

@@ -8143,6 +8143,10 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+/* RESETS */
+li {
+  list-style: none; }
+
 /* HIC_AL: COLORES */
 a {
   color: #fff; }
@@ -8153,10 +8157,6 @@ a {
   background-color: #ccc; }
 #site_header #main_menu-container {
   background-color: #aaa; }
-
-/* RESETS */
-li {
-  list-style: none; }
 
 #mini_menu-container {
   height: 30px; }
