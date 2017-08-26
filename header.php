@@ -10,6 +10,7 @@
 
     <title>HIC-AL</title>
 
+    <link href="<?php echo get_stylesheet_directory_uri(); ?>/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/stylesheets/css/hic_al.css">
 
     <?php wp_head(); ?>
@@ -45,7 +46,7 @@
          <nav id="main_menu">
 
             <ul>
-               
+
                <li>
                   <a href="#">
                      Nombre Menú N
@@ -75,9 +76,11 @@
             </ul>
          </nav>
 
-         <form action="">
+         <form id="search" action="">
             <input type="text">
-            <submit></submit>
+            <button type="submit" value="">
+               <i></i>
+            </button>
          </form>
 
          <nav id="social_media_links">

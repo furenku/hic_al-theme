@@ -19,9 +19,13 @@ $(document).ready(function(){
                   fill: false
                })
             }
+
          } else {
+
             $(this).imgLiquid()
+
          }
+         
       //
       // }
 

@@ -1,5 +1,5 @@
+@import "../../bower_components/font-awesome/scss/font-awesome";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-@import "../../bower_components/font-awesome/scss/font-awesome.scss";
 
 
 @import "colores";
@@ -14,20 +14,19 @@ li {
 
 
 #site_header {
+
    &, &>div {
 
       @extend .row;
       @extend .container-fluid;
 
    }
+
 }
 
 #mini_menu-container {
 
-
    height: $spacing;
-
-
 
    nav {
 
@@ -90,6 +89,25 @@ li {
    }
 
    form {
+
+      input, button {
+         display: inline-block;
+         margin: 0;
+      }
+      input {
+         @extend .col-xs-9;
+      }
+
+      button {
+
+         @extend .col-xs-3;
+
+         i {
+            @extend .fa;
+            @extend .fa-search;
+         }
+
+      }
 
       @extend .col-md-2;
 
