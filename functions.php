@@ -55,7 +55,19 @@ function register_taxonomies() {
 	// create a new taxonomy
 	register_taxonomy(
 		'site_hierarchy',
-		'post',
+		array(
+         'news_item',
+         'call_to_action',
+         'call_for_solidarity',
+         'open_call',
+         'event',
+         'initiative',
+         'member',
+         'document',
+         'publication',
+         'media_content',
+         'glossary-term'
+      ),
 		array(
 			'label' => __( 'Site Hierarchy' ),
          'hierarchical' => true,

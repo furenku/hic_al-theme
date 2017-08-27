@@ -21,11 +21,7 @@ Theme for Habitat International Coalition - Latin America Regional Office
 
 ### Initiative
 
-### Photo
-
-### Video
-
-### Audio
+### Media
 
 
 ## Taxonomy
