@@ -1,0 +1,17 @@
+#home-featured {
+
+   article {
+
+      @extend .col-md-4;
+
+      padding: $spacing * 2;
+
+      text-align: center;
+
+      [image-frame] {
+         height: $spacing * 6;
+      }
+
+   }
+
+}

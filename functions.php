@@ -2,10 +2,17 @@
 
 /* WP CONFIG */
 
-add_theme_support('post-thumbnails');
+add_action('init', 'wp_config');
+
+function wp_config() {
+
+   show_admin_bar( false );
+   add_theme_support('post-thumbnails');
+
+}
 
 
-/* Menús */
+/* Menus */
 
 add_action('after_setup_theme','register_menus');
 
@@ -17,5 +24,24 @@ function register_menus() {
    ) );
 
 }
+
+
+/* Taxonomies */
+
+function register_taxonomies() {
+	// create a new taxonomy
+	register_taxonomy(
+		'site_hierarchy',
+		'post',
+		array(
+			'label' => __( 'Site Hierarchy' ),
+         'hierarchical' => true,
+			'rewrite' => array( 'slug' => 'featured' ),
+
+		)
+	);
+}
+
+add_action( 'init', 'register_taxonomies' );
 
 ?>

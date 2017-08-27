@@ -1,10 +1,17 @@
-<section id="cover-hic_al">
+<?php
+if( have_posts() ) :
+   while ( have_posts() ) :
+      the_post();
+
+?>
+
+<section id="home-cover">
 
    <div image-frame="">
-      <img src="http://unsplash.it/1200/600" alt="">
+      <img src="http://unsplash.it/1200/600?random=15" alt="">
    </div>
 
-   <section class="cover-presentation">
+   <section class="presentation">
 
       <section id="branding">
 
@@ -14,25 +21,23 @@
 
          <div class="name">
             <h1>
-               Título Completo del Sitio
+               <?php echo get_bloginfo('name'); ?>
             </h1>
             <h5>
-               Subtítulo del Sitio
+               <?php echo get_bloginfo('description'); ?>
             </h5>
          </div>
 
       </section>
 
       <section class="description">
-         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, adipisci numquam reiciendis possimus veniam sit, repellendus culpa optio magni assumenda mollitia magnam commodi. Molestiae quos fuga ipsam obcaecati iste veritatis eveniet odio sed voluptatum rerum!
-         </p>
+         <?php echo get_the_content(); ?>
       </section>
 
    </section>
 
 
-   <section class="cover-calls_to_action">
+   <section class="calls_to_action">
 
       <article>
 
@@ -62,3 +67,10 @@
 
    </section>
 </section>
+
+<?php
+
+endwhile;
+endif;
+
+?>

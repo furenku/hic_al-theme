@@ -1,5 +1,19 @@
 $(document).ready(function(){
 
+   image_frames()
+
+   // vcenter($('[vcenter]'))
+   vcenter($('#secondary_menu-container nav ul li'))
+   vcenter($('#primary_menu-container nav ul li'))
+   vcenter($('#home-cover .presentation'))
+   vcenter($('#home-cover .calls_to_action'))
+   // vcenter($('#form-container'))
+
+   console.log("HIC AL theme ready")
+
+})
+
+function image_frames() {
 
    $('[image-frame]').each(function(){
 
@@ -31,14 +45,7 @@ $(document).ready(function(){
 
    })
 
-   // vcenter($('[vcenter]'))
-   vcenter($('#secondary_menu-container nav ul li'))
-   vcenter($('#primary_menu-container nav ul li'))
-   // vcenter($('#form-container'))
-
-   console.log("HIC AL theme ready")
-
-})
+}
 
 
 function vcenter(contenedores){

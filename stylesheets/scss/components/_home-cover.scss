@@ -1,0 +1,56 @@
+#home-cover {
+
+   @extend .row;
+   @extend .container-fluid;
+
+   // &,& > [image-frame] {
+   //    height: $spacing * 10;
+   // }
+
+   position: relative !important;
+   height: $spacing * 15;
+
+
+   & > [image-frame] {
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+   }
+
+
+   .presentation,
+   .calls_to_action {
+      height: 100%;
+   }
+
+   .presentation {
+
+      @extend .col-md-5;
+
+      #branding{
+         @extend .col-md-8;
+         @extend .col-lg-6;
+
+         .logo {
+            @extend .col-xs-6;
+            height: $spacing * 6;
+
+         }
+      }
+
+      .description {
+         @extend .col-md-7;
+      }
+
+   }
+
+   .calls_to_action {
+      @extend .col-md-7;
+
+      article {
+         @extend .col-md-6
+      }
+   }
+
+}

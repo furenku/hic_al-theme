@@ -1,2 +1,19 @@
 # hic_al-theme
-Tema para Habitat International Coalition - América Latina
+
+Theme for Habitat International Coalition - Latin America Regional Office
+
+
+## Content Types
+
+### Call To Action
+
+### Page
+
+
+
+## Taxonomy
+
+
+### Categories
+
+- Featured

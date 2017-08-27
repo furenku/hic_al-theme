@@ -1,6 +1,6 @@
 </main>
 
-<footer>
+<footer id="site_footer">
 
    <section class="copyright">
       <p>

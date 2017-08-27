@@ -1,0 +1,21 @@
+#home-menu {
+
+   li {
+
+      @extend .col-xs-12;
+
+      @media screen and (min-width:960px) {
+         width: 20%;
+      }
+
+      padding: $spacing * 2;
+
+      text-align: center;
+
+      [image-frame] {
+         height: $spacing * 6;
+      }
+
+   }
+
+}

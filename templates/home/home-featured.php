@@ -1,21 +1,37 @@
 <section id="home-featured">
 
-   <?php for ($i=0; $i < 3; $i++) : ?>
+   <?php
+
+   $q = new WP_Query( array(
+      'post_type' => array(
+            'page',
+            'post'
+         ),
+         'posts_per_page' => 3
+         /* taxonomy featured */
+      )
+   );
+
+
+   if( $q -> have_posts() ) :
+      while ( $q -> have_posts() ) :
+         $q -> the_post();
+   ?>
 
       <article>
 
          <a href="#">
 
             <div image-frame="">
-               <img src="http://unsplash.it/600/400" alt="">
+               <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
             </div>
 
             <h3>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, repellendus, eveniet.
+               <?php echo get_the_title(); ?>
             </h3>
 
             <p>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, distinctio. Nostrum maiores assumenda incidunt, harum eius adipisci recusandae, nemo perspiciatis!
+               <?php echo get_the_excerpt(); ?>
             </p>
 
             <footer>
@@ -23,7 +39,8 @@
                   Publicado por <a href="#">Nombre del Autor</a>
                </span>
                <span class="date">
-                  31 de diciembre, 2017
+                  el <?php echo get_the_date(); ?>
+
                </span>
             </footer>
 
@@ -31,6 +48,9 @@
 
       </article>
 
-   <?php endfor; ?>
+   <?php
+      endwhile;
+   endif;
+   ?>
 
 </section>
