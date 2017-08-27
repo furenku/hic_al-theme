@@ -3874,13 +3874,13 @@ pre {
   .row:after, #site_header:after, #site_header > div:after, #secondary_menu-container nav:after, #secondary_menu-container nav ul:after, #home-cover:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, #primary_menu-container #logo, .col-xs-2, .col-sm-2, .col-md-2, #secondary_menu-container nav li, #primary_menu-container #logo, #primary_menu-container nav ul li, #primary_menu-container #form-container, #primary_menu-container #social_media_links, .col-lg-2, .col-xs-3, #primary_menu-container #form-container form button, #primary_menu-container #social_media_links ul li, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, #home-featured article, .col-lg-4, #site_footer .copyright, .col-xs-5, .col-sm-5, .col-md-5, #primary_menu-container nav, #home-cover .presentation, .col-lg-5, .col-xs-6, #home-cover .presentation #branding .logo, .col-sm-6, .col-md-6, #site_footer .copyright, #home-cover .calls_to_action article, .col-lg-6, #home-cover .presentation #branding, .col-xs-7, .col-sm-7, .col-md-7, #home-cover .presentation .description, #home-cover .calls_to_action, .col-lg-7, #primary_menu-container nav, .col-xs-8, .col-sm-8, .col-md-8, #home-cover .presentation #branding, .col-lg-8, .col-xs-9, #primary_menu-container #form-container form input, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, #site_footer .copyright, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, #site_header > div li a, #site_footer, #site_footer > section, #home-menu li, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, #primary_menu-container #logo, .col-xs-2, .col-sm-2, .col-md-2, #secondary_menu-container nav li, #primary_menu-container #logo, #primary_menu-container nav ul li, #primary_menu-container #form-container, #primary_menu-container #social_media_links, .col-lg-2, .col-xs-3, #primary_menu-container #form-container form button, #primary_menu-container #social_media_links ul li, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, #home-featured article, .col-lg-4, #site_footer .copyright, .col-xs-5, .col-sm-5, .col-md-5, #primary_menu-container nav, #home-cover .presentation, #home-cover .calls_to_action, .col-lg-5, .col-xs-6, #home-cover .presentation #branding .logo, .col-sm-6, .col-md-6, #site_footer .copyright, #home-cover .calls_to_action article, .col-lg-6, #home-cover .presentation #branding, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, #primary_menu-container nav, .col-xs-8, .col-sm-8, .col-md-8, #home-cover .presentation #branding, .col-lg-8, .col-xs-9, #primary_menu-container #form-container form input, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, #site_footer .copyright, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, #site_header > div li a, #site_footer, #site_footer > section, #home-cover .presentation .description, #home-menu li, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px; }
 
-.col-xs-1, .col-xs-2, .col-xs-3, #primary_menu-container #form-container form button, #primary_menu-container #social_media_links ul li, .col-xs-4, .col-xs-5, .col-xs-6, #home-cover .presentation #branding .logo, .col-xs-7, .col-xs-8, .col-xs-9, #primary_menu-container #form-container form input, .col-xs-10, #site_footer .copyright, .col-xs-11, .col-xs-12, #site_header > div li a, #site_footer, #site_footer > section, #home-menu li {
+.col-xs-1, .col-xs-2, .col-xs-3, #primary_menu-container #form-container form button, #primary_menu-container #social_media_links ul li, .col-xs-4, .col-xs-5, .col-xs-6, #home-cover .presentation #branding .logo, .col-xs-7, .col-xs-8, .col-xs-9, #primary_menu-container #form-container form input, .col-xs-10, #site_footer .copyright, .col-xs-11, .col-xs-12, #site_header > div li a, #site_footer, #site_footer > section, #home-cover .presentation .description, #home-menu li {
   float: left; }
 
 .col-xs-1 {
@@ -3916,7 +3916,7 @@ pre {
 .col-xs-11 {
   width: 91.66667%; }
 
-.col-xs-12, #site_header > div li a, #site_footer, #site_footer > section, #home-menu li {
+.col-xs-12, #site_header > div li a, #site_footer, #site_footer > section, #home-cover .presentation .description, #home-menu li {
   width: 100%; }
 
 .col-xs-pull-0 {
@@ -4193,7 +4193,7 @@ pre {
   .col-sm-offset-12 {
     margin-left: 100%; } }
 @media (min-width: 992px) {
-  .col-md-1, .col-md-2, #secondary_menu-container nav li, #primary_menu-container #logo, #primary_menu-container nav ul li, #primary_menu-container #form-container, #primary_menu-container #social_media_links, .col-md-3, .col-md-4, #home-featured article, .col-md-5, #primary_menu-container nav, #home-cover .presentation, .col-md-6, #site_footer .copyright, #home-cover .calls_to_action article, .col-md-7, #home-cover .presentation .description, #home-cover .calls_to_action, .col-md-8, #home-cover .presentation #branding, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  .col-md-1, .col-md-2, #secondary_menu-container nav li, #primary_menu-container #logo, #primary_menu-container nav ul li, #primary_menu-container #form-container, #primary_menu-container #social_media_links, .col-md-3, .col-md-4, #home-featured article, .col-md-5, #primary_menu-container nav, #home-cover .presentation, #home-cover .calls_to_action, .col-md-6, #site_footer .copyright, #home-cover .calls_to_action article, .col-md-7, .col-md-8, #home-cover .presentation #branding, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left; }
 
   .col-md-1 {
@@ -4208,13 +4208,13 @@ pre {
   .col-md-4, #home-featured article {
     width: 33.33333%; }
 
-  .col-md-5, #primary_menu-container nav, #home-cover .presentation {
+  .col-md-5, #primary_menu-container nav, #home-cover .presentation, #home-cover .calls_to_action {
     width: 41.66667%; }
 
   .col-md-6, #site_footer .copyright, #home-cover .calls_to_action article {
     width: 50%; }
 
-  .col-md-7, #home-cover .presentation .description, #home-cover .calls_to_action {
+  .col-md-7 {
     width: 58.33333%; }
 
   .col-md-8, #home-cover .presentation #branding {
@@ -4313,7 +4313,7 @@ pre {
   .col-md-offset-0 {
     margin-left: 0%; }
 
-  .col-md-offset-1 {
+  .col-md-offset-1, #home-cover .presentation, #home-cover .calls_to_action {
     margin-left: 8.33333%; }
 
   .col-md-offset-2 {
@@ -8220,9 +8220,13 @@ a {
     z-index: -1;
     width: 100%;
     height: 100%; }
+  #home-cover .content,
   #home-cover .presentation,
   #home-cover .calls_to_action {
     height: 100%; }
+  #home-cover .content {
+    max-width: 1600px;
+    margin: 0 auto; }
   #home-cover .presentation #branding .logo {
     height: 180px; }
 

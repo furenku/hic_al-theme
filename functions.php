@@ -4,11 +4,34 @@
 
 add_action('init', 'wp_config');
 
+add_action( 'admin_init' , 'register_admin_options_fields' );
+
 function wp_config() {
 
    show_admin_bar( false );
    add_theme_support('post-thumbnails');
 
+}
+
+/**
+ * Add new fields to wp-admin/options-general.php page
+ */
+function register_admin_options_fields() {
+   register_setting( 'general', 'site_subtitle', 'esc_attr' );
+   add_settings_field(
+      'site_subtitle',
+      '<label for="site_subtitle_id">' . __( 'Site subtitle' , 'site_subtitle' ) . '</label>',
+      'fields_html',
+      'general'
+   );
+}
+
+/**
+ * HTML for extra settings
+ */
+function fields_html() {
+   $value = get_option( 'site_subtitle', '' );
+   echo '<input type="text" id="site_subtitle_id" name="site_subtitle" value="' . esc_attr( $value ) . '" />';
 }
 
 

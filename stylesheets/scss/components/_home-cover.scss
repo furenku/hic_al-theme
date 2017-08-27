@@ -18,15 +18,21 @@
       height: 100%;
    }
 
-
+   .content,
    .presentation,
    .calls_to_action {
       height: 100%;
    }
 
+   .content {
+      max-width: 1600px;
+      margin: 0 auto;
+   }
+
    .presentation {
 
       @extend .col-md-5;
+      @extend .col-md-offset-1;
 
       #branding{
          @extend .col-md-8;
@@ -40,13 +46,14 @@
       }
 
       .description {
-         @extend .col-md-7;
+         @extend .col-xs-12;
       }
 
    }
 
    .calls_to_action {
-      @extend .col-md-7;
+      @extend .col-md-5;
+      @extend .col-md-offset-1;
 
       article {
          @extend .col-md-6
