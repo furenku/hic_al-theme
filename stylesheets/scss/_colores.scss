@@ -1,20 +1,12 @@
 /* HIC_AL: COLORES */
 
+$link_dark: #000;
+$link_light: #fff;
+
+$neutral_dark: #444;
+$neutral_medium: #666;
+$neutral_light: #888;
+
 a {
-   color: #fff;
-}
-
-#site_header {
-
-   a {
-      color: #fff;
-   }
-
-   #mini_menu-container {
-      background-color: #ccc;
-   }
-   #main_menu-container {
-      background-color: #aaa;
-   }
-
+   color: $link_dark;
 }

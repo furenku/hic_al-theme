@@ -21,67 +21,37 @@
 
    <header id="site_header">
 
-      <div id="mini_menu-container">
+      <div id="secondary_menu-container">
 
-         <nav id="mini_menu">
-
-            <ul>
-               <li>
-                  <a href="#">Link 1</a>
-               </li>
-               <li>
-                  <a href="#">Link 2</a>
-               </li>
-            </ul>
-         </nav>
+         <?php echo wp_nav_menu(array(
+            'theme_location' => 'secondary',
+            'container' => 'nav',
+            'container_class' => 'vcenter',
+            'echo' => false
+         )); ?>
 
       </div>
 
-      <div id="main_menu-container">
+      <div id="primary_menu-container">
 
          <div id="logo" image-frame contain left>
             <img src="http://fakeimg.pl/200x150" alt="">
          </div>
 
-         <nav id="main_menu">
+         <?php echo wp_nav_menu(array(
+            'theme_location' => 'primary',
+            'container' => 'nav',
+            'echo' => false
+         )); ?>
 
-            <ul>
-
-               <li>
-                  <a href="#">
-                     Nombre Menú N
-                  </a>
-               </li>
-               <li>
-                  <a href="#">
-                     Nombre Menú N
-                  </a>
-               </li>
-               <li>
-                  <a href="#">
-                     Nombre Menú N
-                  </a>
-               </li>
-               <li>
-                  <a href="#">
-                     Nombre Menú N
-                  </a>
-               </li>
-               <li>
-                  <a href="#">
-                     Nombre Menú N
-                  </a>
-               </li>
-
-            </ul>
-         </nav>
-
-         <form id="search" action="">
+         <!-- <form id="search" action="">
             <input type="text">
             <button type="submit" value="">
                <i></i>
             </button>
-         </form>
+         </form> -->
+
+         <?php get_search_form( ); ?>
 
          <nav id="social_media_links">
             <ul>
