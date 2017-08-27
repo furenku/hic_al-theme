@@ -1,11 +1,8 @@
 #home-cover {
 
-   @extend .row;
    @extend .container-fluid;
-
-   // &,& > [image-frame] {
-   //    height: $spacing * 10;
-   // }
+   width: 100vw;
+   max-width: 100%;
 
    position: relative !important;
    height: $spacing * 15;

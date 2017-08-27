@@ -1,5 +1,7 @@
 #home-featured {
 
+   @extend .container;
+
    article {
 
       @extend .col-md-4;

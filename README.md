@@ -7,13 +7,30 @@ Theme for Habitat International Coalition - Latin America Regional Office
 
 ### Call To Action
 
+### Call For Solidarity Action
+
 ### Page
 
+### News Item
+
+### Event
+
+### Open Call
+
+### Member
+
+### Initiative
+
+### Photo
+
+### Video
+
+### Audio
 
 
 ## Taxonomy
 
 
-### Categories
+### Site Hierarchy
 
-- Featured
+- Featured  

@@ -4,7 +4,6 @@
 
    $q = new WP_Query( array(
       'post_type' => array(
-            'page',
             'post'
          ),
          'posts_per_page' => 3

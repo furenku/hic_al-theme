@@ -1,5 +1,7 @@
 #home-menu {
 
+   @extend .container-fluid;
+
    li {
 
       @extend .col-xs-12;

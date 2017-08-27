@@ -3834,59 +3834,70 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container {
+.container, main > section, #home-featured, #home-activity {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container:before, .container:after {
+  .container:before, main > section:before, #home-featured:before, #home-activity:before, .container:after, main > section:after, #home-featured:after, #home-activity:after {
     content: " ";
     display: table; }
-  .container:after {
+  .container:after, main > section:after, #home-featured:after, #home-activity:after {
     clear: both; }
   @media (min-width: 768px) {
-    .container {
+    .container, main > section, #home-featured, #home-activity {
       width: 750px; } }
   @media (min-width: 992px) {
-    .container {
+    .container, main > section, #home-featured, #home-activity {
       width: 970px; } }
   @media (min-width: 1200px) {
-    .container {
+    .container, main > section, #home-featured, #home-activity {
       width: 1170px; } }
 
-.container-fluid, #site_header, #site_header > div, #primary_menu-container, #site_footer, #home-cover {
+.container-fluid, #site_header, #site_header > div, #primary_menu-container, #site_footer, #home-cover, #home-menu {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container-fluid:before, #site_header:before, #site_header > div:before, #primary_menu-container:before, #site_footer:before, #home-cover:before, .container-fluid:after, #site_header:after, #site_header > div:after, #primary_menu-container:after, #site_footer:after, #home-cover:after {
+  .container-fluid:before, #site_header:before, #site_header > div:before, #primary_menu-container:before, #site_footer:before, #home-cover:before, #home-menu:before, .container-fluid:after, #site_header:after, #site_header > div:after, #primary_menu-container:after, #site_footer:after, #home-cover:after, #home-menu:after {
     content: " ";
     display: table; }
-  .container-fluid:after, #site_header:after, #site_header > div:after, #primary_menu-container:after, #site_footer:after, #home-cover:after {
+  .container-fluid:after, #site_header:after, #site_header > div:after, #primary_menu-container:after, #site_footer:after, #home-cover:after, #home-menu:after {
     clear: both; }
 
-.row, #site_header, #site_header > div, #secondary_menu-container nav, #secondary_menu-container nav ul, #home-cover {
+.row, main > section, #site_header, #site_header > div, #secondary_menu-container nav, #secondary_menu-container nav ul {
   margin-left: -15px;
   margin-right: -15px; }
-  .row:before, #site_header:before, #site_header > div:before, #secondary_menu-container nav:before, #secondary_menu-container nav ul:before, #home-cover:before, .row:after, #site_header:after, #site_header > div:after, #secondary_menu-container nav:after, #secondary_menu-container nav ul:after, #home-cover:after {
+  .row:before, main > section:before, #site_header:before, #site_header > div:before, #secondary_menu-container nav:before, #secondary_menu-container nav ul:before, .row:after, main > section:after, #site_header:after, #site_header > div:after, #secondary_menu-container nav:after, #secondary_menu-container nav ul:after {
     content: " ";
     display: table; }
-  .row:after, #site_header:after, #site_header > div:after, #secondary_menu-container nav:after, #secondary_menu-container nav ul:after, #home-cover:after {
+  .row:after, main > section:after, #site_header:after, #site_header > div:after, #secondary_menu-container nav:after, #secondary_menu-container nav ul:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, #primary_menu-container #logo, .col-xs-2, .col-sm-2, .col-md-2, #secondary_menu-container nav li, #primary_menu-container #logo, #primary_menu-container nav ul li, #primary_menu-container #form-container, #primary_menu-container #social_media_links, .col-lg-2, .col-xs-3, #primary_menu-container #form-container form button, #primary_menu-container #social_media_links ul li, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, #home-featured article, .col-lg-4, #site_footer .copyright, .col-xs-5, .col-sm-5, .col-md-5, #primary_menu-container nav, #home-cover .presentation, #home-cover .calls_to_action, .col-lg-5, .col-xs-6, #home-cover .presentation #branding .logo, .col-sm-6, .col-md-6, #site_footer .copyright, #home-cover .calls_to_action article, .col-lg-6, #home-cover .presentation #branding, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, #primary_menu-container nav, .col-xs-8, .col-sm-8, .col-md-8, #home-cover .presentation #branding, .col-lg-8, .col-xs-9, #primary_menu-container #form-container form input, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, #site_footer .copyright, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, #site_header > div li a, #site_footer, #site_footer > section, #home-cover .presentation .description, #home-menu li, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, #primary_menu-container #logo, .col-xs-2, .list-item > div[image-frame], #home-activity #home-activity-news .news-items article > div[image-frame], #home-activity #home-activity-open_calls article > div[image-frame],
+#home-activity #home-activity-events article > div[image-frame], .col-sm-2, .col-md-2, #secondary_menu-container nav li, #primary_menu-container #logo, #primary_menu-container nav ul li, #primary_menu-container #form-container, #primary_menu-container #social_media_links, .col-lg-2, .col-xs-3, #primary_menu-container #form-container form button, #primary_menu-container #social_media_links ul li, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, #home-featured article, #home-activity #home-activity-open_calls,
+#home-activity #home-activity-events,
+#home-activity #home-activity-solidarity, .col-lg-4, #site_footer .copyright, .col-xs-5, .col-sm-5, .col-md-5, #primary_menu-container nav, #home-cover .presentation, #home-cover .calls_to_action, .col-lg-5, .col-xs-6, #home-cover .presentation #branding .logo, .col-sm-6, .col-md-6, #site_footer .copyright, #home-cover .calls_to_action article, #home-activity #home-activity-news .latest, #home-activity #home-activity-news .latest > div, #home-activity #home-activity-news .news-items, .col-lg-6, #home-cover .presentation #branding, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, #primary_menu-container nav, .col-xs-8, #home-activity #home-activity-solidarity ul button, .col-sm-8, .col-md-8, #home-cover .presentation #branding, .col-lg-8, .col-xs-9, #primary_menu-container #form-container form input, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .list-item > div, #home-activity #home-activity-news .news-items article > div, #home-activity #home-activity-open_calls article > div,
+#home-activity #home-activity-events article > div, #site_footer .copyright, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, #site_header > div li a, #site_footer, #site_footer > section, #home-cover .presentation .description, #home-menu li, #home-activity #home-activity-open_calls button,
+#home-activity #home-activity-events button,
+#home-activity #home-activity-solidarity button, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px; }
 
-.col-xs-1, .col-xs-2, .col-xs-3, #primary_menu-container #form-container form button, #primary_menu-container #social_media_links ul li, .col-xs-4, .col-xs-5, .col-xs-6, #home-cover .presentation #branding .logo, .col-xs-7, .col-xs-8, .col-xs-9, #primary_menu-container #form-container form input, .col-xs-10, #site_footer .copyright, .col-xs-11, .col-xs-12, #site_header > div li a, #site_footer, #site_footer > section, #home-cover .presentation .description, #home-menu li {
+.col-xs-1, .col-xs-2, .list-item > div[image-frame], #home-activity #home-activity-news .news-items article > div[image-frame], #home-activity #home-activity-open_calls article > div[image-frame],
+#home-activity #home-activity-events article > div[image-frame], .col-xs-3, #primary_menu-container #form-container form button, #primary_menu-container #social_media_links ul li, .col-xs-4, .col-xs-5, .col-xs-6, #home-cover .presentation #branding .logo, .col-xs-7, .col-xs-8, #home-activity #home-activity-solidarity ul button, .col-xs-9, #primary_menu-container #form-container form input, .col-xs-10, .list-item > div, #home-activity #home-activity-news .news-items article > div, #home-activity #home-activity-open_calls article > div,
+#home-activity #home-activity-events article > div, #site_footer .copyright, .col-xs-11, .col-xs-12, #site_header > div li a, #site_footer, #site_footer > section, #home-cover .presentation .description, #home-menu li, #home-activity #home-activity-open_calls button,
+#home-activity #home-activity-events button,
+#home-activity #home-activity-solidarity button {
   float: left; }
 
 .col-xs-1 {
   width: 8.33333%; }
 
-.col-xs-2 {
+.col-xs-2, .list-item > div[image-frame], #home-activity #home-activity-news .news-items article > div[image-frame], #home-activity #home-activity-open_calls article > div[image-frame],
+#home-activity #home-activity-events article > div[image-frame] {
   width: 16.66667%; }
 
 .col-xs-3, #primary_menu-container #form-container form button, #primary_menu-container #social_media_links ul li {
@@ -3904,19 +3915,22 @@ pre {
 .col-xs-7 {
   width: 58.33333%; }
 
-.col-xs-8 {
+.col-xs-8, #home-activity #home-activity-solidarity ul button {
   width: 66.66667%; }
 
 .col-xs-9, #primary_menu-container #form-container form input {
   width: 75%; }
 
-.col-xs-10, #site_footer .copyright {
+.col-xs-10, .list-item > div, #home-activity #home-activity-news .news-items article > div, #home-activity #home-activity-open_calls article > div,
+#home-activity #home-activity-events article > div, #site_footer .copyright {
   width: 83.33333%; }
 
 .col-xs-11 {
   width: 91.66667%; }
 
-.col-xs-12, #site_header > div li a, #site_footer, #site_footer > section, #home-cover .presentation .description, #home-menu li {
+.col-xs-12, #site_header > div li a, #site_footer, #site_footer > section, #home-cover .presentation .description, #home-menu li, #home-activity #home-activity-open_calls button,
+#home-activity #home-activity-events button,
+#home-activity #home-activity-solidarity button {
   width: 100%; }
 
 .col-xs-pull-0 {
@@ -4003,7 +4017,7 @@ pre {
 .col-xs-offset-1, #site_footer .copyright {
   margin-left: 8.33333%; }
 
-.col-xs-offset-2 {
+.col-xs-offset-2, #home-activity #home-activity-solidarity ul button {
   margin-left: 16.66667%; }
 
 .col-xs-offset-3 {
@@ -4193,7 +4207,9 @@ pre {
   .col-sm-offset-12 {
     margin-left: 100%; } }
 @media (min-width: 992px) {
-  .col-md-1, .col-md-2, #secondary_menu-container nav li, #primary_menu-container #logo, #primary_menu-container nav ul li, #primary_menu-container #form-container, #primary_menu-container #social_media_links, .col-md-3, .col-md-4, #home-featured article, .col-md-5, #primary_menu-container nav, #home-cover .presentation, #home-cover .calls_to_action, .col-md-6, #site_footer .copyright, #home-cover .calls_to_action article, .col-md-7, .col-md-8, #home-cover .presentation #branding, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  .col-md-1, .col-md-2, #secondary_menu-container nav li, #primary_menu-container #logo, #primary_menu-container nav ul li, #primary_menu-container #form-container, #primary_menu-container #social_media_links, .col-md-3, .col-md-4, #home-featured article, #home-activity #home-activity-open_calls,
+  #home-activity #home-activity-events,
+  #home-activity #home-activity-solidarity, .col-md-5, #primary_menu-container nav, #home-cover .presentation, #home-cover .calls_to_action, .col-md-6, #site_footer .copyright, #home-cover .calls_to_action article, #home-activity #home-activity-news .latest, #home-activity #home-activity-news .latest > div, #home-activity #home-activity-news .news-items, .col-md-7, .col-md-8, #home-cover .presentation #branding, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left; }
 
   .col-md-1 {
@@ -4205,13 +4221,15 @@ pre {
   .col-md-3 {
     width: 25%; }
 
-  .col-md-4, #home-featured article {
+  .col-md-4, #home-featured article, #home-activity #home-activity-open_calls,
+  #home-activity #home-activity-events,
+  #home-activity #home-activity-solidarity {
     width: 33.33333%; }
 
   .col-md-5, #primary_menu-container nav, #home-cover .presentation, #home-cover .calls_to_action {
     width: 41.66667%; }
 
-  .col-md-6, #site_footer .copyright, #home-cover .calls_to_action article {
+  .col-md-6, #site_footer .copyright, #home-cover .calls_to_action article, #home-activity #home-activity-news .latest, #home-activity #home-activity-news .latest > div, #home-activity #home-activity-news .news-items {
     width: 50%; }
 
   .col-md-7 {
@@ -6062,37 +6080,47 @@ tbody.collapse.in {
     .navbar-fixed-bottom .navbar-collapse {
       max-height: 200px; } }
 
-.container > .navbar-header,
+.container > .navbar-header, main > section > .navbar-header, #home-featured > .navbar-header, #home-activity > .navbar-header,
 .container > .navbar-collapse,
+main > section > .navbar-collapse,
+#home-featured > .navbar-collapse,
+#home-activity > .navbar-collapse,
 .container-fluid > .navbar-header,
 #site_header > .navbar-header,
 #site_header > div > .navbar-header,
 #primary_menu-container > .navbar-header,
 #site_footer > .navbar-header,
 #home-cover > .navbar-header,
+#home-menu > .navbar-header,
 .container-fluid > .navbar-collapse,
 #site_header > .navbar-collapse,
 #site_header > div > .navbar-collapse,
 #primary_menu-container > .navbar-collapse,
 #site_footer > .navbar-collapse,
-#home-cover > .navbar-collapse {
+#home-cover > .navbar-collapse,
+#home-menu > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px; }
   @media (min-width: 768px) {
-    .container > .navbar-header,
+    .container > .navbar-header, main > section > .navbar-header, #home-featured > .navbar-header, #home-activity > .navbar-header,
     .container > .navbar-collapse,
+    main > section > .navbar-collapse,
+    #home-featured > .navbar-collapse,
+    #home-activity > .navbar-collapse,
     .container-fluid > .navbar-header,
     #site_header > .navbar-header,
     #site_header > div > .navbar-header,
     #primary_menu-container > .navbar-header,
     #site_footer > .navbar-header,
     #home-cover > .navbar-header,
+    #home-menu > .navbar-header,
     .container-fluid > .navbar-collapse,
     #site_header > .navbar-collapse,
     #site_header > div > .navbar-collapse,
     #primary_menu-container > .navbar-collapse,
     #site_footer > .navbar-collapse,
-    #home-cover > .navbar-collapse {
+    #home-cover > .navbar-collapse,
+    #home-menu > .navbar-collapse {
       margin-right: 0;
       margin-left: 0; } }
 
@@ -6134,7 +6162,7 @@ tbody.collapse.in {
   .navbar-brand > img {
     display: block; }
   @media (min-width: 768px) {
-    .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand, .navbar > #site_header .navbar-brand, #site_header.navbar > div .navbar-brand, .navbar > #primary_menu-container .navbar-brand, .navbar > #site_footer .navbar-brand, .navbar > #home-cover .navbar-brand {
+    .navbar > .container .navbar-brand, main.navbar > section .navbar-brand, .navbar > #home-featured .navbar-brand, .navbar > #home-activity .navbar-brand, .navbar > .container-fluid .navbar-brand, .navbar > #site_header .navbar-brand, #site_header.navbar > div .navbar-brand, .navbar > #primary_menu-container .navbar-brand, .navbar > #site_footer .navbar-brand, .navbar > #home-cover .navbar-brand, .navbar > #home-menu .navbar-brand {
       margin-left: -15px; } }
 
 .navbar-toggle {
@@ -6650,17 +6678,17 @@ a.badge:hover, a.badge:focus {
     font-weight: 200; }
   .jumbotron > hr {
     border-top-color: #d5d5d5; }
-  .container .jumbotron, .container-fluid .jumbotron, #site_header .jumbotron, #primary_menu-container .jumbotron, #site_footer .jumbotron, #home-cover .jumbotron {
+  .container .jumbotron, main > section .jumbotron, #home-featured .jumbotron, #home-activity .jumbotron, .container-fluid .jumbotron, #site_header .jumbotron, #primary_menu-container .jumbotron, #site_footer .jumbotron, #home-cover .jumbotron, #home-menu .jumbotron {
     border-radius: 6px;
     padding-left: 15px;
     padding-right: 15px; }
-  .jumbotron .container {
+  .jumbotron .container, .jumbotron main > section, .jumbotron #home-featured, .jumbotron #home-activity {
     max-width: 100%; }
   @media screen and (min-width: 768px) {
     .jumbotron {
       padding-top: 48px;
       padding-bottom: 48px; }
-      .container .jumbotron, .container-fluid .jumbotron, #site_header .jumbotron, #primary_menu-container .jumbotron, #site_footer .jumbotron, #home-cover .jumbotron {
+      .container .jumbotron, main > section .jumbotron, #home-featured .jumbotron, #home-activity .jumbotron, .container-fluid .jumbotron, #site_header .jumbotron, #primary_menu-container .jumbotron, #site_footer .jumbotron, #home-cover .jumbotron, #home-menu .jumbotron {
         padding-left: 60px;
         padding-right: 60px; }
       .jumbotron h1,
@@ -8159,6 +8187,18 @@ li {
 a {
   color: #000; }
 
+main > section > h1 {
+  background-color: #666;
+  color: #fff; }
+
+.list-item, #home-activity #home-activity-news .news-items article, #home-activity #home-activity-open_calls article,
+#home-activity #home-activity-events article {
+  height: 60px;
+  margin-bottom: 2px; }
+  .list-item > div[image-frame], #home-activity #home-activity-news .news-items article > div[image-frame], #home-activity #home-activity-open_calls article > div[image-frame],
+  #home-activity #home-activity-events article > div[image-frame] {
+    height: 100%; }
+
 #site_header > div nav, #site_header > div ul, #site_header > div li {
   height: 100%;
   margin: 0; }
@@ -8213,6 +8253,8 @@ a {
     text-align: center; }
 
 #home-cover {
+  width: 100vw;
+  max-width: 100%;
   position: relative !important;
   height: 450px; }
   #home-cover > [image-frame] {
@@ -8244,5 +8286,29 @@ a {
   text-align: center; }
   #home-featured article [image-frame] {
     height: 180px; }
+
+#home-activity #home-activity-open_calls button,
+#home-activity #home-activity-events button,
+#home-activity #home-activity-solidarity button {
+  padding: 7.5px;
+  border: none;
+  background-color: #fff;
+  text-align: center; }
+#home-activity #home-activity-news .latest [image-frame] {
+  height: 180px; }
+#home-activity #home-activity-solidarity ul article {
+  display: none;
+  height: 100%;
+  margin-bottom: 2px; }
+  #home-activity #home-activity-solidarity ul article:nth-child(1) {
+    display: block; }
+  #home-activity #home-activity-solidarity ul article > div[image-frame] {
+    height: 180px; }
+#home-activity #home-activity-solidarity ul button {
+  padding: 7.5px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  text-align: center; }
 
 /*# sourceMappingURL=hic_al.css.map */

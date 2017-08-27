@@ -1,0 +1,32 @@
+main > section > h1 {
+
+   background-color: $neutral_medium;
+   color: #fff;
+
+}
+
+main > section {
+
+   @extend .row;
+   @extend .container;
+
+}
+
+
+
+
+.list-item {
+
+   height: $spacing * 2;
+
+   & > div[image-frame] {
+      @extend .col-xs-2;
+      height: 100%;
+   }
+   & > div {
+      @extend .col-xs-10;
+   }
+
+   margin-bottom: 2px;
+
+}

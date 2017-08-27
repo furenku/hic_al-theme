@@ -1,0 +1,92 @@
+#home-activity {
+
+   @extend .container;
+
+   #home-activity-open_calls,
+   #home-activity-events,
+   #home-activity-solidarity {
+      @extend .col-md-4;
+
+      button {
+         @extend .col-xs-12;
+         padding: $spacing / 4;
+         border: none;
+         background-color: #fff;
+         text-align: center;
+      }
+
+   }
+
+
+   #home-activity-news {
+
+      .latest {
+         @extend .col-md-6;
+
+         &>div {
+            @extend .col-md-6;
+         }
+
+         [image-frame]{
+            height: $spacing * 6;
+         }
+
+      }
+
+      .news-items {
+         @extend .col-md-6;
+         article {
+
+            @extend .list-item;
+
+         }
+      }
+
+   }
+
+
+   #home-activity-open_calls,
+   #home-activity-events {
+      article {
+
+         @extend .list-item;
+      }
+
+
+   }
+
+
+   #home-activity-solidarity {
+      ul {
+         article {
+
+            display: none;
+            &:nth-child(1) {
+               display: block;
+            }
+
+            height: 100%;
+
+            & > div[image-frame] {
+               height: $spacing * 6;
+            }
+
+            margin-bottom: 2px;
+
+         }
+
+         button {
+            @extend .col-xs-8;
+            @extend .col-xs-offset-2;
+            padding: $spacing / 4;
+            border: none;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+         }
+
+      }
+   }
+
+
+}

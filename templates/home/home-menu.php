@@ -1,7 +1,14 @@
 <nav id="home-menu">
    <ul>
 
-      <?php for ($i=0; $i < 5; $i++) : ?>
+      <?php
+
+      $pages = get_pages( array(
+         'parent' => get_page_by_title("Mapa de Sitio")->ID,
+         // 'child_of'=>get_page_by_title("Mapa de Sitio")->ID,
+      ));
+
+      foreach( $pages as $page ): ?>
 
          <li>
             <a href="">
@@ -9,15 +16,15 @@
                   <img src="http://fakeimg.pl/300x200" alt="">
                </div>
                <h2>
-                  Nombre de Menú
+                  <?php echo get_the_title( $page->ID ); ?>
                </h2>
                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam adipisci mollitia rem eum, dolore, eius.
+                  <?php echo get_the_excerpt( $page->ID ); ?>
                </p>
             </a>
          </li>
 
-      <?php endfor;?>
+      <?php endforeach; ?>
 
    </ul>
 </nav>

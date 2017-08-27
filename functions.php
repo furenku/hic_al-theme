@@ -10,7 +10,7 @@ function wp_config() {
 
    show_admin_bar( false );
    add_theme_support('post-thumbnails');
-
+   add_post_type_support( 'page', 'excerpt' );
 }
 
 /**
@@ -67,4 +67,78 @@ function register_taxonomies() {
 
 add_action( 'init', 'register_taxonomies' );
 
+
+
+
+function list_item( $id, $class ) {
+   ?>
+
+   <article class="<?php echo $class ?>">
+
+   <div image-frame="">
+      <?php echo get_the_post_thumbnail( $id, 'large' ); ?>
+   </div>
+
+   <div>
+
+      <h5>
+         <?php echo get_the_title( $id ); ?>
+      </h5>
+
+      <footer>
+         <span class="author">
+            Publicado por <a href="#"><?php echo get_the_author( $id ); ?></a>
+         </span>
+         <span class="date">
+            el <?php echo get_the_date( 'd \d\e F\, Y', $id ); ?>
+
+         </span>
+      </footer>
+
+
+   </div>
+
+</article>
+<?php
+}
+
+function solidarity_item( $id ) {
+   ?>
+
+   <article class="solidarity_item">
+
+   <div image-frame="">
+      <?php echo get_the_post_thumbnail( $id, 'large' ); ?>
+   </div>
+
+   <div>
+
+      <h5>
+         <?php echo get_the_title( $id ); ?>
+      </h5>
+
+      <p>
+         <?php echo get_the_excerpt( $id ); ?>
+      </p>
+
+      <footer>
+         <span class="author">
+            Publicado por <a href="#"><?php echo get_the_author( $id ); ?></a>
+         </span>
+         <span class="date">
+            el <?php echo get_the_date( 'd \d\e F\, Y', $id ); ?>
+
+         </span>
+
+         <button type="button" name="button">
+            Realiza una Acción
+         </button>
+      </footer>
+
+
+   </div>
+
+</article>
+<?php
+}
 ?>
