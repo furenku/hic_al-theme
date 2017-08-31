@@ -1,0 +1,17 @@
+#home-working_groups-list {
+
+   li {
+      @extend .col-xs-12;
+      @extend .col-md-6;
+      @extend .col-lg-4;
+
+
+      padding: $spacing * 2;
+
+      text-align: center;
+
+      [image-frame] {
+         height: $spacing * 6;
+      }
+   }
+}

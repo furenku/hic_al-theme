@@ -1,0 +1,46 @@
+#home-library-publications {
+   ul {
+      article {
+         @extend .col-xs-3;
+         [image-frame] {
+            height: $spacing * 4;
+         }
+      }
+   }
+
+   &>section {
+      @extend .col-md-6;
+      @extend .col-lg-3;
+   }
+
+   #home-library-multimedia {
+      li {
+
+         i {
+            @extend .col-xs-2;
+         }
+         & > div {
+            @extend .col-xs-10;
+         }
+
+         float: left;
+         width: auto;
+         padding: 0 $spacing / 3;
+      }
+   }
+
+   #home-library-exhibition,
+   #home-library-glossary {
+
+      @extend .framed_content;
+
+      [image-frame] {
+         height: $spacing * 5;
+      }
+
+      a > button {
+         @extend .action_button;
+      }
+
+   }
+}

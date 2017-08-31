@@ -1,0 +1,41 @@
+#home-membership {
+
+   &>section {
+      height: $spacing*10;
+   }
+
+   #home-membership-space {
+
+      @extend .col-md-6;
+      @extend .col-lg-8;
+
+      &>div{
+         @extend .col-xs-6;
+      }
+
+      [image-frame] {
+         height: $spacing * 8;
+      }
+
+   }
+   #home-membership-intro {
+      @extend .col-md-6;
+      @extend .col-lg-4;
+   }
+   #home-membership-peer_posts {
+      @extend .col-md-6;
+      @extend .col-lg-5;
+
+      article {
+         footer {
+            font-size: 12px;
+            color: #444;
+         }
+      }
+   }
+   #home-membership-member_invitation {
+      @extend .col-md-6;
+      @extend .col-lg-7;
+   }
+
+}

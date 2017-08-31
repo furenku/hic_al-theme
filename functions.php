@@ -153,4 +153,32 @@ function solidarity_item( $id ) {
 </article>
 <?php
 }
+
+
+
+function peer_post_item( $id, $class ) {
+   ?>
+
+   <article class="<?php echo $class ?>">
+      <a href="">
+         <h5>
+            <?php echo get_the_title( $id ); ?>
+         </h5>
+      </a>
+
+      <footer>
+         <span class="author">
+            Publicado por <a href="#"><?php echo get_the_author( $id ); ?></a>
+         </span>
+         <span class="date">
+            el <?php echo get_the_date( 'd \d\e F\, Y', $id ); ?>
+
+         </span>
+      </footer>
+
+</article>
+<?php
+}
+
+
 ?>

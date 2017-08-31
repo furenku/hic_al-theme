@@ -10,10 +10,15 @@ $spacing: 30px;
 
 @import "components/hic_al-header";
 @import "components/hic_al-footer";
+
 @import "components/home-cover";
 @import "components/home-menu";
 @import "components/home-featured";
 @import "components/home-activity";
+@import "components/home-membership";
+@import "components/home-working_groups";
+@import "components/home-library";
+@import "components/home-about_hic";
 
 
 main > section {

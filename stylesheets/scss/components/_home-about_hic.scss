@@ -1,0 +1,36 @@
+#home-about_hic-thematic_areas-menu {
+
+   @extend .row;
+
+   li {
+      @extend .col-md-6;
+      width: 20%;
+
+      [image-frame] {
+         height: $spacing * 3;
+      }
+
+   }
+}
+
+#home-about_hic-newsletter {
+
+   button {
+      @extend .more_link_button;
+   }
+
+}
+
+#home-about_hic > section {
+
+   height: $spacing * 11;
+
+   @extend .col-md-6;
+   @extend .col-lg-4;
+
+   &#home-about_hic-coalition {
+      @extend .col-md-6;
+      @extend .col-lg-8;
+   }
+
+}

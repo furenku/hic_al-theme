@@ -31,3 +31,38 @@ main > section {
    margin-bottom: 2px;
 
 }
+
+.action_button {
+
+      @extend .col-xs-12;
+
+      padding: $spacing / 4;
+      border: none;
+      background-color: $action_button_bg;
+      color: $action_button_color;
+
+      text-align: center;
+
+}
+
+.more_link_button {
+
+   @extend .col-xs-12;
+
+   padding: $spacing / 4;
+   border: none;
+   background-color: #fff;
+   text-align: center;
+
+}
+
+
+.framed_content {
+
+   &, &>div {
+      border: 2px solid #ddd;
+   }
+
+   padding: 2px;
+
+}

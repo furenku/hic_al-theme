@@ -8,11 +8,9 @@
       @extend .col-md-4;
 
       button {
-         @extend .col-xs-12;
-         padding: $spacing / 4;
-         border: none;
-         background-color: #fff;
-         text-align: center;
+
+         @extend .more_link_button;
+
       }
 
    }
