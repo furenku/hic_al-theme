@@ -1,18 +1,13 @@
-<?php
-if( have_posts() ) :
-   while ( have_posts() ) :
-      the_post();
-
-?>
+<?php $home = get_page_by_title("Inicio"); ?>
 
 <section id="home-cover">
 
    <div image-frame="">
-      <img src="http://unsplash.it/1200/600?random=15" alt="">
+      <?php echo get_the_post_thumbnail( $home->ID, 'full'); ?>
    </div>
 
    <div class="content">
-      
+
       <section class="presentation">
 
          <section id="branding">
@@ -36,7 +31,7 @@ if( have_posts() ) :
             <h3>
                <?php echo get_bloginfo('description'); ?>
             </h3>
-            <?php echo get_the_content(); ?>
+            <?php echo get_the_content( $home->ID ); ?>
          </section>
 
       </section>
@@ -44,41 +39,36 @@ if( have_posts() ) :
 
       <section class="calls_to_action">
 
-         <article>
+         <?php
+         $q = new WP_Query( array('post_type'=>'call_to_action', 'posts_per_page' => 2 ));
+         if( $q->have_posts() ) :
 
-            <h4>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </h4>
-            <a href="">
-               <button>
-                  Llamado a la Acción
-               </button>
-            </a>
+            while ( $q->have_posts() ) :
+               $q->the_post();
+               ?>
 
-         </article>
+               <article>
 
-         <article>
+                  <h4>
+                     <?php echo get_the_content(); ?>
+                  </h4>
+                  <a href="">
+                     <a href="<?php echo get_post_meta( get_the_ID(), 'call_to_action-url', true ); ?>" target="_blank">
+                        <button>
+                           <?php echo get_post_meta( get_the_ID(), 'call_to_action-text', true ); ?>
+                        </button>
+                     </a>
+                  </a>
 
-            <h4>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </h4>
-            <a href="">
-               <button>
-                  Llamado a la Acción
-               </button>
-            </a>
+               </article>
 
-         </article>
+               <?php
+            endwhile;
+         endif;
+         ?>
 
       </section>
 
    </div>
 
 </section>
-
-<?php
-
-endwhile;
-endif;
-
-?>

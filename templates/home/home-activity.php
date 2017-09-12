@@ -10,98 +10,87 @@
          Noticias
       </h2>
 
-      <article class="latest">
+      <?php
 
-         <div>
-            <div image-frame="">
-               <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
-            </div>
-            <footer>
-               <span class="author">
-                  Publicado por <a href="#">Nombre del Autor</a>
-               </span>
-               <span class="date">
-                  el <?php echo get_the_date(); ?>
+         // Noticia Principal
 
-               </span>
-            </footer>
-         </div>
+         $post_type = 'news_item';
 
-         <div>
+         $q = new WP_Query( array(
+            'post_type'=>$post_type,
+            'posts_per_page' => 1,
+            'tax_query' => array(
+               array(
+                  'taxonomy' => 'site_hierarchy',
+                  'field'    => 'slug',
+                  'terms'    => 'main-news',
+               ),
+            ),
+         )
+         );
 
-            <h3>
-               <?php echo get_the_title(); ?>
-            </h3>
+         if( $q->have_posts() ) {
+         while ( $q->have_posts() ) {
+            $q->the_post();
 
-            <p>
-               <?php echo get_the_excerpt(); ?>
-            </p>
+            $exclude_post = get_the_ID();
 
-         </div>
+            ?>
 
+            <article class="latest <?php echo $post_type; ?>">
 
-      </article>
+               <div>
+                  <div image-frame>
+                     <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
+                  </div>
+                  <footer>
+                     <span class="author">
+                        Publicado por <a href="#">Nombre del Autor</a>
+                     </span>
+                     <span class="date">
+                        el <?php echo get_the_date(); ?>
 
+                     </span>
+                  </footer>
+               </div>
 
-      <ul class="news-items">
+               <div>
 
-         <?php
-         for ($i=0; $i < 4; $i++) :
-            list_item(get_the_ID(),'news-item');
-         endfor;
-         ?>
+                  <h3>
+                     <?php echo get_the_title(); ?>
+                  </h3>
 
-      </ul>
+                  <p>
+                     <?php echo get_the_excerpt(); ?>
+                  </p>
 
-   </section>
-
-
-   <section id="home-activity-open_calls">
-
-      <h3>
-         Convocatorias
-      </h3>
-
-      <ul class="open-calls">
-         <?php
-         for ($i=0; $i < 4; $i++) :
-            list_item(get_the_ID(),'open_call');
-         endfor;
-         ?>
-      </ul>
-
-      <a href="#">
-         <button type="button" name="button">
-            Ver Más <b>Convocatorias</b>
-         </button>
-      </a>
+               </div>
 
 
-   </section>
+            </article>
 
-   <section id="home-activity-events">
 
-      <h3>
-         Eventos
-      </h3>
+            <?php
+         }
+      }
 
-      <ul class="events">
-         <?php
-         for ($i=0; $i < 4; $i++) :
-            list_item(get_the_ID(),'event');
-         endfor;
-         ?>
-      </ul>
 
-      <a href="#">
-         <button type="button" name="button">
-            Ver Más <b>Eventos</b>
-         </button>
-      </a>
+      $args = array(
+         'exclude' => array($exclude_post)
+      );
+      post_type_list_box('news_item', $args);
+
+      ?>
 
    </section>
 
-   <section id="home-activity-solidarity">
+   <?php
+   post_type_list_box('open_call');
+   post_type_list_box('event');
+   ?>
+
+
+   <section id="home-activity-solidarity" class="home-activity-content_list">
 
       <h3>
          Solidaridad
@@ -110,12 +99,51 @@
       <ul class="solidarity">
          <?php
          for ($i=0; $i < 4; $i++) :
-            solidarity_item(get_the_ID());
+            $id = get_the_ID();
+         ?>
+
+            <article class="solidarity_item">
+
+               <div image-frame="">
+                  <?php echo get_the_post_thumbnail( $id, 'large' ); ?>
+               </div>
+
+               <div>
+
+                  <h5>
+                     <?php echo get_the_title( $id ); ?>
+                  </h5>
+
+                  <p>
+                     <?php echo get_the_excerpt( $id ); ?>
+                  </p>
+
+                  <footer>
+                     <span class="author">
+                        Publicado por <a href="#"><?php echo get_the_author( $id ); ?></a>
+                     </span>
+                     <span class="date">
+                        el <?php echo get_the_date( 'd \d\e F\, Y', $id ); ?>
+
+                     </span>
+
+                     <button type="button" name="button">
+                        Realiza una Acción
+                     </button>
+
+                  </footer>
+
+
+               </div>
+
+            </article>
+
+         <?php
          endfor;
          ?>
       </ul>
 
-      <a href="#">
+      <a href="<?php echo get_post_type_archive_link( 'call_for_solidarity' ); ?>">
          <button type="button" name="button">
             Ver Más <b>Llamados de Solidaridad</b>
          </button>

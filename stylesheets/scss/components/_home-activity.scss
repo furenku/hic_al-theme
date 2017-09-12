@@ -2,10 +2,14 @@
 
    // @extend .container;
 
-   #home-activity-open_calls,
-   #home-activity-events,
-   #home-activity-solidarity {
+   .home-activity-content_list {
       @extend .col-md-4;
+
+      article {
+
+         @extend .list-item;
+
+      }
 
       button {
 
@@ -15,13 +19,17 @@
 
    }
 
+   & > section {
+      height: $spacing * 14;
+   }
 
    #home-activity-news {
 
       .latest {
-         @extend .col-md-6;
+         @extend .col-md-8;
 
-         &>div {
+         &>div,
+         &>section {
             @extend .col-md-6;
          }
 
@@ -31,27 +39,10 @@
 
       }
 
-      .news-items {
-         @extend .col-md-6;
-         article {
-
-            @extend .list-item;
-
-         }
-      }
 
    }
 
 
-   #home-activity-open_calls,
-   #home-activity-events {
-      article {
-
-         @extend .list-item;
-      }
-
-
-   }
 
 
    #home-activity-solidarity {
@@ -65,8 +56,11 @@
 
             height: 100%;
 
+            & > div {
+               @extend .col-md-12;
+            }
             & > div[image-frame] {
-               height: $spacing * 6;
+               height: $spacing * 5;
             }
 
             margin-bottom: 2px;

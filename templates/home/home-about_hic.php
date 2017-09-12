@@ -7,7 +7,11 @@
 
    <nav id="home-about_hic-thematic_areas-menu">
 
-   <ul>
+      <h3>
+         Áreas Temáticas
+      </h3>
+
+      <ul>
          <?php for ($i=0; $i < 5; $i++) : ?>
 
             <li>
@@ -31,26 +35,20 @@
          La coalición
       </h3>
       <ul>
+
+         <?php
+         $parent = get_page_by_title('La coalición');
+         $pages = get_pages( array('child_of'=>$parent->ID));
+
+         foreach( $pages as $page ) : ?>
+
          <li>
-            <a href="#">
-               Coalition List
+            <a href="<?php echo get_the_permalink($page->ID); ?>">
+               <?php echo ($page -> post_title) ?>
             </a>
          </li>
-         <li>
-            <a href="#">
-               Coalition List
-            </a>
-         </li>
-         <li>
-            <a href="#">
-               Coalition List
-            </a>
-         </li>
-         <li>
-            <a href="#">
-               Coalition List
-            </a>
-         </li>
+
+         <?php endforeach; ?>
       </ul>
    </section>
 
@@ -58,32 +56,21 @@
       <h3>
          Estructuras
       </h3>
-      <ul>
-         <li>
-            <a href="#">
-               HIC - Housing and Land Rights Network (Egypt)
-            </a>
-         </li>
-         <li>
-            <a href="#">
-               HIC - Housing and Land Rights Network (Egypt)
-            </a>
-         </li>
-         <li>
-            <a href="#">
-               HIC - Housing and Land Rights Network (Egypt)
-            </a>
-         </li>
-      </ul>
+      <div>
+         <?php
+         $page = get_page_by_title("Estructuras");
+         echo apply_filters('the_content', $page->post_content);
+         ?>
+      </div>
    </section>
 
 
 
    <section id="home-about_hic-documents">
-   <h4>
-Documentos
-</h4>
-<ul>
+      <h4>
+         Documentos
+      </h4>
+      <ul>
          <?php for ($i=0; $i < 4; $i++) : ?>
 
             <article>
@@ -107,74 +94,44 @@ Documentos
       </a>
    </section>
 
-<section id="home-about_hic-newsletter">
+   <section id="home-about_hic-newsletter">
 
-<h4>
-   Boletín de noticias
-</h4>
+      <h4>
+         Boletín de noticias
+      </h4>
 
-<form action="">
-   <label for="">
-Nombre
-</label>
-<input type="text">
-   <label for="">
-Correo electrónico
-</label>
-<input type="email">
-<input type="submit" value="Inscribirme al boletín bimestral">
-</form>
+      <form action="">
+         <label for="">
+            Nombre
+         </label>
+         <input type="text">
+         <label for="">
+            Correo electrónico
+         </label>
+         <input type="email">
+         <input type="submit" value="Inscribirme al boletín bimestral">
+      </form>
 
-<a href="#">
-   <button type="button" name="button">
-      Ver <b>Boletines de noticias</b> anteriores
-   </button>
-</a>
-</section>
+      <a href="#">
+         <button type="button" name="button">
+            Ver <b>Boletines de noticias</b> anteriores
+         </button>
+      </a>
+   </section>
 
-<section id="home-about_hic-contact">
+   <section id="home-about_hic-contact">
 
-<h4>
-   Contacto
-</h4>
+      <h4>
+         Contacto
+      </h4>
 
-   <dl class="">
-      <dl>
-         E-mail
-      </dl>
-      <dd>
-         <a href="mailto:info@hic-al.org">
-info@hic-al.org
-</a>
-      </dd>
+      <div class="content">
+         <?php
+         $page = get_page_by_title("Contacto");
+         echo apply_filters('the_content', $page->post_content);
+         ?>
+      </div>
 
-      <dl>
-         Dirección
-      </dl>
-      <dd>
-         Huatusco No. 39, colonia Roma Sur, 06760,
-Ciudad de México.
-      </dd>
-
-      <dl>
-         Facebook
-      </dl>
-      <dd>
-         <a href="#">
-            Habitat International Coalition
-         </a>
-      </dd>
-
-      <dl>
-         Twitter
-      </dl>
-      <dd>
-         <a href="#">
-            @habitat_intl
-         </a>
-      </dd>
-   </dl>
-
-</section>
+   </section>
 
 </section>

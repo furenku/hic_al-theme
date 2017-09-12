@@ -1,4 +1,66 @@
+<?php;
+
+
+function post_type_list_box( $post_type, $args = array() ) {
+
+   if( array_key_exists('number',$args) ) {
+      $post_number = $args['number'];
+   } else {
+      $post_number = 3;
+   }
+
+   $exclude = array();
+   if( array_key_exists('exclude',$args) ) {
+      array_push($exclude, $args['exclude']);
+   }
+
+   $plural_label = get_post_type_object( $post_type )->labels->name;
+   $plural_slug = str_replace(" ", "_", strtolower($plural_label));
+
+   ?>
+
+   <section
+   id="home-activity-<?php echo $plural_slug; ?>"
+   class="home-activity-content_list"
+   >
+
+      <h3>
+         <?php echo $plural_label; ?>
+      </h3>
+
+      <ul class="<?php echo $plural_slug; ?>">
+
+         <?php
+         $q = new WP_Query( array(
+            'post_type'=>$post_type,
+            'post__not_in' => $exclude,
+            'posts_per_page' => $post_number
+         ));
+
+         if( $q->have_posts() ) {
+            while ( $q->have_posts() ) {
+               $q->the_post();
+
+               list_item(get_the_ID(),$post_type);
+
+            }
+         }
+
+         ?>
+
+      </ul>
+
+      <a href="<?php echo get_post_type_archive_link( $post_type );  ?>">
+         <button type="button" name="button">
+            Ver Más <b><?php echo $plural_label; ?></b>
+         </button>
+      </a>
+
+   </section>
+
 <?php
+}
+
 
 /* WP CONFIG */
 
@@ -14,21 +76,21 @@ function wp_config() {
 }
 
 /**
- * Add new fields to wp-admin/options-general.php page
- */
+* Add new fields to wp-admin/options-general.php page
+*/
 function register_admin_options_fields() {
    register_setting( 'general', 'site_subtitle', 'esc_attr' );
    add_settings_field(
-      'site_subtitle',
-      '<label for="site_subtitle_id">' . __( 'Site subtitle' , 'site_subtitle' ) . '</label>',
-      'fields_html',
-      'general'
+   'site_subtitle',
+   '<label for="site_subtitle_id">' . __( 'Site subtitle' , 'site_subtitle' ) . '</label>',
+   'fields_html',
+   'general'
    );
 }
 
 /**
- * HTML for extra settings
- */
+* HTML for extra settings
+*/
 function fields_html() {
    $value = get_option( 'site_subtitle', '' );
    echo '<input type="text" id="site_subtitle_id" name="site_subtitle" value="' . esc_attr( $value ) . '" />';
@@ -42,8 +104,8 @@ add_action('after_setup_theme','register_menus');
 function register_menus() {
 
    register_nav_menus( array(
-   	'primary' => 'Primary Menu',
-   	'secondary' => 'Secondary Menu',
+   'primary' => 'Primary Menu',
+   'secondary' => 'Secondary Menu',
    ) );
 
 }
@@ -52,32 +114,50 @@ function register_menus() {
 /* Taxonomies */
 
 function register_taxonomies() {
-	// create a new taxonomy
-	register_taxonomy(
-		'site_hierarchy',
-		array(
-         'news_item',
-         'call_to_action',
-         'call_for_solidarity',
-         'open_call',
-         'event',
-         'initiative',
-         'member',
-         'document',
-         'publication',
-         'media_content',
-         'glossary-term'
-      ),
-		array(
-			'label' => __( 'Site Hierarchy' ),
-         'hierarchical' => true,
-			'rewrite' => array( 'slug' => 'featured' ),
+   // create a new taxonomy
+   register_taxonomy(
+   'site_hierarchy',
 
-		)
-	);
+   array(
+   'news_item',
+   'call_to_action',
+   'call_for_solidarity',
+   'open_call',
+   'event',
+   'initiative',
+   'member',
+   'document',
+   'publication',
+   'media_content',
+   'glossary-term'
+   ),
+   array(
+   'label' => __( 'Site Hierarchy' ),
+   'hierarchical' => true,
+   'rewrite' => array( 'slug' => 'featured' ),
+
+   )
+   );
+
+
+   // multimedia content type
+   register_taxonomy(
+   'media_content_type',
+
+   array(
+   'media_content',
+   'glossary-term'
+   ),
+   array(
+   'label' => __( 'Media Type' ),
+   'hierarchical' => true,
+   'rewrite' => array( 'slug' => 'media_type' ),
+   )
+   );
 }
 
 add_action( 'init', 'register_taxonomies' );
+
 
 
 
@@ -87,71 +167,31 @@ function list_item( $id, $class ) {
 
    <article class="<?php echo $class ?>">
 
-   <div image-frame="">
-      <?php echo get_the_post_thumbnail( $id, 'large' ); ?>
-   </div>
+      <div image-frame="">
+         <?php echo get_the_post_thumbnail( $id, 'large' ); ?>
+      </div>
 
-   <div>
+      <div>
 
-      <h5>
-         <?php echo get_the_title( $id ); ?>
-      </h5>
+         <h5>
+            <?php echo get_the_title( $id ); ?>
+         </h5>
 
-      <footer>
-         <span class="author">
-            Publicado por <a href="#"><?php echo get_the_author( $id ); ?></a>
-         </span>
-         <span class="date">
-            el <?php echo get_the_date( 'd \d\e F\, Y', $id ); ?>
+         <footer>
+            <span class="author">
+               Publicado por <a href="#"><?php echo get_the_author( $id ); ?></a>
+            </span>
+            <span class="date">
+               el <?php echo get_the_date( 'd \d\e F\, Y', $id ); ?>
 
-         </span>
-      </footer>
-
-
-   </div>
-
-</article>
-<?php
-}
-
-function solidarity_item( $id ) {
-   ?>
-
-   <article class="solidarity_item">
-
-   <div image-frame="">
-      <?php echo get_the_post_thumbnail( $id, 'large' ); ?>
-   </div>
-
-   <div>
-
-      <h5>
-         <?php echo get_the_title( $id ); ?>
-      </h5>
-
-      <p>
-         <?php echo get_the_excerpt( $id ); ?>
-      </p>
-
-      <footer>
-         <span class="author">
-            Publicado por <a href="#"><?php echo get_the_author( $id ); ?></a>
-         </span>
-         <span class="date">
-            el <?php echo get_the_date( 'd \d\e F\, Y', $id ); ?>
-
-         </span>
-
-         <button type="button" name="button">
-            Realiza una Acción
-         </button>
-      </footer>
+            </span>
+         </footer>
 
 
-   </div>
+      </div>
 
-</article>
-<?php
+   </article>
+   <?php
 }
 
 
@@ -160,6 +200,7 @@ function peer_post_item( $id, $class ) {
    ?>
 
    <article class="<?php echo $class ?>">
+
       <a href="">
          <h5>
             <?php echo get_the_title( $id ); ?>
@@ -176,8 +217,8 @@ function peer_post_item( $id, $class ) {
          </span>
       </footer>
 
-</article>
-<?php
+   </article>
+   <?php
 }
 
 

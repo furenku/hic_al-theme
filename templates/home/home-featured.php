@@ -4,22 +4,40 @@
 
    $q = new WP_Query( array(
       'post_type' => array(
-            'post'
+         'news_item',
+         'call_for_solidarity',
+         'open_call',
+         'event',
+         'document',
+         'publication',
+      ),
+      'posts_per_page' => 3,
+      'tax_query' => array(
+         array(
+            'taxonomy' => 'site_hierarchy',
+            'field'    => 'slug',
+            'terms'    => 'featured',
          ),
-         'posts_per_page' => 3
-         /* taxonomy featured */
-      )
-   );
+      ),
+      /* taxonomy featured */
+   )
+);
 
 
-   if( $q -> have_posts() ) :
-      while ( $q -> have_posts() ) :
-         $q -> the_post();
-   ?>
+if( $q -> have_posts() ) :
+   while ( $q -> have_posts() ) :
+      $q -> the_post();
+      ?>
 
       <article>
 
-         <a href="#">
+         <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
+
+            <header>
+               <h6>
+                  <?php echo get_post_type_object(get_post_type( get_the_ID() ))->labels->singular_name; ?>
+               </h6>
+            </header>
 
             <div image-frame="">
                <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
@@ -47,9 +65,9 @@
 
       </article>
 
-   <?php
-      endwhile;
-   endif;
-   ?>
+      <?php
+   endwhile;
+endif;
+?>
 
 </section>
