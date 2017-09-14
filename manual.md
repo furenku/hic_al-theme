@@ -14,4 +14,23 @@ La coalición: Páginas Hijas de "La Coalición"
 
 ### Jerarquía en el Sitio
 
+- Destacadas
+- Inicio: Noticia Principal
+
 ### Media Type
+- Fotografía
+- Video
+- Audio
+- Embed (HTML)
+- Infográfico
+
+### Document Type
+- News Bulletin
+
+### Lugar
+
+En todos los tipos de contenido
+
+País: Dropdown
+Estado: Dropdown
+Localidad: Text field

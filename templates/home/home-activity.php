@@ -23,7 +23,7 @@
                array(
                   'taxonomy' => 'site_hierarchy',
                   'field'    => 'slug',
-                  'terms'    => 'main-news',
+                  'terms'    => 'home-main-news',
                ),
             ),
          )

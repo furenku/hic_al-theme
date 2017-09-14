@@ -5,13 +5,13 @@
       @extend .col-md-6;
       @extend .col-lg-4;
 
-
-      padding: $spacing * 2;
+      padding: $spacing * 1;
 
       text-align: center;
 
       [image-frame] {
-         height: $spacing * 6;
+         height: $spacing * 4;
       }
    }
+
 }

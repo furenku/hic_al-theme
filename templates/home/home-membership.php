@@ -1,40 +1,51 @@
+<?php
+$membership_page = 'Membrecía';
+
+$membership_space_page = 'Espacio de miembros';
+$membership_hic_page = 'HIC en el mundo';
+$membership_contributions_page = 'La palabra de miembr@s y amig@s';
+$membership_invitation_page = '¿Cómo ser miembr@ de HIC?';
+
+
+?>
+
 <section id="home-membership">
 
    <h1>
-      Membership
+      <?php echo apply_filters('the_title',get_page_by_title($membership_page)->post_title); ?>
    </h1>
 
+   <?php $page = get_page_by_title($membership_space_page); ?>
 
    <section id="home-membership-space">
+
       <h2>
-         Espacio de Miembros
+         <?php echo apply_filters('the_title',$page->post_title); ?>
       </h2>
 
-      <div class="map" image-frame="" contain="">
-         <img src="http://fakeimg.pl/400x600" alt="" />
+      <div class="map" image-frame="">
+         <?php echo get_the_post_thumbnail($page->ID,'medium'); ?>
       </div>
 
       <div class="text">
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque reiciendis unde, nemo eos iure.</p>
-         <p>Dolore quae, nemo pariatur, nisi ut sunt veritatis velit aliquam, quaerat facere totam sequi.</p>
-         <p>Ut quisquam vitae optio obcaecati rem, alias, sequi quia aperiam ullam dolorem nulla ab.</p>
+         <?php echo apply_filters('the_excerpt',$page->post_excerpt); ?>
       </div>
 
    </section>
 
-   <section id="home-membership-intro">
+   <?php $page = get_page_by_title($membership_hic_page); ?>
+
+   <section id="home-membership-hic">
       <h2>
-         HIC en el Mundo
+         <?php echo apply_filters('the_title',$page->post_title); ?>
       </h2>
 
-      <div image-frame="" contain="">
-         <img src="http://fakeimg.pl/600x400" alt="" />
+      <div image-frame="">
+         <?php echo get_the_post_thumbnail($page->ID,'medium'); ?>
       </div>
 
       <div class="text">
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque reiciendis unde, nemo eos iure.</p>
-         <p>Dolore quae, nemo pariatur, nisi ut sunt veritatis velit aliquam, quaerat facere totam sequi.</p>
-         <p>Ut quisquam vitae optio obcaecati rem, alias, sequi quia aperiam ullam dolorem nulla ab.</p>
+         <?php echo apply_filters('the_excerpt',$page->post_excerpt); ?>
       </div>
    </section>
 
@@ -47,28 +58,41 @@
       <ul>
 
          <?php
+         $q = new WP_Query(array(
+            'post_type' => array('post'),
+            // 'usertype?' => array('memberr'),
+            'posts_per_page' => 3
+         )
+         );
+         if( $q->have_posts() ) :
+            while ( $q->have_posts() ) :
+               $q->the_post();
 
-         for ($i=0; $i < 4; $i++) :
-            peer_post_item(get_the_ID(),'peer-post');
-         endfor;
+               peer_post_item(get_the_ID(),'peer-post');
+
+            endwhile;
+         endif;
 
          ?>
 
       </ul>
+
    </section>
 
-   <section id="home-membership-member_invitation">
+   <?php $page = get_page_by_title($membership_invitation_page); ?>
 
-      <div image-frame="" contain="">
-         <img src="http://fakeimg.pl/200x300" alt="" />
+   <section id="home-membership-member_invitation">
+      <div image-frame="">
+         <?php echo get_the_post_thumbnail($page->ID,'medium'); ?>
       </div>
 
       <div class="text">
-         <h3>¿Cómo ser Miembro de HIC?</h3>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, minus! Similique corrupti veniam consectetur facere.</p>
-         <p>Nemo reiciendis quia aspernatur repudiandae quaerat a placeat accusantium consequatur illo quod, eveniet atque. Atque?</p>
-         <p>Obcaecati consequatur ut asperiores, porro officia nam et enim, pariatur doloribus eum reiciendis cum quia.</p>
-         <p>Debitis eos repellendus accusamus vel adipisci veritatis praesentium molestiae unde, veniam beatae. Adipisci, ipsum, neque.</p>
+         <h3>
+            <?php echo apply_filters('the_title',$page->post_title); ?>
+         </h3>
+
+         <?php echo apply_filters('the_excerpt',$page->post_excerpt); ?>
+
       </div>
 
    </section>

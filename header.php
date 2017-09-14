@@ -34,9 +34,11 @@
 
       <div id="primary_menu-container">
 
-         <div id="logo" image-frame contain left>
-            <img src="http://fakeimg.pl/200x150" alt="">
-         </div>
+         <a href="<?php echo get_site_url(); ?>">
+            <div id="logo" image-frame contain left>
+               <img src="http://fakeimg.pl/200x150" alt="">
+            </div>
+         </a>
 
          <?php echo wp_nav_menu(array(
             'theme_location' => 'primary',

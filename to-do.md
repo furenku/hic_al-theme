@@ -1,23 +1,43 @@
-# Integración
+## Inicio
 
-### Inicio
+#### Integración
 
 - Cabecera
 - Logos
-- ~~Portada~~
+- Portada
+   - C2A Location
 - ~~Destacadas~~
 - Actividad
    - open_call: Deadline
    - event: Event Date
 - Membrecía
-- Grupos de Trabajo
+   - Posts de Miembros
+
+- ~~Grupos de Trabajo~~
 - Biblioteca
-- Acerca de Hic
+   - C2A Location
+   - publication author, date, place
+   - multimedia networks
+- ~~Acerca de Hic~~
+
 - Pie
+
+#### IxD
+
+- Biblioteca
+   - Slider
+
+
+## Micrositio
+
+- Wireframes
 
 
 # CPT
 
+- Implementar Member Contributions
+
+- Todos los Tipos de Contenido: país?
 
 
 - Grupos de Trabajo
@@ -34,3 +54,7 @@
 diseño
 
 resolver slider solidarity
+
+
+administrar llamadas por nombre de categoria o página
+para usar variables desde página de configuración

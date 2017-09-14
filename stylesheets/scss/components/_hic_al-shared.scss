@@ -1,3 +1,8 @@
+$font-s: 12px;
+$font-m: 15px;
+$font-l: 18px;
+
+
 main > section > h1 {
 
    background-color: $neutral_medium;
@@ -12,8 +17,6 @@ main > section {
    margin: 0 auto;
 
 }
-
-
 
 
 .list-item {
@@ -65,4 +68,27 @@ main > section {
 
    padding: 2px;
 
+}
+
+
+
+.page {
+
+   @extend .container;
+   padding: $spacing * 2;
+
+   h1 {
+      margin-bottom: $spacing * (2/3) !important;
+   }
+
+   p {
+      font-size: $font-m;
+   }
+
+}
+
+
+main > article {
+   @extend .page;
+   // @extend .row;
 }

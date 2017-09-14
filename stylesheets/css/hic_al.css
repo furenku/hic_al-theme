@@ -3834,24 +3834,24 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container, main > section, #home-featured {
+.container, main > section, .page, main > article, #home-featured {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container:before, main > section:before, #home-featured:before, .container:after, main > section:after, #home-featured:after {
+  .container:before, main > section:before, .page:before, main > article:before, #home-featured:before, .container:after, main > section:after, .page:after, main > article:after, #home-featured:after {
     content: " ";
     display: table; }
-  .container:after, main > section:after, #home-featured:after {
+  .container:after, main > section:after, .page:after, main > article:after, #home-featured:after {
     clear: both; }
   @media (min-width: 768px) {
-    .container, main > section, #home-featured {
+    .container, main > section, .page, main > article, #home-featured {
       width: 750px; } }
   @media (min-width: 992px) {
-    .container, main > section, #home-featured {
+    .container, main > section, .page, main > article, #home-featured {
       width: 970px; } }
   @media (min-width: 1200px) {
-    .container, main > section, #home-featured {
+    .container, main > section, .page, main > article, #home-featured {
       width: 1170px; } }
 
 .container-fluid, #site_header, #site_header > div, #primary_menu-container, #site_footer, #home-cover, #home-menu {
@@ -3874,33 +3874,31 @@ pre {
   .row:after, main > section:after, #site_header:after, #site_header > div:after, #secondary_menu-container nav:after, #secondary_menu-container nav ul:after, #home-about_hic-thematic_areas-menu:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, #primary_menu-container #logo, .col-xs-2, .list-item > div[image-frame], #home-activity .home-activity-content_list article > div[image-frame], #home-library-publications #home-library-multimedia li i, .col-sm-2, .col-md-2, #secondary_menu-container nav li, #primary_menu-container #logo, #primary_menu-container nav ul li, #primary_menu-container #form-container, #primary_menu-container #social_media_links, .col-lg-2, .col-xs-3, #primary_menu-container #form-container form button, #primary_menu-container #social_media_links ul li, #home-library-publications ul article, .col-sm-3, .col-md-3, .col-lg-3, #home-library-publications > section, .col-xs-4, .col-sm-4, .col-md-4, #home-featured article, #home-activity .home-activity-content_list, .col-lg-4, #site_footer .copyright, #home-membership #home-membership-intro, #home-working_groups-list li, #home-about_hic > section, .col-xs-5, .col-sm-5, .col-md-5, #primary_menu-container nav, #home-cover .presentation, #home-cover .calls_to_action, .col-lg-5, #home-membership #home-membership-peer_posts, .col-xs-6, #home-cover .presentation #branding .logo, #home-membership #home-membership-space > div, .col-sm-6, .col-md-6, #site_footer .copyright, #home-cover .calls_to_action article, #home-activity #home-activity-news .latest > div, #home-activity #home-activity-news .latest > section, #home-membership #home-membership-space, #home-membership #home-membership-intro, #home-membership #home-membership-peer_posts, #home-membership #home-membership-member_invitation, #home-working_groups-list li, #home-library-publications > section, #home-about_hic-thematic_areas-menu li, #home-about_hic > section, #home-about_hic > section#home-about_hic-coalition, .col-lg-6, #home-cover .presentation #branding, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, #primary_menu-container nav, #home-membership #home-membership-member_invitation, .col-xs-8, #home-activity #home-activity-solidarity ul button, .col-sm-8, .col-md-8, #home-cover .presentation #branding, #home-activity #home-activity-news .latest, .col-lg-8, #home-membership #home-membership-space, #home-about_hic > section#home-about_hic-coalition, .col-xs-9, #primary_menu-container #form-container form input, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .list-item > div, #home-activity .home-activity-content_list article > div, #site_footer .copyright, #home-library-publications #home-library-multimedia li > div, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .action_button, #home-library-publications #home-library-exhibition a > button,
-#home-library-publications #home-library-glossary a > button, .more_link_button, #home-activity .home-activity-content_list button, #home-about_hic-newsletter button, #site_header > div li a, #site_footer, #site_footer > section, #home-cover .presentation .description, #home-menu li, #home-working_groups-list li, .col-sm-12, .col-md-12, #home-activity #home-activity-solidarity ul article > div, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, #primary_menu-container #logo, .col-xs-2, .list-item > div[image-frame], #home-activity .home-activity-content_list article > div[image-frame], #home-membership #home-membership-peer_posts article > div[image-frame], .col-sm-2, .col-md-2, #secondary_menu-container nav li, #primary_menu-container #logo, #primary_menu-container nav ul li, #primary_menu-container #form-container, #primary_menu-container #social_media_links, .col-lg-2, .col-xs-3, #primary_menu-container #form-container form button, #primary_menu-container #social_media_links ul li, #home-membership #home-membership-member_invitation [image-frame], #home-library #home-library-publications ul article, .col-sm-3, .col-md-3, .col-lg-3, #home-library > section, .col-xs-4, #home-library #home-library-media_content footer li, .col-sm-4, .col-md-4, #home-featured article, #home-activity .home-activity-content_list, .col-lg-4, #site_footer .copyright, #home-membership #home-membership-hic, #home-working_groups-list li, #home-about_hic > section, .col-xs-5, .col-sm-5, .col-md-5, #primary_menu-container nav, #home-cover .presentation, #home-cover .calls_to_action, .col-lg-5, #home-membership #home-membership-peer_posts, .col-xs-6, #home-cover .presentation #branding .logo, #home-membership #home-membership-space > div, #home-library #home-library-media_content > ul article, .col-sm-6, .col-md-6, #site_footer .copyright, #home-cover .calls_to_action article, #home-activity #home-activity-news .latest > div, #home-activity #home-activity-news .latest > section, #home-membership #home-membership-space, #home-membership #home-membership-hic, #home-membership #home-membership-peer_posts, #home-membership #home-membership-member_invitation, #home-working_groups-list li, #home-library > section, #home-library #home-library-calls_to_action, #home-library #home-library-calls_to_action article, #home-about_hic-thematic_areas-menu li, #home-about_hic > section, #home-about_hic > section#home-about_hic-coalition, .col-lg-6, #home-cover .presentation #branding, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, #primary_menu-container nav, #home-membership #home-membership-member_invitation, .col-xs-8, #home-activity #home-activity-solidarity ul button, .col-sm-8, .col-md-8, #home-cover .presentation #branding, #home-activity #home-activity-news .latest, .col-lg-8, #home-membership #home-membership-space, #home-about_hic > section#home-about_hic-coalition, .col-xs-9, #primary_menu-container #form-container form input, #home-membership #home-membership-member_invitation .text, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .list-item > div, #home-activity .home-activity-content_list article > div, #home-membership #home-membership-peer_posts article > div, #site_footer .copyright, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .action_button, #home-library #home-library-calls_to_action article a > button, .more_link_button, #home-activity .home-activity-content_list button, #home-about_hic-newsletter button, #site_header > div li a, #site_footer, #site_footer > section, #home-cover .presentation .description, #home-menu li, #home-working_groups-list li, #home-library #home-library-media_content footer li i, #home-library #home-library-media_content footer li > div, .col-sm-12, .col-md-12, #home-activity #home-activity-solidarity ul article > div, #home-library #home-library-publications, .col-lg-12, #home-library #home-library-publications {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px; }
 
-.col-xs-1, .col-xs-2, .list-item > div[image-frame], #home-activity .home-activity-content_list article > div[image-frame], #home-library-publications #home-library-multimedia li i, .col-xs-3, #primary_menu-container #form-container form button, #primary_menu-container #social_media_links ul li, #home-library-publications ul article, .col-xs-4, .col-xs-5, .col-xs-6, #home-cover .presentation #branding .logo, #home-membership #home-membership-space > div, .col-xs-7, .col-xs-8, #home-activity #home-activity-solidarity ul button, .col-xs-9, #primary_menu-container #form-container form input, .col-xs-10, .list-item > div, #home-activity .home-activity-content_list article > div, #site_footer .copyright, #home-library-publications #home-library-multimedia li > div, .col-xs-11, .col-xs-12, .action_button, #home-library-publications #home-library-exhibition a > button,
-#home-library-publications #home-library-glossary a > button, .more_link_button, #home-activity .home-activity-content_list button, #home-about_hic-newsletter button, #site_header > div li a, #site_footer, #site_footer > section, #home-cover .presentation .description, #home-menu li, #home-working_groups-list li {
+.col-xs-1, .col-xs-2, .list-item > div[image-frame], #home-activity .home-activity-content_list article > div[image-frame], #home-membership #home-membership-peer_posts article > div[image-frame], .col-xs-3, #primary_menu-container #form-container form button, #primary_menu-container #social_media_links ul li, #home-membership #home-membership-member_invitation [image-frame], #home-library #home-library-publications ul article, .col-xs-4, #home-library #home-library-media_content footer li, .col-xs-5, .col-xs-6, #home-cover .presentation #branding .logo, #home-membership #home-membership-space > div, #home-library #home-library-media_content > ul article, .col-xs-7, .col-xs-8, #home-activity #home-activity-solidarity ul button, .col-xs-9, #primary_menu-container #form-container form input, #home-membership #home-membership-member_invitation .text, .col-xs-10, .list-item > div, #home-activity .home-activity-content_list article > div, #home-membership #home-membership-peer_posts article > div, #site_footer .copyright, .col-xs-11, .col-xs-12, .action_button, #home-library #home-library-calls_to_action article a > button, .more_link_button, #home-activity .home-activity-content_list button, #home-about_hic-newsletter button, #site_header > div li a, #site_footer, #site_footer > section, #home-cover .presentation .description, #home-menu li, #home-working_groups-list li, #home-library #home-library-media_content footer li i, #home-library #home-library-media_content footer li > div {
   float: left; }
 
 .col-xs-1 {
   width: 8.33333%; }
 
-.col-xs-2, .list-item > div[image-frame], #home-activity .home-activity-content_list article > div[image-frame], #home-library-publications #home-library-multimedia li i {
+.col-xs-2, .list-item > div[image-frame], #home-activity .home-activity-content_list article > div[image-frame], #home-membership #home-membership-peer_posts article > div[image-frame] {
   width: 16.66667%; }
 
-.col-xs-3, #primary_menu-container #form-container form button, #primary_menu-container #social_media_links ul li, #home-library-publications ul article {
+.col-xs-3, #primary_menu-container #form-container form button, #primary_menu-container #social_media_links ul li, #home-membership #home-membership-member_invitation [image-frame], #home-library #home-library-publications ul article {
   width: 25%; }
 
-.col-xs-4 {
+.col-xs-4, #home-library #home-library-media_content footer li {
   width: 33.33333%; }
 
 .col-xs-5 {
   width: 41.66667%; }
 
-.col-xs-6, #home-cover .presentation #branding .logo, #home-membership #home-membership-space > div {
+.col-xs-6, #home-cover .presentation #branding .logo, #home-membership #home-membership-space > div, #home-library #home-library-media_content > ul article {
   width: 50%; }
 
 .col-xs-7 {
@@ -3909,17 +3907,16 @@ pre {
 .col-xs-8, #home-activity #home-activity-solidarity ul button {
   width: 66.66667%; }
 
-.col-xs-9, #primary_menu-container #form-container form input {
+.col-xs-9, #primary_menu-container #form-container form input, #home-membership #home-membership-member_invitation .text {
   width: 75%; }
 
-.col-xs-10, .list-item > div, #home-activity .home-activity-content_list article > div, #site_footer .copyright, #home-library-publications #home-library-multimedia li > div {
+.col-xs-10, .list-item > div, #home-activity .home-activity-content_list article > div, #home-membership #home-membership-peer_posts article > div, #site_footer .copyright {
   width: 83.33333%; }
 
 .col-xs-11 {
   width: 91.66667%; }
 
-.col-xs-12, .action_button, #home-library-publications #home-library-exhibition a > button,
-#home-library-publications #home-library-glossary a > button, .more_link_button, #home-activity .home-activity-content_list button, #home-about_hic-newsletter button, #site_header > div li a, #site_footer, #site_footer > section, #home-cover .presentation .description, #home-menu li, #home-working_groups-list li {
+.col-xs-12, .action_button, #home-library #home-library-calls_to_action article a > button, .more_link_button, #home-activity .home-activity-content_list button, #home-about_hic-newsletter button, #site_header > div li a, #site_footer, #site_footer > section, #home-cover .presentation .description, #home-menu li, #home-working_groups-list li, #home-library #home-library-media_content footer li i, #home-library #home-library-media_content footer li > div {
   width: 100%; }
 
 .col-xs-pull-0 {
@@ -4196,7 +4193,7 @@ pre {
   .col-sm-offset-12 {
     margin-left: 100%; } }
 @media (min-width: 992px) {
-  .col-md-1, .col-md-2, #secondary_menu-container nav li, #primary_menu-container #logo, #primary_menu-container nav ul li, #primary_menu-container #form-container, #primary_menu-container #social_media_links, .col-md-3, .col-md-4, #home-featured article, #home-activity .home-activity-content_list, .col-md-5, #primary_menu-container nav, #home-cover .presentation, #home-cover .calls_to_action, .col-md-6, #site_footer .copyright, #home-cover .calls_to_action article, #home-activity #home-activity-news .latest > div, #home-activity #home-activity-news .latest > section, #home-membership #home-membership-space, #home-membership #home-membership-intro, #home-membership #home-membership-peer_posts, #home-membership #home-membership-member_invitation, #home-working_groups-list li, #home-library-publications > section, #home-about_hic-thematic_areas-menu li, #home-about_hic > section, #home-about_hic > section#home-about_hic-coalition, .col-md-7, .col-md-8, #home-cover .presentation #branding, #home-activity #home-activity-news .latest, .col-md-9, .col-md-10, .col-md-11, .col-md-12, #home-activity #home-activity-solidarity ul article > div {
+  .col-md-1, .col-md-2, #secondary_menu-container nav li, #primary_menu-container #logo, #primary_menu-container nav ul li, #primary_menu-container #form-container, #primary_menu-container #social_media_links, .col-md-3, .col-md-4, #home-featured article, #home-activity .home-activity-content_list, .col-md-5, #primary_menu-container nav, #home-cover .presentation, #home-cover .calls_to_action, .col-md-6, #site_footer .copyright, #home-cover .calls_to_action article, #home-activity #home-activity-news .latest > div, #home-activity #home-activity-news .latest > section, #home-membership #home-membership-space, #home-membership #home-membership-hic, #home-membership #home-membership-peer_posts, #home-membership #home-membership-member_invitation, #home-working_groups-list li, #home-library > section, #home-library #home-library-calls_to_action, #home-library #home-library-calls_to_action article, #home-about_hic-thematic_areas-menu li, #home-about_hic > section, #home-about_hic > section#home-about_hic-coalition, .col-md-7, .col-md-8, #home-cover .presentation #branding, #home-activity #home-activity-news .latest, .col-md-9, .col-md-10, .col-md-11, .col-md-12, #home-activity #home-activity-solidarity ul article > div, #home-library #home-library-publications {
     float: left; }
 
   .col-md-1 {
@@ -4214,7 +4211,7 @@ pre {
   .col-md-5, #primary_menu-container nav, #home-cover .presentation, #home-cover .calls_to_action {
     width: 41.66667%; }
 
-  .col-md-6, #site_footer .copyright, #home-cover .calls_to_action article, #home-activity #home-activity-news .latest > div, #home-activity #home-activity-news .latest > section, #home-membership #home-membership-space, #home-membership #home-membership-intro, #home-membership #home-membership-peer_posts, #home-membership #home-membership-member_invitation, #home-working_groups-list li, #home-library-publications > section, #home-about_hic-thematic_areas-menu li, #home-about_hic > section, #home-about_hic > section#home-about_hic-coalition {
+  .col-md-6, #site_footer .copyright, #home-cover .calls_to_action article, #home-activity #home-activity-news .latest > div, #home-activity #home-activity-news .latest > section, #home-membership #home-membership-space, #home-membership #home-membership-hic, #home-membership #home-membership-peer_posts, #home-membership #home-membership-member_invitation, #home-working_groups-list li, #home-library > section, #home-library #home-library-calls_to_action, #home-library #home-library-calls_to_action article, #home-about_hic-thematic_areas-menu li, #home-about_hic > section, #home-about_hic > section#home-about_hic-coalition {
     width: 50%; }
 
   .col-md-7 {
@@ -4232,7 +4229,7 @@ pre {
   .col-md-11 {
     width: 91.66667%; }
 
-  .col-md-12, #home-activity #home-activity-solidarity ul article > div {
+  .col-md-12, #home-activity #home-activity-solidarity ul article > div, #home-library #home-library-publications {
     width: 100%; }
 
   .col-md-pull-0 {
@@ -4352,7 +4349,7 @@ pre {
   .col-md-offset-12 {
     margin-left: 100%; } }
 @media (min-width: 1200px) {
-  .col-lg-1, #primary_menu-container #logo, .col-lg-2, .col-lg-3, #home-library-publications > section, .col-lg-4, #site_footer .copyright, #home-membership #home-membership-intro, #home-working_groups-list li, #home-about_hic > section, .col-lg-5, #home-membership #home-membership-peer_posts, .col-lg-6, #home-cover .presentation #branding, .col-lg-7, #primary_menu-container nav, #home-membership #home-membership-member_invitation, .col-lg-8, #home-membership #home-membership-space, #home-about_hic > section#home-about_hic-coalition, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+  .col-lg-1, #primary_menu-container #logo, .col-lg-2, .col-lg-3, #home-library > section, .col-lg-4, #site_footer .copyright, #home-membership #home-membership-hic, #home-working_groups-list li, #home-about_hic > section, .col-lg-5, #home-membership #home-membership-peer_posts, .col-lg-6, #home-cover .presentation #branding, .col-lg-7, #primary_menu-container nav, #home-membership #home-membership-member_invitation, .col-lg-8, #home-membership #home-membership-space, #home-about_hic > section#home-about_hic-coalition, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, #home-library #home-library-publications {
     float: left; }
 
   .col-lg-1, #primary_menu-container #logo {
@@ -4361,10 +4358,10 @@ pre {
   .col-lg-2 {
     width: 16.66667%; }
 
-  .col-lg-3, #home-library-publications > section {
+  .col-lg-3, #home-library > section {
     width: 25%; }
 
-  .col-lg-4, #site_footer .copyright, #home-membership #home-membership-intro, #home-working_groups-list li, #home-about_hic > section {
+  .col-lg-4, #site_footer .copyright, #home-membership #home-membership-hic, #home-working_groups-list li, #home-about_hic > section {
     width: 33.33333%; }
 
   .col-lg-5, #home-membership #home-membership-peer_posts {
@@ -4388,7 +4385,7 @@ pre {
   .col-lg-11 {
     width: 91.66667%; }
 
-  .col-lg-12 {
+  .col-lg-12, #home-library #home-library-publications {
     width: 100%; }
 
   .col-lg-pull-0 {
@@ -6065,9 +6062,11 @@ tbody.collapse.in {
     .navbar-fixed-bottom .navbar-collapse {
       max-height: 200px; } }
 
-.container > .navbar-header, main > section > .navbar-header, #home-featured > .navbar-header,
+.container > .navbar-header, main > section > .navbar-header, .page > .navbar-header, main > article > .navbar-header, #home-featured > .navbar-header,
 .container > .navbar-collapse,
 main > section > .navbar-collapse,
+.page > .navbar-collapse,
+main > article > .navbar-collapse,
 #home-featured > .navbar-collapse,
 .container-fluid > .navbar-header,
 #site_header > .navbar-header,
@@ -6086,9 +6085,11 @@ main > section > .navbar-collapse,
   margin-right: -15px;
   margin-left: -15px; }
   @media (min-width: 768px) {
-    .container > .navbar-header, main > section > .navbar-header, #home-featured > .navbar-header,
+    .container > .navbar-header, main > section > .navbar-header, .page > .navbar-header, main > article > .navbar-header, #home-featured > .navbar-header,
     .container > .navbar-collapse,
     main > section > .navbar-collapse,
+    .page > .navbar-collapse,
+    main > article > .navbar-collapse,
     #home-featured > .navbar-collapse,
     .container-fluid > .navbar-header,
     #site_header > .navbar-header,
@@ -6145,7 +6146,7 @@ main > section > .navbar-collapse,
   .navbar-brand > img {
     display: block; }
   @media (min-width: 768px) {
-    .navbar > .container .navbar-brand, main.navbar > section .navbar-brand, .navbar > #home-featured .navbar-brand, .navbar > .container-fluid .navbar-brand, .navbar > #site_header .navbar-brand, #site_header.navbar > div .navbar-brand, .navbar > #primary_menu-container .navbar-brand, .navbar > #site_footer .navbar-brand, .navbar > #home-cover .navbar-brand, .navbar > #home-menu .navbar-brand {
+    .navbar > .container .navbar-brand, main.navbar > section .navbar-brand, .navbar > .page .navbar-brand, main.navbar > article .navbar-brand, .navbar > #home-featured .navbar-brand, .navbar > .container-fluid .navbar-brand, .navbar > #site_header .navbar-brand, #site_header.navbar > div .navbar-brand, .navbar > #primary_menu-container .navbar-brand, .navbar > #site_footer .navbar-brand, .navbar > #home-cover .navbar-brand, .navbar > #home-menu .navbar-brand {
       margin-left: -15px; } }
 
 .navbar-toggle {
@@ -6661,17 +6662,17 @@ a.badge:hover, a.badge:focus {
     font-weight: 200; }
   .jumbotron > hr {
     border-top-color: #d5d5d5; }
-  .container .jumbotron, main > section .jumbotron, #home-featured .jumbotron, .container-fluid .jumbotron, #site_header .jumbotron, #primary_menu-container .jumbotron, #site_footer .jumbotron, #home-cover .jumbotron, #home-menu .jumbotron {
+  .container .jumbotron, main > section .jumbotron, .page .jumbotron, main > article .jumbotron, #home-featured .jumbotron, .container-fluid .jumbotron, #site_header .jumbotron, #primary_menu-container .jumbotron, #site_footer .jumbotron, #home-cover .jumbotron, #home-menu .jumbotron {
     border-radius: 6px;
     padding-left: 15px;
     padding-right: 15px; }
-  .jumbotron .container, .jumbotron main > section, .jumbotron #home-featured {
+  .jumbotron .container, .jumbotron main > section, .jumbotron .page, .jumbotron main > article, .jumbotron #home-featured {
     max-width: 100%; }
   @media screen and (min-width: 768px) {
     .jumbotron {
       padding-top: 48px;
       padding-bottom: 48px; }
-      .container .jumbotron, main > section .jumbotron, #home-featured .jumbotron, .container-fluid .jumbotron, #site_header .jumbotron, #primary_menu-container .jumbotron, #site_footer .jumbotron, #home-cover .jumbotron, #home-menu .jumbotron {
+      .container .jumbotron, main > section .jumbotron, .page .jumbotron, main > article .jumbotron, #home-featured .jumbotron, .container-fluid .jumbotron, #site_header .jumbotron, #primary_menu-container .jumbotron, #site_footer .jumbotron, #home-cover .jumbotron, #home-menu .jumbotron {
         padding-left: 60px;
         padding-right: 60px; }
       .jumbotron h1,
@@ -8177,14 +8178,13 @@ main > section > h1 {
 main > section {
   margin: 0 auto; }
 
-.list-item, #home-activity .home-activity-content_list article {
+.list-item, #home-activity .home-activity-content_list article, #home-membership #home-membership-peer_posts article {
   height: 60px;
   margin-bottom: 2px; }
-  .list-item > div[image-frame], #home-activity .home-activity-content_list article > div[image-frame] {
+  .list-item > div[image-frame], #home-activity .home-activity-content_list article > div[image-frame], #home-membership #home-membership-peer_posts article > div[image-frame] {
     height: 100%; }
 
-.action_button, #home-library-publications #home-library-exhibition a > button,
-#home-library-publications #home-library-glossary a > button {
+.action_button, #home-library #home-library-calls_to_action article a > button {
   padding: 7.5px;
   border: none;
   background-color: #000;
@@ -8197,13 +8197,17 @@ main > section {
   background-color: #fff;
   text-align: center; }
 
-.framed_content, #home-library-publications #home-library-exhibition,
-#home-library-publications #home-library-glossary {
+.framed_content, #home-library #home-library-calls_to_action article {
   padding: 2px; }
-  .framed_content, #home-library-publications #home-library-exhibition,
-  #home-library-publications #home-library-glossary, .framed_content > div, #home-library-publications #home-library-exhibition > div,
-  #home-library-publications #home-library-glossary > div {
+  .framed_content, #home-library #home-library-calls_to_action article, .framed_content > div, #home-library #home-library-calls_to_action article > div {
     border: 2px solid #ddd; }
+
+.page, main > article {
+  padding: 60px; }
+  .page h1, main > article h1 {
+    margin-bottom: 20px !important; }
+  .page p, main > article p {
+    font-size: 15px; }
 
 #site_header > div nav, #site_header > div ul, #site_header > div li {
   height: 100%;
@@ -8314,26 +8318,50 @@ main > section {
 
 #home-membership > section {
   height: 300px; }
-#home-membership #home-membership-space [image-frame] {
+#home-membership #home-membership-space {
+  height: 405px; }
+  #home-membership #home-membership-space [image-frame] {
+    height: 100%; }
+  #home-membership #home-membership-space p {
+    font-size: 18px; }
+#home-membership #home-membership-hic {
+  height: 450px; }
+  #home-membership #home-membership-hic [image-frame] {
+    height: 40%; }
+  #home-membership #home-membership-hic p {
+    font-size: 15px; }
+#home-membership #home-membership-member_invitation {
   height: 240px; }
+  #home-membership #home-membership-member_invitation [image-frame] {
+    height: 100%; }
+  #home-membership #home-membership-member_invitation .text p {
+    font-size: 12px; }
 #home-membership #home-membership-peer_posts article footer {
   font-size: 12px;
   color: #444; }
 
 #home-working_groups-list li {
-  padding: 60px;
+  padding: 30px;
   text-align: center; }
   #home-working_groups-list li [image-frame] {
-    height: 180px; }
+    height: 120px; }
 
-#home-library-publications ul article [image-frame] {
+#home-library #home-library-publications ul article [image-frame] {
   height: 120px; }
-#home-library-publications #home-library-multimedia li {
-  float: left;
-  width: auto;
-  padding: 0 10px; }
-#home-library-publications #home-library-exhibition [image-frame],
-#home-library-publications #home-library-glossary [image-frame] {
+#home-library #home-library-publications footer {
+  text-align: center; }
+#home-library #home-library-media_content > ul article {
+  margin: 0;
+  padding: 0; }
+  #home-library #home-library-media_content > ul article [image-frame] {
+    height: 75px; }
+#home-library #home-library-media_content footer {
+  text-align: center; }
+  #home-library #home-library-media_content footer li {
+    float: left;
+    width: auto;
+    padding: 0 10px; }
+#home-library #home-library-calls_to_action article [image-frame] {
   height: 150px; }
 
 #home-about_hic-thematic_areas-menu li {

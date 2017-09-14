@@ -40,7 +40,18 @@
       <section class="calls_to_action">
 
          <?php
-         $q = new WP_Query( array('post_type'=>'call_to_action', 'posts_per_page' => 2 ));
+         $q = new WP_Query( array(
+            'post_type'=>'call_to_action',
+            'posts_per_page' => 2,
+            'tax_query' => array(
+               array(
+                  'taxonomy' => 'call_to_action-location',
+                  'field'    => 'slug',
+                  'terms'    => 'cover',
+               ),
+            ),
+         ));
+
          if( $q->have_posts() ) :
 
             while ( $q->have_posts() ) :

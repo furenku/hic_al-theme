@@ -1,6 +1,11 @@
 <?php;
 
 
+add_filter( 'the_excerpt', 'shortcode_unautop');
+add_filter( 'the_excerpt', 'do_shortcode');
+
+
+
 function post_type_list_box( $post_type, $args = array() ) {
 
    if( array_key_exists('number',$args) ) {
@@ -145,13 +150,41 @@ function register_taxonomies() {
    'media_content_type',
 
    array(
-   'media_content',
-   'glossary-term'
+   'media_content'
    ),
    array(
    'label' => __( 'Media Type' ),
    'hierarchical' => true,
-   'rewrite' => array( 'slug' => 'media_type' ),
+   'rewrite' => array( 'slug' => 'media_content_type' ),
+   )
+   );
+
+
+   // call_to_action location
+   register_taxonomy(
+   'call_to_action-location',
+
+   array(
+   'call_to_action'
+   ),
+   array(
+   'label' => __( 'Site Location' ),
+   'hierarchical' => true,
+   'rewrite' => array( 'slug' => 'call_to_action-location' ),
+   )
+   );
+
+   // call_to_action location
+   register_taxonomy(
+   'document-type',
+
+   array(
+   'document'
+   ),
+   array(
+   'label' => __( 'Document Type' ),
+   'hierarchical' => true,
+   'rewrite' => array( 'slug' => 'document-type' ),
    )
    );
 }
@@ -201,7 +234,7 @@ function peer_post_item( $id, $class ) {
 
    <article class="<?php echo $class ?>">
 
-      <a href="">
+      <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
          <h5>
             <?php echo get_the_title( $id ); ?>
          </h5>
@@ -218,6 +251,7 @@ function peer_post_item( $id, $class ) {
       </footer>
 
    </article>
+
    <?php
 }
 

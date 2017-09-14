@@ -6,20 +6,35 @@
 
    <nav id="home-working_groups-list">
       <ul>
-         <?php for ($i=0; $i < 5; $i++) : ?>
+         <?php
+         $q = new WP_Query(array(
+            'post_type' => array('working_group'),
+            // 'usertype?' => array('memberr'),
+            'posts_per_page' => -1
+         )
+      );
+      if( $q->have_posts() ) :
+         while ( $q->have_posts() ) :
+            $q->the_post();
+
+            ?>
             <li>
                <div image-frame="" contain="">
-                  <img src="http://fakeimg.pl/300x200" alt="" />
+                  <?php echo get_the_post_thumbnail(get_the_ID()); ?>
                </div>
                <h4>
-                  Lorem ipsum dolor sit amet, consectetur.
+                  <?php echo apply_filters('the_title', get_the_title() ); ?>
                </h4>
                <p>
-                  Lorem ipsum dolor sit amet, consectetur.
+                  <?php echo apply_filters('the_excerpt', get_the_excerpt() ); ?>
                </p>
             </li>
-         <?php endfor; ?>
-      </ul>
-   </nav>
+            <?php
+         endwhile;
+      endif;
+
+      ?>
+   </ul>
+</nav>
 
 </section>

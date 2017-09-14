@@ -1,0 +1,76 @@
+#home-library{
+
+   &>section {
+      @extend .col-md-6;
+      @extend .col-lg-3;
+   }
+
+#home-library-publications {
+   @extend .col-md-12;
+   @extend .col-lg-12;
+
+   ul {
+      article {
+         @extend .col-xs-3;
+         [image-frame] {
+            height: $spacing * 4;
+         }
+      }
+   }
+
+   footer {
+      text-align: center;   
+   }
+}
+
+   #home-library-media_content {
+
+      & > ul {
+         article {
+
+            @extend .col-xs-6;
+
+            margin: 0;
+            padding: 0;
+
+            [image-frame] {
+               height: $spacing * 2.5;
+            }
+         }
+      }
+
+      footer {
+         text-align: center;
+         li {
+            @extend .col-xs-4;
+            i,& > div {
+               @extend .col-xs-12;
+            }
+            float: left;
+            width: auto;
+            padding: 0 $spacing / 3;
+
+         }
+      }
+
+   }
+
+   #home-library-calls_to_action {
+      @extend .col-md-6;
+      article {
+         @extend .col-md-6;
+
+         @extend .framed_content;
+
+         [image-frame] {
+            height: $spacing * 5;
+         }
+
+         a > button {
+            @extend .action_button;
+         }
+
+      }
+
+   }
+}

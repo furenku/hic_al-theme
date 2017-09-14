@@ -6,13 +6,15 @@ if( have_posts() ) {
       the_post();
       ?>
 
-      <h1>
-         <?php echo get_the_title(); ?>
-      </h1>
+      <article>
+         <h1>
+            <?php echo get_the_title(); ?>
+         </h1>
 
-      <section class="content">
-         <?php echo get_the_content(); ?>
-      </section>
+         <section class="content">
+            <?php echo apply_filters('the_content', get_the_content()); ?>
+         </section>
+      </article>
       <?php
 
    }
