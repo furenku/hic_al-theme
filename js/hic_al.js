@@ -4,7 +4,7 @@ $(document).ready(function(){
 
    // vcenter($('[vcenter]'))
    vcenter($('#secondary_menu-container nav ul li'))
-   vcenter($('#primary_menu-container nav ul li'))
+   vcenter($('#primary_menu-container nav > ul > li'))
    vcenter($('#home-cover .presentation'))
    vcenter($('#home-cover .calls_to_action'))
    // vcenter($('#form-container'))
@@ -66,6 +66,7 @@ function vcenter(contenedores){
       })
 
       alturaHijos = 0
+
 
       // recorrer cada uno de sus hijos para obtener su altura
       hijos.each(function(){

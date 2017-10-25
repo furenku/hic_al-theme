@@ -211,13 +211,27 @@ function list_item( $id, $class ) {
          </h5>
 
          <footer>
+
+            <?php if( get_post_type( $id ) == 'open_call' ) :  ?>
+               <span class="open_call-deadline">
+                  Fecha de Cierre:
+                  <?php echo date_i18n('F d\,',strtotime(get_post_meta($id,'open_call-deadline',true))); ?>
+               </span>
+            <?php elseif( get_post_type( $id ) == 'event' ) : ?>
+               <span class="event_date">
+                  Fecha del Evento:
+                  <?php echo date_i18n('F d\,',strtotime(get_post_meta($id,'event-date',true))); ?>
+               </span>
+            <?php else : ?>
             <span class="author">
                Publicado por <a href="#"><?php echo get_the_author( $id ); ?></a>
             </span>
             <span class="date">
                el <?php echo get_the_date( 'd \d\e F\, Y', $id ); ?>
-
             </span>
+
+            <?php endif; ?>
+
          </footer>
 
 

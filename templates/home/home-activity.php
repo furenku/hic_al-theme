@@ -98,38 +98,51 @@
 
       <ul class="solidarity">
          <?php
-         for ($i=0; $i < 4; $i++) :
-            $id = get_the_ID();
+         $q = new WP_Query( array(
+            'post_type'=>'call_for_solidarity',
+            'posts_per_page' => 1
+         )
+         );
+
+         if( $q->have_posts() ) :
+         while ( $q->have_posts() ) :
+            $q->the_post();
+
+
          ?>
 
             <article class="solidarity_item">
 
                <div image-frame="">
-                  <?php echo get_the_post_thumbnail( $id, 'large' ); ?>
+                  <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
                </div>
 
                <div>
 
                   <h5>
-                     <?php echo get_the_title( $id ); ?>
+                     <?php echo get_the_title(); ?>
                   </h5>
 
                   <p>
-                     <?php echo get_the_excerpt( $id ); ?>
+                     <?php echo get_the_excerpt(); ?>
                   </p>
 
                   <footer>
+
+                     <a href="<?php echo get_post_meta( get_the_ID(),'call_to_action-url', true ); ?>">
+                        <button>
+                           <?php echo get_post_meta( get_the_ID(), 'call_to_action-text', true ); ?>
+                        </button>
+                     </a>
+
+
                      <span class="author">
-                        Publicado por <a href="#"><?php echo get_the_author( $id ); ?></a>
+                        Publicado por <a href="#"><?php echo get_the_author( get_the_ID() ); ?></a>
                      </span>
                      <span class="date">
-                        el <?php echo get_the_date( 'd \d\e F\, Y', $id ); ?>
+                        el <?php echo get_the_date( 'd \d\e F\, Y', get_the_ID() ); ?>
 
                      </span>
-
-                     <button type="button" name="button">
-                        Realiza una Acción
-                     </button>
 
                   </footer>
 
@@ -139,7 +152,8 @@
             </article>
 
          <?php
-         endfor;
+         endwhile;
+         endif;
          ?>
       </ul>
 

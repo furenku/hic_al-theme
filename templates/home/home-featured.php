@@ -43,25 +43,43 @@ if( $q -> have_posts() ) :
                <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
             </div>
 
+            <?php #if( get_post_type() != 'call_for_solidarity' ) : ?>
+
             <h3>
                <?php echo get_the_title(); ?>
             </h3>
+
+            <?php #endif; ?>
 
             <p>
                <?php echo get_the_excerpt(); ?>
             </p>
 
-            <footer>
-               <span class="author">
-                  Publicado por <a href="#">Nombre del Autor</a>
-               </span>
-               <span class="date">
-                  el <?php echo get_the_date(); ?>
-
-               </span>
-            </footer>
-
          </a>
+
+         <?php if( get_post_type() == 'call_for_solidarity' ) : ?>
+            <a href="<?php echo get_post_meta( get_the_ID(), 'call_to_action-url', true ); ?>">
+
+               <button type="button" name="button">
+                  <?php echo get_post_meta( get_the_ID(), 'call_to_action-text', true ); ?>
+               </button>
+
+            </a>
+         <?php endif; ?>
+
+         <footer>
+            <div class="place">
+               <?php echo get_post_meta(get_the_ID(),'content-place-country',true); ?>
+            </div>
+            <span class="author">
+               Publicado por <a href="#">Nombre del Autor</a>
+            </span>
+            <span class="date">
+               el <?php echo get_the_date(); ?>
+
+            </span>
+         </footer>
+
 
       </article>
 

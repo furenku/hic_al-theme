@@ -33,13 +33,13 @@
 
                   <footer>
                      <div class="author">
-                        Autor
+                        <?php echo get_post_meta(get_the_ID(),'publication-info-author',true); ?>
                      </div>
                      <div class="place">
-                        Place
+                        <?php echo get_post_meta(get_the_ID(),'content-place-country',true); ?>
                      </div>
                      <div class="date">
-                        Month, Year
+                        <?php echo date_i18n('F\, Y',strtotime(get_post_meta(get_the_ID(),'publication-info-date',true))); ?>
                      </div>
                   </footer>
 

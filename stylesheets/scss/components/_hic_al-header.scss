@@ -89,20 +89,108 @@
 
    }
 
+   nav, ul {
+      padding: 0;
+   }
+
    nav {
 
       @extend .col-md-5;
       @extend .col-lg-7;
 
-      ul{
+      li {
+         background-color: $neutral_dark;
+         transition: background-color 0.4s ease-in-out;
+      }
+
+      li:hover {
+         background-color: #222;
+      }
+
+      &>ul{
 
          width: 100%;
 
-         li {
+         & > li {
+
+            position: relative;
             @extend .col-md-2;
             width: 20%;
+
+            margin-top: 0;
+            padding: 0;
+            display: block;
             @extend .text-center;
+
+            height: $spacing * 2;
+
+
+            ul {
+               width: 100%;
+               display: none;
+               height: 0;
+
+               padding: 0;
+
+
+            }
+
+
+            @media screen and (max-width:960px){
+               width: 100%;
+               // border-bottom: 1px solid #222;
+
+               & {
+                  border-top: 1px solid #222;
+               }
+               &:first-child{
+                  border-top: none;
+                  margin-top: 0;
+               }
+               ul li:first-child{
+                  margin-top: $spacing * 1.3;
+               }
+
+            }
+            @media screen and (min-width:960px){
+
+               & {
+                  border-left: 1px solid #222;
+               }
+               &:first-child{
+                  border-left: none;
+               }
+               &:hover {
+                  ul {
+                     height: auto;
+                     margin-top: $spacing;
+                  }
+               }
+            }
+
+            &:hover {
+
+               ul {
+                  display: block;
+                  height: auto;
+               }
+
+            }
+
+            li {
+               position: relative;
+               z-index: 99;
+               width: 100%;
+               height: $spacing * 1.2;
+               padding: $spacing / 4;
+               margin: 0;
+
+               border-top: 1px solid #222;
+            }
          }
+
+
+
 
       }
 

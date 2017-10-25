@@ -63,12 +63,11 @@
                   <h4>
                      <?php echo get_the_content(); ?>
                   </h4>
-                  <a href="">
-                     <a href="<?php echo get_post_meta( get_the_ID(), 'call_to_action-url', true ); ?>" target="_blank">
-                        <button>
-                           <?php echo get_post_meta( get_the_ID(), 'call_to_action-text', true ); ?>
-                        </button>
-                     </a>
+
+                  <a href="<?php echo get_post_meta(get_the_ID(),'call_to_action-url',true); ?>">
+                     <button>
+                        <?php echo get_post_meta( get_the_ID(), 'call_to_action-text', true ); ?>
+                     </button>
                   </a>
 
                </article>

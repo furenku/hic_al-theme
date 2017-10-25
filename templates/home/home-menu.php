@@ -11,9 +11,9 @@
       foreach( $pages as $page ): ?>
 
          <li>
-            <a href="">
+            <a href="<?php echo get_the_permalink( $page->ID ); ?>">
                <div image-frame="" contain="">
-                  <img src="http://fakeimg.pl/300x200" alt="">
+                  <?php echo get_the_post_thumbnail( $page->ID ); ?>
                </div>
                <h2>
                   <?php echo get_the_title( $page->ID ); ?>

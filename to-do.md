@@ -3,20 +3,17 @@
 #### Integración
 
 - Cabecera
-- Logos
+   - Logos
 - Portada
-   - C2A Location
+   - Logo
+- ~~Menú Intro~~
 - ~~Destacadas~~
-- Actividad
-   - open_call: Deadline
-   - event: Event Date
+- ~~Actividad~~   
 - Membrecía
    - Posts de Miembros
 
 - ~~Grupos de Trabajo~~
 - Biblioteca
-   - C2A Location
-   - publication author, date, place
    - multimedia networks
 - ~~Acerca de Hic~~
 

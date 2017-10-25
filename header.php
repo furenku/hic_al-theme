@@ -43,7 +43,8 @@
          <?php echo wp_nav_menu(array(
             'theme_location' => 'primary',
             'container' => 'nav',
-            'echo' => false
+            'echo' => false,
+            // 'depth' => 1
          )); ?>
 
          <!-- <form id="search" action="">
