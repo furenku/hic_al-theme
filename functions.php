@@ -84,21 +84,46 @@ function wp_config() {
 * Add new fields to wp-admin/options-general.php page
 */
 function register_admin_options_fields() {
-   register_setting( 'general', 'site_subtitle', 'esc_attr' );
-   add_settings_field(
-   'site_subtitle',
-   '<label for="site_subtitle_id">' . __( 'Site subtitle' , 'site_subtitle' ) . '</label>',
-   'fields_html',
-   'general'
-   );
+
+   register_admin_setting('organization_title', 'Organization Title');
+   register_admin_setting('organization_title_1', 'Organization Title 1');
+   register_admin_setting('organization_title_2', 'Organization Title 2');
+   register_admin_setting('organization_subtitle', 'Organization Subtitle');
+   register_admin_setting('organization_statement', 'Organization Stament', 'textarea');
+
 }
 
+
+function register_admin_setting( $slug, $label, $field_type='') {
+
+   register_setting( 'general', $slug, 'esc_attr' );
+
+   add_settings_field(
+      $slug,
+      '<label for="'.$slug.'_id">' . __( $label , $slug ) . '</label>',
+      'fields_html',
+      'general',
+      'default',
+      array('slug'=>$slug, 'field_type'=>$field_type )
+   );
+
+}
 /**
 * HTML for extra settings
 */
-function fields_html() {
-   $value = get_option( 'site_subtitle', '' );
-   echo '<input type="text" id="site_subtitle_id" name="site_subtitle" value="' . esc_attr( $value ) . '" />';
+function fields_html($args) {
+
+   $slug = $args['slug'];
+
+   $value = get_option( $slug, '' );
+
+   switch( $args['field_type'] ){
+      case 'textarea':
+         echo '<textarea id="'.$slug.'_id" name="'.$slug.'">'.esc_attr( $value ).'</textarea>';
+         break;
+      default:
+         echo '<input type="text" id="'.$slug.'_id" name="'.$slug.'" value="' . esc_attr( $value ) . '" />';
+   }
 }
 
 
@@ -140,7 +165,6 @@ function register_taxonomies() {
    'label' => __( 'Site Hierarchy' ),
    'hierarchical' => true,
    'rewrite' => array( 'slug' => 'featured' ),
-
    )
    );
 

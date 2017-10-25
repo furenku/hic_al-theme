@@ -33,21 +33,20 @@ if( $q -> have_posts() ) :
 
          <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
 
-            <header>
-               <h6>
-                  <?php echo get_post_type_object(get_post_type( get_the_ID() ))->labels->singular_name; ?>
-               </h6>
-            </header>
 
             <div image-frame="">
                <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
             </div>
 
-            <?php #if( get_post_type() != 'call_for_solidarity' ) : ?>
+               <header>
+                  <h6>
+                     <?php echo get_post_type_object(get_post_type( get_the_ID() ))->labels->singular_name; ?>
+                  </h6>
+                  <h4>
+                     <?php echo get_the_title(); ?>
+                  </h4>
+               </header>
 
-            <h3>
-               <?php echo get_the_title(); ?>
-            </h3>
 
             <?php #endif; ?>
 

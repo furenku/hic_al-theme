@@ -6,7 +6,7 @@ $(document).ready(function(){
    vcenter($('#secondary_menu-container nav ul li'))
    vcenter($('#primary_menu-container nav > ul > li'))
    vcenter($('#home-cover .presentation'))
-   vcenter($('#home-cover .calls_to_action'))
+   vcenter($('[vcenter]'))
    // vcenter($('#form-container'))
 
    console.log("HIC AL theme ready")

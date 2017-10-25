@@ -15,9 +15,9 @@
                <div image-frame="" contain="">
                   <?php echo get_the_post_thumbnail( $page->ID ); ?>
                </div>
-               <h2>
+               <h4>
                   <?php echo get_the_title( $page->ID ); ?>
-               </h2>
+               </h4>
                <p>
                   <?php echo get_the_excerpt( $page->ID ); ?>
                </p>

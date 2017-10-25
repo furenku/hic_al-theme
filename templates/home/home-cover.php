@@ -13,25 +13,27 @@
          <section id="branding">
 
             <div class="logo" image-frame="" contain="">
-               <img src="http://fakeimg.pl/300x200" alt="">
+               <img src="http://fakeimg.pl/300x450" alt="">
             </div>
 
-            <div class="name">
-               <h1>
-                  <?php echo get_bloginfo('name'); ?>
-               </h1>
-               <h5>
-                  <?php echo get_option('site_subtitle'); ?>
-               </h5>
+            <div class="text" vcenter>
+               <h3>
+                  <?php echo get_option('organization_title_1'); ?>
+               </h3>
+               <h4>
+                  <?php echo get_option('organization_title_2'); ?>
+               </h4>
             </div>
 
          </section>
 
          <section class="description">
             <h3>
-               <?php echo get_bloginfo('description'); ?>
+               <?php echo get_option('organization_subtitle'); ?>
             </h3>
-            <?php echo get_the_content( $home->ID ); ?>
+               <p>
+                  <?php echo get_option('organization_statement'); ?>
+               </p>
          </section>
 
       </section>
@@ -39,43 +41,45 @@
 
       <section class="calls_to_action">
 
-         <?php
-         $q = new WP_Query( array(
-            'post_type'=>'call_to_action',
-            'posts_per_page' => 2,
-            'tax_query' => array(
-               array(
-                  'taxonomy' => 'call_to_action-location',
-                  'field'    => 'slug',
-                  'terms'    => 'cover',
+         <ul>
+            <?php
+            $q = new WP_Query( array(
+               'post_type'=>'call_to_action',
+               'posts_per_page' => 2,
+               'tax_query' => array(
+                  array(
+                     'taxonomy' => 'call_to_action-location',
+                     'field'    => 'slug',
+                     'terms'    => 'cover',
+                  ),
                ),
-            ),
-         ));
+            ));
 
-         if( $q->have_posts() ) :
+            if( $q->have_posts() ) :
 
-            while ( $q->have_posts() ) :
-               $q->the_post();
-               ?>
+               while ( $q->have_posts() ) :
+                  $q->the_post();
+                  ?>
 
-               <article>
+                  <article>
 
-                  <h4>
-                     <?php echo get_the_content(); ?>
-                  </h4>
+                     <h4>
+                        <?php echo get_the_content(); ?>
+                     </h4>
 
-                  <a href="<?php echo get_post_meta(get_the_ID(),'call_to_action-url',true); ?>">
-                     <button>
-                        <?php echo get_post_meta( get_the_ID(), 'call_to_action-text', true ); ?>
-                     </button>
-                  </a>
+                     <a href="<?php echo get_post_meta(get_the_ID(),'call_to_action-url',true); ?>">
+                        <button>
+                           <?php echo get_post_meta( get_the_ID(), 'call_to_action-text', true ); ?>
+                        </button>
+                     </a>
 
-               </article>
+                  </article>
 
-               <?php
-            endwhile;
-         endif;
-         ?>
+                  <?php
+               endwhile;
+            endif;
+            ?>
+         </ul>
 
       </section>
 

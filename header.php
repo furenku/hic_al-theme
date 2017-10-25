@@ -10,6 +10,8 @@
 
     <title>HIC-AL</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+
     <link href="<?php echo get_stylesheet_directory_uri(); ?>/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/stylesheets/css/hic_al.css">
 
@@ -36,7 +38,7 @@
 
          <a href="<?php echo get_site_url(); ?>">
             <div id="logo" image-frame contain left>
-               <img src="http://fakeimg.pl/200x150" alt="">
+               <img src="http://fakeimg.pl/200x70" alt="">
             </div>
          </a>
 
