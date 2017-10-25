@@ -1,4 +1,4 @@
-<?php;
+<?php
 
 
 add_filter( 'the_excerpt', 'shortcode_unautop');
