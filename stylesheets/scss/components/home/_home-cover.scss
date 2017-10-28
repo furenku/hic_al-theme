@@ -89,10 +89,7 @@
             display: inline-block;
             bottom: 0;
             button {
-               width: 80%;
-               background-color: black;
-               border: none;
-               height:$spacing;
+               @extend .button-action;
             }
          }
       }

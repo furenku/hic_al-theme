@@ -33,22 +33,26 @@ if( $q -> have_posts() ) :
 
          <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
 
+            <i class="fa fa-angle-right"></i>
 
             <div image-frame="">
                <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
             </div>
 
                <header>
-                  <h6>
+
+                  <h6 class="post-type">
                      <?php echo get_post_type_object(get_post_type( get_the_ID() ))->labels->singular_name; ?>
                   </h6>
-                  <h4>
-                     <?php echo get_the_title(); ?>
-                  </h4>
+
+                  <div class="title-container" vcenter>
+                     <h4>
+                        <?php echo get_the_title(); ?>
+                     </h4>
+                  </div>
                </header>
 
 
-            <?php #endif; ?>
 
             <p>
                <?php echo get_the_excerpt(); ?>
@@ -67,16 +71,19 @@ if( $q -> have_posts() ) :
          <?php endif; ?>
 
          <footer>
-            <div class="place">
-               <?php echo get_post_meta(get_the_ID(),'content-place-country',true); ?>
+            <div>
+               <span class="author">
+                  Publicado por <a href="#">Nombre del Autor</a>
+               </span>
             </div>
-            <span class="author">
-               Publicado por <a href="#">Nombre del Autor</a>
-            </span>
-            <span class="date">
-               el <?php echo get_the_date(); ?>
-
-            </span>
+            <div>
+               <span class="place">
+                  <?php echo get_post_meta(get_the_ID(),'content-place-country',true); ?>
+               </span>
+               <span class="date">
+                  , <?php echo get_the_date(); ?>
+               </span>
+            </div>
          </footer>
 
 

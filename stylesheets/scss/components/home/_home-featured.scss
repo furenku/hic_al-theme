@@ -2,16 +2,90 @@
 
    @extend .container;
 
+   padding-top: $spacing;
+
    article {
 
       @extend .col-md-4;
 
-      padding: $spacing / 2;
+      height: $spacing * 15.5;
+
+      padding: 0;
+      outline: 1px solid $neutral_light;
+
+      &>a {
+         display: inline-block;
+      }
+
+      a > i {
+         position: absolute;
+         right: $spacing;
+         top: $spacing * 5.5;
+         font-size: $font-xxxl;
+         color: white;
+         font-weight: bold;
+      }
 
       // text-align: left;
+      h6, .author, .place, .date {
+         font-size: $font-xs;
+         color: $neutral_medium;
+      }
 
       [image-frame] {
-         height: $spacing * 6;
+         height: $spacing * 7;
+         // position: absolute;
+         top: 0;
+      }
+      header {
+         .title-container {
+
+            height: $spacing * 2;
+
+            display: block;
+
+            h4 {
+               margin: 0;
+            }
+
+         }
+      }
+      & > a {
+
+         width: 100%;
+         text-align: center;
+         button {
+            @extend .button-action;
+            width: auto;
+            min-width: 40%;
+         }
+
+      }
+
+      header, p, footer {
+         padding: $spacing / 6 $spacing / 2;
+         text-align: left;
+      }
+
+      footer {
+
+         width: 100%;
+
+         position: absolute;
+         bottom: 0;
+         left: 0;
+
+
+         & > div {
+            padding: 0;
+            @extend .col-xs-6;
+         }
+         & > div:last-child {
+            text-align: right;
+         }
+
+
+
       }
 
    }

@@ -1,6 +1,10 @@
+$font-xs: 10px;
 $font-s: 12px;
 $font-m: 15px;
 $font-l: 18px;
+$font-xl: 23px;
+$font-xxl: 30px;
+$font-xxxl: 40px;
 
 
 * {
@@ -96,4 +100,14 @@ main > section {
 main > article {
    @extend .page;
    // @extend .row;
+}
+
+
+
+.button-action {
+   width: 80%;
+   height:$spacing;
+   background-color: black;
+   color: white;
+   border: none;
 }
