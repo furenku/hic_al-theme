@@ -70,22 +70,7 @@ if( $q -> have_posts() ) :
             </a>
          <?php endif; ?>
 
-         <footer>
-            <div>
-               <span class="author">
-                  Publicado por <a href="#">Nombre del Autor</a>
-               </span>
-            </div>
-            <div>
-               <span class="place">
-                  <?php echo get_post_meta(get_the_ID(),'content-place-country',true); ?>
-               </span>
-               <span class="date">
-                  , <?php echo get_the_date(); ?>
-               </span>
-            </div>
-         </footer>
-
+        <?php article_footer(); ?>
 
       </article>
 

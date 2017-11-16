@@ -1,14 +1,15 @@
+<h3>
+  Actividad Reciente
+</h3>
+
 <section id="home-activity">
 
-   <h1>
-      Actividad Reciente
-   </h1>
 
    <section id="home-activity-news">
 
-      <h2>
+      <h4>
          Noticias
-      </h2>
+      </h4>
 
       <?php
 
@@ -43,22 +44,16 @@
                   <div image-frame>
                      <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
                   </div>
-                  <footer>
-                     <span class="author">
-                        Publicado por <a href="#">Nombre del Autor</a>
-                     </span>
-                     <span class="date">
-                        el <?php echo get_the_date(); ?>
 
-                     </span>
-                  </footer>
+                  <?php article_footer(); ?>
+                  
                </div>
 
                <div>
 
-                  <h3>
+                  <h4>
                      <?php echo get_the_title(); ?>
-                  </h3>
+                  </h4>
 
                   <p>
                      <?php echo get_the_excerpt(); ?>
@@ -78,9 +73,15 @@
       $args = array(
          'exclude' => array($exclude_post)
       );
-      post_type_list_box('news_item', $args);
 
       ?>
+
+      <section>
+        <?php post_type_list('news_item', $args); ?>
+      </section>
+      <footer>
+        <?php post_type_more_button('news_item'); ?>
+      </footer>
 
    </section>
 

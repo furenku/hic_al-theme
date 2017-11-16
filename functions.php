@@ -66,6 +66,71 @@ function post_type_list_box( $post_type, $args = array() ) {
 <?php
 }
 
+function post_type_list( $post_type, $args = array() ) {
+
+   if( array_key_exists('number',$args) ) {
+      $post_number = $args['number'];
+   } else {
+      $post_number = 3;
+   }
+
+   $exclude = array();
+   if( array_key_exists('exclude',$args) ) {
+      array_push($exclude, $args['exclude']);
+   }
+
+   $plural_label = get_post_type_object( $post_type )->labels->name;
+   $plural_slug = str_replace(" ", "_", strtolower($plural_label));
+
+   ?>
+
+   <!-- <section
+   id="home-activity-<?php echo $plural_slug; ?>"
+   class="home-activity-content_list"
+   > -->
+
+      <ul class="<?php echo $plural_slug; ?>">
+
+         <?php
+         $q = new WP_Query( array(
+            'post_type'=>$post_type,
+            'post__not_in' => $exclude,
+            'posts_per_page' => $post_number
+         ));
+
+         if( $q->have_posts() ) {
+            while ( $q->have_posts() ) {
+               $q->the_post();
+
+               list_item(get_the_ID(),$post_type);
+
+            }
+         }
+
+         ?>
+
+      </ul>
+
+   <!-- </section> -->
+
+<?php
+}
+
+function post_type_more_button( $post_type, $args = array() ) {
+
+  $plural_label = get_post_type_object( $post_type )->labels->name;
+
+  ?>
+
+  <a href="<?php echo get_post_type_archive_link( $post_type );  ?>">
+    <button type="button" name="button">
+      Ver Más <b><?php echo $plural_label; ?></b>
+    </button>
+  </a>
+
+  <?php
+}
+
 
 /* WP CONFIG */
 
@@ -246,15 +311,11 @@ function list_item( $id, $class ) {
                   Fecha del Evento:
                   <?php echo date_i18n('F d\,',strtotime(get_post_meta($id,'event-date',true))); ?>
                </span>
-            <?php else : ?>
-            <span class="author">
-               Publicado por <a href="#"><?php echo get_the_author( $id ); ?></a>
-            </span>
-            <span class="date">
-               el <?php echo get_the_date( 'd \d\e F\, Y', $id ); ?>
-            </span>
+            <?php else :
 
-            <?php endif; ?>
+              article_footer_contents();
+
+            endif; ?>
 
          </footer>
 
@@ -293,5 +354,35 @@ function peer_post_item( $id, $class ) {
    <?php
 }
 
+function article_footer() {
+  ?>
+
+  <footer class="article-footer">
+
+    <?php article_footer_contents(); ?>
+    
+  </footer>
+
+  <?php
+}
+
+function article_footer_contents() {
+  ?>
+
+    <div class="author">
+       Publicado por
+       <?php echo get_the_author_link(); ?>
+   </div>
+   <div>
+      <span class="place">
+         <?php echo get_post_meta(get_the_ID(),'content-place-country',true); ?>
+      </span>
+      <span class="date">
+         , <?php echo get_the_date(); ?>
+      </span>
+   </div>
+
+  <?php
+}
 
 ?>
