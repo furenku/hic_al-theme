@@ -17,37 +17,45 @@ $membership_invitation_page = '¿Cómo ser miembr@ de HIC?';
 
    <?php $page = get_page_by_title($membership_space_page); ?>
 
-   <section id="home-membership-space">
+   <div class="row row-eq-height">
 
-      <h2>
-         <?php echo apply_filters('the_title',$page->post_title); ?>
-      </h2>
+     <section id="home-membership-space">
 
-      <div class="map" image-frame="">
-         <?php echo get_the_post_thumbnail($page->ID,'medium'); ?>
-      </div>
+        <h2>
+           <?php echo apply_filters('the_title',$page->post_title); ?>
+        </h2>
 
-      <div class="text">
-         <?php echo apply_filters('the_excerpt',$page->post_excerpt); ?>
-      </div>
+        <div class="map" image-frame="">
+           <?php echo get_the_post_thumbnail($page->ID,'medium'); ?>
+        </div>
 
-   </section>
+        <div class="text">
+           <?php echo apply_filters('the_excerpt',$page->post_excerpt); ?>
+        </div>
 
-   <?php $page = get_page_by_title($membership_hic_page); ?>
+     </section>
 
-   <section id="home-membership-hic">
-      <h2>
-         <?php echo apply_filters('the_title',$page->post_title); ?>
-      </h2>
+     <?php $page = get_page_by_title($membership_hic_page); ?>
 
-      <div image-frame="">
-         <?php echo get_the_post_thumbnail($page->ID,'medium'); ?>
-      </div>
+     <section id="home-membership-hic">
+        <h2>
+           <?php echo apply_filters('the_title',$page->post_title); ?>
+        </h2>
 
-      <div class="text">
-         <?php echo apply_filters('the_excerpt',$page->post_excerpt); ?>
-      </div>
-   </section>
+        <div image-frame="">
+           <?php echo get_the_post_thumbnail($page->ID,'medium'); ?>
+        </div>
+
+        <div class="text">
+           <?php echo apply_filters('the_excerpt',$page->post_excerpt); ?>
+        </div>
+     </section>
+
+   </div>
+   <!-- .row-eq-height -->
+
+
+   <div class="row row-eq-height">
 
    <section id="home-membership-peer_posts">
 
@@ -96,5 +104,9 @@ $membership_invitation_page = '¿Cómo ser miembr@ de HIC?';
       </div>
 
    </section>
+
+
+      </div>
+      <!-- .row-eq-height -->
 
 </section>

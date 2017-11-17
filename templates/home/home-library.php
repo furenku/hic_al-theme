@@ -5,7 +5,7 @@
    </h1>
 
 
-   <section id="home-library-publications">
+   <section id="home-library-publications" class="row">
 
       <ul>
 
@@ -63,6 +63,10 @@
    </a>
 </footer>
 </section>
+
+
+
+<div class="row row-eq-height">
 
 
       <section id="home-library-media_content">
@@ -239,7 +243,10 @@
                   ?>
 
 
+
       </section>
 
+    </div>
+    <!-- .row-eq-height -->
 
 </section>

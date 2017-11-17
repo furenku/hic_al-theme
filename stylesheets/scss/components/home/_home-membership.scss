@@ -1,7 +1,7 @@
 #home-membership {
 
-   &>section {
-      height: $spacing*10;
+   &>.row>section {
+      @extend .border_light;
    }
 
    #home-membership-space {
@@ -9,14 +9,14 @@
       @extend .col-md-6;
       @extend .col-lg-8;
 
-      height: $spacing * 13.5;
+      // height: $spacing * 13.5;
 
       &>div{
          @extend .col-xs-6;
       }
 
       [image-frame] {
-         height: 100%;
+         height: 80%;
       }
 
       p {
@@ -28,7 +28,7 @@
       @extend .col-md-6;
       @extend .col-lg-4;
 
-      height: $spacing * 15;
+      // height: $spacing * 15;
 
       [image-frame] {
          height: 40%;
@@ -41,7 +41,7 @@
 
    #home-membership-member_invitation {
 
-      height: $spacing * 8;
+      // height: $spacing * 8;
 
       [image-frame] {
          @extend .col-xs-3;

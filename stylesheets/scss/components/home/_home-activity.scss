@@ -34,15 +34,11 @@
     }
 
     article {
-
       @extend .list-item;
-
     }
 
     button {
-
       @extend .more_link_button;
-
     }
 
   }
@@ -69,11 +65,7 @@
       padding-bottom: $spacing / 2;
 
       article {
-
         @extend .list-item;
-
-
-
       }
 
       button {

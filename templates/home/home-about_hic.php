@@ -49,6 +49,8 @@
    </ul>
 </nav>
 
+<div class="row row-eq-height">
+
 <section id="home-about_hic-coalition">
    <h3>
       La coalición
@@ -84,6 +86,10 @@
 </section>
 
 
+</div>
+<!-- .row-eq-height -->
+
+<div class="row row-eq-height">
 
 <section id="home-about_hic-documents">
    <h4>
@@ -164,5 +170,8 @@
    </div>
 
 </section>
+
+</div>
+<!-- .row-eq-height -->
 
 </section>

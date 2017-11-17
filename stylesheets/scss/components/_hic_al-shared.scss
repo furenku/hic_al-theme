@@ -113,7 +113,7 @@ main > section > section {
   & > div:not([image-frame]) {
     padding: $spacing / 8 $spacing / 3;
   }
-  
+
   h6 {
     padding: 0;
     margin: 0;
@@ -201,4 +201,11 @@ main > section > section {
 main > article {
   @extend .page;
   // @extend .row;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }

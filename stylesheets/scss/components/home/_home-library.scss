@@ -1,13 +1,15 @@
 #home-library{
 
-   &>section {
+   &>div>section {
       @extend .col-md-6;
       @extend .col-lg-3;
+      @extend .border_light;
    }
 
 #home-library-publications {
-   @extend .col-md-12;
-   @extend .col-lg-12;
+   // @extend .col-md-12;
+   // @extend .col-lg-12;
+   @extend .row;
 
    ul {
       article {
@@ -19,7 +21,7 @@
    }
 
    footer {
-      text-align: center;   
+      text-align: center;
    }
 }
 

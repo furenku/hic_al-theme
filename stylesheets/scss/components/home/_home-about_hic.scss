@@ -21,12 +21,13 @@
 
 }
 
-#home-about_hic > section {
+#home-about_hic > div > section {
 
-   height: $spacing * 11;
+   // height: $spacing * 11;
 
    @extend .col-md-6;
    @extend .col-lg-4;
+   @extend .border_light;
 
    &#home-about_hic-coalition {
       @extend .col-md-6;
