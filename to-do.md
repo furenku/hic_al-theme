@@ -1,3 +1,15 @@
+# hic-al
+
+
+integración
+- si el lugar de un post es null, colocar el lugar de origen del autor
+-
+
+
+
+
+# oldies:
+
 ## Inicio
 
 #### Integración

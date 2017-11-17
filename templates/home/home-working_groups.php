@@ -1,8 +1,8 @@
 <section id="home-working_groups">
 
-   <h1>
-      Iniciativas y Grupos de Trabajo
-   </h1>
+   <h3>
+      Iniciativas y Grupos
+   </h3>
 
    <nav id="home-working_groups-list">
       <ul>

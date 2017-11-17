@@ -51,9 +51,9 @@
 
                <div>
 
-                  <h4>
+                  <h5>
                      <?php echo get_the_title(); ?>
-                  </h4>
+                  </h5>
 
                   <p>
                      <?php echo get_the_excerpt(); ?>
@@ -87,10 +87,45 @@
 
    <div class="row row-eq-height">
 
-        <?php
-        post_type_list_box('open_call',array('number'=>5));
-        post_type_list_box('event',array('number'=>5));
-        ?>
+        <section id="home-activity-open_call" class="home-activity-content_list">
+
+          <h4>
+             Convocatorias
+          </h4>
+
+          <?php
+          post_type_list('open_call',array('number'=>5));
+          ?>
+
+          <footer>
+            <a href="<?php echo get_post_type_archive_link( 'open_call' ); ?>">
+               <button type="button" name="button" class="more_link_button">
+                  Ver Más <b>Convocatorias</b>
+               </button>
+            </a>
+          </footer>
+
+        </section>
+
+        <section id="home-activity-event" class="home-activity-content_list">
+
+          <h4>
+             Eventos
+          </h4>
+
+          <?php
+          post_type_list('event',array('number'=>5));
+          ?>
+
+          <footer>
+            <a href="<?php echo get_post_type_archive_link( 'event' ); ?>">
+               <button type="button" name="button" class="more_link_button">
+                  Ver Más <b>Eventos</b>
+               </button>
+            </a>
+          </footer>
+
+        </section>
 
 
         <section id="home-activity-solidarity" class="home-activity-content_list">
@@ -149,11 +184,13 @@
               ?>
            </ul>
 
-           <a href="<?php echo get_post_type_archive_link( 'call_for_solidarity' ); ?>">
-              <button type="button" name="button">
-                 Ver Más <b>Llamados de Solidaridad</b>
-              </button>
-           </a>
+           <footer>
+             <a href="<?php echo get_post_type_archive_link( 'call_for_solidarity' ); ?>">
+                <button type="button" name="button" class="more_link_button">
+                   Ver Más <b>Llamados de Solidaridad</b>
+                </button>
+             </a>
+           </footer>
 
         </section>
 

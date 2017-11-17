@@ -22,12 +22,6 @@
 
     padding: 0;
 
-    h4 {
-      margin: 0;
-      padding: $spacing / 4;
-      background-color: $neutral_light;
-      text-align: center;
-    }
 
     ul {
       padding: $spacing / 2;
@@ -40,6 +34,8 @@
     button {
       @extend .more_link_button;
     }
+
+    @extend .more_link_footer;
 
   }
 

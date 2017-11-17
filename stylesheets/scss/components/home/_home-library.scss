@@ -14,8 +14,20 @@
    ul {
       article {
          @extend .col-xs-3;
-         [image-frame] {
-            height: $spacing * 4;
+         & > a > div {
+           @extend .col-xs-8;
+
+           footer {
+             font-size: $font-xs;
+             text-align: left;
+             padding: 0;
+             color: $neutral_medium;
+           }
+         }
+
+         & > a > [image-frame] {
+           @extend .col-xs-4;
+            height: $spacing * 5;
          }
       }
    }
@@ -25,10 +37,17 @@
    }
 }
 
+   #home-library-media_content,
+   #home-library-infographics {
+
+     @extend .more_link_footer;
+
+   }
+
    #home-library-media_content {
 
-      & > ul {
-         article {
+      nav#multimedia > ul {
+         li {
 
             @extend .col-xs-6;
 
@@ -41,19 +60,21 @@
          }
       }
 
-      footer {
-         text-align: center;
-         li {
-            @extend .col-xs-4;
-            i,& > div {
-               @extend .col-xs-12;
-            }
-            float: left;
-            width: auto;
-            padding: 0 $spacing / 3;
+      nav#redes > ul{
+        padding: 0;
+        li {
+          text-align: center;
+           @extend .col-xs-4;
+           i,& > div {
+              @extend .col-xs-12;
+           }
+           // float: left;
+           // width: auto;
+           padding: $spacing / 2;
 
-         }
+        }
       }
+
 
    }
 
@@ -65,7 +86,7 @@
          @extend .framed_content;
 
          [image-frame] {
-            height: $spacing * 5;
+            height: $spacing * 6;
          }
 
          a > button {

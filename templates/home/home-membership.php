@@ -11,9 +11,9 @@ $membership_invitation_page = '¿Cómo ser miembr@ de HIC?';
 
 <section id="home-membership">
 
-   <h1>
+   <h3>
       <?php echo apply_filters('the_title',get_page_by_title($membership_page)->post_title); ?>
-   </h1>
+   </h3>
 
    <?php $page = get_page_by_title($membership_space_page); ?>
 
@@ -32,6 +32,14 @@ $membership_invitation_page = '¿Cómo ser miembr@ de HIC?';
         <div class="text">
            <?php echo apply_filters('the_excerpt',$page->post_excerpt); ?>
         </div>
+
+        <footer>
+          <a href="#">
+             <button type="button" name="button" class="more_link_button">
+                Acceder al <b>Espacio de Miembros</b>
+             </button>
+          </a>
+        </footer>
 
      </section>
 
@@ -76,7 +84,22 @@ $membership_invitation_page = '¿Cómo ser miembr@ de HIC?';
             while ( $q->have_posts() ) :
                $q->the_post();
 
-               peer_post_item(get_the_ID(),'peer-post');
+               ?>
+
+               <article class="peer-post">
+
+                  <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
+                     <h5>
+                        <?php echo get_the_title( $id ); ?>
+                     </h5>
+                  </a>
+
+                  <?php article_footer(); ?>
+
+               </article>
+
+               <?php
+
 
             endwhile;
          endif;

@@ -1,37 +1,46 @@
 #home-about_hic-thematic_areas-menu {
 
-   @extend .row;
+  padding: $spacing;
+  h2 {
+    text-align: center;
+  }
 
-   li {
-      @extend .col-md-6;
-      width: 20%;
+  @extend .row;
+  @extend .border_light;
 
-      [image-frame] {
-         height: $spacing * 3;
-      }
+  li {
+    @extend .col-md-6;
+    width: 20%;
+    text-align: center;
+    [image-frame] {
+      height: $spacing * 3;
+    }
 
-   }
+  }
 }
 
 #home-about_hic-newsletter {
 
-   button {
-      @extend .more_link_button;
-   }
+   .content {
+     height: 55%;
 
+     input[type="submit"] {
+       @extend .action_button;
+     }
+   }
 }
 
 #home-about_hic > div > section {
 
-   // height: $spacing * 11;
+  // height: $spacing * 11;
 
-   @extend .col-md-6;
-   @extend .col-lg-4;
-   @extend .border_light;
+  @extend .col-md-6;
+  @extend .col-lg-4;
+  @extend .border_light;
 
-   &#home-about_hic-coalition {
-      @extend .col-md-6;
-      @extend .col-lg-8;
-   }
+  &#home-about_hic-coalition {
+    @extend .col-md-6;
+    @extend .col-lg-8;
+  }
 
 }

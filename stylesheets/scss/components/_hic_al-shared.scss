@@ -126,15 +126,14 @@ main > section > section {
     padding: $spacing / 4 0;
     color: $neutral_medium;
 
-    div {
     font-size: $font-xs;
+    div {
+      font-size: $font-xs;
       @extend .col-xs-6;
       padding: 0;
     }
 
   }
-
-  margin-bottom: 2px;
 
 }
 
@@ -197,15 +196,46 @@ main > section > section {
 
 }
 
+.more_link_footer {
 
-main > article {
-  @extend .page;
-  // @extend .row;
+  &:after {
+    display: block;
+    content: '';
+    // padding: $spacing;
+    height: $spacing;
+    clear: both;
+  }
+
+  &>footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
 }
+
 
 .row-eq-height {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+
+main > article {
+  @extend .page;
+  // @extend .row;
+}
+
+main > section,
+main > section > .row > section,
+main > .row > section {
+
+  &>h4 {
+    margin: 0;
+    padding: $spacing / 4;
+    background-color: $neutral_light;
+    text-align: center;
+  }
+
 }

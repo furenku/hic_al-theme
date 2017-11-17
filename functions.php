@@ -328,31 +328,6 @@ function list_item( $id, $class ) {
 
 
 
-function peer_post_item( $id, $class ) {
-   ?>
-
-   <article class="<?php echo $class ?>">
-
-      <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
-         <h5>
-            <?php echo get_the_title( $id ); ?>
-         </h5>
-      </a>
-
-      <footer>
-         <span class="author">
-            Publicado por <a href="#"><?php echo get_the_author( $id ); ?></a>
-         </span>
-         <span class="date">
-            el <?php echo get_the_date( 'd \d\e F\, Y', $id ); ?>
-
-         </span>
-      </footer>
-
-   </article>
-
-   <?php
-}
 
 function article_footer() {
   ?>

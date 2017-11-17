@@ -7,9 +7,9 @@
 
    <nav id="home-about_hic-thematic_areas-menu">
 
-      <h3>
+      <h2>
          Áreas Temáticas
-      </h3>
+      </h2>
 
       <ul>
          <?php
@@ -22,7 +22,6 @@
          while ( $q->have_posts() ) :
             $q->the_post();
             ?>
-
 
             <li>
 
@@ -91,7 +90,7 @@
 
 <div class="row row-eq-height">
 
-<section id="home-about_hic-documents">
+<section id="home-about_hic-documents" class="more_link_footer">
    <h4>
       Documentos
    </h4>
@@ -130,14 +129,17 @@
 
    </ul>
 
-   <a href="<?php echo get_post_type_archive_link('document'); ?>">
-      <button type="button" name="button">
-         Ver Más <b>Documentos de HIC</b>
-      </button>
-   </a>
+   <footer>
+     <a href="<?php echo get_post_type_archive_link('document'); ?>">
+        <button type="button" name="button" class="more_link_button">
+          Ver Más <b>Documentos de HIC</b>
+        </button>
+     </a>
+   </footer>
+
 </section>
 
-<section id="home-about_hic-newsletter">
+<section id="home-about_hic-newsletter" class="more_link_footer">
    <?php
    $page = get_page_by_title('Boletín De Noticias de HIC-AL');
    ?>
@@ -145,15 +147,19 @@
       <?php echo apply_filters('the_title',get_the_title($page->ID)); ?>
    </h4>
 
-   <div>
-      <?php echo apply_filters('the_excerpt',get_the_excerpt($page->ID)); ?>
-   </div>
+  <section class="content" vcenter>
+       <?php echo apply_filters('the_excerpt',get_the_excerpt($page->ID)); ?>
+    
+  </section>
 
-   <a href="<?php echo get_term_link('news_bulletin','document-type'); ?>">
-      <button type="button" name="button">
-         Ver <b>Boletines de noticias</b> anteriores
-      </button>
-   </a>
+   <footer>
+     <a href="<?php echo get_term_link('news_bulletin','document-type'); ?>">
+        <button type="button" name="button" class="more_link_button">
+           Ver <b>Boletines de noticias</b> anteriores
+        </button>
+     </a>
+   </footer>
+
 </section>
 
 <section id="home-about_hic-contact">
