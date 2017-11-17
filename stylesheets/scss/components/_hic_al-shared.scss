@@ -12,7 +12,10 @@ $font-xxxl: 40px;
   font-family: 'Roboto', sans-serif;
 }
 
-
+body, ul, li {
+  margin: 0;
+  padding: 0;
+}
 
 
 .button-action {
@@ -88,8 +91,12 @@ main > section > section {
 
 .list-item {
 
-  height: $spacing * 2;
-  margin-bottom: 1px;
+  @extend .col-xs-12;
+
+  height: $spacing * 2.5;
+  margin-bottom: 3px;
+
+  padding: 0;
 
   & > div {
     @extend .col-xs-9;
@@ -97,20 +104,30 @@ main > section > section {
     position: relative;
     box-sizing: border-box;
   }
+
   & > div[image-frame] {
     @extend .col-xs-3;
     height: 100%;
   }
+
   & > div:not([image-frame]) {
     padding: $spacing / 8 $spacing / 3;
   }
-  footer {
-    text-align: left;
-    @extend .col-xs-offset-0;
-    color: $neutral_medium;
-    font-size: $font-xs;
+  
+  h6 {
     padding: 0;
+    margin: 0;
+  }
+
+  footer {
+    @extend .col-xs-offset-0;
+
+    text-align: left;
+    padding: $spacing / 4 0;
+    color: $neutral_medium;
+
     div {
+    font-size: $font-xs;
       @extend .col-xs-6;
       padding: 0;
     }
@@ -138,11 +155,18 @@ main > section > section {
 
   @extend .col-xs-12;
 
-  padding: $spacing / 4;
+  padding: 0 $spacing / 2;
+  margin: $spacing / 2 0;
+
   border: none;
+  border-top: 1px solid $neutral_light;
+  border-bottom: 1px solid $neutral_light;
+
   background-color: #fff;
   text-align: center;
+
   font-size: $font-s;
+
 }
 
 

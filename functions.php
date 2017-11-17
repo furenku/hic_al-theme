@@ -29,9 +29,9 @@ function post_type_list_box( $post_type, $args = array() ) {
    class="home-activity-content_list"
    >
 
-      <h3>
+      <h4>
          <?php echo $plural_label; ?>
-      </h3>
+      </h4>
 
       <ul class="<?php echo $plural_slug; ?>">
 
@@ -295,21 +295,21 @@ function list_item( $id, $class ) {
 
       <div>
 
-         <h5>
-            <?php echo get_the_title( $id ); ?>
-         </h5>
+         <h6>
+            <?php echo wp_trim_words(get_the_title( $id ),18); ?>
+         </h6>
 
          <footer>
 
             <?php if( get_post_type( $id ) == 'open_call' ) :  ?>
                <span class="open_call-deadline">
                   Fecha de Cierre:
-                  <?php echo date_i18n('F d\,',strtotime(get_post_meta($id,'open_call-deadline',true))); ?>
+                  <?php echo date_i18n('F d',strtotime(get_post_meta($id,'open_call-deadline',true))); ?>
                </span>
             <?php elseif( get_post_type( $id ) == 'event' ) : ?>
                <span class="event_date">
                   Fecha del Evento:
-                  <?php echo date_i18n('F d\,',strtotime(get_post_meta($id,'event-date',true))); ?>
+                  <?php echo date_i18n('F d',strtotime(get_post_meta($id,'event-date',true))); ?>
                </span>
             <?php else :
 
@@ -360,7 +360,7 @@ function article_footer() {
   <footer class="article-footer">
 
     <?php article_footer_contents(); ?>
-    
+
   </footer>
 
   <?php

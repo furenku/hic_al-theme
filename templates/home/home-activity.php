@@ -46,7 +46,7 @@
                   </div>
 
                   <?php article_footer(); ?>
-                  
+
                </div>
 
                <div>
@@ -85,85 +85,77 @@
 
    </section>
 
-   <?php
-   post_type_list_box('open_call');
-   post_type_list_box('event');
-   ?>
+   <div class="row row-eq-height">
+
+        <?php
+        post_type_list_box('open_call',array('number'=>5));
+        post_type_list_box('event',array('number'=>5));
+        ?>
 
 
-   <section id="home-activity-solidarity" class="home-activity-content_list">
+        <section id="home-activity-solidarity" class="home-activity-content_list">
 
-      <h3>
-         Solidaridad
-      </h3>
+           <h4>
+              Solidaridad
+           </h4>
 
-      <ul class="solidarity">
-         <?php
-         $q = new WP_Query( array(
-            'post_type'=>'call_for_solidarity',
-            'posts_per_page' => 1
-         )
-         );
+           <ul class="solidarity">
+              <?php
+              $q = new WP_Query( array(
+                 'post_type'=>'call_for_solidarity',
+                 'posts_per_page' => 1
+              )
+              );
 
-         if( $q->have_posts() ) :
-         while ( $q->have_posts() ) :
-            $q->the_post();
-
-
-         ?>
-
-            <article class="solidarity_item">
-
-               <div image-frame="">
-                  <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
-               </div>
-
-               <div>
-
-                  <h5>
-                     <?php echo get_the_title(); ?>
-                  </h5>
-
-                  <p>
-                     <?php echo get_the_excerpt(); ?>
-                  </p>
-
-                  <footer>
-
-                     <a href="<?php echo get_post_meta( get_the_ID(),'call_to_action-url', true ); ?>">
-                        <button>
-                           <?php echo get_post_meta( get_the_ID(), 'call_to_action-text', true ); ?>
-                        </button>
-                     </a>
+              if( $q->have_posts() ) :
+              while ( $q->have_posts() ) :
+                 $q->the_post();
 
 
-                     <span class="author">
-                        Publicado por <a href="#"><?php echo get_the_author( get_the_ID() ); ?></a>
-                     </span>
-                     <span class="date">
-                        el <?php echo get_the_date( 'd \d\e F\, Y', get_the_ID() ); ?>
+              ?>
 
-                     </span>
+                 <article class="solidarity_item">
 
-                  </footer>
+                    <div image-frame="">
+                       <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
+                    </div>
+
+                    <div>
+
+                       <h5>
+                          <?php echo get_the_title(); ?>
+                       </h5>
+
+                       <p>
+                          <?php echo get_the_excerpt(); ?>
+                       </p>
+
+                       <a href="<?php echo get_post_meta( get_the_ID(),'call_to_action-url', true ); ?>">
+                          <button>
+                             <?php echo get_post_meta( get_the_ID(), 'call_to_action-text', true ); ?>
+                          </button>
+                       </a>
+
+                       <?php article_footer(); ?>
 
 
-               </div>
+                    </div>
 
-            </article>
+                 </article>
 
-         <?php
-         endwhile;
-         endif;
-         ?>
-      </ul>
+              <?php
+              endwhile;
+              endif;
+              ?>
+           </ul>
 
-      <a href="<?php echo get_post_type_archive_link( 'call_for_solidarity' ); ?>">
-         <button type="button" name="button">
-            Ver Más <b>Llamados de Solidaridad</b>
-         </button>
-      </a>
+           <a href="<?php echo get_post_type_archive_link( 'call_for_solidarity' ); ?>">
+              <button type="button" name="button">
+                 Ver Más <b>Llamados de Solidaridad</b>
+              </button>
+           </a>
 
-   </section>
+        </section>
 
+   </div>
 </section>

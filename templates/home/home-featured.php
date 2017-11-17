@@ -52,8 +52,6 @@ if( $q -> have_posts() ) :
                   </div>
                </header>
 
-
-
             <p>
                <?php echo get_the_excerpt(); ?>
             </p>
