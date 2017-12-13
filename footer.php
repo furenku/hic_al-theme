@@ -1,16 +1,23 @@
+<?php
+
+$footer_text = $logoCover = get_option('hic_al-footer-text');
+$legal_info = get_option('hic_al-legal_info');
+
+?>
+
 </main>
 
 <footer id="site_footer">
 
    <section class="copyright">
       <p>
-         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, amet nemo excepturi possimus tempora sed. Ex debitis, illo est praesentium minima id molestias vitae beatae qui esse. Iusto a quidem, ullam aperiam saepe illum quibusdam.
+        <?php echo $footer_text; ?>
       </p>
    </section>
 
    <section class="disclaimer">
-      <a href="#">
-         Aviso Legal
+      <a href="<?php echo get_the_permalink( $legal_info ); ?>">
+         <?php echo apply_filters('the_title',get_the_title( $legal_info )); ?>
       </a>
    </section>
 

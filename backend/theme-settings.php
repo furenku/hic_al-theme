@@ -27,8 +27,8 @@ function hic_al_theme_settings() {
 	add_settings_field("hic_al-cover-image-3", "", "hic_al-cover-image-3", "hic_al_options_page");//, "first_section");
 	add_settings_field("hic_al-cover-image-4", "", "hic_al-cover-image-4", "hic_al_options_page");//, "first_section");
 
-	add_settings_field("hic_al-aviso_privacidad", "Aviso de Privacidad", "hic_al-aviso_privacidad", "hic_al_options_page");//, "first_section");
-	add_settings_field("hic_al-terminos_condiciones", "Aviso de Privacidad", "hic_al-terminos_condiciones", "hic_al_options_page");//, "first_section");
+	add_settings_field("hic_al-footer-text", "Texto Pie Página", "hic_al-footer-text", "hic_al_options_page");//, "first_section");
+	add_settings_field("hic_al-legal_info", "Aviso Legal", "hic_al-legal_info", "hic_al_options_page");//, "first_section");
 
 	register_setting( 'hic_al_options_page-grp', 'hic_al-logo-header');
 	register_setting( 'hic_al_options_page-grp', 'hic_al-logo-cover');
@@ -39,8 +39,8 @@ function hic_al_theme_settings() {
 	register_setting( 'hic_al_options_page-grp', 'hic_al-cover-image-3');
 	register_setting( 'hic_al_options_page-grp', 'hic_al-cover-image-4');
 
-	register_setting( 'hic_al_options_page-grp', 'hic_al-aviso_privacidad');
-	register_setting( 'hic_al_options_page-grp', 'hic_al-terminos_condiciones');
+	register_setting( 'hic_al_options_page-grp', 'hic_al-footer-text');
+	register_setting( 'hic_al_options_page-grp', 'hic_al-legal_info');
 
 }
 
@@ -82,42 +82,25 @@ function hic_al_options_page() {
 
 			?>
 
-			<h4>Páginas</h4>
+			<h3>Pie de Página</h3>
 
-			<h5>Áreas</h5>
-
-			<?php
-
-			wp_dropdown_pages(array(
-				'selected'              => get_option('hic_al-areas'),
-				'name'                  => 'hic_al-areas',
-				'id'                    => 'hic_al-areas',
-			));
-
-
-			?>
 				<h5>
-					Aviso de Privacidad
+					Texto
+				</h5>
+
+				<input type="text" name="hic_al-footer-text" value="<?php echo get_option('hic_al-footer-text'); ?>"/>
+
+				<h5>
+					Aviso Legal
 				</h5>
 			<?php
 
 			wp_dropdown_pages(array(
-				'selected'              => get_option('hic_al-aviso_privacidad'),
-				'name'                  => 'hic_al-aviso_privacidad',
-				'id'                    => 'hic_al-aviso_privacidad',
+				'selected'              => get_option('hic_al-legal_info'),
+				'name'                  => 'hic_al-legal_info',
+				'id'                    => 'hic_al-legal_info',
 			));
 
-			?>
-				<h5>
-					Términos y Condiciones
-				</h5>
-			<?php
-
-			wp_dropdown_pages(array(
-				'selected'              => get_option('hic_al-terminos_condiciones'),
-				'name'                  => 'hic_al-terminos_condiciones',
-				'id'                    => 'hic_al-terminos_condiciones',
-			));
 
 
 			settings_fields("hic_al_options_page-grp");
