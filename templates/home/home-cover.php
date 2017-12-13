@@ -1,9 +1,15 @@
-<?php $home = get_page_by_title("Inicio"); ?>
+<?php
+$home = get_page_by_title("Inicio");
+
+$logoCover = wp_get_attachment_image_src( get_option('hic_al-logo-cover'), 'full')[0];
+$coverImage_0 = wp_get_attachment_image_src( get_option('hic_al-cover-image-0'), 'large')[0] ;
+
+?>
 
 <section id="home-cover">
 
    <div image-frame="">
-      <?php echo get_the_post_thumbnail( $home->ID, 'full'); ?>
+     <img src="<?php echo $coverImage_0; ?>" alt="">
    </div>
 
    <div class="content">
@@ -13,7 +19,7 @@
          <section id="branding">
 
             <div class="logo" image-frame="" contain="">
-               <img src="http://fakeimg.pl/300x450" alt="">
+               <img src="<?php echo $logoCover; ?>" alt="">
             </div>
 
             <div class="text" vcenter>

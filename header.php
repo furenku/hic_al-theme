@@ -38,7 +38,7 @@
 
          <a href="<?php echo get_site_url(); ?>">
             <div id="logo" image-frame contain left>
-               <img src="http://fakeimg.pl/200x70" alt="">
+               <img src="<?php echo wp_get_attachment_image_src( get_option('hic_al-logo-header'), 'full')[0]; ?>" alt="">
             </div>
          </a>
 

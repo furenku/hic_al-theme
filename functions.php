@@ -136,6 +136,15 @@ function post_type_more_button( $post_type, $args = array() ) {
 
 add_action('init', 'wp_config');
 
+
+/* THEME SETTINGS */
+
+
+
+
+include_once 'backend/theme-settings.php';
+
+
 add_action( 'admin_init' , 'register_admin_options_fields' );
 
 function wp_config() {
