@@ -18,20 +18,36 @@ function hic_al_theme_settings() {
 
 	add_option( 'hic_al-logo', 'logo...');
 
-	add_settings_field("hic_al-logo-header", "Logo Cabecera", "hic_al-logo-header", "hic_al_options_page");//, "first_section");
-	add_settings_field("hic_al-logo-cover", "Logo Portada", "hic_al-logo-cover", "hic_al_options_page");//, "first_section");
+	add_settings_field("hic_al-logo-header", "Logo Cabecera", "hic_al-logo-header", "hic_al_options_page");
+	add_settings_field("hic_al-logo-cover", "Logo Portada", "hic_al-logo-cover", "hic_al_options_page");
 
-	add_settings_field("hic_al-cover-image-0", "", "hic_al-cover-image-0", "hic_al_options_page");//, "first_section");
-	add_settings_field("hic_al-cover-image-1", "", "hic_al-cover-image-1", "hic_al_options_page");//, "first_section");
-	add_settings_field("hic_al-cover-image-2", "", "hic_al-cover-image-2", "hic_al_options_page");//, "first_section");
-	add_settings_field("hic_al-cover-image-3", "", "hic_al-cover-image-3", "hic_al_options_page");//, "first_section");
-	add_settings_field("hic_al-cover-image-4", "", "hic_al-cover-image-4", "hic_al_options_page");//, "first_section");
 
-	add_settings_field("hic_al-footer-text", "Texto Pie Página", "hic_al-footer-text", "hic_al_options_page");//, "first_section");
-	add_settings_field("hic_al-legal_info", "Aviso Legal", "hic_al-legal_info", "hic_al_options_page");//, "first_section");
+   add_settings_field('hic_al-organization_title', 'Organization Title', 'hic_al-organization_title', "hic_al_options_page" );
+   add_settings_field('hic_al-organization_title_1', 'Organization Title 1', 'hic_al-organization_title_1', "hic_al_options_page" );
+   add_settings_field('hic_al-organization_title_2', 'Organization Title 2', 'hic_al-organization_title_2', "hic_al_options_page" );
+   add_settings_field('hic_al-organization_subtitle', 'Organization Subtitle', 'hic_al-organization_subtitle', "hic_al_options_page" );
+   add_settings_field('hic_al-organization_statement', 'Organization Stament', 'textarea', 'hic_al-organization_statement', "hic_al_options_page" );
+
+
+	add_settings_field("hic_al-cover-image-0", "", "hic_al-cover-image-0", "hic_al_options_page");
+	add_settings_field("hic_al-cover-image-1", "", "hic_al-cover-image-1", "hic_al_options_page");
+	add_settings_field("hic_al-cover-image-2", "", "hic_al-cover-image-2", "hic_al_options_page");
+	add_settings_field("hic_al-cover-image-3", "", "hic_al-cover-image-3", "hic_al_options_page");
+	add_settings_field("hic_al-cover-image-4", "", "hic_al-cover-image-4", "hic_al_options_page");
+
+	add_settings_field("hic_al-footer-text", "Texto Pie Página", "hic_al-footer-text", "hic_al_options_page");
+	add_settings_field("hic_al-legal_info", "Aviso Legal", "hic_al-legal_info", "hic_al_options_page");
 
 	register_setting( 'hic_al_options_page-grp', 'hic_al-logo-header');
 	register_setting( 'hic_al_options_page-grp', 'hic_al-logo-cover');
+
+
+   register_setting( 'hic_al_options_page-grp', 'hic_al-organization_title' );
+   register_setting( 'hic_al_options_page-grp', 'hic_al-organization_title_1' );
+   register_setting( 'hic_al_options_page-grp', 'hic_al-organization_title_2' );
+   register_setting( 'hic_al_options_page-grp', 'hic_al-organization_subtitle' );
+   register_setting( 'hic_al_options_page-grp', 'hic_al-organization_statement' );
+
 
 	register_setting( 'hic_al_options_page-grp', 'hic_al-cover-image-0');
 	register_setting( 'hic_al_options_page-grp', 'hic_al-cover-image-1');
@@ -81,6 +97,27 @@ function hic_al_options_page() {
 
 
 			?>
+
+			<h3>Información de la Organización</h3>
+
+			<h6>Título de la Organización</h6>
+			<input type="text" name="hic_al-organization_title" value="<?php echo get_option('hic_al-organization_title'); ?>"/>
+
+			<h6>Título 1 de la Organización</h6>
+			<input type="text" name="hic_al-organization_title_1" value="<?php echo get_option('hic_al-organization_title_1'); ?>"/>
+
+			<h6>Título 2 de la Organización</h6>
+			<input type="text" name="hic_al-organization_title_2" value="<?php echo get_option('hic_al-organization_title_2'); ?>"/>
+
+			<h6>Subtítulo de la Organización</h6>
+			<input type="text" name="hic_al-organization_subtitle" value="<?php echo get_option('hic_al-organization_subtitle'); ?>"/>
+
+			<h6>Texto de la Organización</h6>
+			<textarea name="hic_al-organization_statement"><?php echo get_option('hic_al-organization_statement'); ?></textarea>
+
+
+
+
 
 			<h3>Pie de Página</h3>
 

@@ -152,36 +152,9 @@ function wp_config() {
    show_admin_bar( false );
    add_theme_support('post-thumbnails');
    add_post_type_support( 'page', 'excerpt' );
-}
-
-/**
-* Add new fields to wp-admin/options-general.php page
-*/
-function register_admin_options_fields() {
-
-   register_admin_setting('organization_title', 'Organization Title');
-   register_admin_setting('organization_title_1', 'Organization Title 1');
-   register_admin_setting('organization_title_2', 'Organization Title 2');
-   register_admin_setting('organization_subtitle', 'Organization Subtitle');
-   register_admin_setting('organization_statement', 'Organization Stament', 'textarea');
 
 }
 
-
-function register_admin_setting( $slug, $label, $field_type='') {
-
-   register_setting( 'general', $slug, 'esc_attr' );
-
-   add_settings_field(
-      $slug,
-      '<label for="'.$slug.'_id">' . __( $label , $slug ) . '</label>',
-      'fields_html',
-      'general',
-      'default',
-      array('slug'=>$slug, 'field_type'=>$field_type )
-   );
-
-}
 /**
 * HTML for extra settings
 */

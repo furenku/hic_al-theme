@@ -24,10 +24,10 @@ $coverImage_0 = wp_get_attachment_image_src( get_option('hic_al-cover-image-0'),
 
             <div class="text" vcenter>
                <h3>
-                  <?php echo get_option('organization_title_1'); ?>
+                  <?php echo get_option('hic_al-organization_title_1'); ?>
                </h3>
                <h4>
-                  <?php echo get_option('organization_title_2'); ?>
+                  <?php echo get_option('hic_al-organization_title_2'); ?>
                </h4>
             </div>
 
@@ -35,10 +35,10 @@ $coverImage_0 = wp_get_attachment_image_src( get_option('hic_al-cover-image-0'),
 
          <section class="description">
             <h3>
-               <?php echo get_option('organization_subtitle'); ?>
+               <?php echo get_option('hic_al-organization_subtitle'); ?>
             </h3>
                <p>
-                  <?php echo get_option('organization_statement'); ?>
+                  <?php echo get_option('hic_al-organization_statement'); ?>
                </p>
          </section>
 
