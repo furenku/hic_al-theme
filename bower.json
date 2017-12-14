@@ -17,6 +17,7 @@
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
     "font-awesome": "^4.7.0",
-    "imgLiquid": "^0.9.944"
+    "imgLiquid": "^0.9.944",
+    "isotope": "^3.0.4"
   }
 }

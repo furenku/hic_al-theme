@@ -6,10 +6,15 @@ $spacing: 30px;
 @import "reset";
 @import "colores";
 
+@import "utils/aspect_ratio";
+
 @import "components/hic_al-shared";
 
 @import "components/hic_al-header";
 @import "components/hic_al-footer";
+
+@import "components/hic_al-page";
+@import "components/hic_al-archive";
 
 @import "components/home/home-cover";
 @import "components/home/home-menu";

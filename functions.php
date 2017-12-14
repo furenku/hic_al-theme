@@ -6,6 +6,8 @@ add_filter( 'the_excerpt', 'do_shortcode');
 
 
 
+
+
 function post_type_list_box( $post_type, $args = array() ) {
 
    if( array_key_exists('number',$args) ) {
@@ -330,6 +332,7 @@ function article_footer_contents() {
        Publicado por
        <?php echo get_the_author_link(); ?>
    </div>
+
    <div>
       <span class="place">
          <?php echo get_post_meta(get_the_ID(),'content-place-country',true); ?>
@@ -342,4 +345,25 @@ function article_footer_contents() {
   <?php
 }
 
+
+
+
+
+/* search highlight */
+
+function search_excerpt_highlight() {
+    $excerpt = get_the_excerpt();
+    $keys = implode('|', explode(' ', get_search_query()));
+    $excerpt = preg_replace('/(' . $keys .')/iu', '<span class="search-highlight">\0</span>', $excerpt);
+    echo '<p>' . $excerpt . '</p>';
+}
+function search_title_highlight() {
+    $title = get_the_title();
+    $keys = implode('|', explode(' ', get_search_query()));
+    $title = preg_replace('/(' . $keys .')/iu', '<span class="search-highlight">\0</span>', $title);
+    echo $title;
+}
+function test_func() {
+  return "test!";
+}
 ?>

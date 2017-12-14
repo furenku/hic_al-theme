@@ -9,6 +9,24 @@ $(document).ready(function(){
    vcenter($('[vcenter]'))
    // vcenter($('#form-container'))
 
+
+   // adjustCollapseView();
+   // $(window).on("resize", function(){
+   //     adjustCollapseView();
+   // });
+
+
+   $('.archive .content-list').isotope({
+     itemSelector: '.archive-item',
+     percentPosition: true,
+      // masonry: {
+      //   // use element for option
+      //   columnWidth: '.article-item'
+      // }
+   })
+
+
+
    console.log("HIC AL theme ready")
 
 })
@@ -87,4 +105,22 @@ function vcenter(contenedores){
       })
 
    })
+}
+
+
+
+
+
+
+
+function adjustCollapseView(){
+    var desktopView = $(document).width();
+    if(desktopView >= "768"){
+        $("#accordion-1 a[data-toggle]").attr("data-toggle","");
+        $("#accordion-1 .collapse").addClass("in").css("height","auto")
+    }else{
+        $("#accordion-1 a[data-toggle]").attr("data-toggle","collapse");
+        $("#accordion-1 .collapse").removeClass("in").css("height","0")
+        $("#accordion-1 .collapse:first").addClass("in").css("height","auto")
+    }
 }

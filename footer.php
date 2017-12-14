@@ -27,6 +27,7 @@ $legal_info = get_option('hic_al-legal_info');
 
 <script src="<?php echo $themeDir; ?>bower_components/jquery/dist/jquery.js"></script>
 <script src="<?php echo $themeDir; ?>bower_components/what-input/dist/what-input.js"></script>
+<script src="<?php echo $themeDir; ?>bower_components/isotope/dist/isotope.pkgd.min.js"></script>
 <script src="<?php echo $themeDir; ?>bower_components/imgLiquid/js/imgLiquid-min.js"></script>
 <script src="<?php echo $themeDir; ?>js/hic_al.js"></script>
 
