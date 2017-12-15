@@ -1,110 +1,110 @@
 $(document).ready(function(){
 
-   image_frames()
+  image_frames()
 
-   // vcenter($('[vcenter]'))
-   vcenter($('#secondary_menu-container nav ul li'))
-   vcenter($('#primary_menu-container nav > ul > li'))
-   vcenter($('#home-cover .presentation'))
-   vcenter($('[vcenter]'))
-   // vcenter($('#form-container'))
-
-
-   // adjustCollapseView();
-   // $(window).on("resize", function(){
-   //     adjustCollapseView();
-   // });
+  // vcenter($('[vcenter]'))
+  vcenter($('#secondary_menu-container nav ul li'))
+  vcenter($('#primary_menu-container nav > ul > li'))
+  vcenter($('#home-cover .presentation'))
+  vcenter($('[vcenter]'))
+  // vcenter($('#form-container'))
 
 
-   $('.archive .content-list').isotope({
-     itemSelector: '.archive-item',
-     percentPosition: true,
-      // masonry: {
-      //   // use element for option
-      //   columnWidth: '.article-item'
-      // }
-   })
+  // adjustCollapseView();
+  // $(window).on("resize", function(){
+  //     adjustCollapseView();
+  // });
 
 
+  $('.archive .content-list').isotope({
+    itemSelector: '.archive-item',
+    percentPosition: true,
+    // masonry: {
+    //   // use element for option
+    //   columnWidth: '.article-item'
+    // }
+  })
 
-   console.log("HIC AL theme ready")
+  setup_datepickers()
+
+  console.log("HIC AL theme ready")
 
 })
 
 function image_frames() {
 
-   $('[image-frame]').each(function(){
+  $('[image-frame]').each(function(){
 
-      // if( ! $(this).find('img').hasClass('b-lazy') ) {
-      //
-         if( typeof $(this).attr('contain') !== typeof undefined && $(this).attr('contain') !== false) {
+    // if( ! $(this).find('img').hasClass('b-lazy') ) {
+    //
+    if( typeof $(this).attr('contain') !== typeof undefined && $(this).attr('contain') !== false) {
 
-            if( typeof $(this).attr('left') !== typeof undefined && $(this).attr('left') !== false) {
+      if( typeof $(this).attr('left') !== typeof undefined && $(this).attr('left') !== false) {
 
-               $(this).imgLiquid({
-                  fill: false,
-                  horizontalAlign: 'left'
-               })
+        $(this).imgLiquid({
+          fill: false,
+          horizontalAlign: 'left'
+        })
 
-            } else {
-               $(this).imgLiquid({
-                  fill: false
-               })
-            }
+      } else {
+        $(this).imgLiquid({
+          fill: false
+        })
+      }
 
-         } else {
+    } else {
 
-            $(this).imgLiquid()
+      $(this).imgLiquid()
 
-         }
+    }
 
-      //
-      // }
+    //
+    // }
 
-   })
+  })
 
 }
 
 
 function vcenter(contenedores){
 
-   contenedores.each(function(){
+  contenedores.each(function(){
 
-      contenedor = $(this)
+    contenedor = $(this)
 
-      hijos = contenedor.children()
+    hijos = contenedor.children()
 
-      // vamos a eliminar el marginTop del primer hijo
-      hijos.first().css({
-         marginTop: 0
-      })
-      // vamos a eliminar el marginBottom del ultimo hijo
-      hijos.last().css({
-         marginBottom: 0
-      })
+    // vamos a eliminar el marginTop del primer hijo
+    hijos.first().css({
+      marginTop: 0
+    })
+    // vamos a eliminar el marginBottom del ultimo hijo
+    hijos.last().css({
+      marginBottom: 0
+    })
 
-      alturaHijos = 0
+    alturaHijos = 0
 
 
-      // recorrer cada uno de sus hijos para obtener su altura
-      hijos.each(function(){
+    // recorrer cada uno de sus hijos para obtener su altura
+    hijos.each(function(){
 
-         hijo = $(this)
+      hijo = $(this)
 
-         // sumar la altura de cada hijo a la altura total
-         alturaHijos += hijo.outerHeight(true)
+      // sumar la altura de cada hijo a la altura total
+      alturaHijos += hijo.outerHeight(true)
 
-      })
+    })
 
-      diferencia = contenedor.height() - alturaHijos
+    diferencia = contenedor.height() - alturaHijos
 
-      distanciaParaCentrar = diferencia / 2
+    distanciaParaCentrar = diferencia / 2
 
-      contenedor.css({
-         paddingTop: distanciaParaCentrar
-      })
+    contenedor.css({
+      paddingTop: distanciaParaCentrar
+    })
 
-   })
+  })
 }
 
 
@@ -114,13 +114,26 @@ function vcenter(contenedores){
 
 
 function adjustCollapseView(){
-    var desktopView = $(document).width();
-    if(desktopView >= "768"){
-        $("#accordion-1 a[data-toggle]").attr("data-toggle","");
-        $("#accordion-1 .collapse").addClass("in").css("height","auto")
-    }else{
-        $("#accordion-1 a[data-toggle]").attr("data-toggle","collapse");
-        $("#accordion-1 .collapse").removeClass("in").css("height","0")
-        $("#accordion-1 .collapse:first").addClass("in").css("height","auto")
-    }
+  var desktopView = $(document).width();
+  if(desktopView >= "768"){
+    $("#accordion-1 a[data-toggle]").attr("data-toggle","");
+    $("#accordion-1 .collapse").addClass("in").css("height","auto")
+  }else{
+    $("#accordion-1 a[data-toggle]").attr("data-toggle","collapse");
+    $("#accordion-1 .collapse").removeClass("in").css("height","0")
+    $("#accordion-1 .collapse:first").addClass("in").css("height","auto")
+  }
+}
+
+
+
+
+
+
+
+function setup_datepickers() {
+
+  $('.input-daterange').datepicker({});
+
+
 }

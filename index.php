@@ -6,7 +6,14 @@ if( have_posts() ) {
       the_post();
       ?>
 
+      <div class="article-cover-photo" image-frame="">
+        <?php echo get_the_post_thumbnail(get_the_ID(),'full'); ?>
+      </div>
+
       <article>
+
+
+
          <h1>
             <?php echo get_the_title(); ?>
          </h1>

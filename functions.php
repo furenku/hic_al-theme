@@ -1,6 +1,12 @@
 <?php
 
 
+
+// include_once 'hic-al-functions/post_type_countries.php';
+
+
+
+
 add_filter( 'the_excerpt', 'shortcode_unautop');
 add_filter( 'the_excerpt', 'do_shortcode');
 
@@ -295,11 +301,12 @@ function list_item( $id, $class ) {
                   Fecha del Evento:
                   <?php echo date_i18n('F d',strtotime(get_post_meta($id,'event-date',true))); ?>
                </span>
-            <?php else :
+            <?php
+          endif;
 
-              article_footer_contents();
+            article_footer_contents();
 
-            endif; ?>
+            ?>
 
          </footer>
 
@@ -326,7 +333,8 @@ function article_footer() {
 }
 
 function article_footer_contents() {
-  ?>
+
+  $categories = get_the_category(); ?>
 
     <div class="author">
        Publicado por
@@ -341,6 +349,22 @@ function article_footer_contents() {
          , <?php echo get_the_date(); ?>
       </span>
    </div>
+
+     <ul>
+
+       <?php foreach($categories as $category) :  ?>
+
+         <li>
+
+           <a href="<?php echo get_category_link($category->cat_ID); ?>">
+             <?php echo $category->name; ?>
+           </a>
+
+         </li>
+
+       <?php endforeach; ?>
+
+     </ul>
 
   <?php
 }
@@ -366,4 +390,48 @@ function search_title_highlight() {
 function test_func() {
   return "test!";
 }
+
+
+
+/* query vars */
+
+
+function hic_al_query_vars_filter($vars) {
+  $vars[] = 'date_start';
+  $vars[] .= 'date_end';
+  $vars[] .= 'categories';
+  $vars[] .= 'countries';
+  return $vars;
+}
+add_filter( 'query_vars', 'hic_al_query_vars_filter' );
+
+
+
+
+function post_type_countries( $post_type ) {
+
+    global $countries_posts;
+    $countries_posts = array();
+    $args = array( "post_type" => $post_type, "posts_per_page" => -1 );
+    $loop  = new WP_Query( $args );
+
+    while ( $loop->have_posts() ) : $loop->the_post();
+
+        $this_country = get_post_meta( get_the_ID(), 'content-place-country', true );
+
+
+        if ( ! array_key_exists( $this_country, $countries_posts ) ) {
+          $countries_posts[ $this_country ] = array();
+        }
+
+        array_push( $countries_posts[ $this_country ], get_the_ID() );
+
+
+    endwhile;
+
+
+    return $countries_posts;
+
+}
+
 ?>

@@ -38,6 +38,16 @@ function hic_al_theme_settings() {
 	add_settings_field("hic_al-footer-text", "Texto Pie Página", "hic_al-footer-text", "hic_al_options_page");
 	add_settings_field("hic_al-legal_info", "Aviso Legal", "hic_al-legal_info", "hic_al_options_page");
 
+
+	add_settings_field("hic_al-url-facebook", "", "hic_al-url-facebook", "hic_al_options_page");
+	add_settings_field("hic_al-url-twitter", "", "hic_al-url-twitter", "hic_al_options_page");
+	add_settings_field("hic_al-url-youtube", "", "hic_al-url-youtube", "hic_al_options_page");
+	add_settings_field("hic_al-url-flickr", "", "hic_al-url-flickr", "hic_al_options_page");
+
+
+
+
+
 	register_setting( 'hic_al_options_page-grp', 'hic_al-logo-header');
 	register_setting( 'hic_al_options_page-grp', 'hic_al-logo-cover');
 
@@ -58,6 +68,10 @@ function hic_al_theme_settings() {
 	register_setting( 'hic_al_options_page-grp', 'hic_al-footer-text');
 	register_setting( 'hic_al_options_page-grp', 'hic_al-legal_info');
 
+	register_setting( 'hic_al_options_page-grp', 'hic_al-url-facebook');
+	register_setting( 'hic_al_options_page-grp', 'hic_al-url-twitter');
+	register_setting( 'hic_al_options_page-grp', 'hic_al-url-youtube');
+	register_setting( 'hic_al_options_page-grp', 'hic_al-url-flickr');
 }
 
 
@@ -139,7 +153,28 @@ function hic_al_options_page() {
 			));
 
 
+			?>
 
+			<h3>Redes</h3>
+
+			<div class="row">
+				<label for="hic_al-url-facebook">Facebook</label>
+				<input type="url" name="hic_al-url-facebook" id="hic_al-url-facebook" value="<?php echo get_option("hic_al-url-facebook"); ?>"/>
+			</div>
+			<div class="row">
+				<label for="hic_al-url-twitter">Twitter</label>
+				<input type="url" name="hic_al-url-twitter" id="hic_al-url-twitter" value="<?php echo get_option("hic_al-url-twitter"); ?>"/>
+			</div>
+			<div class="row">
+				<label for="hic_al-url-youtube">Youtube</label>
+				<input type="url" name="hic_al-url-youtube" id="hic_al-url-youtube" value="<?php echo get_option("hic_al-url-youtube"); ?>"/>
+			</div>
+			<div class="row">
+				<label for="hic_al-url-flickr">Flickr</label>
+				<input type="url" name="hic_al-url-flickr" id="hic_al-url-flickr" value="<?php echo get_option("hic_al-url-flickr"); ?>"/>
+			</div>
+
+			<?php
 			settings_fields("hic_al_options_page-grp");
 
 			do_settings_sections("hic_al_options_page");

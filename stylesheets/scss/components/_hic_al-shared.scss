@@ -266,6 +266,32 @@ main > .row > section {
   }
 
 
+  ul {
+
+    @extend .col-xs-12;
+
+    padding: $spacing / 4  $spacing / 1.5;
+    li {
+      width: auto;
+      padding: 1px 4px;
+      margin-right: $spacing/4;
+      float: left;
+      background-color: $color_main;
+      a { color: white; }
+
+      transition: background-color 0.2s ease-in-out, font-weight 0.2s ease-in-out;
+
+      &:hover {
+        background-color: #000;
+        font-weight: bold;
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+
+  }
+
 
 }
 
@@ -284,4 +310,12 @@ article > a:hover {
   color: #fff;
   // padding-left: 2px;
   // padding-right: 2px;
+}
+
+
+
+
+
+.article-cover-photo {
+  height: 50vh;
 }

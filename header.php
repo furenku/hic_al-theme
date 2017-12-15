@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
 
     <link href="<?php echo get_stylesheet_directory_uri(); ?>/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?php echo get_stylesheet_directory_uri(); ?>/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/stylesheets/css/hic_al.css">
 
     <?php wp_head(); ?>
@@ -61,22 +62,22 @@
          <nav id="social_media_links">
             <ul>
                <li>
-                  <a href="#" network="facebook">
+                  <a href="<?php echo get_option("hic_al-url-facebook"); ?>" network="facebook" target="_blank">
                      <i></i>
                   </a>
                </li>
                <li>
-                  <a href="#" network="twitter">
+                  <a href="<?php echo get_option("hic_al-url-twitter"); ?>" network="twitter" target="_blank">
                      <i></i>
                   </a>
                </li>
                <li>
-                  <a href="#" network="youtube">
+                  <a href="<?php echo get_option("hic_al-url-youtube"); ?>" network="youtube" target="_blank">
                      <i></i>
                   </a>
                </li>
                <li>
-                  <a href="#" network="instagram">
+                  <a href="<?php echo get_option("hic_al-url-flickr"); ?>" network="flickr" target="_blank">
                      <i></i>
                   </a>
                </li>
