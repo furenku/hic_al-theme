@@ -2,9 +2,10 @@
 
 get_header();
 
-
 $post_type = get_post_type();
 $post_type_plural = get_post_type_object( $post_type )->label;
+
+$archive_title = is_category() ? single_cat_title("", false) : $post_type_plural;
 
 global $countries_posts;
 $countries_posts = post_type_countries( $post_type );
@@ -15,11 +16,12 @@ $end_day = date_i18n('d',strtotime($date_end));
 
 $args = $wp_query -> query_vars;
 
+
 $date_query = array();
 
 
-if( $date_start && $date_start != "" ) {
-
+if( $date_start && $date_start != "" )
+{
   $start_year = date_i18n('Y',strtotime($date_start));
   $start_month = date_i18n('m',strtotime($date_start));
   $start_day = date_i18n('d',strtotime($date_start));
@@ -31,11 +33,10 @@ if( $date_start && $date_start != "" ) {
   );
 
   $date_query['inclusive'] = true;
-
 }
 
-if( $date_end && $date_end != "" ) {
-
+if( $date_end && $date_end != "" )
+{
   $end_year = date_i18n('Y',strtotime($date_end));
   $end_month = date_i18n('m',strtotime($date_end));
   $end_day = date_i18n('d',strtotime($date_end));
@@ -47,10 +48,12 @@ if( $date_end && $date_end != "" ) {
   );
 
   $date_query['inclusive'] = true;
-
 }
 
+
+
 if( is_array($countries) && count( $countries ) > 0 ) {
+
   global $countries_posts;
   $country_post_ids = array();
 
@@ -59,6 +62,7 @@ if( is_array($countries) && count( $countries ) > 0 ) {
   }
 
   $args["post__in"] = $country_post_ids;
+
 }
 
 if( count($date_query) > 0 ) {
@@ -69,8 +73,23 @@ if( is_array($categories) && count($categories) > 0 ) {
   $args["category__in"] = $categories;
 }
 
-// var_dump( $args["category__in"] );
 
+if( is_category() ) {
+
+  $post_type = [
+    "news_item",
+    "call_for_solidarity",
+    "open_call",
+    "event",
+    "member",
+    "document",
+    "publication",
+    "media_content"
+  ];
+
+}
+
+$args["post_type"] = $post_type;
 
 $q = new WP_Query( $args );
 
@@ -82,7 +101,7 @@ $q = new WP_Query( $args );
   <header>
 
     <h1>
-      <?php echo $post_type_plural; ?>
+      <?php echo $archive_title; ?>
     </h1>
   </header>
 
@@ -93,7 +112,6 @@ $q = new WP_Query( $args );
 
     <?php get_template_part("templates/archive_search"); ?>
 
-
   </aside>
 
 
@@ -102,14 +120,8 @@ $q = new WP_Query( $args );
   <ul class="content-list">
 
 
-  <?php
-  if( $q -> have_posts() ) {
-    ?>
-
-
-
-    <?php
-     while ( $q -> have_posts() ) {
+  <?php if( $q -> have_posts() ) :
+     while ( $q -> have_posts() ) :
         $q -> the_post();
         ?>
 
@@ -137,13 +149,13 @@ $q = new WP_Query( $args );
         </article>
         <?php
 
-     }
+     endwhile;
 
-  } else {
+  else :
 
     echo "No hay Contenido de ese Tipo.";
 
-  }
+  endif;
 
 
        ?>

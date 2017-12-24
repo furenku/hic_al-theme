@@ -1,0 +1,15 @@
+#microsite-intro {
+
+  .text,
+  #microsite-calls_to_action {
+    @extend .col-xs-6;
+  }
+
+  #microsite-calls_to_action {
+
+    article {
+      @extend .col-xs-6;
+    }
+
+  }
+}

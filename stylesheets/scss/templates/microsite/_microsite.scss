@@ -1,0 +1,46 @@
+@import "microsite-header";
+@import "sections/microsite-menu-description";
+@import "sections/microsite-intro";
+@import "sections/microsite-events";
+@import "sections/microsite-publications";
+@import "sections/microsite-cases";
+@import "sections/microsite-members";
+@import "sections/microsite-sidebar";
+
+#microsite-header-image {
+  @extend .row;
+  height: $spacing * 15;
+}
+
+#microsite {
+
+
+}
+
+// quizás eliminar:
+#microsite-container {
+  @extend .container-fluid;
+}
+
+#microsite-content {
+  @extend .col-md-8;
+  @extend .col-lg-9;
+
+  section {
+
+    @extend .container;
+
+    padding: $spacing;
+
+    &:even {
+      background-color: #eee;
+    }
+    &:even {
+      background-color: #eaeaea;
+    }
+  }
+}
+#microsite-sidebar {
+  @extend .col-md-4;
+  @extend .col-lg-3;
+}

@@ -1,0 +1,33 @@
+#microsite-header,
+#microsite-cover-image {
+  @extend .row;
+}
+
+#microsite-header {
+  background-color: #aaa;
+
+  li {
+    @extend .col-xs-3;
+    text-align: center;
+    transition: background-color 0.4s ease-in-out;
+
+    &:hover {
+      background-color: #888;
+    }
+
+    a {
+      @extend .col-xs-12;
+      padding: $spacing / 2;
+      width: 100%;
+      height: 100%;
+      color: white;
+      text-decoration: none;
+    }
+
+
+  }
+
+}
+#microsite-cover-image {
+  height: $spacing * 15;
+}

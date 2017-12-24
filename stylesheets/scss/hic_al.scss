@@ -25,6 +25,8 @@ $spacing: 30px;
 @import "components/home/home-library";
 @import "components/home/home-about_hic";
 
+@import "templates/microsite/microsite";
+
 
 main > section {
    @extend .row;

@@ -1,0 +1,19 @@
+#microsite-events {
+
+  #microsite-events-list {
+    @extend .col-xs-6;
+  }
+
+  #microsite-events-featured {
+    @extend .col-xs-6;
+  }
+
+  #microsite-meetings-list {
+    @extend .col-xs-12;
+    article {
+      @extend .col-md-3;      
+    }
+  }
+
+
+}

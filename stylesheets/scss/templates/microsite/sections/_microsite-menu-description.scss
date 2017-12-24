@@ -1,0 +1,13 @@
+#microsite-intro-menu-description {
+
+  @extend .row;
+  margin: $spacing * 2 0;
+
+  li {
+    @extend .col-xs-6;
+    @extend .col-md-3;
+    padding: $spacing * 2;
+    text-align: center;
+  }
+
+}

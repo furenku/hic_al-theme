@@ -57,6 +57,8 @@ $categoryObjects = get_categories( array( "parent" => $parent ) );
 
   </div>
 
+  <?php if(!is_category()): ?>
+
   <div class="form-section-label">
     <h5>Categorías</h5>
   </div>
@@ -95,8 +97,9 @@ $categoryObjects = get_categories( array( "parent" => $parent ) );
 
 
 
-
   <input type="hidden" name="post_type" value="<?php echo $post_type; ?>"/>
+
+  <?php endif; ?>
 
   <input class="inlineSubmit" id="searchsubmit" type="submit" alt="Search" value="Search" />
 
