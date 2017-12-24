@@ -1,0 +1,30 @@
+#microsite-members {
+
+  @extend .row;
+
+  .content{
+
+    @extend .col-md-8;
+    @extend .col-md-offset-2;
+    @extend .col-lg-6;
+    @extend .col-lg-offset-3;
+
+    padding: $spacing;
+
+  }
+
+  ul {
+
+    @extend .row;
+    @extend .col-xs-12;
+
+    article {
+      @extend .ratio-square;
+      @extend .col-xs-6;
+      @extend .col-md-4;
+      @extend .col-lg-3;
+    }
+
+  }
+
+}

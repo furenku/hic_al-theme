@@ -1,0 +1,21 @@
+#microsite-publications {
+
+
+  #microsite-publications-featured-1 {
+    @extend .col-xs-7;
+  }
+  #microsite-publications-featured-2 {
+    @extend .col-xs-5;
+  }
+
+  #microsite-publications-list {
+
+    article {
+      @extend .col-md-6;
+      @extend .col-lg-4;
+    }
+
+  }
+
+
+}

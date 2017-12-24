@@ -1,0 +1,38 @@
+#microsite-cases {
+
+
+  #microsite-cases-map,
+  #microsite-cases-container {
+    height: 80vh;
+  }
+
+  #microsite-cases-map {
+
+    @extend .col-md-7;
+
+  }
+
+  #microsite-cases-container {
+
+    @extend .col-md-5;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .content{
+      padding: $spacing / 2;
+    }
+
+    #microsite-cases-list {
+
+      article {
+        @extend .ratio-square;
+        @extend .col-md-6;
+        @extend .col-lg-4;
+      }
+
+    }
+
+  }
+
+
+}
