@@ -1,9 +1,14 @@
 #archive-searchform {
 
-  max-width: 25em;
-  // background-color: #000;
+  // max-width: 25em;
+
+  background-color: #fff;
 
   padding: $spacing;
+
+  h3 {
+    margin-top: 0;
+  }
 
   text-align: center;
 
@@ -11,9 +16,32 @@
     color: #666;
   }
 
+  .form-section-inputs {
+    @extend .col-xs-12;
+    margin-bottom: $spacing / 2;
+    padding: $spacing / 2 !important;
+    // border-bottom: 1px solid $neutral_medium;
+    background-color: #ddd;
+  }
+
+  .input-group-addon {
+    width: 100%;
+    background: none;
+    display: inline-block;
+  }
+
+  .date-input-container {
+    @extend .col-xs-6;
+    &:first {
+      padding-left: 0;
+    }
+    &:last {
+      padding-right: 0;
+    }
+  }
   input {
     width: 100%;
-    max-width:15em;
+    // max-width:15em;
 
     border-radius: 0;
     border: none;
@@ -25,6 +53,7 @@
 
   .inlineSearch {
     padding: $spacing / 4;
+    box-sizing: border-box;
   }
 
   .checkbox-hidden {
@@ -35,7 +64,7 @@
   }
 
   input + label {
-    background-color: #ddd;
+    background-color: #ccc;
   }
   input:checked + label {
     background-color: #fa0;
@@ -43,6 +72,17 @@
 
   input[type=submit] {
     @extend .button-action;
+  }
+
+  nav {
+    li {
+      @extend .col-xs-6;
+      font-size: $font-xs;
+      label {
+        width: 100%;
+        font-weight: normal;
+      }
+    }
   }
 
 }

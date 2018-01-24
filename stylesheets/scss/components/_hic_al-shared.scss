@@ -35,14 +35,19 @@ body, ul, li {
 
 
 .button-action {
+
   width: 80%;
-  height:$spacing;
+  // height:$spacing;
   background-color: $color_main;
   color: black;
   // background-color: black;
   // color: white;
   border: none;
   @extend .bx-shw-1;
+  padding: $spacing / 4;
+  box-sizing: border-box;
+  height: auto;
+
 }
 
 .border_light {

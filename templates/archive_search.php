@@ -18,11 +18,8 @@ $categoryObjects = get_categories( array( "parent" => $parent ) );
     Filtrar
   </h2>
 
-  <div class="form-section-label">
-    <h5>Texto</h5>
-  </div>
 
-  <div class="row form-section-inputs">
+  <div class="rrow form-section-inputs">
 
 
     <input class="inlineSearch"
@@ -30,26 +27,24 @@ $categoryObjects = get_categories( array( "parent" => $parent ) );
     name="s"
     value="<?php echo $s; ?>"
     onclick="this.value = ''"
-    placeholder = "Buscar <?php echo $post_type_plural; ?>"
+    placeholder = "Buscar en <?php echo $post_type_plural; ?>..."
     onfocus="if (this.placeholder == "Buscar <?php echo $post_type_plural; ?>") {this.placeholder = ''} " />
 
   </div>
 
-  <div class="form-section-label">
-    <h5>Fechas</h5>
-  </div>
 
-  <div class="row input-daterange input-group form-section-inputs">
+  <div class="rrow input-daterange input-group form-section-inputs">
 
+    <h3>Fechas</h3>
 
-    <div class="col-xs-6">
+    <div class="date-input-container">
       <label class="input-group-addon">Desde</label>
       <input type="text"
       class="input-sm form-control"
       value="<?php echo $date_start; ?>"
       name="date_start" />
     </div>
-    <div class="col-xs-6">
+    <div class="date-input-container">
       <label class="input-group-addon">Hasta</label>
       <input type="text"
       class="input-sm form-control"
@@ -61,11 +56,11 @@ $categoryObjects = get_categories( array( "parent" => $parent ) );
 
   <?php if(!is_category()): ?>
 
-  <div class="form-section-label">
-    <h5>Categorías</h5>
-  </div>
 
-  <nav id="categories" class="row form-section-inputs">
+  <nav id="categories" class="rrow form-section-inputs">
+
+    <h3>Categorías</h3>
+
     <ul>
       <?php foreach ($categoryObjects as $category ): $cat_id = $category->cat_ID; ?>
         <!-- input[type=checkbox][cat_id=x][name=categories[]]{n} -->
@@ -80,11 +75,10 @@ $categoryObjects = get_categories( array( "parent" => $parent ) );
   </nav>
 
 
-  <div class="form-section-label">
-    <h5>Países</h5>
-  </div>
+  <nav id="countries" class="rrow form-section-inputs">
 
-  <nav id="countries" class="row form-section-inputs">
+    <h3>Países</h3>
+
     <ul>
 
       <?php global $countries_posts; foreach ( $countries_posts as $country => $country_posts ): ?>
@@ -105,7 +99,7 @@ $categoryObjects = get_categories( array( "parent" => $parent ) );
 
   <?php endif; ?>
 
-  <input class="inlineSubmit" id="searchsubmit" type="submit" alt="Search" value="Search" />
+  <input class="inlineSubmit" id="searchsubmit" type="submit" alt="Buscar" value="Buscar" />
 
 
 

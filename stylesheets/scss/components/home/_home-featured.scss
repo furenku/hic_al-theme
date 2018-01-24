@@ -2,20 +2,29 @@
 
    @extend .container;
 
-   padding-top: $spacing;
+   padding-top: $spacing * 3;
+   padding-bottom: $spacing * 2;
+
+   padding-left: 0;
+   padding-right: 0;
 
    article {
 
       @extend .col-md-4;
 
-      height: $spacing * 15.5;
+      height: $spacing * 16.5;
 
-      padding: 0;
+      padding: $spacing / 2;
 
-      @extend .border_light;
 
-      &>a {
+      &>div {
+        @extend .border_light;
+        height: 100%;
+      }
+
+      &>div>a {
          display: inline-block;
+         height: 100%;
       }
 
       a > i {
@@ -52,7 +61,7 @@
 
          }
       }
-      & > a {
+      & > div > a {
 
          width: 100%;
          text-align: center;
@@ -68,7 +77,10 @@
          padding: $spacing / 6 $spacing / 2;
          text-align: left;
       }
-
+      .footer-container {
+        padding: 0 $spacing;
+        position: relative;
+      }
       footer {
 
          width: 100%;
@@ -76,6 +88,7 @@
          position: absolute;
          bottom: 0;
          left: 0;
+
 
 
          // & > div {
