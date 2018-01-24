@@ -9,25 +9,91 @@
   #microsite-cases-map {
 
     @extend .col-md-7;
+    @extend .col-lg-6;
 
   }
 
   #microsite-cases-container {
 
     @extend .col-md-5;
+    @extend .col-lg-6;
     overflow-y: auto;
     overflow-x: hidden;
+
+    padding-top: 0;
 
     .content{
       padding: $spacing / 2;
     }
 
+    #microsite-case-preview {
+
+      display: none;
+
+      .close-container {
+
+        // @extend .row;
+        text-align: right;
+        height: $spacing;
+
+        .close-button {
+
+          color: #000;
+
+          font-size: $font-xs;
+
+          * {
+            padding: 2px;
+          }
+
+        }
+      }
+
+      [image-frame] {
+          height: $spacing * 8;
+      }
+
+      .excerpt {
+        @extend .col-xs-9;
+      }
+      footer {
+        @extend .col-xs-3;
+        position: relative;
+        // right:0
+        &>* {
+          width: 100%;
+        }
+      }
+
+    }
+
     #microsite-cases-list {
 
       article {
-        @extend .ratio-square;
+
         @extend .col-md-6;
         @extend .col-lg-4;
+
+        position: relative;
+
+        [image-frame] {
+          height: $spacing * 4;
+        }
+
+        .excerpt {
+          display: none;
+        }
+
+        footer {
+
+          position: absolute;
+
+          button {
+            position: absolute;
+            bottom: $spacing / 2;
+            right: $spacing / 2;
+          }
+        }
       }
 
     }

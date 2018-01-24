@@ -313,7 +313,9 @@ article > a:hover {
 }
 
 
-
+[image-frame] {
+  min-height: $spacing * 3;
+}
 
 
 .article-cover-photo {

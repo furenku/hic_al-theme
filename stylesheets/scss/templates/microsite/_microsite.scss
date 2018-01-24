@@ -14,6 +14,48 @@
 
 #microsite {
 
+  padding-left: 0;
+  padding-right: 0;
+
+}
+
+
+#microsite-dynamic_area {
+
+  height: calc( 100vh - ( $spacing * 5 ) );
+
+  & > * {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  & > [image-frame],
+  & > img {
+
+    width: 100%;
+    display: block;
+    margin: $spacing 0;
+
+  }
+
+  iframe {
+    height: 80vh;
+    margin: $spacing 0;
+  }
+
+  p {
+
+    &:first-child {
+      margin-top: $spacing;
+    }
+
+    width: 60%;
+    margin: 0 20%;
+    padding: $spacing / 3;
+    font-size: $font-l;
+
+  }
 
 }
 
@@ -22,15 +64,36 @@
   @extend .container-fluid;
 }
 
+
+#microsite-content,
+#microsite-sidebar {
+  height: calc( 100vh - 50px );
+}
+
+
 #microsite-content {
-  @extend .col-md-8;
-  @extend .col-lg-9;
+
+  @extend .col-md-9;
+  @extend .col-lg-10;
+
+  overflow-y: auto;
+
+  padding-left: 0;
+  padding-right: 0;
 
   section {
 
-    @extend .container;
+    @extend .col-xs-12;
+
+    padding-left: 0;
+    padding-right: 0;
 
     padding: $spacing;
+
+    h1, h2 {
+      text-align: center;
+      margin: $spacing 0;
+    }
 
     &:even {
       background-color: #eee;
@@ -38,9 +101,20 @@
     &:even {
       background-color: #eaeaea;
     }
+
   }
+
 }
+
 #microsite-sidebar {
-  @extend .col-md-4;
-  @extend .col-lg-3;
+  @extend .col-md-3;
+  @extend .col-lg-2;
+}
+
+
+
+footer {
+  .place {
+    font-size: $font-xs;
+  }
 }

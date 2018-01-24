@@ -15,7 +15,35 @@
     <?php for ($i=0; $i < 18; $i++) : ?>
 
       <article class="microsite-member">
-        Miembro
+
+        <a href="#">
+
+          <div image-frame contain>
+            <img src="http://fakeimg.pl/300x300/?text=logo" alt="">
+          </div>
+
+          <h3>
+            Nombre Miembro
+          </h3>
+
+          <footer>
+            <div class="place">
+
+              <span class="locality">
+                Nombre Localidad
+              </span>
+              ,
+              <span class="country">
+                Nombre País
+              </span>
+
+            </div>
+
+          </footer>
+
+        </a>
+
+
       </article>
 
     <?php endfor; ?>
@@ -33,7 +61,21 @@
     <?php for ($i=0; $i < 3; $i++) : ?>
 
       <article class="microsite-supporter">
-        Organización
+
+        <a href="#">
+
+          <div image-frame contain>
+            <img src="http://fakeimg.pl/300x300/?text=logo" alt="">
+          </div>
+
+          <h4>
+            Nombre Organización
+          </h4>
+
+          </footer>
+
+        </a>
+
       </article>
 
     <?php endfor; ?>

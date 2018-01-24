@@ -27,6 +27,8 @@ $(document).ready(function(){
 
   setup_datepickers()
 
+  setup_microsite()
+
   console.log("HIC AL theme ready")
 
 })
@@ -135,5 +137,60 @@ function setup_datepickers() {
 
   $('.input-daterange').datepicker({});
 
+}
+
+
+
+function setup_microsite() {
+
+  setup_microsite_map()
+  setup_microsite_cases()
+
+}
+
+
+function setup_microsite_cases() {
+
+    $('#microsite-cases-list .microsite-case a').click(function(e){
+
+
+      var microsite_case, microsite_cases_intro, microsite_cases_list, microsite_case_preview, close_button;
+
+      microsite_case = $(this)
+      microsite_cases_intro = $('#microsite-cases-container .content')
+      microsite_cases_list = $('#microsite-cases-list')
+      microsite_case_preview = $('#microsite-case-preview')
+      microsite_case_preview_content = $('#microsite-case-preview .content-preview')
+      close_button = $('#microsite-case-preview .close-button')
+
+      microsite_case_preview_content.html( microsite_case.html() )
+
+      microsite_cases_intro.hide()
+      microsite_cases_list.hide()
+      microsite_case_preview.show()
+
+      close_button.click(function(){
+        microsite_cases_intro.show()
+        microsite_cases_list.show()
+        microsite_case_preview.hide()
+      })
+
+      e.preventDefault()
+      return false;
+
+    })
+}
+
+function setup_microsite_map() {
+
+  if( $('#microsite-cases-map').length > 0 ) {
+
+    var map = L.map('microsite-cases-map').setView([51.505, -0.09], 13);
+
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        // attribution: ''
+    }).addTo(map);
+
+  }
 
 }

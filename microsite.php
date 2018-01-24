@@ -8,6 +8,7 @@ get_header();
 get_template_part("templates/microsite/microsite-header");
 
 get_template_part("templates/microsite/microsite-intro");
+get_template_part("templates/microsite/microsite-dynamic_area");
 get_template_part("templates/microsite/microsite-menu-description");
 
 ?>

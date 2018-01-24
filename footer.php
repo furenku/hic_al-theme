@@ -30,6 +30,7 @@ $legal_info = get_option('hic_al-legal_info');
 <script src="<?php echo $themeDir; ?>bower_components/isotope/dist/isotope.pkgd.min.js"></script>
 <script src="<?php echo $themeDir; ?>bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 <script src="<?php echo $themeDir; ?>bower_components/imgLiquid/js/imgLiquid-min.js"></script>
+<script src="<?php echo $themeDir; ?>bower_components/leaflet/dist/leaflet.js"></script>
 <script src="<?php echo $themeDir; ?>js/hic_al.js"></script>
 
 <?php wp_footer(); ?>
