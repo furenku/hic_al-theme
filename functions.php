@@ -274,11 +274,11 @@ function article_footer_contents() {
       </span>
    </div>
 
-     <ul>
+     <ul class="categories">
 
        <?php foreach($categories as $category) :  ?>
 
-         <li>
+         <li class="category">
 
            <a href="<?php echo get_category_link($category->cat_ID); ?>">
              <?php echo $category->name; ?>

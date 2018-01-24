@@ -8264,8 +8264,8 @@ body, ul, li {
 .button-action, #home-cover .description-calls_to_action ul.calls_to_action article a button, #home-featured article > a button {
   width: 80%;
   height: 30px;
-  background-color: black;
-  color: white;
+  background-color: #e67817;
+  color: black;
   border: none; }
 
 .border_light, #home-featured article, #home-membership > .row > section, main#home-membership > section > section, #home-membership > #site_header > section, #secondary_menu-container #home-membership > nav > section, #secondary_menu-container nav #home-membership > ul > section, #home-library #home-membership > #home-library-publications > section, #home-membership > #home-about_hic-thematic_areas-menu > section, #home-membership > #microsite-header > section,
@@ -8304,7 +8304,7 @@ main > section > section {
 
 .list-item, #home-activity .home-activity-content_list article, #home-activity #home-activity-news > section article, #home-membership #home-membership-peer_posts article {
   height: 75px;
-  margin-bottom: 3px;
+  margin-bottom: 15px;
   padding: 0; }
   .list-item > div, #home-activity .home-activity-content_list article > div, #home-activity #home-activity-news > section article > div, #home-membership #home-membership-peer_posts article > div {
     display: inline-block;
@@ -8324,7 +8324,24 @@ main > section > section {
     font-size: 10px; }
     .list-item footer div, #home-activity .home-activity-content_list article footer div, #home-activity #home-activity-news > section article footer div, #home-membership #home-membership-peer_posts article footer div {
       font-size: 10px;
-      padding: 0; }
+      padding: 2px 0;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd; }
+      .list-item footer div:nth-child(2), #home-activity .home-activity-content_list article footer div:nth-child(2), #home-activity #home-activity-news > section article footer div:nth-child(2), #home-membership #home-membership-peer_posts article footer div:nth-child(2) {
+        text-align: right; }
+    .list-item footer ul, #home-activity .home-activity-content_list article footer ul, #home-activity #home-activity-news > section article footer ul, #home-membership #home-membership-peer_posts article footer ul {
+      margin-top: 15px;
+      width: auto;
+      text-align: right;
+      padding: 3.75px 0; }
+      .list-item footer ul li, #home-activity .home-activity-content_list article footer ul li, #home-activity #home-activity-news > section article footer ul li, #home-membership #home-membership-peer_posts article footer ul li {
+        display: inline-block;
+        padding-right: 7.5px;
+        font-size: 9px; }
+        .list-item footer ul li a, #home-activity .home-activity-content_list article footer ul li a, #home-activity #home-activity-news > section article footer ul li a, #home-membership #home-membership-peer_posts article footer ul li a {
+          color: #666; }
+          .list-item footer ul li a:hover, #home-activity .home-activity-content_list article footer ul li a:hover, #home-activity #home-activity-news > section article footer ul li a:hover, #home-membership #home-membership-peer_posts article footer ul li a:hover {
+            color: #222; }
 
 .action_button, #home-library #home-library-calls_to_action article a > button, #home-about_hic-newsletter .content input[type="submit"] {
   padding: 7.5px;
@@ -8430,21 +8447,21 @@ main > #microsite-header-image > section > h4 {
   .article-footer > div:last-child {
     text-align: right; }
   .article-footer ul {
-    padding: 7.5px 20px; }
+    padding: 7.5px 0; }
     .article-footer ul li {
       width: auto;
-      padding: 1px 4px;
+      padding: 2px 4px;
       margin-right: 7.5px;
       float: left;
-      background-color: #e67817;
+      background-color: #888;
       transition: background-color 0.2s ease-in-out, font-weight 0.2s ease-in-out; }
       .article-footer ul li a {
         color: white; }
       .article-footer ul li:hover {
-        background-color: #000;
-        font-weight: bold; }
+        background-color: #e67817; }
         .article-footer ul li:hover a {
-          text-decoration: none; }
+          text-decoration: none;
+          color: black; }
 
 article > a:hover {
   color: black;
@@ -8467,6 +8484,10 @@ article > a:hover {
 
 .tx-shw-2, #home-cover .description-calls_to_action ul.calls_to_action article a button {
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3); }
+
+a {
+  color: #000;
+  text-decoration: none !important; }
 
 #site_header > div nav, #site_header > div ul, #site_header > div li {
   height: 100%;
@@ -8639,7 +8660,7 @@ section.archive {
     z-index: -1;
     width: 100%;
     height: 100%;
-    filter: brightness(80%) contrast(70%); }
+    filter: brightness(90%) contrast(80%); }
   #home-cover .content,
   #home-cover .presentation,
   #home-cover .description-calls_to_action {
@@ -8656,7 +8677,7 @@ section.archive {
     padding-right: 0 !important; }
     #home-cover .description-calls_to_action .description {
       padding: 30px;
-      background-color: #000; }
+      background-color: #888; }
     #home-cover .description-calls_to_action ul.calls_to_action {
       text-align: center;
       margin: 0;
@@ -8677,16 +8698,29 @@ section.archive {
           display: inline-block;
           bottom: 0; }
 
-#home-menu ul {
-  margin-top: 30px; }
-#home-menu li {
-  padding: 15px;
-  text-align: center; }
-  @media screen and (min-width: 960px) {
-    #home-menu li {
-      width: 20%; } }
-  #home-menu li [image-frame] {
-    height: 90px; }
+#home-menu {
+  padding: 0;
+  background-color: #ddd; }
+  #home-menu li {
+    height: 300px;
+    padding: 30px;
+    text-align: center;
+    transition: background-color 0.4s ease-in-out; }
+    @media screen and (min-width: 960px) {
+      #home-menu li {
+        width: 20%; } }
+    #home-menu li [image-frame] {
+      height: 90px; }
+    #home-menu li:nth-child(1):hover {
+      background: #e7b17a; }
+    #home-menu li:nth-child(2):hover {
+      background: #eaa45d; }
+    #home-menu li:nth-child(3):hover {
+      background: #df9f4f; }
+    #home-menu li:nth-child(4):hover {
+      background: #ea8c18; }
+    #home-menu li:nth-child(5):hover {
+      background: #d08232; }
 
 #home-featured {
   padding-top: 30px; }
@@ -8759,18 +8793,27 @@ section.archive {
   padding-bottom: 15px; }
 #home-activity #home-activity-news footer {
   box-sizing: border-box; }
-#home-activity #home-activity-news .latest .h4 {
-  margin-top: 0 !important; }
-#home-activity #home-activity-news .latest footer {
-  text-align: left;
-  font-size: 10px;
-  color: #888;
-  padding-left: 0; }
-  #home-activity #home-activity-news .latest footer div {
-    width: 100%;
+#home-activity #home-activity-news h4 {
+  margin-bottom: 15px; }
+#home-activity #home-activity-news .latest {
+  padding: 0; }
+  #home-activity #home-activity-news .latest .h4 {
+    margin-top: 0 !important; }
+  #home-activity #home-activity-news .latest > div {
     padding: 0; }
-#home-activity #home-activity-news .latest [image-frame] {
-  height: 180px; }
+    #home-activity #home-activity-news .latest > div > * {
+      padding: 0 15px; }
+  #home-activity #home-activity-news .latest footer {
+    margin-top: 15px;
+    text-align: left;
+    font-size: 10px;
+    color: #888;
+    padding-left: 0; }
+    #home-activity #home-activity-news .latest footer div {
+      width: 100%;
+      padding: 0; }
+  #home-activity #home-activity-news .latest [image-frame] {
+    height: 180px; }
 #home-activity #home-activity-solidarity ul {
   padding: 0; }
   #home-activity #home-activity-solidarity ul article {

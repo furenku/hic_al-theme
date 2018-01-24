@@ -1,10 +1,16 @@
 #home-menu {
 
    @extend .container-fluid;
+
+   padding: 0;
+
+  background-color: #ddd;
+
    ul {
-      margin-top: $spacing;
+      // margin-top: $spacing;
    }
    li {
+
 
       @extend .col-xs-12;
 
@@ -12,7 +18,9 @@
          width: 20%;
       }
 
-      padding: $spacing / 2;
+
+      height: $spacing * 10;
+      padding: $spacing;
 
       text-align: center;
 
@@ -20,6 +28,31 @@
          height: $spacing * 3;
       }
 
-   }
+      // a {
+      //   transition: color 0.4s ease-in-out;
+      // }
+      // &:hover {
+      //   * { color: #ddd !important; }
+      // }
+
+      transition: background-color 0.4s ease-in-out;
+      
+      &:nth-child(1):hover {
+        background: #e7b17a;
+      }
+      &:nth-child(2):hover {
+        background: #eaa45d;
+      }
+      &:nth-child(3):hover {
+        background: #df9f4f;
+      }
+      &:nth-child(4):hover {
+        background: #ea8c18;
+      }
+      &:nth-child(5):hover {
+        background: #d08232;
+      }
+
+	  }
 
 }

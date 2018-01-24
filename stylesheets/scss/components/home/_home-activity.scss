@@ -79,7 +79,14 @@
       }
     }
 
+    h4 {
+      margin-bottom: $spacing / 2;
+    }
+
     .latest {
+
+
+      padding: 0;
 
       .h4 {
         margin-top: 0 !important;
@@ -90,7 +97,17 @@
         @extend .col-md-6;
       }
 
+      &>div {
+        padding: 0;
+
+        & > * {
+          padding: 0 $spacing / 2;
+        }
+      }
+
       footer {
+
+        margin-top: $spacing / 2;
 
         text-align: left;
         font-size: $font-xs;
