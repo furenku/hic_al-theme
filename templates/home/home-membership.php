@@ -21,27 +21,25 @@ $membership_invitation_page = 'Registro';
 
      <section id="home-membership-space">
 
-        <h2>
-           <?php echo apply_filters('the_title',$page->post_title); ?>
-        </h2>
 
-        <div class="map" image-frame="">
+        <h3>
+           <?php echo apply_filters('the_title',$page->post_title); ?>
+        </h3>
+
+        <div class="image" image-frame="">
            <?php echo get_the_post_thumbnail($page->ID,'medium'); ?>
         </div>
 
-        <div class="text">
-           <?php echo apply_filters('the_excerpt',$page->post_excerpt); ?>
+        <div class="text" v-center>
+           <div>
+             <?php echo apply_filters('the_excerpt',$page->post_excerpt); ?>
+           </div>
         </div>
 
         <footer>
           <a href="#">
              <button type="button" name="button" class="more_link_button">
                 Acceder al <b>Espacio de Miembros</b>
-             </button>
-          </a>
-          <a href="#">
-             <button type="button" name="button" class="more_link_button">
-                Crear Cuenta
              </button>
           </a>
         </footer>
@@ -51,9 +49,9 @@ $membership_invitation_page = 'Registro';
      <?php $page = get_page_by_title($membership_hic_page); ?>
 
      <section id="home-membership-hic">
-        <h2>
+        <h3>
            <?php echo apply_filters('the_title',$page->post_title); ?>
-        </h2>
+        </h3>
 
         <div image-frame="">
            <?php echo get_the_post_thumbnail($page->ID,'medium'); ?>
@@ -72,9 +70,9 @@ $membership_invitation_page = 'Registro';
 
    <section id="home-membership-peer_posts">
 
-      <h2>
+      <h3>
          La palabra de miembr@s y amig@s
-      </h2>
+      </h3>
 
       <ul>
 
@@ -82,7 +80,7 @@ $membership_invitation_page = 'Registro';
          $q = new WP_Query(array(
             'post_type' => array('post'),
             // 'usertype?' => array('memberr'),
-            'posts_per_page' => 3
+            'posts_per_page' => 5
          )
          );
          if( $q->have_posts() ) :
@@ -95,14 +93,21 @@ $membership_invitation_page = 'Registro';
 
                   <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
 
-                     <h5>
-                        <?php echo get_the_title( $id ); ?>
-                     </h5>
+                    <div image-frame>
+                      <?php echo get_the_post_thumbnail(get_the_ID()); ?>
+                    </div>
 
-                     <p>
-                        <?php echo get_the_excerpt( $id ); ?>
-                     </p>
+                    <div>
 
+                       <h5>
+                          <?php echo apply_filters('the_title', get_the_title( $id )); ?>
+                       </h5>
+
+                       <p>
+                          <?php echo apply_filters('the_excerpt', wp_trim_words(get_the_excerpt( $id ),22)); ?>
+                       </p>
+
+                    </div>
                   </a>
 
                   <?php article_footer(); ?>
@@ -119,35 +124,48 @@ $membership_invitation_page = 'Registro';
 
       </ul>
 
+      <footer>
+        <a href="#">
+           <button type="button" name="button" class="more_link_button">
+              Ver más <b>Contenidos de Miembros</b>
+           </button>
+        </a>
+      </footer>
+
    </section>
 
    <?php $page = get_page_by_title($membership_invitation_page); ?>
 
-   <section id="home-membership-member_invitation">
-
+   <section id="home-membership-member_invitation" v-center>
+     <!--
       <div image-frame="">
          <?php echo get_the_post_thumbnail($page->ID,'medium'); ?>
       </div>
+    -->
 
 
       <div class="text">
 
-         <h3>
+         <h2>
             <?php echo apply_filters('the_title',$page->post_title); ?>
+         </h2>
+
+         <h3>
+            ¿Cómo ser miembro de HIC?
          </h3>
 
-         <h5>
-            ¿Cómo ser miembro de HIC?
-         </h5>
+         <div class="excerpt">
+           <?php echo apply_filters('the_excerpt',$page->post_excerpt); ?>
+         </div>
 
-         <?php echo apply_filters('the_excerpt',$page->post_excerpt); ?>
+         <footer>
+           <a href="<?php echo get_the_permalink($page->ID); ?>">
+             <button>
+               Registra tu Organización
+             </button>
+           </a>
 
-         <a href="<?php echo get_the_permalink($page->ID); ?>">
-           <button>
-             Registra tu Organización
-           </button>
-         </a>
-
+         </footer>
       </div>
 
    </section>

@@ -34,10 +34,15 @@
     padding: $spacing / 3;
   }
 
+  input + label {
+    background-color: #ddd;
+  }
   input:checked + label {
     background-color: #fa0;
   }
 
-
+  input[type=submit] {
+    @extend .button-action;
+  }
 
 }

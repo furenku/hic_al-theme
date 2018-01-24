@@ -51,9 +51,9 @@
 <div class="row row-eq-height">
 
 <section id="home-about_hic-coalition">
-   <h3>
+   <h4>
       La coalición
-   </h3>
+   </h4>
    <ul>
 
       <?php
@@ -69,14 +69,14 @@
       </li>
 
    <?php endforeach; ?>
-</ul>
+  </ul>
 </section>
 
 <section id="home-about_hic-structures">
-   <h3>
+   <h4>
       Estructuras
-   </h3>
-   <div>
+   </h4>
+   <div class="content">
       <?php
       $page = get_page_by_title("Estructuras");
       echo apply_filters('the_content', $page->post_content);
@@ -106,18 +106,15 @@
          $q->the_post();
          ?>
          <article>
-            <a href="">
+
+            <a href="#">
                <h5>
                   <?php echo apply_filters('the_title', get_the_title()); ?>
-
                </h5>
-               <span class="place">
-                  <?php echo get_post_meta(get_the_ID(),'content-place-country',true); ?>,
-               </span>
-               <span class="date">
-                  <?php echo get_the_date('d \d\e F\, Y',get_the_ID()); ?>
-               </span>
+
+               <?php article_footer(); ?>
             </a>
+
          </article>
 
          <?php
@@ -147,9 +144,12 @@
       <?php echo apply_filters('the_title',get_the_title($page->ID)); ?>
    </h4>
 
-  <section class="content" vcenter>
-       <?php echo apply_filters('the_excerpt',get_the_excerpt($page->ID)); ?>
-    
+  <section class="content" v-center>
+
+       <div>
+         <?php echo apply_filters('the_excerpt',get_the_excerpt($page->ID)); ?>
+       </div>
+
   </section>
 
    <footer>

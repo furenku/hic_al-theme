@@ -1,23 +1,30 @@
-#home-working_groups-list {
+#home-working_groups {
 
-   li {
+  padding-left: 0;
+  padding-right: 0;
 
-      @extend .col-xs-12;
-      @extend .col-md-4;
+  #home-working_groups-list {
 
-      @media screen and (min-width:1024px)
-      {
-        width: 20%;
-      }
+     li {
 
-      padding: $spacing * 1;
+        @extend .col-xs-12;
+        @extend .col-md-4;
 
-      text-align: center;
+        @media screen and (min-width:1024px)
+        {
+          width: 20%;
+        }
 
-      [image-frame] {
-        height: $spacing * 4;
-      }
+        padding: $spacing * 1;
 
-   }
+        text-align: center;
+
+        [image-frame] {
+          height: $spacing * 4;
+        }
+
+     }
+
+  }
 
 }

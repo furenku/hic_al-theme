@@ -76,11 +76,11 @@ function post_type_list_box( $post_type, $args = array() ) {
 
 function post_type_list( $post_type, $args = array() ) {
 
-   if( array_key_exists('number',$args) ) {
-      $post_number = $args['number'];
-   } else {
-      $post_number = 3;
-   }
+  $post_number = 4;
+  if( $args['number'] ) {
+     $post_number = $args['number'];
+  }
+
 
    $exclude = array();
    if( array_key_exists('exclude',$args) ) {
@@ -203,6 +203,8 @@ function list_item( $id, $class ) {
 
    <article class="<?php echo $class ?>">
 
+     <!-- <a href="#"> -->
+
       <div image-frame="">
          <?php echo get_the_post_thumbnail( $id, 'large' ); ?>
       </div>
@@ -213,7 +215,7 @@ function list_item( $id, $class ) {
             <?php echo wp_trim_words(get_the_title( $id ),18); ?>
          </h6>
 
-         <footer>
+         <footer class="article-footer">
 
             <?php if( get_post_type( $id ) == 'open_call' ) :  ?>
                <span class="open_call-deadline">
@@ -237,6 +239,8 @@ function list_item( $id, $class ) {
 
       </div>
 
+    <!-- </a> -->
+
    </article>
    <?php
 }
@@ -258,21 +262,39 @@ function article_footer() {
 
 function article_footer_contents() {
 
-  $categories = get_the_category(); ?>
+  $author = get_the_author_link();
 
-    <div class="author">
-       Publicado por
-       <?php echo get_the_author_link(); ?>
-   </div>
+  $country = get_post_meta(get_the_ID(),'content-place-country',true);
+  $date = get_the_date();
 
-   <div>
-      <span class="place">
-         <?php echo get_post_meta(get_the_ID(),'content-place-country',true); ?>
-      </span>
-      <span class="date">
-         , <?php echo get_the_date(); ?>
-      </span>
-   </div>
+  $categories = get_the_category();
+
+  ?>
+
+    <div class="info">
+      <?php if( $author && $author != "" ) : ?>
+      <div class="author">
+         Publicado por
+         <?php echo $author; ?>
+     </div>
+      <?php endif; ?>
+
+     <div class="place-date">
+
+        <?php if( $country && $country != "" ) : ?>
+            <span class="place">
+             <?php echo $country; ?>,
+           </span>
+        <?php endif; ?>
+
+        <?php if( $date && $date != "" ) : ?>
+          <span class="date">
+             <?php echo $date; ?>
+          </span>
+        <?php endif; ?>
+
+     </div>
+    </div>
 
      <ul class="categories">
 

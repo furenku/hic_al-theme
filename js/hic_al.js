@@ -7,6 +7,7 @@ $(document).ready(function(){
   vcenter($('#primary_menu-container nav > ul > li'))
   vcenter($('#home-cover .presentation'))
   vcenter($('[vcenter]'))
+  vcenter($('[v-center]'))
   // vcenter($('#form-container'))
 
 

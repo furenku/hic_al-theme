@@ -1,5 +1,8 @@
 #home-library{
 
+  padding-left: $spacing / 2;
+  padding-right: $spacing / 2;
+
    &>div>section {
       @extend .col-md-6;
       @extend .col-lg-3;
@@ -12,22 +15,37 @@
    @extend .row;
 
    ul {
+
       article {
-         @extend .col-xs-3;
+
+         @extend .col-xs-4;
+
          & > a > div {
+
            @extend .col-xs-8;
 
+           height: $spacing * 6.5;
+            position: relative;
+            
            footer {
-             font-size: $font-xs;
-             text-align: left;
-             padding: 0;
-             color: $neutral_medium;
+             // font-size: $font-xs;
+             // text-align: left;
+             padding: 0 $spacing / 2;
+             // color: $neutral_medium;
+             // position: relative;
            }
          }
 
          & > a > [image-frame] {
            @extend .col-xs-4;
-            height: $spacing * 5;
+            height: $spacing * 6;
+         }
+
+         .publication-info {
+           font-size: $font-s;
+           text-align: center;
+           height: $spacing * 2;
+
          }
       }
    }

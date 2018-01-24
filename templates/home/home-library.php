@@ -12,7 +12,7 @@
       <?php
       $q = new WP_Query(array(
         'post_type' => array('publication'),
-        'posts_per_page' => 4
+        'posts_per_page' => 3
       )
     );
     if( $q->have_posts() ) :
@@ -28,9 +28,30 @@
             </div>
 
             <div>
-              <h6>
+
+              <h5>
                 <?php echo apply_filters('the_title',get_the_title()); ?>
-              </h6>
+              </h5>
+
+              <div class="publication-info">
+
+                <div class="publication-author">
+
+                  <ul>
+                    <li>
+                      Nombre Autor 1
+                    </li>
+                    <li>
+                      Nombre Autor 2
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="publication-date">
+                  1999
+                </div>
+
+              </div>
 
               <?php article_footer(); ?>
 

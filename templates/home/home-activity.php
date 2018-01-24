@@ -11,6 +11,7 @@
          Noticias
       </h4>
 
+      <section class="latest-container">
       <?php
 
          // Noticia Principal
@@ -19,7 +20,7 @@
 
          $q = new WP_Query( array(
             'post_type'=>$post_type,
-            'posts_per_page' => 1,
+            'posts_per_page' => 2,
             'tax_query' => array(
                array(
                   'taxonomy' => 'site_hierarchy',
@@ -41,11 +42,11 @@
             <article class="latest <?php echo $post_type; ?>">
 
                <div>
+
                   <div image-frame>
                      <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
                   </div>
 
-                  <?php article_footer(); ?>
 
                </div>
 
@@ -61,6 +62,7 @@
 
                </div>
 
+               <?php article_footer(); ?>
 
             </article>
 
@@ -71,10 +73,12 @@
 
 
       $args = array(
-         'exclude' => array($exclude_post)
+         'exclude' => array($exclude_post),
+         'number'  => 5
       );
 
       ?>
+    </section>
 
       <section>
         <?php post_type_list('news_item', $args); ?>
@@ -94,7 +98,7 @@
           </h4>
 
           <?php
-          post_type_list('open_call',array('number'=>5));
+          post_type_list('open_call',array('number'=>4));
           ?>
 
           <footer>
@@ -114,7 +118,7 @@
           </h4>
 
           <?php
-          post_type_list('event',array('number'=>5));
+          post_type_list('event',array('number'=>4));
           ?>
 
           <footer>
@@ -164,6 +168,7 @@
                        <p>
                           <?php echo get_the_excerpt(); ?>
                        </p>
+<div class="button-container">
 
                        <a href="<?php echo get_post_meta( get_the_ID(),'call_to_action-url', true ); ?>">
                           <button>
@@ -171,6 +176,7 @@
                           </button>
                        </a>
 
+                     </div>
                        <?php article_footer(); ?>
 
 
