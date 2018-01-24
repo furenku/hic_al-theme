@@ -1,0 +1,43 @@
+#archive-searchform {
+
+  max-width: 25em;
+  // background-color: #000;
+
+  padding: $spacing;
+
+  text-align: center;
+
+  &, * {
+    color: #666;
+  }
+
+  input {
+    width: 100%;
+    max-width:15em;
+
+    border-radius: 0;
+    border: none;
+  }
+
+  label {
+    border: none;
+  }
+
+  .inlineSearch {
+    padding: $spacing / 4;
+  }
+
+  .checkbox-hidden {
+
+  }
+  .checkbox-label {
+    padding: $spacing / 3;
+  }
+
+  input:checked + label {
+    background-color: #fa0;
+  }
+
+
+
+}

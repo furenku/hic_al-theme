@@ -4,7 +4,7 @@ $membership_page = 'Membrecía';
 $membership_space_page = 'Espacio de miembros';
 $membership_hic_page = 'HIC en el mundo';
 $membership_contributions_page = 'La palabra de miembr@s y amig@s';
-$membership_invitation_page = '¿Cómo ser miembr@ de HIC?';
+$membership_invitation_page = 'Registro';
 
 
 ?>
@@ -37,6 +37,11 @@ $membership_invitation_page = '¿Cómo ser miembr@ de HIC?';
           <a href="#">
              <button type="button" name="button" class="more_link_button">
                 Acceder al <b>Espacio de Miembros</b>
+             </button>
+          </a>
+          <a href="#">
+             <button type="button" name="button" class="more_link_button">
+                Crear Cuenta
              </button>
           </a>
         </footer>
@@ -89,9 +94,15 @@ $membership_invitation_page = '¿Cómo ser miembr@ de HIC?';
                <article class="peer-post">
 
                   <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
+
                      <h5>
                         <?php echo get_the_title( $id ); ?>
                      </h5>
+
+                     <p>
+                        <?php echo get_the_excerpt( $id ); ?>
+                     </p>
+
                   </a>
 
                   <?php article_footer(); ?>
@@ -113,16 +124,29 @@ $membership_invitation_page = '¿Cómo ser miembr@ de HIC?';
    <?php $page = get_page_by_title($membership_invitation_page); ?>
 
    <section id="home-membership-member_invitation">
+
       <div image-frame="">
          <?php echo get_the_post_thumbnail($page->ID,'medium'); ?>
       </div>
 
+
       <div class="text">
+
          <h3>
             <?php echo apply_filters('the_title',$page->post_title); ?>
          </h3>
 
+         <h5>
+            ¿Cómo ser miembro de HIC?
+         </h5>
+
          <?php echo apply_filters('the_excerpt',$page->post_excerpt); ?>
+
+         <a href="<?php echo get_the_permalink($page->ID); ?>">
+           <button>
+             Registra tu Organización
+           </button>
+         </a>
 
       </div>
 

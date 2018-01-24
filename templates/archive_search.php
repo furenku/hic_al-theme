@@ -12,9 +12,11 @@ $categoryObjects = get_categories( array( "parent" => $parent ) );
 
 ?>
 
-<form id="searchform" class="row" action="<?php echo get_post_type_archive_link(); ?>">
+<form id="archive-searchform" class="row" action="<?php echo get_post_type_archive_link(); ?>">
 
-  <h4>Buscar</h4>
+  <h2>
+    Filtrar
+  </h2>
 
   <div class="form-section-label">
     <h5>Texto</h5>
@@ -68,9 +70,10 @@ $categoryObjects = get_categories( array( "parent" => $parent ) );
       <?php foreach ($categoryObjects as $category ): $cat_id = $category->cat_ID; ?>
         <!-- input[type=checkbox][cat_id=x][name=categories[]]{n} -->
         <li category="<?php echo $cat_id; ?>">
-          <input type="checkbox" value="<?php echo $cat_id; ?>" name="categories[]" <?php echo in_array( $cat_id, $categories ) ? 'checked' : ''; ?>>
+          <input type="checkbox" value="<?php echo $cat_id; ?>" name="categories[]" <?php echo in_array( $cat_id, $categories ) ? 'checked' : ''; ?> class="checkbox-hidden"/>
+          <label class="checkbox-label">
             <?php echo $category->name; ?>
-          </input>
+          </label>
         </li>
       <?php endforeach; ?>
     </ul>
@@ -86,9 +89,10 @@ $categoryObjects = get_categories( array( "parent" => $parent ) );
 
       <?php global $countries_posts; foreach ( $countries_posts as $country => $country_posts ): ?>
         <li country="<?php echo $country; ?>" posts="<?php echo json_encode($country_posts); ?>">
-          <input type="checkbox" value="<?php echo $country; ?>" name="countries[]" <?php echo in_array( $country, $countries ) ? 'checked' : ''; ?>>
+          <input type="checkbox" value="<?php echo $country; ?>" name="countries[]" <?php echo in_array( $country, $countries ) ? 'checked' : ''; ?> class="checkbox-hidden"/>
+          <label class="checkbox-label">
             <?php echo $country; ?> <span>(<span class="post_count"><?php echo count($country_posts); ?></span>)</span>
-          </input>
+          </label>
         </li>
       <?php endforeach; ?>
 

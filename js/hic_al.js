@@ -29,6 +29,8 @@ $(document).ready(function(){
 
   setup_microsite()
 
+  custom_toggles()
+
   console.log("HIC AL theme ready")
 
 })
@@ -192,5 +194,34 @@ function setup_microsite_map() {
     }).addTo(map);
 
   }
+
+}
+
+
+
+function custom_toggles() {
+
+
+  if( $('.checkbox-hidden').length > 0 ) {
+    $('.checkbox-hidden').hide()
+  }
+
+  $('.checkbox-label').click(function(){
+
+    if( ! $(this).prev().attr('checked') == true ) {
+
+      $(this).prev().attr('checked',true);
+      $(this).addClass('checked');
+
+    } else {
+
+      $(this).prev().attr('checked',false);
+      $(this).removeClass('checked');
+
+    }
+
+  })
+
+
 
 }

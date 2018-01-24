@@ -23,31 +23,33 @@ $coverImage_0 = wp_get_attachment_image_src( get_option('hic_al-cover-image-0'),
             </div>
 
             <div class="text" vcenter>
-               <h3>
+               <h1>
                   <?php echo get_option('hic_al-organization_title_1'); ?>
-               </h3>
-               <h4>
+               </h1>
+               <h2>
                   <?php echo get_option('hic_al-organization_title_2'); ?>
-               </h4>
+               </h2>
             </div>
 
          </section>
 
-         <section class="description">
-            <h3>
-               <?php echo get_option('hic_al-organization_subtitle'); ?>
-            </h3>
-               <p>
-                  <?php echo get_option('hic_al-organization_statement'); ?>
-               </p>
-         </section>
 
       </section>
 
 
-      <section class="calls_to_action">
+      <section class="description-calls_to_action">
 
-         <ul>
+        <section class="description">
+           <h3>
+              <?php echo get_option('hic_al-organization_subtitle'); ?>
+           </h3>
+              <p>
+                 <?php echo get_option('hic_al-organization_statement'); ?>
+              </p>
+        </section>
+
+
+         <ul class="calls_to_action">
             <?php
             $q = new WP_Query( array(
                'post_type'=>'call_to_action',
