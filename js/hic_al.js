@@ -189,8 +189,8 @@ function setup_microsite_map() {
   if( $('#microsite-cases-map').length > 0 ) {
 
     var map = L.map('microsite-cases-map').setView([0, 0], 1);
+    var markersDictionary = {}
 
-    var markersArray = []
     var markers = L.markerClusterGroup({
       maxClusterRadius: 30
     });
@@ -206,12 +206,33 @@ function setup_microsite_map() {
       var lat = $(this).attr('data-latitude');
       var lng = $(this).attr('data-longitude');
       var title = $(this).find('.title').html();
-      var marker =  L.marker([lat,lng]).addTo(map)
+      var post_id = $(this).attr('data-id');
+
+      PostMarker = L.Marker.extend({
+         post_id: post_id
+      });
+
+      var marker =  new PostMarker([lat,lng], { post_id: post_id }).addTo(map)
       .bindPopup( title )
       // .openPopup()
       markers.addLayer( marker );
 
-      markersArray.push( marker )
+      markersDictionary[post_id] = marker
+
+      marker.on('click', function(e) {
+
+        var clicked_post_id =  e.sourceTarget.options.post_id
+
+        var post = $('#post_list article[data-id='+clicked_post_id+']')
+
+        post.get(0).scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        })
+        post.addClass('active').siblings().removeClass('active')
+
+
+      })
 
     })
 
@@ -219,11 +240,33 @@ function setup_microsite_map() {
 
     // center map on markers:
 
-    var group = new L.featureGroup(markersArray);
+    var group = new L.featureGroup(Object.values( markersDictionary ));
 
     map.fitBounds(group.getBounds(), { padding: [20,20] });
 
+
+
+    $('#post_list .location_item').click(function(){
+
+      var markerId = $(this).attr('data-id');
+      map.setView(markersDictionary[ markerId ].getLatLng())
+
+      $(this).addClass('active')
+      .siblings().removeClass('active')
+
+      $(this).scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      })
+
+    })
+
+
+
   }
+
+
+
 
 }
 

@@ -15,11 +15,9 @@
 
   .publication {
 
-    height: auto;
 
-    // &:first-child {
-    //   padding-left: 0;
-    // }
+    position: relative;
+    height: auto;
 
     padding: 0 $spacing / 2 $spacing / 2 0 !important;
 
@@ -36,8 +34,9 @@
       background-color: #fff;
 
       @extend .bx-shw-1;
-      
+
     }
+
 
 
     h3, h4 {
@@ -49,26 +48,6 @@
       margin-bottom: $spacing / 2;
     }
 
-    &.featured {
-
-      @extend .col-xs-6;
-
-      .date {
-        margin-bottom: $spacing / 2;
-      }
-
-      [image-frame] {
-        @extend .col-xs-5;
-        height: $spacing * 6.5;
-        margin-bottom: $spacing / 4;
-      }
-      .excerpt {
-        @extend .col-xs-7;
-      }
-
-    }
-
-    position: relative;
 
     footer {
       @extend .col-xs-12;
@@ -86,6 +65,32 @@
         // padding: $spacing;
       }
     }
+
+
+
+    &.featured {
+
+      @extend .col-xs-6;
+
+      .date {
+        margin-bottom: $spacing / 2;
+      }
+
+      [image-frame] {
+        @extend .col-xs-5;
+        height: $spacing * 6.5;
+        margin-bottom: $spacing / 4;
+      }
+      .excerpt {
+        @extend .col-xs-7;
+        &, * {
+          font-size: $font-s;
+        }
+      }
+
+    }
+
+
 
   }
 

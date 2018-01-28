@@ -2,26 +2,96 @@
 
   &>section {
     &>footer {
-      text-align: center;
-      padding: $spacing / 2;
+      // text-align: center;
+      // padding: $spacing / 2;
       button {
         @extend .more_link_button;
       }
     }
   }
 
-  article {
-    .date {
-      text-align: center;
-      .d,.m {
-        @extend .col-xs-12;
+  article.event {
 
-      }
+    @extend .col-xs-12;
+    position: relative;
 
-      .d {
-        font-size: 40px;
+    a {
+      @extend .col-xs-12;
+      padding: 0;
+      height: auto;
+    }
+    header {
+      @extend .col-xs-12;
+      // display: block;
+      // padding: 0 $spacing / 4;
+      padding: 0;
+      h5 {
+        margin-top: 0;
       }
     }
+
+    footer {
+      // position: absolute;
+      @extend .col-xs-12;
+      bottom: 0;
+      padding: 0;
+
+      width: 100%;
+      height: $spacing * 2;
+    }
+
+    [image-frame] {
+      @extend .col-xs-4;
+      height: $spacing * 5;
+      // @extend .ratio-square;
+    }
+    .text {
+      @extend .col-xs-8;
+    }
+
+
+    .date-place {
+      @extend .col-xs-4;
+      padding: 0 !important;
+
+      &, * {
+        text-align: center;
+        padding: 0;
+      }
+
+      .date {
+
+        padding: 0;
+        // margin-bottom: $spacing / 8;
+        &,.d,.m {
+          @extend .col-xs-12;
+
+        }
+
+        .d {
+          font-size: 40px;
+          line-height: 1;
+        }
+        .m {
+          font-size: $font-s;
+          letter-spacing: 2px;
+        }
+      }
+      .place {
+        padding-top: $spacing / 2 !important;
+        font-size: $font-xs;
+      }
+    }
+    .excerpt {
+      @extend .col-xs-8;
+      padding: 0;
+      padding-right: $spacing / 2;
+      font-size: $font-s;
+    }
+
+
+
+
   }
 
   #microsite-events-list {
@@ -34,38 +104,42 @@
       overflow-y: auto;
       overflow-x: hidden;
     }
-    article.event {
 
-      header {
-        @extend .row;
+
+  }
+
+  #microsite-events-featured.event,
+  #microsite-meetings-list .event {
+    header {
+      // padding: 0 $spacing / 2;
+      h5 {
+        margin-top: $spacing / 2 !important;
+        padding: 0 $spacing / 2;
       }
-
-      [image-frame] {
-        @extend .col-xs-4;
-        @extend .ratio-square;
-      }
-      .text {
-        @extend .col-xs-8;
-
-        .date-place,
-        .excerpt {
-          @extend .col-xs-6;
-        }
-        .excerpt {
-          padding-top: 0;
-          padding-bottom: 0;
-        }
-
-
-      }
-
     }
 
+    header, .excerpt {
+      padding: 0;
+    }
 
   }
 
   #microsite-events-featured {
     @extend .col-xs-6;
+
+
+    [image-frame] {
+      height: auto;
+      @extend .col-xs-12;
+      @extend .ratio-16-9;
+    }
+
+    .date-place {
+      @extend .col-xs-3;
+    }
+    .excerpt {
+      @extend .col-xs-9;
+    }
   }
 
   #microsite-meetings-list article {
@@ -80,18 +154,21 @@
     }
 
     [image-frame] {
-      @extend .row;
+      @extend .col-xs-12;
       @extend .ratio-16-9;
     }
 
+    .text {
+      @extend .col-xs-12;
+    }
+
     .excerpt {
-      @extend .col-xs-8;
       padding-top: 0;
       padding-bottom: 0;
     }
 
     .date-place {
-      @extend .col-xs-4;
+      // @extend .col-xs-4;
     }
 
   }
@@ -102,6 +179,10 @@
 
     article {
       @extend .col-md-3;
+
+      [image-frame] {
+        @extend .col-xs-12;
+      }
     }
 
   }

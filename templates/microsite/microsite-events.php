@@ -15,17 +15,14 @@
             </div>
             <div class="text">
               <header>
-                <h6 class="title">
+                <h5 class="title">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, modi excepturi.
-                </h6>
+                </h5>
               </header>
               <section class="excerpt">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt cumque eligendi recusandae impedit optio.</p>
               </section>
               <div class="date-place">
-                <div class="place">
-                  Lugar del Evento
-                </div>
                 <div class="date">
                   <span class="d">
                     17
@@ -33,6 +30,9 @@
                   <span class="m">
                     octubre
                   </span>
+                </div>
+                <div class="place">
+                  Lugar del Evento
                 </div>
               </div>
             </div>
@@ -56,34 +56,26 @@
 
   </section>
 
+  <article id="microsite-events-featured" class="event">
 
-  <article id="microsite-events-featured">
-
-
-        <article>
-
-          <a href="#">
+        <a href="#">
 
           <div image-frame>
             <img src="http://unsplash.it/300x300" alt="">
           </div>
 
           <header>
-            <h6 class="title">
+            <h5 class="title">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, modi excepturi.
-            </h6>
+            </h5>
           </header>
 
           <section class="excerpt">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, sapiente, in! Perferendis veritatis est itaque rerum eveniet, placeat maxime quaerat sit. Natus recusandae excepturi quis.
-            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis perspiciatis, dicta consequatur mollitia debitis quasi, nam fuga maiores.</p>
+            <p>Ullam repellendus, officia cumque nisi architecto! Molestiae ducimus repudiandae dolore ipsam accusamus veritatis illum eveniet sequi nostrum a.</p>
           </section>
 
           <div class="date-place">
-            <div class="place">
-              Lugar del Evento
-            </div>
             <div class="date">
               <span class="d">
                 17
@@ -92,17 +84,19 @@
                 octubre
               </span>
             </div>
+            <div class="place">
+              Lugar del Evento
+            </div>
           </div>
 
         </a>
 
-        </article>
-
-  </article>
-
+      </article>
 
 
     <section id="microsite-meetings-list">
+
+      <h3>Encuentros</h3>
 
       <ul>
         <?php for ($i=0; $i < 3; $i++) : ?>
@@ -115,9 +109,9 @@
               </div>
 
               <header>
-                <h6 class="title">
+                <h5 class="title">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, modi excepturi.
-                </h6>
+                </h5>
               </header>
 
               <section class="excerpt">
@@ -127,9 +121,6 @@
               </section>
 
               <div class="date-place">
-                <div class="place">
-                  Lugar del Evento
-                </div>
                 <div class="date">
                   <span class="d">
                     17
@@ -137,6 +128,9 @@
                   <span class="m">
                     octubre
                   </span>
+                </div>
+                <div class="place">
+                  Lugar del Evento
                 </div>
               </div>
 

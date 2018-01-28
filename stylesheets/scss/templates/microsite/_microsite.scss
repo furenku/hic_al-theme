@@ -129,14 +129,46 @@ footer {
   #microsite-cases-map,
   #post_list {
     float: left;
-    height: 70vh;
+    height: 50vh;
   }
 
   #microsite-cases-map {
-    width: 60%;
+
+    @extend .col-md-7;
+    @extend .col-lg-8;
+
   }
 
   #post_list {
-    width: 40%;
+
+    @extend .col-md-5;
+    @extend .col-lg-4;
+
+    overflow-y: auto;
+
+    article.location_item {
+
+      @extend .row;
+
+      padding: $spacing / 2 !important;
+      box-sizing: border-box;
+      display: block;
+      border-bottom: 1px solid #eee;
+
+      footer {
+        display: block;
+
+        @extend .row;
+
+      }
+
+
+      &.active {
+        background-color: $color_main;
+        * {
+          color: white;
+        }
+      }
+    }
   }
 }

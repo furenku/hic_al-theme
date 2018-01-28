@@ -57,6 +57,7 @@ if( have_posts() ) {
 
                    <article
                    class="location_item"
+                   data-id="<?php echo get_the_ID(); ?>"
                    data-latitude="<?php echo $latitude; ?>"
                    data-longitude="<?php echo $longitude; ?>"
                    >

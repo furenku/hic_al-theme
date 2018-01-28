@@ -7,9 +7,9 @@ get_header();
 
 get_template_part("templates/microsite/microsite-header");
 
-get_template_part("templates/microsite/microsite-intro");
-get_template_part("templates/microsite/microsite-dynamic_area");
-get_template_part("templates/microsite/microsite-menu-description");
+// get_template_part("templates/microsite/microsite-intro");
+// get_template_part("templates/microsite/microsite-dynamic_area");
+// get_template_part("templates/microsite/microsite-menu-description");
 
 ?>
 <div id="microsite-container">
@@ -18,9 +18,9 @@ get_template_part("templates/microsite/microsite-menu-description");
 
     <?php
     get_template_part("templates/microsite/microsite-events");
-    get_template_part("templates/microsite/microsite-publications");
-    get_template_part("templates/microsite/microsite-cases");
-    get_template_part("templates/microsite/microsite-members");
+    // get_template_part("templates/microsite/microsite-publications");
+    // get_template_part("templates/microsite/microsite-cases");
+    // get_template_part("templates/microsite/microsite-members");
     ?>
 
   </section>
