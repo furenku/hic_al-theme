@@ -118,3 +118,25 @@ footer {
     font-size: $font-xs;
   }
 }
+
+
+
+
+
+
+#single-microsite {
+
+  #microsite-cases-map,
+  #post_list {
+    float: left;
+    height: 70vh;
+  }
+
+  #microsite-cases-map {
+    width: 60%;
+  }
+
+  #post_list {
+    width: 40%;
+  }
+}

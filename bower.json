@@ -20,6 +20,8 @@
     "imgLiquid": "^0.9.944",
     "isotope": "^3.0.4",
     "bootstrap-datepicker": "^1.7.1",
-    "leaflet": "^1.3.1"
+    "leaflet": "^1.3.1",
+    "install": "^1.0.4",
+    "leaflet.markercluster": "^1.3.0"
   }
 }

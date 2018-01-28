@@ -9219,4 +9219,13 @@ section.archive {
 footer .place {
   font-size: 10px; }
 
+#single-microsite #microsite-cases-map,
+#single-microsite #post_list {
+  float: left;
+  height: 70vh; }
+#single-microsite #microsite-cases-map {
+  width: 60%; }
+#single-microsite #post_list {
+  width: 40%; }
+
 /*# sourceMappingURL=hic_al.css.map */

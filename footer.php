@@ -23,15 +23,16 @@ $legal_info = get_option('hic_al-legal_info');
 
 </footer>
 
-<?php $themeDir = get_stylesheet_directory_uri() . "/"; ?>
+<?php $themeDir = get_stylesheet_directory_uri(); ?>
 
-<script src="<?php echo $themeDir; ?>bower_components/jquery/dist/jquery.js"></script>
-<script src="<?php echo $themeDir; ?>bower_components/what-input/dist/what-input.js"></script>
-<script src="<?php echo $themeDir; ?>bower_components/isotope/dist/isotope.pkgd.min.js"></script>
-<script src="<?php echo $themeDir; ?>bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<script src="<?php echo $themeDir; ?>bower_components/imgLiquid/js/imgLiquid-min.js"></script>
-<script src="<?php echo $themeDir; ?>bower_components/leaflet/dist/leaflet.js"></script>
-<script src="<?php echo $themeDir; ?>js/hic_al.js"></script>
+<script src="<?php echo $themeDir; ?>/bower_components/jquery/dist/jquery.js"></script>
+<script src="<?php echo $themeDir; ?>/bower_components/what-input/dist/what-input.js"></script>
+<script src="<?php echo $themeDir; ?>/bower_components/isotope/dist/isotope.pkgd.min.js"></script>
+<script src="<?php echo $themeDir; ?>/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="<?php echo $themeDir; ?>/bower_components/imgLiquid/js/imgLiquid-min.js"></script>
+<script src="<?php echo $themeDir; ?>/bower_components/leaflet/dist/leaflet.js"></script>
+<script src="<?php echo $themeDir; ?>/bower_components/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+<script src="<?php echo $themeDir; ?>/js/hic_al.js"></script>
 
 <?php wp_footer(); ?>
 

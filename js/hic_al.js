@@ -188,11 +188,40 @@ function setup_microsite_map() {
 
   if( $('#microsite-cases-map').length > 0 ) {
 
-    var map = L.map('microsite-cases-map').setView([51.505, -0.09], 13);
+    var map = L.map('microsite-cases-map').setView([0, 0], 1);
+
+    var markersArray = []
+    var markers = L.markerClusterGroup({
+      maxClusterRadius: 30
+    });
 
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         // attribution: ''
     }).addTo(map);
+
+
+
+    $('.location_list .location_item').each(function(){
+
+      var lat = $(this).attr('data-latitude');
+      var lng = $(this).attr('data-longitude');
+      var title = $(this).find('.title').html();
+      var marker =  L.marker([lat,lng]).addTo(map)
+      .bindPopup( title )
+      // .openPopup()
+      markers.addLayer( marker );
+
+      markersArray.push( marker )
+
+    })
+
+    map.addLayer(markers);
+
+    // center map on markers:
+
+    var group = new L.featureGroup(markersArray);
+
+    map.fitBounds(group.getBounds(), { padding: [20,20] });
 
   }
 

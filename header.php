@@ -16,6 +16,8 @@
     <link href="<?php echo get_stylesheet_directory_uri(); ?>/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet">
 
     <link href="<?php echo get_stylesheet_directory_uri(); ?>/bower_components/leaflet/dist/leaflet.css" rel="stylesheet">
+    <link href="<?php echo get_stylesheet_directory_uri(); ?>/bower_components/leaflet.markercluster/dist/MarkerCluster.css" rel="stylesheet">
+    <link href="<?php echo get_stylesheet_directory_uri(); ?>/bower_components/leaflet.markercluster/dist/MarkerCluster.Default.css" rel="stylesheet">
 
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/stylesheets/css/hic_al.css">
 
