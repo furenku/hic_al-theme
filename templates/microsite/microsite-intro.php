@@ -2,7 +2,7 @@
 global $microsite_id;
 ?>
 
-<section id="microsite-intro">
+<section id="microsite-intro" class="row row-eq-height">
 
   <div class="text">
 

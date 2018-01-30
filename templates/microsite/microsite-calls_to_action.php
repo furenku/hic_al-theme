@@ -1,4 +1,5 @@
-<section id="microsite-calls_to_action">
+<section id="microsite-calls_to_action" v-center>
+  
   <?php for ($i=0; $i<2; $i++): ?>
 
   <article class="call-to-action">

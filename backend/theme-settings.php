@@ -44,6 +44,11 @@ function hic_al_theme_settings() {
 	add_settings_field("hic_al-url-youtube", "", "hic_al-url-youtube", "hic_al_options_page");
 	add_settings_field("hic_al-url-flickr", "", "hic_al-url-flickr", "hic_al_options_page");
 
+	add_settings_field("hic_al-color-0", "", "hic_al-color-0", "hic_al_options_page");
+	add_settings_field("hic_al-color-1", "", "hic_al-color-1", "hic_al_options_page");
+	add_settings_field("hic_al-color-2", "", "hic_al-color-2", "hic_al_options_page");
+	add_settings_field("hic_al-color-3", "", "hic_al-color-3", "hic_al_options_page");
+
 
 
 
@@ -72,6 +77,12 @@ function hic_al_theme_settings() {
 	register_setting( 'hic_al_options_page-grp', 'hic_al-url-twitter');
 	register_setting( 'hic_al_options_page-grp', 'hic_al-url-youtube');
 	register_setting( 'hic_al_options_page-grp', 'hic_al-url-flickr');
+
+	register_setting( 'hic_al_options_page-grp', 'hic_al-color-0');
+	register_setting( 'hic_al_options_page-grp', 'hic_al-color-1');
+	register_setting( 'hic_al_options_page-grp', 'hic_al-color-2');
+	register_setting( 'hic_al_options_page-grp', 'hic_al-color-3');
+
 }
 
 
@@ -172,6 +183,25 @@ function hic_al_options_page() {
 			<div class="row">
 				<label for="hic_al-url-flickr">Flickr</label>
 				<input type="url" name="hic_al-url-flickr" id="hic_al-url-flickr" value="<?php echo get_option("hic_al-url-flickr"); ?>"/>
+			</div>
+
+			<h3>Colores</h3>
+
+			<div class="row">
+				<label for="hic_al-url-color-0">Color 1</label>
+				<input type="url" name="hic_al-color-0" id="hic_al-color-0" value="<?php echo get_option("hic_al-color-0"); ?>"/>
+			</div>
+			<div class="row">
+				<label for="hic_al-color-1">Color 2</label>
+				<input type="url" name="hic_al-color-1" id="hic_al-color-1" value="<?php echo get_option("hic_al-color-1"); ?>"/>
+			</div>
+			<div class="row">
+				<label for="hic_al-url-color-2">Color 3</label>
+				<input type="url" name="hic_al-color-2" id="hic_al-color-2" value="<?php echo get_option("hic_al-color-2"); ?>"/>
+			</div>
+			<div class="row">
+				<label for="hic_al-color-3">Color 4</label>
+				<input type="url" name="hic_al-color-3" id="hic_al-color-3" value="<?php echo get_option("hic_al-color-3"); ?>"/>
 			</div>
 
 			<?php

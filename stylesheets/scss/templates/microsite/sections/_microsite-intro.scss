@@ -7,9 +7,18 @@
 
   #microsite-calls_to_action {
 
+    min-height: 35vh;
+
     article {
       @extend .col-xs-6;
+      height: auto;
+
+      button {
+        @extend .button-action;
+      }
     }
+
+    // height: 100%;
 
   }
 }

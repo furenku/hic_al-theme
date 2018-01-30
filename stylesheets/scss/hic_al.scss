@@ -10,6 +10,15 @@ $spacing: 30px;
 
 @import "components/hic_al-shared";
 
+
+
+@import "components/dynamic/text-box";
+@import "components/dynamic/image-box";
+@import "components/dynamic/embed-box";
+
+
+
+@import "components/home/home-about_hic";
 @import "components/hic_al-header";
 @import "components/hic_al-footer";
 
@@ -25,6 +34,7 @@ $spacing: 30px;
 @import "components/home/home-working_groups";
 @import "components/home/home-library";
 @import "components/home/home-about_hic";
+
 
 @import "templates/microsite/microsite";
 

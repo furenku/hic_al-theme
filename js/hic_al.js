@@ -6,6 +6,7 @@ $(document).ready(function(){
   vcenter($('#secondary_menu-container nav ul li'))
   vcenter($('#primary_menu-container nav > ul > li'))
   vcenter($('#home-cover .presentation'))
+  vcenter($('#microsite-calls_to_action'))
   vcenter($('[vcenter]'))
   vcenter($('[v-center]'))
   // vcenter($('#form-container'))

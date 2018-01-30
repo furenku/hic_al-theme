@@ -134,21 +134,23 @@ footer {
 
   #microsite-cases-map {
 
-    @extend .col-md-7;
-    @extend .col-lg-8;
+    @extend .col-md-4;
+    // @extend .col-md-7;
+    // @extend .col-lg-8;
 
   }
 
   #post_list {
 
-    @extend .col-md-5;
-    @extend .col-lg-4;
+    @extend .col-md-8;
+    // @extend .col-md-5;
+    // @extend .col-lg-4;
 
     overflow-y: auto;
 
     article.location_item {
 
-      @extend .row;
+      @extend .col-xs-4;
 
       padding: $spacing / 2 !important;
       box-sizing: border-box;

@@ -2,10 +2,10 @@ $font-xxs: 9px;
 $font-xs: 10px;
 $font-s: 12px;
 $font-m: 15px;
-$font-l: 18px;
-$font-xl: 23px;
-$font-xxl: 30px;
-$font-xxxl: 40px;
+$font-l: 23px;
+$font-xl: 28px;
+$font-xxl: 35px;
+$font-xxxl: 45px;
 
 
 
@@ -420,3 +420,19 @@ a {
   color: #000;
   text-decoration: none !important;
 }
+
+
+
+
+
+
+/* typography */
+
+.font-xxs { font-size: $font-xxs; }
+.font-xs { font-size: $font-xs; }
+.font-s { font-size: $font-s; }
+.font-m { font-size: $font-m; }
+.font-l { font-size: $font-l; }
+.font-xl { font-size: $font-xl; }
+.font-xxl { font-size: $font-xxl; }
+.font-xxxl { font-size: $font-xxxl; }
