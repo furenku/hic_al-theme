@@ -4,7 +4,7 @@
 embed_code
 */
 
-if( $embed_code ) :
+if( $embed ) :
 
   $attributes = array();
 
@@ -18,7 +18,7 @@ if( $embed_code ) :
 
   <div class="embed-box">
 
-    <?php echo $embed_code; ?>
+    <?php echo $embed; ?>
 
   </div>
 

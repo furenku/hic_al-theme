@@ -1,0 +1,48 @@
+.calls_to_action.dynamic_component {
+
+
+  ul {
+    opacity: 0;
+    width: 100%;
+    display: inline-block;
+    height: auto;
+  }
+  article {
+    @extend .col-md-6;
+    text-align: center;
+    position: relative;
+    height: auto;
+    min-height: 30vh;
+    @media screen and (min-height: 500px ) {
+
+      min-height: 15vh;
+
+    }
+    bottom: 0;
+    // height: 30vh;
+
+    &>*{
+      position: absolute;
+      left: 0;
+    }
+
+    h4 {
+      width: 100%;
+      bottom: $spacing * 1.5;
+      text-align: center;
+    }
+
+    a {
+      width: 100%;
+      display: inline-block;
+      bottom: 0;
+
+      button {
+        @extend .button-action;
+        @extend .bx-shw-2;
+      }
+
+    }
+  }
+
+}

@@ -34,6 +34,9 @@ $legal_info = get_option('hic_al-legal_info');
 <script src="<?php echo $themeDir; ?>/bower_components/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
 <script src="<?php echo $themeDir; ?>/js/hic_al.js"></script>
 
+<script src="<?php echo $themeDir; ?>/js/components/text-box.js"></script>
+<script src="<?php echo $themeDir; ?>/js/components/calls-to-action.js"></script>
+
 <?php wp_footer(); ?>
 
 </body>

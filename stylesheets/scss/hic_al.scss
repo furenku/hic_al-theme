@@ -3,6 +3,8 @@
 
 $spacing: 30px;
 
+$component_min_height: 35vh;
+
 @import "reset";
 @import "colores";
 
@@ -12,9 +14,12 @@ $spacing: 30px;
 
 
 
+@import "components/dynamic/shared";
 @import "components/dynamic/text-box";
 @import "components/dynamic/image-box";
 @import "components/dynamic/embed-box";
+
+@import "components/dynamic/calls-to-action";
 
 
 

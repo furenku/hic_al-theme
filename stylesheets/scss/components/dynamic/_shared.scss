@@ -1,0 +1,14 @@
+.dynamic-content-area {
+
+  height: 65vh;
+  overflow-y: auto;
+  overflow-x: visible;
+  padding: 0;
+}
+
+
+.dynamic_component {
+  min-height: $component_min_height;
+  height: 100%;
+  padding: 0;
+}

@@ -110,6 +110,12 @@ function vcenter(contenedores){
       paddingTop: distanciaParaCentrar
     })
 
+    hijos.css({
+      opacity:0
+    }).animate({
+      opacity:1
+    })
+
   })
 }
 
