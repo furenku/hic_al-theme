@@ -5,6 +5,7 @@ $(document).ready(function(){
   // vcenter($('[vcenter]'))
   vcenter($('#secondary_menu-container nav ul li'))
   vcenter($('#primary_menu-container nav > ul > li'))
+  vcenter($('.site-menu li'))
   vcenter($('.description-calls_to_action'))
   vcenter($('#home-cover .presentation'))
   vcenter($('#microsite-calls_to_action'))
