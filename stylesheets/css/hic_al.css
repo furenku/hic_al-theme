@@ -8500,6 +8500,10 @@ a {
 .font-xxxl {
   font-size: 45px; }
 
+.site-menu li a {
+  display: block;
+  height: auto; }
+
 .dynamic-content-area {
   height: 65vh;
   overflow-y: auto;
