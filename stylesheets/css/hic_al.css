@@ -8732,7 +8732,15 @@ a {
     #primary_menu-container #form-container form input, #primary_menu-container #form-container form button {
       display: inline-block;
       margin: 0;
-      height: 30px; }
+      height: 30px;
+      border: none;
+      border-radius: 0; }
+    #primary_menu-container #form-container form input {
+      background-color: #ddd;
+      color: #333; }
+    #primary_menu-container #form-container form button {
+      background-color: #222;
+      color: #ddd; }
   #primary_menu-container #social_media_links ul {
     width: 100%; }
   #primary_menu-container #social_media_links a i {

@@ -1,4 +1,4 @@
-<section id="home-working_groups">
+<section id="home-working_groups" data-scroll-id="iniciativas_y_grupos">
 
    <h3>
       Iniciativas y Grupos

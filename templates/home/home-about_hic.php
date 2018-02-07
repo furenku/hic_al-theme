@@ -1,4 +1,4 @@
-<section id="home-about_hic">
+<section id="home-about_hic" data-scroll-id="acerca_de_hic">
 
    <h1>
       About HIC

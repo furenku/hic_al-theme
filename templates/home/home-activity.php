@@ -1,9 +1,9 @@
-<h3>
-  Actividad Reciente
-</h3>
 
-<section id="home-activity">
+<section id="home-activity" data-scroll-id="actividad_reciente">
 
+  <h3>
+    Actividad Reciente
+  </h3>
 
    <section id="home-activity-news">
 

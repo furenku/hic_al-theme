@@ -9,7 +9,7 @@ $membership_invitation_page = 'Registro';
 
 ?>
 
-<section id="home-membership">
+<section id="home-membership" data-scroll-id="membrecia">
 
    <h3>
       <?php echo apply_filters('the_title',get_page_by_title($membership_page)->post_title); ?>

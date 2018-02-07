@@ -225,14 +225,22 @@
             display: inline-block;
             margin: 0;
             height: $spacing;
+
+            border: none;
+            border-radius: 0;
          }
 
          input {
             @extend .col-xs-9;
+            background-color: $neutral_lighter;
+            color: $neutral_darker;
          }
 
          button {
 
+           background-color: $neutral_darkest;
+           color: $neutral_lighter;
+           
             @extend .col-xs-3;
 
             i {

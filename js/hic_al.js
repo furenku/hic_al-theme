@@ -28,6 +28,8 @@ $(document).ready(function(){
     // }
   })
 
+  site_menus()
+
   setup_datepickers()
 
   setup_microsite()
@@ -304,5 +306,46 @@ function custom_toggles() {
   })
 
 
+
+}
+
+
+
+
+function site_menus() {
+
+
+  $('.site-menu li a').click(function(){
+
+    var hash = $(this).attr('data-target')
+
+    scrollTo( $('[data-scroll-id='+hash+']'), $('html,body') )
+
+    return false
+
+  })
+
+}
+
+
+function scrollTo( target, parent ) {
+
+  // $('#main-header nav').removeClass('scroll-spy')
+
+  var targetScroll = target.offset().top
+	var parentTop  = parent.offset().top
+	var headerHeight  = 0
+	// var headerHeight  = $('#main-header').height()
+	var currScroll = parent.scrollTop()
+	var targetY = parentTop + targetScroll - headerHeight
+
+	parent.stop().animate({
+		scrollTop: targetY
+	}, 1000, function(){
+
+    // $('#main-header nav').addClass('scroll-spy')
+    // $('#main-header nav li').removeClass('scrolling')
+
+  })
 
 }
