@@ -49,10 +49,15 @@
             height: $spacing * 6;
          }
          .logo {
-            @extend .col-lg-5;
+            @extend .col-md-5;
          }
          .text {
-            @extend .col-lg-7;
+            @extend .col-md-7;
+         }
+         .text-2 {
+            @extend .col-xs-12;
+            margin-top: $spacing;
+            height: auto;
          }
          h2 {
             font-style: italic;
@@ -63,14 +68,16 @@
 
    .description-calls_to_action {
 
-     @extend .col-md-5;
+     @extend .col-md-4;
      @extend .col-md-offset-1;
+     // @extend .last;
 
+      height: 100%;
 
      .description {
         @extend .col-xs-12;
         padding: $spacing;
-        background-color: $neutral_medium;
+        // background-color: $neutral_medium;
      }
 
 
@@ -80,12 +87,15 @@
 
       ul.calls_to_action {
 
+        // height: 100%;
+
         text-align: center;
         // padding-top: $spacing * 4.5;
         margin: 0;
         padding: 0;
 
-         height: $spacing * 5;
+         height: $spacing * 4;
+
          display: block;
 
          article {

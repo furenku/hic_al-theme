@@ -8,7 +8,9 @@
     height: auto;
   }
   article {
+
     @extend .col-md-6;
+    
     text-align: center;
     position: relative;
     height: auto;
