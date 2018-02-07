@@ -8900,6 +8900,8 @@ section.archive {
         width: 20%; } }
     #home-menu li [image-frame] {
       height: 90px; }
+    #home-menu li h4 {
+      margin-bottom: 30px; }
     #home-menu li:nth-child(1):hover {
       background: #e7b17a; }
     #home-menu li:nth-child(2):hover {

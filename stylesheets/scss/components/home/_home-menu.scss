@@ -37,6 +37,7 @@
 
 
       height: $spacing * 11;
+
       padding-left: $spacing;
       padding-right: $spacing;
 
@@ -44,6 +45,10 @@
 
       [image-frame] {
          height: $spacing * 3;
+      }
+
+      h4 {
+        margin-bottom: $spacing;
       }
 
       // a {
