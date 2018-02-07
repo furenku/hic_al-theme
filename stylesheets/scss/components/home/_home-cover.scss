@@ -56,10 +56,10 @@
          }
          .text-2 {
             @extend .col-xs-12;
-            margin-top: $spacing * 2;
+            margin-top: $spacing;
 
             text-align: center;
-            
+
             height: auto;
          }
          h2 {
