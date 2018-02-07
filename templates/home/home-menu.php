@@ -14,6 +14,7 @@
       ?>
 
          <li>
+         <div>
             <a href="<?php echo get_the_permalink( $page->ID ); ?>" data-target="<?php echo $page_slug; ?>">
                <div image-frame="" contain="">
                   <?php echo get_the_post_thumbnail( $page->ID ); ?>
@@ -25,6 +26,7 @@
                   <?php echo get_the_excerpt( $page->ID ); ?>
                </p>
             </a>
+         </div>
          </li>
 
       <?php endforeach; ?>

@@ -44,6 +44,7 @@ $coverImage_0 = wp_get_attachment_image_src( get_option('hic_al-cover-image-0'),
 
       <section class="description-calls_to_action">
 
+
         <!--
         <section class="description">
              <h3>

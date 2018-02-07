@@ -8500,10 +8500,6 @@ a {
 .font-xxxl {
   font-size: 45px; }
 
-.site-menu li a {
-  display: block;
-  height: auto; }
-
 .dynamic-content-area {
   height: 65vh;
   overflow-y: auto;
@@ -8886,9 +8882,17 @@ section.archive {
 #home-menu {
   padding: 0;
   background-color: #ddd; }
+  #home-menu .site-menu li * > div {
+    display: block;
+    height: auto;
+    width: 100%; }
+  #home-menu .site-menu li a {
+    display: block;
+    height: auto; }
   #home-menu li {
-    height: 300px;
-    padding: 30px;
+    height: 330px;
+    padding-left: 30px;
+    padding-right: 30px;
     text-align: center;
     transition: background-color 0.4s ease-in-out; }
     @media screen and (min-width: 960px) {
