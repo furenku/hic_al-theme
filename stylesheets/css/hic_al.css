@@ -8849,7 +8849,8 @@ section.archive {
   #home-cover .presentation #branding > div {
     height: 180px; }
   #home-cover .presentation #branding .text-2 {
-    margin-top: 30px;
+    margin-top: 60px;
+    text-align: center;
     height: auto; }
   #home-cover .presentation #branding h2 {
     font-style: italic; }
