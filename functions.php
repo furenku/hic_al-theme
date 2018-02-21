@@ -274,7 +274,7 @@ function article_footer_contents() {
     <div class="info">
       <?php if( $author && $author != "" ) : ?>
       <div class="author">
-         Publicado por
+         Por: 
          <?php echo $author; ?>
      </div>
       <?php endif; ?>
