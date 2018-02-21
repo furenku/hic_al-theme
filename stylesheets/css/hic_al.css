@@ -8869,7 +8869,7 @@ section.archive {
       #home-cover .description-calls_to_action ul.calls_to_action article {
         height: 100%;
         display: inline-block;
-        padding: 0; }
+        padding: 0 60px; }
         #home-cover .description-calls_to_action ul.calls_to_action article > * {
           position: absolute;
           left: 0; }
@@ -9127,8 +9127,10 @@ section.archive {
     height: 180px; }
   #home-library #home-library-publications ul article .publication-info {
     font-size: 12px;
-    text-align: center;
+    text-align: left;
     height: 60px; }
+    #home-library #home-library-publications ul article .publication-info .publication-year {
+      margin-top: 15px; }
   #home-library #home-library-publications footer {
     text-align: center; }
   #home-library #home-library-media_content nav#multimedia > ul li {

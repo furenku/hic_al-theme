@@ -18,19 +18,25 @@
     if( $q->have_posts() ) :
       while ( $q->have_posts() ) :
         $q->the_post();
+
+        $title = apply_filters('the_title',get_the_title());
+        $image = get_the_post_thumbnail();
+        $publication_authors = get_post_meta( get_the_ID(), 'publication-info-authors', true );
+        $publication_year = date_i18n( 'Y', strtotime(get_post_meta( get_the_ID(), 'publication-info-date', true )));
+
         ?>
 
         <article>
 
           <a href="">
             <div image-frame>
-              <?php echo get_the_post_thumbnail(); ?>
+              <?php echo $image; ?>
             </div>
 
             <div>
 
               <h5>
-                <?php echo apply_filters('the_title',get_the_title()); ?>
+                <?php echo $title; ?>
               </h5>
 
               <div class="publication-info">
@@ -38,22 +44,22 @@
                 <div class="publication-author">
 
                   <ul>
+                    <?php foreach ($publication_authors as $publication_author) :  ?>
                     <li>
-                      Nombre Autor 1
+                      <?php echo $publication_author; ?>
                     </li>
-                    <li>
-                      Nombre Autor 2
-                    </li>
+                    <?php endforeach; ?>
+
                   </ul>
                 </div>
 
-                <div class="publication-date">
-                  1999
+                <div class="publication-year">
+                  <?php echo $publication_year; ?>
                 </div>
 
               </div>
 
-              <?php article_footer(); ?>
+              <?php #  article_footer(); ?>
 
             </div>
 
