@@ -77,11 +77,11 @@ $membership_invitation_page = 'Registro';
       <ul>
 
          <?php
-         $palabra_cat = get_term_by( 'slug', 'palabra-de-miembros-y-amigs', 'category' );
+         // $palabra_cat = get_term_by( 'slug', 'palabra-de-miembros-y-amigs', 'category' );
          $q = new WP_Q uery(array(
             'post_type' => array('post'),
             // 'usertype?' => array('memberr'),
-            'cat' => $palabra_cat => term_id,
+            // 'cat' => $palabra_cat => term_id,
             'posts_per_page' => 5
          )
          );
