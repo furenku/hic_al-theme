@@ -33,7 +33,7 @@ $(document).ready(function(){
 
   setup_datepickers()
 
-  setup_microsite()
+  setup_post_map()
 
   custom_toggles()
 
@@ -155,38 +155,38 @@ function setup_datepickers() {
 
 
 
-function setup_microsite() {
+function setup_post_map() {
 
-  setup_microsite_map()
-  setup_microsite_cases()
+  setup_post_map_map()
+  setup_post_map_posts()
 
 }
 
 
-function setup_microsite_cases() {
+function setup_post_map_posts() {
 
-    $('#microsite-cases-list .microsite-case a').click(function(e){
+    $('.post-map-post-list article a').click(function(e){
 
 
-      var microsite_case, microsite_cases_intro, microsite_cases_list, microsite_case_preview, close_button;
+      var post_map_post, post_map_posts_intro, post_map_posts_list, post_map_post_preview, close_button;
 
-      microsite_case = $(this)
-      microsite_cases_intro = $('#microsite-cases-container .content')
-      microsite_cases_list = $('#microsite-cases-list')
-      microsite_case_preview = $('#microsite-case-preview')
-      microsite_case_preview_content = $('#microsite-case-preview .content-preview')
-      close_button = $('#microsite-case-preview .close-button')
+      post_map_post = $(this)
+      post_map_posts_intro = $('.post-map-posts-container .content')
+      post_map_posts_list = $('.post-list')
+      post_map_post_preview = $('.post-map-post-preview')
+      post_map_post_preview_content = $('.post-map-post-preview .content-preview')
+      close_button = $('.post-map-post-preview .close-button')
 
-      microsite_case_preview_content.html( microsite_case.html() )
+      post_map_post_preview_content.html( post_map_post.html() )
 
-      microsite_cases_intro.hide()
-      microsite_cases_list.hide()
-      microsite_case_preview.show()
+      post_map_posts_intro.hide()
+      post_map_posts_list.hide()
+      post_map_post_preview.show()
 
       close_button.click(function(){
-        microsite_cases_intro.show()
-        microsite_cases_list.show()
-        microsite_case_preview.hide()
+        post_map_posts_intro.show()
+        post_map_posts_list.show()
+        post_map_post_preview.hide()
       })
 
       e.preventDefault()
@@ -195,11 +195,12 @@ function setup_microsite_cases() {
     })
 }
 
-function setup_microsite_map() {
 
-  if( $('#microsite-cases-map').length > 0 ) {
+function setup_post_map_map() {
 
-    var map = L.map('microsite-cases-map').setView([0, 0], 1);
+  if( $('#post-map-map').length > 0 ) {
+
+    var map = L.map('post-map-map').setView([0, 0], 1);
     var markersDictionary = {}
 
     var markers = L.markerClusterGroup({
@@ -234,12 +235,13 @@ function setup_microsite_map() {
 
         var clicked_post_id =  e.sourceTarget.options.post_id
 
-        var post = $('#post_list article[data-id='+clicked_post_id+']')
+        var post = $('.post-map .post_list article[data-id='+clicked_post_id+']')
 
         post.get(0).scrollIntoView({
           behavior: "smooth",
           block: "start"
         })
+
         post.addClass('active').siblings().removeClass('active')
 
 
@@ -257,18 +259,18 @@ function setup_microsite_map() {
 
 
 
-    $('#post_list .location_item').click(function(){
+    $('.post-map .post_list .location_item').click(function(){
 
       var markerId = $(this).attr('data-id');
       map.setView(markersDictionary[ markerId ].getLatLng())
 
       $(this).addClass('active')
       .siblings().removeClass('active')
-
-      $(this).scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      })
+      // 
+      // $(this)[0].scrollIntoView({
+      //   behavior: "smooth",
+      //   block: "start"
+      // })
 
     })
 
@@ -320,7 +322,7 @@ function site_menus() {
 
     var hash = $(this).attr('data-target')
 
-    scrollTo( $('[data-scroll-id='+hash+']'), $('html,body') )
+    scrollViewTo( $('[data-scroll-id='+hash+']'), $('html,body') )
 
     return false
 
@@ -329,7 +331,7 @@ function site_menus() {
 }
 
 
-function scrollTo( target, parent ) {
+function scrollViewTo( target, parent ) {
 
   // $('#main-header nav').removeClass('scroll-spy')
 

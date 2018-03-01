@@ -267,6 +267,10 @@ function article_footer_contents() {
   $country = get_post_meta(get_the_ID(),'content-place-country',true);
   $date = get_the_date();
 
+  if( ! $country ) {
+    $country = esc_attr( get_the_author_meta( 'country' ) );
+  }
+
   $categories = get_the_category();
 
   ?>
@@ -274,7 +278,7 @@ function article_footer_contents() {
     <div class="info">
       <?php if( $author && $author != "" ) : ?>
       <div class="author">
-         Por: 
+         Por:
          <?php echo $author; ?>
      </div>
       <?php endif; ?>

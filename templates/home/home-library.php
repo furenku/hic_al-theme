@@ -118,11 +118,14 @@
 
 
           <li>
-            <div image-frame>
+            <!-- <div image-frame>
               <?php echo get_the_post_thumbnail(); ?>
+            </div> -->
+            <div class="text-center font-m">
+              <i class="fa fa-dot-circle-o"></i>
             </div>
             <footer>
-              <h6>
+              <h6 class="text-center">
                 <?php echo get_the_terms(get_the_ID(),'media_content_type')[0]->name; ?>
               </h6>
             </footer>
@@ -138,7 +141,7 @@
   </nav>
 
   <nav id="redes">
-    <h5>
+    <h5 class="text-center">
       En redes:
     </h5>
     <ul>
@@ -148,7 +151,7 @@
           <i class="fa fa-dot-circle-o"></i>
 
           <h5>
-            Videos
+            Red Medios
           </h5>
         </li>
 

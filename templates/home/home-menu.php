@@ -5,6 +5,7 @@
 
       $pages = get_pages( array(
          'parent' => get_page_by_title("Mapa de Sitio")->ID,
+         'sort_column' => 'menu_order'
          // 'child_of'=>get_page_by_title("Mapa de Sitio")->ID,
       ));
 

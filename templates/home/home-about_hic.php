@@ -27,7 +27,7 @@
 
                <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
 
-                  <div image-frame="" contain="">
+                  <div image-frame contain>
                      <?php echo get_the_post_thumbnail(); ?>
                   </div>
 
@@ -98,7 +98,8 @@
       <?php
       $q = new WP_Query(array(
          'post_type' => array('document'),
-         'posts_per_page' => 3
+         'posts_per_page' => 3,
+
       )
    );
    if( $q->have_posts() ) :

@@ -20,7 +20,6 @@ if( ! $number ) {
 }
 
 
-
 if( true ) {
 
 
