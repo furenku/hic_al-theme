@@ -8265,7 +8265,7 @@ body, ul, li {
 
 .button-action, .calls_to_action.dynamic_component article a button, #archive-searchform input[type=submit], #home-cover .description-calls_to_action ul.calls_to_action article a button, #home-featured article > div > a button, #home-activity #home-activity-solidarity ul .button-container button, #home-membership #home-membership-member_invitation footer button, #microsite-intro #microsite-calls_to_action article button {
   width: 80%;
-  background-color: #e67817;
+  background-color: #ff6319;
   color: black;
   border: none;
   padding: 7.5px;
@@ -8299,8 +8299,8 @@ main > section > section {
     margin-top: 0;
     margin-bottom: 15px;
     padding: 7.5px;
-    background-color: #bbb;
-    color: #000;
+    background-color: #2b6901;
+    color: #fff;
     text-align: center; }
   main > section > section footer {
     text-align: center; }
@@ -8328,7 +8328,7 @@ main > section > section {
 .action_button, #home-about_hic-newsletter .content input[type="submit"], #home-library #home-library-calls_to_action article a > button {
   padding: 7.5px;
   border: none;
-  background-color: #000;
+  background-color: #993233;
   color: #fff;
   text-align: center; }
 
@@ -8411,8 +8411,9 @@ main > #microsite-members > section > h4,
 main > #microsite-header-image > section > h4,
 #single-microsite #post_list article.location_item main > footer > section > h4 {
   margin: 0;
-  padding: 7.5px;
-  background-color: #bbb;
+  padding: 7.5px 0;
+  background-color: #2b6901;
+  color: #fff;
   text-align: center; }
 
 .article-footer {
@@ -8457,7 +8458,7 @@ main > #microsite-header-image > section > h4,
       .article-footer ul li a {
         color: white; }
       .article-footer ul li:hover {
-        background-color: #e67817; }
+        background-color: #3c7a12; }
         .article-footer ul li:hover a {
           text-decoration: none;
           color: black; }
@@ -8469,7 +8470,7 @@ article > a:hover {
     text-decoration: underline; }
 
 .search-highlight {
-  background-color: #e67817;
+  background-color: #3c7a12;
   color: #fff; }
 
 [image-frame] {
@@ -8479,8 +8480,11 @@ article > a:hover {
   height: 50vh; }
 
 a {
-  color: #000;
-  text-decoration: none !important; }
+  color: #222;
+  text-decoration: none !important;
+  transition: color 0.3s; }
+  a:hover {
+    color: #000; }
 
 /* typography */
 .font-xxs {
@@ -8698,15 +8702,15 @@ a {
   #site_header > div li a {
     padding: 0;
     margin: 0; }
-#site_header a {
-  color: #fff; }
 #site_header #secondary_menu-container {
-  background-color: #bbb;
-  color: black; }
+  background-color: #55ad19;
+  color: #993233; }
   #site_header #secondary_menu-container li {
     font-size: 12px; }
+  #site_header #secondary_menu-container a {
+    color: #993233; }
 #site_header #primary_menu-container {
-  background-color: #888; }
+  background-color: #3c7a12; }
   #site_header #primary_menu-container li {
     font-size: 15px; }
 
@@ -8734,10 +8738,10 @@ a {
   #primary_menu-container nav, #primary_menu-container ul {
     padding: 0; }
   #primary_menu-container nav li {
-    background-color: #888;
+    background-color: #3c7a12;
     transition: background-color 0.4s ease-in-out; }
   #primary_menu-container nav li:hover {
-    background-color: #444; }
+    background-color: #55ad19; }
   #primary_menu-container nav > ul {
     width: 100%; }
     #primary_menu-container nav > ul > li {
@@ -8794,9 +8798,9 @@ a {
       border-radius: 0; }
     #primary_menu-container #form-container form input {
       background-color: #ddd;
-      color: #333; }
+      color: #575756; }
     #primary_menu-container #form-container form button {
-      background-color: #222;
+      background-color: #272726;
       color: #ddd; }
   #primary_menu-container #social_media_links ul {
     width: 100%; }
@@ -8999,7 +9003,7 @@ section.archive {
     padding-left: 30px;
     padding-right: 30px;
     text-align: center;
-    transition: background-color 0.4s ease-in-out; }
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out; }
     @media screen and (min-width: 960px) {
       #home-menu li {
         width: 20%; } }
@@ -9007,16 +9011,20 @@ section.archive {
       height: 90px; }
     #home-menu li h4 {
       margin: 15px 0 !important; }
-    #home-menu li:nth-child(1):hover {
-      background: #e7b17a; }
-    #home-menu li:nth-child(2):hover {
-      background: #eaa45d; }
-    #home-menu li:nth-child(3):hover {
-      background: #df9f4f; }
-    #home-menu li:nth-child(4):hover {
-      background: #ea8c18; }
-    #home-menu li:nth-child(5):hover {
-      background: #d08232; }
+    #home-menu li:nth-child(1) {
+      background-color: #8CEE4C; }
+    #home-menu li:nth-child(2) {
+      background-color: #993233; }
+    #home-menu li:nth-child(3) {
+      background-color: #70EA20; }
+    #home-menu li:nth-child(4) {
+      background-color: #CF0034; }
+    #home-menu li:nth-child(5) {
+      background-color: #4EC700; }
+    #home-menu li:hover {
+      background-color: #272726; }
+      #home-menu li:hover * {
+        color: #fff !important; }
 
 #home-featured {
   padding-top: 90px;
@@ -9069,8 +9077,10 @@ section.archive {
       left: 0; }
 
 #home-activity {
-  padding: 0;
-  padding-top: 15px; }
+  padding: 0 !important;
+  outline: 1px solid #888; }
+  #home-activity h3 {
+    margin-top: 0; }
   #home-activity .row.row-eq-height, #home-activity main > section.row-eq-height, #home-activity .row-eq-height.post-map, #home-activity .row-eq-height#home-about_hic-thematic_areas-menu, #home-activity .row-eq-height#site_header, #home-activity #site_header > div.row-eq-height, #home-activity #secondary_menu-container nav.row-eq-height, #secondary_menu-container #home-activity nav.row-eq-height, #home-activity #secondary_menu-container nav ul.row-eq-height, #secondary_menu-container nav #home-activity ul.row-eq-height, #home-activity .row-eq-height#home-activity-articles-news, #home-activity #home-library .row-eq-height#home-library-publications, #home-library #home-activity .row-eq-height#home-library-publications, #home-activity .row-eq-height#microsite-header,
   #home-activity .row-eq-height#microsite-cover-image, #home-activity .row-eq-height#microsite-intro-menu-description, #home-activity #microsite-events #microsite-events-featured header.row-eq-height, #microsite-events #microsite-events-featured #home-activity header.row-eq-height,
   #home-activity #microsite-events #microsite-meetings-list article header.row-eq-height,
@@ -9078,9 +9088,7 @@ section.archive {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex;
-    padding-left: 15px;
-    padding-right: 15px; }
+    display: flex; }
   #home-activity .home-activity-content_list {
     outline: 1px solid #bbb;
     margin-right: 1px;
@@ -9522,7 +9530,7 @@ footer .place {
     #single-microsite #post_list article.location_item footer {
       display: block; }
     #single-microsite #post_list article.location_item.active {
-      background-color: #e67817; }
+      background-color: #3c7a12; }
       #single-microsite #post_list article.location_item.active * {
         color: white; }
 

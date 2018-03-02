@@ -3,12 +3,52 @@
 $link_dark: #000;
 $link_light: #fff;
 
-$color_main: #e67817;
+$color_main_dark: #2b6901;
+$color_main: #3c7a12;
+$color_main-light: #55ad19;
 $color_main-dark-1: #d65800;
 $color_main-dark-2: #b63800;
 
-$neutral_darkest: #222;
-$neutral_darker: #333;
+
+$color_complementary: #ff6319;
+$color_complementary_dark: #993233;
+
+$color_main_palette-0: #8CEE4C;	// Main Primary color */
+$color_main_palette-1: $color_complementary_dark;
+$color_main_palette-2: #70EA20;
+$color_main_palette-3: #CF0034;
+$color_main_palette-4: #4EC700;
+
+
+
+//
+// $color-primary-0: #5BE700;	// Main Primary color */
+// $color-primary-1: #8CEE4C;
+// $color-primary-2: #75EA29;
+// $color-primary-3: #4EC700;
+// $color-primary-4: #3E9D00;
+//
+// $color-secondary-1-0: #00BF7C;	// Main Secondary color (1) */
+// $color-secondary-1-1: #43D2A0;
+// $color-secondary-1-2: #23C78D;
+// $color-secondary-1-3: #009862;
+// $color-secondary-1-4: #00784E;
+//
+// $color-secondary-2-0: #C5F700;	// Main Secondary color (2) */
+// $color-secondary-2-1: #D7F94F;
+// $color-secondary-2-2: #CEF82B;
+// $color-secondary-2-3: #ADD900;
+// $color-secondary-2-4: #89AC00;
+//
+// $color-complement-0: #EE003C;	// Main Complement color */
+// $color-complement-1: #F34D77;
+// $color-complement-2: #F02A5C;
+// $color-complement-3: #CF0034;
+// $color-complement-4: #A30029;
+
+
+$neutral_darkest: #272726;
+$neutral_darker: #575756;
 $neutral_dark: #444;
 $neutral_medium: #888;
 $neutral_light: #bbb;

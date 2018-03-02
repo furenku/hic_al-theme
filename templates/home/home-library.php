@@ -196,17 +196,17 @@
   );
   if( $q->have_posts() ) :
     while ( $q->have_posts() ) :
-      
+
       $q->the_post();
       ?>
 
       <li>
         <a href="<?php echo get_the_permalink( get_the_ID() ); ?>">
-          <h5>
+          <h4>
             <?php echo apply_filters('the_title',get_the_title()); ?>
-          </h5>
+          </h4>
           <span class="date">
-            <?php echo get_the_date('F \d\e\l Y', get_the_ID()); ?>
+            <?php echo get_the_date('F, Y', get_the_ID()); ?>
           </span>
         </a>
       </li>

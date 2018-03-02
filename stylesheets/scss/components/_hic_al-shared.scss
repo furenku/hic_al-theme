@@ -22,7 +22,7 @@ $font-xxxl: 45px;
 html, body {
 
   overflow-x: hidden;
-  
+
 }
 
 
@@ -44,7 +44,7 @@ body, ul, li {
 
   width: 80%;
   // height:$spacing;
-  background-color: $color_main;
+  background-color: $color_complementary;
   color: black;
   // background-color: black;
   // color: white;
@@ -106,8 +106,8 @@ main > section > section {
 
     padding: $spacing / 4;
 
-    background-color: $neutral_light;
-    color: #000;
+    background-color: $color_main_dark;
+    color: #fff;
 
     text-align: center;
   }
@@ -195,7 +195,7 @@ main > section > section {
 
   padding: $spacing / 4;
   border: none;
-  background-color: $action_button_bg;
+  background-color: $color_complementary_dark;
   color: $action_button_color;
 
   text-align: center;
@@ -286,8 +286,10 @@ main > .row > section {
 
   &>h4 {
     margin: 0;
-    padding: $spacing / 4;
-    background-color: $neutral_light;
+    padding: $spacing / 4 0;
+    background-color: $color_main_dark;
+    color: #fff;
+
     text-align: center;
   }
 
@@ -423,8 +425,14 @@ article > a:hover {
 
 
 a {
-  color: #000;
+  color: #222;
   text-decoration: none !important;
+
+  transition: color 0.3s;
+
+  &:hover {
+    color: #000;
+  }
 }
 
 
