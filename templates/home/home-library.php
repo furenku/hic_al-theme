@@ -122,7 +122,7 @@
               <?php echo get_the_post_thumbnail(); ?>
             </div> -->
             <div class="text-center font-m">
-              <i class="fa fa-dot-circle-o"></i>
+              <i class="fa fa-film"></i>
             </div>
             <footer>
               <h6 class="text-center">
@@ -196,6 +196,7 @@
   );
   if( $q->have_posts() ) :
     while ( $q->have_posts() ) :
+      
       $q->the_post();
       ?>
 

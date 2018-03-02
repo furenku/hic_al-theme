@@ -9246,6 +9246,9 @@ section.archive {
   #home-library #home-library-media_content nav#multimedia > ul li {
     margin: 0;
     padding: 0; }
+    #home-library #home-library-media_content nav#multimedia > ul li i {
+      font-size: 35px;
+      padding: 7.5px 0; }
     #home-library #home-library-media_content nav#multimedia > ul li [image-frame] {
       height: 75px; }
   #home-library #home-library-media_content nav#redes > ul {
@@ -9254,7 +9257,8 @@ section.archive {
       text-align: center;
       padding: 15px; }
       #home-library #home-library-media_content nav#redes > ul li i {
-        font-size: 23px; }
+        font-size: 28px;
+        margin-bottom: 7.5px; }
   #home-library #home-library-calls_to_action article [image-frame] {
     height: 180px; }
 
