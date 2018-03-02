@@ -60,28 +60,34 @@
 
       transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
 
-      &:nth-child(1) {
-        background-color: $color_main_palette-0;
+
+      &:nth-child(1):hover {
+        background-color: $color_main_dark;
       }
-      &:nth-child(2) {
-        background-color: $color_main_palette-1;
+      &:nth-child(2):hover {
+        background-color: $color_complementary_dark;
       }
-      &:nth-child(3) {
-        background-color: $color_main_palette-2;
+      &:nth-child(3):hover {
+        background-color: #70EA20;
       }
-      &:nth-child(4) {
-        background-color: $color_main_palette-3;
+      &:nth-child(4):hover {
+        background-color: #CF0034;
       }
-      &:nth-child(5) {
-        background-color: $color_main_palette-4;
+      &:nth-child(5):hover {
+        background-color: #4EC700;
       }
 
-      &:hover {
-        background-color: $neutral_darkest;
-        * {
-          color: #fff !important;
+        &:even {
+          background-color: $neutral_darkest;
         }
-      }
+        &:odd {
+          background-color: $neutral_dark;
+        }
+        &:hover {
+          * {
+            color: #fff !important;
+          }
+        }
 
 	  }
 

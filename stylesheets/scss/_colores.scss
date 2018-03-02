@@ -13,11 +13,20 @@ $color_main-dark-2: #b63800;
 $color_complementary: #ff6319;
 $color_complementary_dark: #993233;
 
-$color_main_palette-0: #8CEE4C;	// Main Primary color */
-$color_main_palette-1: $color_complementary_dark;
-$color_main_palette-2: #70EA20;
-$color_main_palette-3: #CF0034;
-$color_main_palette-4: #4EC700;
+
+$neutral_darkest: #272726;
+$neutral_darker: #575756;
+$neutral_dark: #444;
+$neutral_medium: #888;
+$neutral_light: #bbb;
+$neutral_lighter: #ddd;
+$neutral_lightest: #eee;
+
+$color_main_palette-0: $neutral_medium;	// Main Primary color */
+$color_main_palette-1: $neutral_light;
+$color_main_palette-2: $neutral_medium;
+$color_main_palette-3: $neutral_light;
+$color_main_palette-4: $neutral_medium;
 
 
 
@@ -33,7 +42,7 @@ $color_main_palette-4: #4EC700;
 // $color-secondary-1-2: #23C78D;
 // $color-secondary-1-3: #009862;
 // $color-secondary-1-4: #00784E;
-//
+//#4EC700
 // $color-secondary-2-0: #C5F700;	// Main Secondary color (2) */
 // $color-secondary-2-1: #D7F94F;
 // $color-secondary-2-2: #CEF82B;
@@ -47,13 +56,6 @@ $color_main_palette-4: #4EC700;
 // $color-complement-4: #A30029;
 
 
-$neutral_darkest: #272726;
-$neutral_darker: #575756;
-$neutral_dark: #444;
-$neutral_medium: #888;
-$neutral_light: #bbb;
-$neutral_lighter: #ddd;
-$neutral_lightest: #eee;
 
 a {
    color: $link_dark;

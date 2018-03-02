@@ -9011,20 +9011,22 @@ section.archive {
       height: 90px; }
     #home-menu li h4 {
       margin: 15px 0 !important; }
-    #home-menu li:nth-child(1) {
-      background-color: #8CEE4C; }
-    #home-menu li:nth-child(2) {
+    #home-menu li:nth-child(1):hover {
+      background-color: #2b6901; }
+    #home-menu li:nth-child(2):hover {
       background-color: #993233; }
-    #home-menu li:nth-child(3) {
+    #home-menu li:nth-child(3):hover {
       background-color: #70EA20; }
-    #home-menu li:nth-child(4) {
+    #home-menu li:nth-child(4):hover {
       background-color: #CF0034; }
-    #home-menu li:nth-child(5) {
+    #home-menu li:nth-child(5):hover {
       background-color: #4EC700; }
-    #home-menu li:hover {
+    #home-menu li:even {
       background-color: #272726; }
-      #home-menu li:hover * {
-        color: #fff !important; }
+    #home-menu li:odd {
+      background-color: #444; }
+    #home-menu li:hover * {
+      color: #fff !important; }
 
 #home-featured {
   padding-top: 90px;
