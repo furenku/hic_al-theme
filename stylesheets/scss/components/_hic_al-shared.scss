@@ -2,6 +2,7 @@ $font-xxs: 9px;
 $font-xs: 10px;
 $font-s: 12px;
 $font-m: 15px;
+$font-mm: 16px;
 $font-l: 23px;
 $font-xl: 28px;
 $font-xxl: 35px;
@@ -18,6 +19,11 @@ $font-xxxl: 45px;
 }
 
 
+html, body {
+
+  overflow-x: hidden;
+  
+}
 
 
 

@@ -1,8 +1,38 @@
 article.single {
 
   header {
+
+    padding: $spacing 0;
+
     * {
+    // .title {
+
       text-align: center;
+
+    }
+
+    .date {
+
+      // text-align: center;
+
+      font-size: $font-s;
+
+      color: #888;
+
+    }
+
+  }
+
+
+  .content {
+
+    padding: $spacing ;
+    font-size: $font-mm;
+    line-height: 1.5;
+
+    p {
+      padding-bottom: $spacing / 2;
+      line-height: 1.5;
     }
   }
 

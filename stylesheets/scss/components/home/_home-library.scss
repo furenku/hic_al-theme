@@ -90,6 +90,10 @@
            i,& > div {
               @extend .col-xs-12;
            }
+
+           i {
+             font-size: $font-l;
+           }
            // float: left;
            // width: auto;
            padding: $spacing / 2;

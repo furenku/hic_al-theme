@@ -148,10 +148,10 @@
       <?php for ($i=0; $i < 3; $i++) : ?>
 
         <li>
-          <i class="fa fa-dot-circle-o"></i>
+          <i class="fa fa-youtube"></i>
 
           <h5>
-            Red Medios
+            Youtube
           </h5>
         </li>
 
@@ -257,7 +257,7 @@
         <div image-frame>
           <?php echo get_the_post_thumbnail(get_the_ID()); ?>
         </div>
-        
+
         <p>
           <?php echo get_the_content(); ?>
         </p>

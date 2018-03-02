@@ -7,7 +7,11 @@ $legal_info = get_option('hic_al-legal_info');
 
 </main>
 
-<footer id="site_footer">
+
+<?php get_template_part('templates/components/general/footer'); ?>
+
+
+<!-- <footer id="site_footer">
 
    <section class="copyright">
       <p>
@@ -21,7 +25,9 @@ $legal_info = get_option('hic_al-legal_info');
       </a>
    </section>
 
-</footer>
+</footer> -->
+
+
 
 <?php $themeDir = get_stylesheet_directory_uri(); ?>
 

@@ -10,16 +10,25 @@ if( have_posts() ) {
 
         <?php if( get_the_post_thumbnail(get_the_ID(),'full') ) : ?>
 
-        <div class="article-cover-photo" image-frame="">
+        <div class="article-cover-photo" image-frame contain>
           <?php echo get_the_post_thumbnail(get_the_ID(),'full'); ?>
         </div>
 
         <?php endif; ?>
 
          <header>
-           <h1>
+           <h1 class="title">
               <?php echo get_the_title(); ?>
            </h1>
+
+
+           <div class="author">
+             Por: <?php echo get_the_author(); ?>
+           </div>
+           <div class="date">
+             <?php echo get_the_date(); ?>
+           </div>
+
          </header>
 
          <section class="content">

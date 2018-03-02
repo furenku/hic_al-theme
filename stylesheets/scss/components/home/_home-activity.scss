@@ -135,11 +135,13 @@
 
 
         &>a>div {
+
           padding: 0;
 
           & > * {
             padding: 0 $spacing / 2;
           }
+          
         }
 
         footer {
