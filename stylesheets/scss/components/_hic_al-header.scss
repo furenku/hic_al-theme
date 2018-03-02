@@ -42,13 +42,15 @@
       }
 
       a {
-         color: $color_complementary_dark;
+         color: white;
       }
 
    }
    #primary_menu-container {
       background-color: $color_main;
-      li { font-size: $font-m; }
+      li { font-size: $font-m;
+        &, * { color: #fff; }
+      }
    }
 
 }

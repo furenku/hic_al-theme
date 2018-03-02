@@ -8708,11 +8708,13 @@ a {
   #site_header #secondary_menu-container li {
     font-size: 12px; }
   #site_header #secondary_menu-container a {
-    color: #993233; }
+    color: white; }
 #site_header #primary_menu-container {
   background-color: #3c7a12; }
   #site_header #primary_menu-container li {
     font-size: 15px; }
+    #site_header #primary_menu-container li, #site_header #primary_menu-container li * {
+      color: #fff; }
 
 #secondary_menu-container {
   height: 30px; }
