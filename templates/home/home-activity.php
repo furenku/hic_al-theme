@@ -56,7 +56,7 @@
 
               ?>
 
-              <article class="articulo">
+              <article class="article">
 
 <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
 
@@ -70,17 +70,20 @@
 
   <div class="text_container">
 
-    <h5>
-       <?php echo get_the_title(); ?>
-    </h5>
+    <header>
+      <h5>
+         <?php echo get_the_title(); ?>
+      </h5>
+      <?php article_footer(); ?>
+
+    </header>
 
     <p>
-       <?php echo apply_filters('the_excerpt',wp_trim_words(get_the_excerpt(),20)); ?>
+       <?php echo apply_filters( 'the_excerpt', wp_trim_words(get_the_excerpt(),20) ); ?>
     </p>
 
   </div>
 
-  <?php #article_footer(); ?>
 
 </a>
               </article>

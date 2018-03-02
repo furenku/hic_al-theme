@@ -125,11 +125,11 @@
 
 
         .image_container {
-          @extend .col-md-5;
+          @extend .col-md-4;
         }
 
         .text_container {
-          @extend .col-md-7;
+          @extend .col-md-8;
           @extend .font-s;
         }
 
@@ -141,17 +141,20 @@
           & > * {
             padding: 0 $spacing / 2;
           }
-          
+
         }
 
         footer {
           padding-left: 0;
           padding-right: 0;
         }
-
+        .categories,
+        .category {
+          display: none;
+        }
 
         [image-frame]{
-          height: $spacing * 5.25;
+          height: $spacing * 5;
         }
 
       }
