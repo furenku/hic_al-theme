@@ -1,3 +1,5 @@
+console.log("HIC AL pre theme ready")
+
 $(document).ready(function(){
 
   image_frames()
@@ -266,7 +268,7 @@ function setup_post_map_map() {
 
       $(this).addClass('active')
       .siblings().removeClass('active')
-      // 
+      //
       // $(this)[0].scrollIntoView({
       //   behavior: "smooth",
       //   block: "start"

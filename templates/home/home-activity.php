@@ -5,87 +5,103 @@
     Actividad Reciente
   </h3>
 
-   <section id="home-activity-news">
+   <section id="home-activity-articles-news" class="row row-eq-height">
 
-      <h4>
+
+     <section id="home-activity-news" class="news_item-container">
+
+       <h4>
          Noticias
-      </h4>
+       </h4>
 
-      <section class="latest-container">
-      <?php
-
-         // Noticia Principal
-
-         $post_type = 'news_item';
-
-         $q = new WP_Query( array(
-            'post_type'=>$post_type,
-            'posts_per_page' => 2,
-            'tax_query' => array(
-               array(
-                  'taxonomy' => 'site_hierarchy',
-                  'field'    => 'slug',
-                  'terms'    => 'home-main-news',
-               ),
-            ),
-         )
-         );
-
-         if( $q->have_posts() ) {
-         while ( $q->have_posts() ) {
-            $q->the_post();
-
-            $exclude_post = get_the_ID();
-
-            ?>
-
-            <article class="latest <?php echo $post_type; ?>">
-
-               <div>
-
-                  <div image-frame>
-                     <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
-                  </div>
+        <?php
+            $args = array(
+               // 'exclude' => array($exclude_post),
+               'number'  => 5
+            );
+            post_type_list('news_item', $args);
+          ?>
+          <footer>
+            <?php post_type_more_button('news_item'); ?>
+          </footer>
+        </section>
 
 
-               </div>
+      <section id="home-activity-articles" class="articles-container">
 
-               <div>
+        <h4>
+          Artículos
+        </h4>
 
-                  <h5>
-                     <?php echo get_the_title(); ?>
-                  </h5>
+        <?php
 
-                  <p>
-                     <?php echo get_the_excerpt(); ?>
-                  </p>
-
-               </div>
-
-               <?php article_footer(); ?>
-
-            </article>
+           $articles_cat = get_term_by('name','Artículos','category')->term_id;
 
 
-            <?php
-         }
-      }
+           $post_type = 'post';
+
+           $q = new WP_Query( array(
+              'post_type'=>$post_type,
+              'posts_per_page' => 3,
+              'cat' => $articles_cat
+
+           )
+           );
+
+           if( $q->have_posts() ) {
+           while ( $q->have_posts() ) {
+              $q->the_post();
+
+              $exclude_post = get_the_ID();
+
+              ?>
+
+              <article class="articulo">
+
+<a href="<?php echo get_the_permalink(get_the_ID()); ?>">
+
+  <div class="image_container">
+
+    <div image-frame>
+       <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
+    </div>
+
+  </div>
+
+  <div class="text_container">
+
+    <h5>
+       <?php echo get_the_title(); ?>
+    </h5>
+
+    <p>
+       <?php echo apply_filters('the_excerpt',wp_trim_words(get_the_excerpt(),20)); ?>
+    </p>
+
+  </div>
+
+  <?php #article_footer(); ?>
+
+</a>
+              </article>
 
 
-      $args = array(
-         'exclude' => array($exclude_post),
-         'number'  => 5
-      );
+              <?php
+           }
+        }
 
-      ?>
-    </section>
 
-      <section>
-        <?php post_type_list('news_item', $args); ?>
+        ?>
+
+        <footer>
+          <a href="<?php echo get_category_link( $articles_cat );  ?>">
+            <button type="button" name="button">
+              Ver Más <b>Artículos</b>
+            </button>
+          </a>
+        </footer>
+
       </section>
-      <footer>
-        <?php post_type_more_button('news_item'); ?>
-      </footer>
 
    </section>
 

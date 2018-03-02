@@ -163,11 +163,13 @@
 
   <footer>
 
+    <!--
     <a href="#">
       <button type="button" class="more_link_button">
         Ver contenido <b>Multimedia</b>
       </button>
     </a>
+    -->
 
   </footer>
 </section>
@@ -218,7 +220,7 @@
 <footer>
   <a href="#">
     <button type="button" class="more_link_button">
-      Ver más Infográficos
+      Ver más <b>Infográficos</b>
     </button>
   </a>
 </footer>
@@ -251,18 +253,19 @@
       ?>
 
       <article>
+
         <div image-frame>
           <?php echo get_the_post_thumbnail(get_the_ID()); ?>
         </div>
+        
         <p>
           <?php echo get_the_content(); ?>
         </p>
-        <a href="">
-          <a href="<?php echo get_post_meta( get_the_ID(), 'call_to_action-url', true ); ?>" target="_blank">
-            <button>
-              <?php echo get_post_meta( get_the_ID(), 'call_to_action-text', true ); ?>
-            </button>
-          </a>
+
+        <a href="<?php echo get_post_meta( get_the_ID(), 'call_to_action-url', true ); ?>" target="_blank">
+          <button>
+            <?php echo get_post_meta( get_the_ID(), 'call_to_action-text', true ); ?>
+          </button>
         </a>
 
       </article>

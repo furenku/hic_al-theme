@@ -54,7 +54,7 @@ function post_type_list_box( $post_type, $args = array() ) {
             while ( $q->have_posts() ) {
                $q->the_post();
 
-               list_item(get_the_ID(),$post_type);
+               list_item( get_the_ID(), $post_type );
 
             }
          }
@@ -336,9 +336,6 @@ function search_title_highlight() {
     $keys = implode('|', explode(' ', get_search_query()));
     $title = preg_replace('/(' . $keys .')/iu', '<span class="search-highlight">\0</span>', $title);
     echo $title;
-}
-function test_func() {
-  return "test!";
 }
 
 

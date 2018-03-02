@@ -51,9 +51,11 @@
 <div class="row row-eq-height">
 
 <section id="home-about_hic-coalition">
+
    <h4>
       La coalición
    </h4>
+   
    <ul>
 
       <?php
@@ -73,15 +75,18 @@
 </section>
 
 <section id="home-about_hic-structures">
+
    <h4>
       Estructuras
    </h4>
+
    <div class="content">
       <?php
       $page = get_page_by_title("Estructuras");
       echo apply_filters('the_content', $page->post_content);
       ?>
    </div>
+
 </section>
 
 
@@ -91,9 +96,11 @@
 <div class="row row-eq-height">
 
 <section id="home-about_hic-documents" class="more_link_footer">
+
    <h4>
       Documentos
    </h4>
+
    <ul>
       <?php
       $q = new WP_Query(array(
@@ -154,7 +161,7 @@
   </section>
 
    <footer>
-     <a href="<?php echo get_term_link('news_bulletin','document-type'); ?>">
+     <a href="<?php #echo get_term_link('news_bulletin','document-type'); ?>">
         <button type="button" name="button" class="more_link_button">
            Ver <b>Boletines de noticias</b> anteriores
         </button>
@@ -162,6 +169,7 @@
    </footer>
 
 </section>
+
 
 <section id="home-about_hic-contact">
 

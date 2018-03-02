@@ -29,6 +29,7 @@ $component_min_height: 35vh;
 @import "components/hic_al-header";
 @import "components/hic_al-footer";
 
+@import "components/hic_al-single";
 @import "components/hic_al-page";
 @import "components/hic_al-archive";
 @import "components/hic_al-search_form";
@@ -46,6 +47,12 @@ $component_min_height: 35vh;
 @import "templates/microsite/microsite";
 
 
-main > section {
-   @extend .row;
+main {
+
+  min-height: 80vh;
+
+  & > section {
+    @extend .row;
+  }
+
 }

@@ -37,7 +37,7 @@ $membership_invitation_page = 'Registro';
         </div>
 
         <footer>
-          <a href="#">
+          <a href="<?php echo get_the_permalink( $page -> ID ); ?>">
              <button type="button" name="button" class="more_link_button">
                 Acceder al <b>Espacio de Miembros</b>
              </button>

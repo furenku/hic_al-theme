@@ -19,15 +19,19 @@
 
             ?>
             <li>
-               <div image-frame="" contain="">
-                  <?php echo get_the_post_thumbnail(get_the_ID()); ?>
-               </div>
-               <h4>
-                  <?php echo apply_filters('the_title', get_the_title() ); ?>
-               </h4>
-               <p>
-                  <?php echo apply_filters('the_excerpt', get_the_excerpt() ); ?>
-               </p>
+               <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
+
+                 <div image-frame="" contain="">
+                    <?php echo get_the_post_thumbnail(get_the_ID()); ?>
+                 </div>
+                 <h4>
+                    <?php echo apply_filters('the_title', get_the_title() ); ?>
+                 </h4>
+                 <p>
+                    <?php echo apply_filters('the_excerpt', get_the_excerpt() ); ?>
+                 </p>
+                 
+               </a>
             </li>
             <?php
          endwhile;
