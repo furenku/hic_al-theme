@@ -32,7 +32,43 @@ if( have_posts() ) {
          </header>
 
          <section class="content">
-            <?php echo apply_filters('the_content', get_the_content()); ?>
+
+           <header>
+
+             <?php
+             global $post;
+
+             if(is_singular() || is_home()){
+
+               $crunchifyURL = urlencode(get_permalink());
+
+               $crunchifyTitle = str_replace( ' ', '%20', get_the_title());
+
+               $crunchifyThumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+
+               $twitterURL = 'https://twitter.com/intent/tweet?text='.$crunchifyTitle.'&amp;url='.$crunchifyURL.'&amp;via=Crunchify';
+               $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$crunchifyURL;
+
+               $widget = '';
+               $widget .= '<h5 class="col-xs-6 text-right">Compartir</h5>';
+               $widget .= '<div class="hic_al-social col-xs-6 text-right">';
+                 $widget .= '<a class="hic_al-link hic_al-twitter text-center col-xs-6" href="'. $twitterURL .'" target="_blank"><i class="fa fa-twitter font-xl w-100  "></i><span class="row">Twitter</span></a>';
+                 $widget .= '<a class="hic_al-link hic_al-facebook text-center col-xs-6" href="'.$facebookURL.'" target="_blank"><i class="fa fa-facebook font-xl w-100 "></i><span class="row">Facebook</span></a>';
+
+               $widget .= '</div>';
+
+               echo $widget;
+               // return  $widget . $content;
+
+             }
+
+             ?>
+
+           </header>
+
+
+           <?php echo apply_filters('the_content', get_the_content()); ?>
+
          </section>
 
       </article>

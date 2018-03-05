@@ -27,14 +27,15 @@
             margin: 0;
             @extend .col-xs-12;
          }
+
       }
 
    }
 
 
    #secondary_menu-container {
-      background-color: $color_main_light;
-      color: $color_complementary_dark;
+      background-color: $neutral_darker;
+      color: white;
       li {
          @extend .col-md-3;
          @extend .col-lg-2;
@@ -47,7 +48,7 @@
 
    }
    #primary_menu-container {
-      background-color: $color_main;
+      background-color: $neutral_dark;
       li { font-size: $font-m;
         &, * { color: #fff; }
       }
@@ -126,12 +127,12 @@
       @extend .col-lg-7;
 
       li {
-         background-color: $color_main;
+         background-color: $neutral_dark;
          transition: background-color 0.4s ease-in-out;
       }
 
       li:hover {
-         background-color: $color_main_light;
+         background-color: $neutral_darker;
       }
 
       &>ul{

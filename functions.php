@@ -3,6 +3,7 @@
 
 
 // include_once 'hic-al-functions/post_type_countries.php';
+include_once 'hic-al-functions/share_buttons.php';
 
 
 
