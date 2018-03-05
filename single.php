@@ -46,7 +46,7 @@ if( have_posts() ) {
 
                $hic_al_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
 
-               $twitterURL = 'https://twitter.com/intent/tweet?text='.$hic_al_title.'&amp;url='.$hic_al_url.'&amp;via=HIC-AL';
+               $twitterURL = 'https://twitter.com/intent/tweet?text='.$hic_al_title.'&amp;url='.$hic_al_url.'&amp;via=habitat_intl';
                $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$hic_al_url;
 
                $widget = '';
