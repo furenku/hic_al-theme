@@ -58,34 +58,34 @@
 
               <article class="article">
 
-<a href="<?php echo get_the_permalink(get_the_ID()); ?>">
+                <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
 
-  <div class="image_container">
+                  <div class="image_container">
 
-    <div image-frame>
-       <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
-    </div>
+                    <div image-frame>
+                       <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
+                    </div>
 
-  </div>
+                  </div>
 
-  <div class="text_container">
+                  <div class="text_container">
 
-    <header>
-      <h5>
-         <?php echo get_the_title(); ?>
-      </h5>
-      <?php article_footer(); ?>
+                    <header>
+                      <h5>
+                         <?php echo get_the_title(); ?>
+                      </h5>
+                      <?php article_footer(); ?>
 
-    </header>
+                    </header>
 
-    <p>
-       <?php echo apply_filters( 'the_excerpt', wp_trim_words(get_the_excerpt(),20) ); ?>
-    </p>
+                    <p>
+                       <?php echo apply_filters( 'the_excerpt', wp_trim_words(get_the_excerpt(),20) ); ?>
+                    </p>
 
-  </div>
+                  </div>
 
 
-</a>
+                </a>
               </article>
 
 
@@ -110,7 +110,7 @@
 
    <div class="row row-eq-height">
 
-        <section id="home-activity-open_call" class="home-activity-content_list">
+        <section id="home-activity-open_call" class="content_list">
 
           <h4>
              Convocatorias
@@ -130,7 +130,7 @@
 
         </section>
 
-        <section id="home-activity-event" class="home-activity-content_list">
+        <section id="home-activity-event" class="content_list">
 
           <h4>
              Eventos
@@ -151,7 +151,7 @@
         </section>
 
 
-        <section id="home-activity-solidarity" class="home-activity-content_list">
+        <section id="home-activity-solidarity" class="content_list">
 
            <h4>
               Solidaridad
@@ -187,15 +187,17 @@
                        <p>
                           <?php echo get_the_excerpt(); ?>
                        </p>
-<div class="button-container">
 
-                       <a href="<?php echo get_post_meta( get_the_ID(),'call_to_action-url', true ); ?>">
-                          <button>
-                             <?php echo get_post_meta( get_the_ID(), 'call_to_action-text', true ); ?>
-                          </button>
-                       </a>
+                      <div class="button-container">
 
-                     </div>
+                         <a href="<?php echo get_post_meta( get_the_ID(),'call_to_action-url', true ); ?>">
+                            <button>
+                               <?php echo get_post_meta( get_the_ID(), 'call_to_action-text', true ); ?>
+                            </button>
+                         </a>
+
+                       </div>
+
                        <?php article_footer(); ?>
 
 

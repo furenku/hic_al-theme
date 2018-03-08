@@ -21,7 +21,7 @@
     padding: $spacing;
 
     @extend .row;
-    @extend .border_light;
+    // @extend .border_light;
 
     li {
       @extend .col-md-6;

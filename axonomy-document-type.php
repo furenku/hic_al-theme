@@ -4,7 +4,7 @@ get_header();
 ?>
 
 <h1>
-   Taxonomy
+   <?php echo single_term_title() ?>
 </h1>
 
 <?php

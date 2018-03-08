@@ -154,6 +154,7 @@
 
 
             ul {
+
                width: 100%;
                display: none;
                height: 0;
@@ -203,7 +204,7 @@
 
             &:hover {
 
-               ul {
+               &>ul {
                   display: block;
                   height: auto;
                }

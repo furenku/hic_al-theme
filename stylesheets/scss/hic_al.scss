@@ -19,10 +19,18 @@ $component_min_height: 35vh;
 @import "components/dynamic/image-box";
 @import "components/dynamic/embed-box";
 
+@import "components/dynamic/section-menu";
+
 @import "components/dynamic/calls-to-action";
+
+@import "components/dynamic/site-section";
+
+@import "components/dynamic/post-list";
 @import "components/dynamic/post-grid";
 @import "components/dynamic/post-map";
 
+
+@import "components/dynamic/solidarity_item";
 
 
 @import "components/home/home-about_hic";
@@ -44,6 +52,7 @@ $component_min_height: 35vh;
 @import "components/home/home-about_hic";
 
 
+@import "templates/sections/activity";
 @import "templates/microsite/microsite";
 
 

@@ -1,0 +1,57 @@
+.site_section {
+
+  @extend .container-fluid;
+  width: 100%;
+  padding: 0;
+
+
+  .sections_list {
+
+    // &,
+    & > section {
+
+      h1 {
+        border-bottom: 1px solid black;
+        margin-bottom: $spacing;
+        padding-bottom: $spacing / 2;
+      }
+
+      @extend .row;
+      padding: $spacing;
+
+      min-height: 80vh;
+      margin-bottom: 5vh  ;
+
+      text-align: center;
+
+      // display: -webkit-flex;
+      // display: -ms-flex;
+      // display: flex;
+      //
+      // // align-items: center;
+      // justify-content: center;
+
+      // background-color: #eee;
+      // color: #fff;
+
+      .post-list {
+
+        .list-item {
+          @extend .col-md-6;
+        }
+
+      }
+
+    }
+
+
+    footer {
+      @extend .more_link_footer;
+      button {
+        @extend .more_link_button;
+      }
+    }
+
+  }
+
+}

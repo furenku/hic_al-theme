@@ -3,7 +3,8 @@
 
 
 // include_once 'hic-al-functions/post_type_countries.php';
-include_once 'hic-al-functions/share_buttons.php';
+// include_once 'hic-al-functions/share_buttons.php';
+include_once 'hic_al-functions/share_buttons.php';
 
 
 
@@ -35,7 +36,7 @@ function post_type_list_box( $post_type, $args = array() ) {
 
    <section
    id="home-activity-<?php echo $plural_slug; ?>"
-   class="home-activity-content_list"
+   class="content_list"
    >
 
       <h4>
@@ -95,10 +96,10 @@ function post_type_list( $post_type, $args = array() ) {
 
    <!-- <section
    id="home-activity-<?php echo $plural_slug; ?>"
-   class="home-activity-content_list"
+   class="content_list"
    > -->
 
-      <ul class="<?php echo $plural_slug; ?>">
+      <ul class="<?php echo $plural_slug; ?> post-list">
 
          <?php
          $q = new WP_Query( array(
@@ -202,19 +203,22 @@ function register_menus() {
 function list_item( $id, $class ) {
    ?>
 
-   <article class="<?php echo $class ?>">
+   <article class="<?php echo $class ?> list-item">
 
-     <!-- <a href="#"> -->
 
+     <a href="<?php echo get_the_permalink( $id ); ?>" class="image-container">
       <div image-frame="">
          <?php echo get_the_post_thumbnail( $id, 'large' ); ?>
       </div>
+      </a>
 
-      <div>
+      <div class="post-info">
 
-         <h6>
-            <?php echo wp_trim_words(get_the_title( $id ),18); ?>
-         </h6>
+        <a href="<?php echo get_the_permalink( $id ); ?>">
+           <h6>
+              <?php echo wp_trim_words(get_the_title( $id ),18); ?>
+           </h6>
+         </a>
 
          <footer class="article-footer">
 
@@ -240,7 +244,6 @@ function list_item( $id, $class ) {
 
       </div>
 
-    <!-- </a> -->
 
    </article>
    <?php

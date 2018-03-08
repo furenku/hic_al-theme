@@ -1,10 +1,11 @@
 <?php
-$membership_page = 'Membrecía';
+$membership_page = 'Membresía';
 
-$membership_space_page = 'Espacio de miembros';
+$membership_space_page = 'HIC en América Latina';
+$membership_activity_page = 'Actividad de Miembros';
 $membership_hic_page = 'HIC en el mundo';
 $membership_contributions_page = 'La palabra de miembr@s y amig@s';
-$membership_invitation_page = 'Registro';
+$membership_invitation_page = 'Nuevos Miembros';
 
 
 ?>
@@ -30,7 +31,7 @@ $membership_invitation_page = 'Registro';
            <?php echo get_the_post_thumbnail($page->ID,'medium'); ?>
         </div>
 
-        <div class="text" v-center>
+        <div class="text">
            <div>
              <?php echo apply_filters('the_excerpt',$page->post_excerpt); ?>
            </div>
@@ -39,7 +40,64 @@ $membership_invitation_page = 'Registro';
         <footer>
           <a href="<?php echo get_the_permalink( $page -> ID ); ?>">
              <button type="button" name="button" class="more_link_button">
-                Acceder al <b>Espacio de Miembros</b>
+               Ver la <b>Lista de Miembros</b>
+             </button>
+          </a>
+        </footer>
+
+     </section>
+
+     <section id="home-membership-activity">
+
+
+       <?php $page = get_page_by_title($membership_activity_page); ?>
+
+       <h3>
+         <?php echo apply_filters('the_title',$page->post_title); ?>
+       </h3>
+
+        <section class="content_list">
+
+          <?php
+          $authors = get_users( array('role'=>'member_role') );
+          $author_ids = array();
+
+          foreach ($authors as $author) {
+            array_push( $author_ids, $author->ID );
+          }
+
+          ?>
+
+
+         <ul class="<?php echo $plural_slug; ?>">
+
+            <?php
+            $q = new WP_Query( array(
+               'post_type' => array( 'post', 'news_item', 'open_call', 'event', 'publication' ),
+               'author__in' => $author_ids,
+               'posts_per_page' => 3
+            ));
+
+            if( $q->have_posts() ) {
+               while ( $q->have_posts() ) {
+                  $q->the_post();
+
+                  list_item( get_the_ID(), $post_type );
+
+               }
+            }
+
+            ?>
+
+         </ul>
+
+        </section>
+
+
+        <footer>
+          <a href="<?php echo get_the_permalink( $page -> ID ); ?>">
+             <button type="button" name="button" class="more_link_button">
+                Ver <b>Actividad de Miembros</b>
              </button>
           </a>
         </footer>
@@ -129,7 +187,7 @@ $membership_invitation_page = 'Registro';
       <footer>
         <a href="#">
            <button type="button" name="button" class="more_link_button">
-              Ver más <b>Contenidos de Miembros</b>
+              Ver más <b>Entradas</b>
            </button>
         </a>
       </footer>
@@ -153,7 +211,7 @@ $membership_invitation_page = 'Registro';
          </h2>
 
          <h3>
-            ¿Cómo ser miembro de HIC?
+            ¿Cómo ser miembr@ de HIC?
          </h3>
 
          <div class="excerpt">

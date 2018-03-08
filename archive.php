@@ -5,7 +5,14 @@ get_header();
 $post_type = get_post_type();
 $post_type_plural = get_post_type_object( $post_type )->label;
 
-$archive_title = is_category() ? single_cat_title("", false) : $post_type_plural;
+if( is_category() ) {
+  $archive_title = single_cat_title("", false);
+
+} elseif ( is_tax() ) {
+  $archive_title = single_term_title("",false);
+} else {
+  $archive_title = $post_type_plural;
+}
 
 global $countries_posts;
 $countries_posts = post_type_countries( $post_type );
@@ -103,7 +110,7 @@ $q = new WP_Query( $args );
     <h1>
       <?php echo $archive_title; ?>
     </h1>
-    
+
   </header>
 
 

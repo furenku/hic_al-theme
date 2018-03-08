@@ -5,9 +5,10 @@
 - font_size
 */
 
-if( ! $text ) {
-  $text = "...";
-}
+
+$text = $dynamic_content['text'];
+$font_size = $dynamic_content['font_size'];
+
 if( $font_size ) {
   $font_size = "font-" . $font_size;
 } else {

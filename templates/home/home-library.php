@@ -97,23 +97,20 @@
     <nav id="multimedia">
       <ul>
         <?php
-        $q = new WP_Query(array(
-          'post_type' => array('media_content'),
-          // 'usertype?' => array('memberr'),
-          'posts_per_page' => 4,
-          'tax_query' => array(
-            array(
-              'taxonomy' => 'media_content_type',
-              'field'    => 'slug',
-              'terms'    => 'infografico',
-              'operator' => 'NOT IN',
-            ),
-          ),
-        )
-      );
-      if( $q->have_posts() ) :
-        while ( $q->have_posts() ) :
-          $q->the_post();
+
+        $media_types = get_terms('media_content_type');
+        foreach( $media_types as $media_type ):
+          switch( $media_type->name ) {
+            case 'Audio':
+              $icon = 'headphones';
+              break;
+            case 'Video':
+              $icon = 'film';
+              break;
+            case 'Fotografía':
+              $icon = 'camera-retro';
+              break;
+          }
           ?>
 
 
@@ -122,19 +119,19 @@
               <?php echo get_the_post_thumbnail(); ?>
             </div> -->
             <div class="text-center font-m">
-              <i class="fa fa-film"></i>
+
+              <i class="fa fa-<?php echo $icon; ?>"></i>
             </div>
             <footer>
               <h6 class="text-center">
-                <?php echo get_the_terms(get_the_ID(),'media_content_type')[0]->name; ?>
+                <?php echo $media_type->name; ?>
               </h6>
             </footer>
           </li>
 
 
           <?php
-        endwhile;
-      endif;
+        endforeach;
       ?>
     </ul>
 
@@ -145,18 +142,45 @@
       En redes:
     </h5>
     <ul>
-      <?php for ($i=0; $i < 3; $i++) : ?>
 
         <li>
+          <a href="<?php echo get_option("hic_al-url-youtube"); ?>" target="_blank">
+
           <i class="fa fa-youtube"></i>
 
           <h5>
             Youtube
           </h5>
+
+          </a>
+        </li>
+
+        <li>
+          <a href="<?php echo get_option("hic_al-url-soundcloud"); ?>" target="_blank">
+
+          <i class="fa fa-soundcloud"></i>
+
+          <h5>
+            Soundcloud
+          </h5>
+
+          </a>
+        </li>
+
+        <li>
+          <a href="<?php echo get_option("hic_al-url-flickr"); ?>" target="_blank">
+
+          <i class="fa fa-flickr"></i>
+
+          <h5>
+            Flickr
+          </h5>
+
+          </a>
         </li>
 
 
-      <?php endfor; ?>
+
     </ul>
 
   </nav>
@@ -174,22 +198,23 @@
   </footer>
 </section>
 
-<section id="home-library-infographics">
+<section id="home-library-documents">
   <h4>
-    Infográficos
+    Documentos
   </h4>
 
   <ul>
     <?php
     $q = new WP_Query(array(
-      'post_type' => array('media_content'),
+      'post_type' => array('document'),
       // 'usertype?' => array('memberr'),
       'posts_per_page' => 4,
       'tax_query' => array(
         array(
-          'taxonomy' => 'media_content_type',
+          'taxonomy' => 'document-type',
           'field'    => 'slug',
-          'terms'    => 'infografico'
+          'terms'    => array('interno', 'newsletter'),
+          'operator'  => 'NOT IN'
         ),
       ),
     )
@@ -200,16 +225,22 @@
       $q->the_post();
       ?>
 
-      <li>
+      <article>
         <a href="<?php echo get_the_permalink( get_the_ID() ); ?>">
-          <h4>
+          <h5>
             <?php echo apply_filters('the_title',get_the_title()); ?>
-          </h4>
-          <span class="date">
-            <?php echo get_the_date('F, Y', get_the_ID()); ?>
-          </span>
+          </h5>
+          <div class="document-type">
+            <?php
+            $terms = get_the_terms( get_the_ID(),'document-type');
+            echo $terms[0]->name;
+            ?>
+          </div>
+          <div class="date">
+            <?php echo ucfirst(get_the_date('F, Y', get_the_ID())); ?>
+          </div>
         </a>
-      </li>
+      </article>
 
 
       <?php
@@ -221,7 +252,7 @@
 <footer>
   <a href="#">
     <button type="button" class="more_link_button">
-      Ver más <b>Infográficos</b>
+      Ver más <b>Documentos</b>
     </button>
   </a>
 </footer>
@@ -229,20 +260,21 @@
 </section>
 
 
-<section id="home-library-calls_to_action" vcenter>
-
-  <div class="row row-eq-height">
+<section id="home-library-calls_to_action">
+  <h4>
+    Destacado
+  </h4>
 
 
   <?php
   $q = new WP_Query( array(
-    'post_type'=>'call_to_action',
+    'post_type'=>array('publication','document'),
     'posts_per_page' => 2,
     'tax_query' => array(
       array(
-        'taxonomy' => 'call_to_action-location',
+        'taxonomy' => 'library-category',
         'field'    => 'slug',
-        'terms'    => 'library',
+        'terms'    => 'destacado',
       ),
     ),
   ));
@@ -259,13 +291,19 @@
           <?php echo get_the_post_thumbnail(get_the_ID()); ?>
         </div>
 
-        <p>
-          <?php echo get_the_content(); ?>
-        </p>
+        <div class="title" vcenter>
+          <h5>
+            <?php echo apply_filters('the_title',get_the_title()); ?>
+          </h5>
+        </div>
 
-        <a href="<?php echo get_post_meta( get_the_ID(), 'call_to_action-url', true ); ?>" target="_blank">
+        <div class="excerpt">
+          <?php echo apply_filters('the_excerpt',wp_trim_words(get_the_excerpt(),21)); ?>
+        </div>
+
+        <a href="<?php echo get_the_permalink(get_the_ID()); ?>" target="_blank">
           <button>
-            <?php echo get_post_meta( get_the_ID(), 'call_to_action-text', true ); ?>
+            Ver
           </button>
         </a>
 
@@ -276,8 +314,6 @@
   endif;
   ?>
 
-</div>
-<!-- .row-eq-height -->
 
 </section>
 

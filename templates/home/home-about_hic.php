@@ -1,8 +1,8 @@
 <section id="home-about_hic" data-scroll-id="acerca_de_hic">
 
-   <h1>
-      About HIC
-   </h1>
+  <h3>
+    Acerca de HIC
+  </h3>
 
 
    <nav id="home-about_hic-thematic_areas-menu">
@@ -55,7 +55,7 @@
    <h4>
       La coalición
    </h4>
-   
+
    <ul>
 
       <?php
@@ -161,7 +161,7 @@
   </section>
 
    <footer>
-     <a href="<?php #echo get_term_link('news_bulletin','document-type'); ?>">
+     <a href="<?php echo get_term_link('newsletter','document-type'); ?>">
         <button type="button" name="button" class="more_link_button">
            Ver <b>Boletines de noticias</b> anteriores
         </button>

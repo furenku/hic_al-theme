@@ -8,12 +8,9 @@ if( have_posts() ) {
       ?>
       <article class="working_group single">
 
-        <?php if( get_the_post_thumbnail(get_the_ID(),'full') ) : ?>
-<!--
-        <div class="article-cover-photo" image-frame="">
+        <div class="article-cover-photo" image-frame contain>
           <?php echo get_the_post_thumbnail(get_the_ID(),'full'); ?>
         </div>
--->
 
         <?php endif; ?>
 
@@ -21,16 +18,11 @@ if( have_posts() ) {
            <h1>
               <?php echo get_the_title(); ?>
            </h1>
-
-           <h3>
-              En construcción
-           </h3>
          </header>
-<!--
+
          <section class="content">
             <?php echo apply_filters('the_content', get_the_content()); ?>
          </section>
--->
 
       </article>
 

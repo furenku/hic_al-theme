@@ -42,6 +42,7 @@ function hic_al_theme_settings() {
 	add_settings_field("hic_al-url-facebook", "", "hic_al-url-facebook", "hic_al_options_page");
 	add_settings_field("hic_al-url-twitter", "", "hic_al-url-twitter", "hic_al_options_page");
 	add_settings_field("hic_al-url-youtube", "", "hic_al-url-youtube", "hic_al_options_page");
+	add_settings_field("hic_al-url-soundcloud", "", "hic_al-url-soundcloud", "hic_al_options_page");
 	add_settings_field("hic_al-url-flickr", "", "hic_al-url-flickr", "hic_al_options_page");
 
 	add_settings_field("hic_al-color-0", "", "hic_al-color-0", "hic_al_options_page");
@@ -75,6 +76,7 @@ function hic_al_theme_settings() {
 
 	register_setting( 'hic_al_options_page-grp', 'hic_al-url-facebook');
 	register_setting( 'hic_al_options_page-grp', 'hic_al-url-twitter');
+
 	register_setting( 'hic_al_options_page-grp', 'hic_al-url-youtube');
 	register_setting( 'hic_al_options_page-grp', 'hic_al-url-flickr');
 
@@ -176,9 +178,16 @@ function hic_al_options_page() {
 				<label for="hic_al-url-twitter">Twitter</label>
 				<input type="url" name="hic_al-url-twitter" id="hic_al-url-twitter" value="<?php echo get_option("hic_al-url-twitter"); ?>"/>
 			</div>
+
+			<h3>Contenidos Multimedia en Red</h3>
+
 			<div class="row">
 				<label for="hic_al-url-youtube">Youtube</label>
 				<input type="url" name="hic_al-url-youtube" id="hic_al-url-youtube" value="<?php echo get_option("hic_al-url-youtube"); ?>"/>
+			</div>
+			<div class="row">
+				<label for="hic_al-url-soundcloud">Soundcloud</label>
+				<input type="url" name="hic_al-url-soundcloud" id="hic_al-url-soundcloud" value="<?php echo get_option("hic_al-url-soundcloud"); ?>"/>
 			</div>
 			<div class="row">
 				<label for="hic_al-url-flickr">Flickr</label>

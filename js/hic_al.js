@@ -1,4 +1,4 @@
-console.log("HIC AL pre theme ready")
+$ = jQuery.noConflict()
 
 $(document).ready(function(){
 
@@ -36,6 +36,8 @@ $(document).ready(function(){
   setup_datepickers()
 
   setup_post_map()
+
+  setup_section_menu()
 
   custom_toggles()
 
@@ -320,9 +322,17 @@ function custom_toggles() {
 function site_menus() {
 
 
-  $('.site-menu li a').click(function(){
+  $('.site-menu li a').each(function(e,i){
+    console.log(e,$(i).attr('href'));
+  })
+  $('.site-menu li a').click(function(e){
+
+    e.preventDefault()
 
     var hash = $(this).attr('data-target')
+
+    // var hash = $(this).getAttribute('data-target')
+
 
     scrollViewTo( $('[data-scroll-id='+hash+']'), $('html,body') )
 
@@ -333,7 +343,7 @@ function site_menus() {
 }
 
 
-function scrollViewTo( target, parent ) {
+function scrollViewTo( target, parent, callback ) {
 
   // $('#main-header nav').removeClass('scroll-spy')
 
@@ -346,10 +356,25 @@ function scrollViewTo( target, parent ) {
 
 	parent.stop().animate({
 		scrollTop: targetY
-	}, 1000, function(){
+	}, 1000, callback )
 
-    // $('#main-header nav').addClass('scroll-spy')
-    // $('#main-header nav li').removeClass('scrolling')
+}
+
+
+
+function setup_section_menu() {
+
+  $('.section-menu li a').click(function(e){
+
+    var href = $(this).attr('href')
+
+
+    scrollViewTo( $(href), $('html, body'), function(){
+      console.log("implement: add #anchor to url");
+    })
+
+    e.preventDefault()
+    return false
 
   })
 

@@ -6,7 +6,7 @@
    &>div>section {
       @extend .col-md-6;
       @extend .col-lg-3;
-      @extend .border_light;
+      // @extend .border_light;
    }
 
 #home-library-publications {
@@ -68,10 +68,15 @@
 
    #home-library-media_content {
 
+      nav {
+        @extend .col-xs-12;
+
+      }
       nav#multimedia > ul {
+        padding-top: $spacing * 1;
          li {
 
-            @extend .col-xs-6;
+            @extend .col-xs-4;
 
             margin: 0;
             padding: 0;
@@ -87,6 +92,9 @@
          }
       }
 
+      nav#multimedia {
+        margin-bottom: $spacing * 1;
+      }
       nav#redes > ul{
         padding: 0;
         li {
@@ -110,19 +118,60 @@
 
    }
 
+
+  #home-library-documents {
+
+    article {
+
+      text-align: center;
+      border-top: 1px solid $neutral_light;
+      padding: $spacing / 4 0;
+
+      &:fist-child {
+        border-top: none;
+      }
+      .document-type {
+        font-weight: 500;
+      }
+      .document-type, .date {
+        font-size: $font-s;
+        text-align: right;
+      }
+
+    }
+
+  }
+
    #home-library-calls_to_action {
       @extend .col-md-6;
       article {
+
          @extend .col-md-6;
+         height: 100%;
 
          @extend .framed_content;
 
          [image-frame] {
-            height: $spacing * 6;
+            height: $spacing * 5;
          }
-
+        .title,
+        .excerpt {
+          padding-left: $spacing / 4 !important;
+          padding-right: $spacing / 4 !important;
+          border: none !important;
+        }
+        .title {
+          height: $spacing * 2;
+          border: none;
+        }
+        a {
+          position: absolute;
+          bottom: $spacing ;
+          right: $spacing / 4;
+        }
          a > button {
             @extend .action_button;
+            padding: $spacing / 4 $spacing / 2;
          }
 
       }
