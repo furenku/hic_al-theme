@@ -9441,17 +9441,17 @@ section.archive {
     padding-left: 60px;
     padding-right: 60px;
     background-color: #888;
-    color: white; }
+    color: white;
+    text-align: center; }
     #home-membership #home-membership-member_invitation h2 {
       margin-top: 0; }
-    #home-membership #home-membership-member_invitation h2, #home-membership #home-membership-member_invitation h3 {
-      text-align: center; }
     #home-membership #home-membership-member_invitation .text {
       height: auto;
       padding: 0; }
     #home-membership #home-membership-member_invitation .excerpt {
       padding: 15px 45px; }
-      #home-membership #home-membership-member_invitation .excerpt * {
+      #home-membership #home-membership-member_invitation .excerpt tacz
+      * {
         font-size: 15px; }
     #home-membership #home-membership-member_invitation footer {
       text-align: center; }
