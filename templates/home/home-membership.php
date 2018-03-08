@@ -27,7 +27,7 @@ $membership_invitation_page = 'Nuevos Miembros';
            <?php echo apply_filters('the_title',$page->post_title); ?>
         </h3>
 
-        <div class="image" image-frame="">
+        <div class="image" image-frame contain>
            <?php echo get_the_post_thumbnail($page->ID,'medium'); ?>
         </div>
 
@@ -111,7 +111,7 @@ $membership_invitation_page = 'Nuevos Miembros';
            <?php echo apply_filters('the_title',$page->post_title); ?>
         </h3>
 
-        <div image-frame="">
+        <div image-frame contain>
            <?php echo get_the_post_thumbnail($page->ID,'medium'); ?>
         </div>
 
