@@ -50,29 +50,32 @@ if( have_posts() ) {
   </h1>
 
 
-  <?php include( locate_template('templates/components/section-menu.php') ); ?>
+  <?php
+    $prefix = "activity";
+    include( locate_template('templates/components/shared/section-menu.php') );
+  ?>
 
 
   <section id="activity-sections" class="sections_list">
 
     <section id="activity-<?php echo name2slug('Solidaridad'); ?>" class="activity-section">
-      <?php include_once( locate_template('sections/activity/activity-solidarity.php', true) ); ?>
+      <?php include_once( locate_template('templates-activity/activity/activity-solidarity.php', true) ); ?>
     </section>
 
     <section id="activity-<?php echo name2slug( $news_item_name ); ?>" class="activity-section">
-      <?php include_once( locate_template('sections/activity/activity-news.php', true) ); ?>
+      <?php include_once( locate_template('templates-activity/activity/activity-news.php', true) ); ?>
     </section>
 
     <section id="activity-<?php echo name2slug( $open_call_name ); ?>" class="activity-section">
-      <?php include_once( locate_template('sections/activity/activity-open_calls.php', true) ); ?>
+      <?php include_once( locate_template('templates-activity/activity/activity-open_calls.php', true) ); ?>
     </section>
 
     <section id="activity-<?php echo name2slug( $event_name ); ?>" class="activity-section">
-      <?php include_once( locate_template('sections/activity/activity-events.php', true) ); ?>
+      <?php include_once( locate_template('templates-activity/activity/activity-events.php', true) ); ?>
     </section>
 
     <section id="activity-<?php echo name2slug( $category_name ); ?>" class="activity-section">
-      <?php include_once( locate_template('sections/activity/activity-articles.php', true) ); ?>
+      <?php include_once( locate_template('templates-activity/activity/activity-articles.php', true) ); ?>
     </section>
 
   </section>

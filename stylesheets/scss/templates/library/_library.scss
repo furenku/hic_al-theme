@@ -1,0 +1,13 @@
+@import 'library/library-publications';
+@import 'library/library-member-publications';
+@import 'library/library-multimedia';
+@import 'library/library-documents';
+@import 'library/library-glossary';
+
+#library {
+
+  .sections_list > section {
+    @extend .container;  
+  }
+
+}

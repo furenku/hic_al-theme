@@ -7,7 +7,7 @@
     <?php foreach( $subsections as $section ) : ?>
 
       <li>
-        <a href="#activity-<?php echo name2slug($section); ?>">
+        <a href="#<?php echo $prefix . '-' . name2slug($section); ?>">
 
           <span>
              <?php echo $section; ?>

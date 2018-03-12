@@ -52,7 +52,11 @@ $component_min_height: 35vh;
 @import "components/home/home-about_hic";
 
 
-@import "templates/sections/activity";
+@import "components/shared/publication-list";
+@import "components/shared/pagination-menu";
+
+@import "templates/library/library";
+@import "templates/activity/activity";
 @import "templates/microsite/microsite";
 
 

@@ -1,0 +1,52 @@
+.pagination_menu {
+
+  @extend .col-xs-12;
+
+  margin-top: $spacing;
+  
+  text-align: center;
+
+  border-top: 1px solid $neutral_medium;
+  border-bottom: 1px solid $neutral_medium;
+
+  padding: $spacing / 2;
+
+  ul {
+    height: $spacing / 1.25 !important;
+
+      li {
+
+        // float: left;
+
+        display: inline-block;
+
+        width: auto;
+
+        margin: 0 $spacing / 4;
+
+        .pagination_button {
+
+          &.active {
+            background-color: $neutral_medium;
+            color: #fff;
+            font-weight: bold;
+          }
+
+          display: block;
+          width: $spacing / 1.25 !important;
+          height: $spacing / 1.25;
+          padding: 0 $spacing / 4 !important;
+          margin: 0 !important;
+          text-align: center;
+          border-radius: 50%;
+          border: 1px solid $neutral_medium !important;
+
+          font-size: $font-xs;
+          line-height: 1;
+        }
+
+      }
+
+  }
+
+}

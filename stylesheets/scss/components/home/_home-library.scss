@@ -15,43 +15,7 @@
    @extend .row;
 
    ul {
-
-      article {
-
-         @extend .col-xs-4;
-
-         & > a > div {
-
-           @extend .col-xs-8;
-
-           height: $spacing * 6.5;
-            position: relative;
-
-           footer {
-             // font-size: $font-xs;
-             // text-align: left;
-             padding: 0 $spacing / 2;
-             // color: $neutral_medium;
-             // position: relative;
-           }
-         }
-
-         & > a > [image-frame] {
-           @extend .col-xs-4;
-            height: $spacing * 6;
-         }
-
-         .publication-info {
-           font-size: $font-s;
-           text-align: left;
-           height: $spacing * 2;
-
-           .publication-year {
-             margin-top: $spacing / 2;
-           }
-
-         }
-      }
+      @extend .publication_list;      
    }
 
    footer {

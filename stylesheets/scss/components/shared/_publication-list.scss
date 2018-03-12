@@ -1,0 +1,57 @@
+.publication_list {
+  article {
+
+    @extend .col-xs-4;
+
+    padding: $spacing / 2;
+
+    & > .text {
+      @extend .col-xs-7;
+      text-align: left;
+
+      position: relative;
+
+      footer {
+        position: absolute;
+        bottom: 0;
+        padding: 0 $spacing / 2;
+
+        height: $spacing !important;
+        font-size: $font-xs;
+
+      }
+    }
+
+    & > div,
+    & > a > div {
+
+
+      height: $spacing * 7;
+
+      footer {
+        position: relative;
+        font-size: $font-xxs !important;
+        // text-align: left;
+        padding: 0 $spacing / 2;
+        // color: $neutral_medium;
+        // position: relative;
+      }
+    }
+
+    & > a > [image-frame] {
+      @extend .col-xs-5;
+    }
+
+    .publication-info {
+
+      font-size: $font-s;
+      // text-align: left;
+      // height: $spacing * 2;
+
+      .publication-year {
+        margin-top: $spacing / 2;
+      }
+
+    }
+  }
+}

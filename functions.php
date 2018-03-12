@@ -535,4 +535,13 @@ function name2slug( $name ) {
 }
 
 
+
+
+function setup_query_vars($vars ) {
+
+  $vars[] = "publications_page";
+  return $vars;
+}
+add_filter( 'query_vars', 'setup_query_vars' );
+
 ?>

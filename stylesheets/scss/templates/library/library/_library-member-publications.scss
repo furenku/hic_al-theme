@@ -1,0 +1,19 @@
+#library-member-publication_list {
+  article {
+    @extend .col-md-6;
+    @extend .col-lg-4;
+
+    [image-frame] {
+      height: $spacing * 8;
+    }
+
+    text-align: center;
+
+    padding: $spacing;
+
+  }
+
+  &>footer {
+
+  }
+}
