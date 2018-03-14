@@ -94,3 +94,7 @@
    </header>
 
    <main>
+
+
+
+<?php global $template; echo $template; ?>

@@ -1,83 +1,125 @@
 
-  <ul id="library-media_content_list" class="media_content_list">
+<?php
 
-    <?php
-    $publications_page = ( get_query_var( 'publications_page' ) ) ? get_query_var( 'publications_page' ) : 1;
 
-    $posts_per_page = 3;
-    $this_url = get_permalink();
 
-    $q = new WP_Query(array(
-      'post_type' => array('publication'),
-      'posts_per_page' => $posts_per_page,
-      'paged' => $publications_page
-    )
-    );
+library_media_content_list('Video');
+library_media_content_list('Fotografía');
+library_media_content_list('Audio');
 
-    $total_posts = $q->found_posts;
+function library_media_content_list( $term_name ) {
 
-    if( $q->have_posts() ) :
-      while ( $q->have_posts() ) :
-        $q->the_post();
+  ?>
+  <section id="<?php echo name2slug($term_name); ?>-list" class="media_content-list">
 
-        $title = apply_filters('the_title',get_the_title());
-        $image = get_the_post_thumbnail();
-        $publication_authors = get_post_meta( get_the_ID(), 'publication-info-authors', true );
-        $publication_year = date_i18n( 'Y', strtotime(get_post_meta( get_the_ID(), 'publication-info-date', true )));
+    <h2>
+      <?php echo $term_name; ?>
+    </h2>
 
-        ?>
+    <ul id="library-media_content_list" class="media_content_list">
 
-        <article>
+      <?php
+      // $publications_page = ( get_query_var( 'publications_page' ) ) ? get_query_var( 'publications_page' ) : 1;
 
-          <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
-            <div image-frame>
-              <?php echo $image; ?>
-            </div>
+      $posts_per_page = 6;
+      $this_url = get_permalink();
 
-            <div>
+      $term = get_term_by( 'name', $term_name, 'media_content-type' );
 
-              <h5>
-                <?php echo $title; ?>
-              </h5>
 
-              <div class="publication-info">
+      $taxonomy_term_link = get_term_link( get_term_by('name',$term_name,'media_content-type') );
+      $taxonomy_term_name = $term->name;
 
-                <div class="publication-author">
+      $q = new WP_Query(array(
+        'post_type' => array('media_content'),
+        'posts_per_page' => $posts_per_page,
 
-                  <ul>
-                    <?php foreach ($publication_authors as $publication_author) :  ?>
-                    <li>
-                      <?php echo $publication_author; ?>
-                    </li>
-                    <?php endforeach; ?>
+        'tax_query' => array(
+        		array(
+        			'taxonomy' => 'media_content-type',
+              'field' => 'term_id',
+        			'terms'    => array($term->term_id)
+        		),
+        	),
 
-                  </ul>
+          // 'paged' => $publications_page
+        )
+      );
+
+      $total_posts = $q->found_posts;
+
+      if( $q->have_posts() ) :
+
+        while ( $q->have_posts() ) :
+
+          $q->the_post();
+
+          $title = apply_filters( 'the_title', get_the_title() );
+          $image = get_the_post_thumbnail();
+
+          ?>
+
+          <article>
+
+            <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
+
+              <?php if( $image ) : ?>
+
+                <div image-frame>
+                  <?php echo $image; ?>
                 </div>
 
-                <div class="publication-year">
-                  <?php echo $publication_year; ?>
-                </div>
+              <?php else: ?>
 
+                <button class="link-button">
+                  <i class="fa fa-play-circle-o"></i>
+                </button>
+
+              <?php endif; ?>
+            </a>
+
+            <footer>
+
+              <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
+                <h5 class="title">
+                  <?php echo $title; ?>
+                </h5>
+              </a>
+
+              <div class="excerpt">
+                <?php echo get_the_excerpt(); ?>
               </div>
 
-              <?php #  article_footer(); ?>
+              <div class="article-footer">
+                <?php article_footer(); ?>
+              </div>
 
-            </div>
 
-          </a>
-        </article>
+            </footer>
 
-        <?php
+          </article>
 
-      endwhile;
-    endif;
+          <?php
 
-    ?>
+        endwhile;
+      endif;
 
-</ul>
+      ?>
 
-<footer>
+    </ul>
 
-  <?php include(locate_template('templates/components/shared/pagination_menu.php')); ?>
+    <footer>
+      <a href="<?php echo $taxonomy_term_link; ?>">
+        <button>
+          Ver más <?php echo $taxonomy_term_name; ?>s
+        </button>
+      </a>
+    </footer>
 
-</footer>
+  </section>
+
+<?php
+
+}
+
+?>
