@@ -10,6 +10,16 @@ if( ! $category ) {
 if( ! $number ) {
   $number = -1;
 }
+
+if( ! $query ) {
+
+  $query = new WP_Query( array(
+     'post_type'=> $post_type,
+     'posts_per_page' => $number,
+     'cat' => $category,
+  ));
+
+}
 ?>
 
 
@@ -23,21 +33,38 @@ if( ! $number ) {
 
       <?php
 
-      $q = new WP_Query( array(
-         'post_type'=> $post_type,
-         'posts_per_page' => $number,
-         'cat' => $category,
-      ));
 
-      if( $q->have_posts() ) {
-        while ( $q->have_posts() ) {
-          $q->the_post();
+      if( $query->have_posts() ) {
+        while ( $query->have_posts() ) {
+          $query->the_post();
 
           $latitude = get_post_meta( get_the_ID(), 'content-map_location-latitude', true );
           $longitude = get_post_meta( get_the_ID(), 'content-map_location-longitude', true );
 
           $country = get_post_meta( get_the_ID(), 'content-place-country', true );
           $location = get_post_meta( get_the_ID(), 'content-place-location', true );
+
+          $author_id =  get_the_author_meta( 'ID' );
+
+          if( ! $latitude || $longitude ) {
+            $user = get_userdata( $author_id );
+
+            if ( in_array( 'member_role', (array) $user->roles ) ) {
+              $latitude = esc_attr( get_the_author_meta( 'latitude' ) );
+              $longitude = esc_attr( get_the_author_meta( 'longitude' ) );
+            }
+          }
+
+
+          if( ! $country || $location ) {
+
+            if ( in_array( 'member', (array) $user->roles ) ) {
+              $country = esc_attr( get_the_author_meta( 'country' ) );
+              $location = esc_attr( get_the_author_meta( 'location' ) );
+            }
+
+          }
+
 
           ?>
 

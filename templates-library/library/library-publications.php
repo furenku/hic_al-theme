@@ -4,8 +4,7 @@
   $publications_page = ( get_query_var( 'publications_page' ) ) ? get_query_var( 'publications_page' ) : 1;
 
   $posts_per_page = 6;
-  $this_url = get_permalink();
-
+  
   $member_authors = get_users( array('role'=>'member_role') );
   $member_author_ids = array();
 
@@ -29,6 +28,10 @@
 
 <footer>
 
-  <?php include(locate_template('templates/components/shared/pagination-menu.php')); ?>
+  <?php
+  $page_var_name = 'publications_page';
+  $page_var = $publications_page;
+  include(locate_template('templates/components/shared/pagination-menu.php'));
+  ?>
 
 </footer>

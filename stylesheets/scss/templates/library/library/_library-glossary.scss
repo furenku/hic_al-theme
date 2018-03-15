@@ -1,4 +1,43 @@
-#library-glossary_term_list {
-  article {
+dl#library-glossary_term_list {
+
+  margin-top: $spacing * 2;
+
+
+  .glossary-term,
+  .glossary-definition {
+    text-align: left;
   }
+
+  .glossary-term {
+    @extend .col-xs-6;
+    @extend .col-sm-5;
+    @extend .col-md-4;
+    @extend .col-lg-3;
+    font-size: $font-l;
+  }
+
+  .glossary-definition {
+    @extend .col-xs-6;
+    @extend .col-sm-7;
+    @extend .col-md-8;
+    @extend .col-lg-9;
+
+    margin-bottom: $spacing * 2;
+
+    &,* {
+      font-size: $font-ml;
+    }
+
+    @media screen and (min-width: 960px) {
+      padding-left: $spacing * 2;
+      margin-bottom: $spacing * 3;
+    }
+    @media screen and (min-width: 1170px) {
+      padding-left: $spacing * 3;
+      margin-bottom: $spacing * 4;
+    }
+
+  }
+
+
 }

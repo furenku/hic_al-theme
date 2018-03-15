@@ -352,6 +352,12 @@ function hic_al_query_vars_filter($vars) {
   $vars[] .= 'date_end';
   $vars[] .= 'categories';
   $vars[] .= 'countries';
+
+  // paging:
+  $vars[] = "publications_page";
+  $vars[] = "member_publications_page";
+  $vars[] = "documents_page";
+
   return $vars;
 }
 add_filter( 'query_vars', 'hic_al_query_vars_filter' );
@@ -536,12 +542,5 @@ function name2slug( $name ) {
 
 
 
-
-function setup_query_vars($vars ) {
-
-  $vars[] = "publications_page";
-  return $vars;
-}
-add_filter( 'query_vars', 'setup_query_vars' );
 
 ?>

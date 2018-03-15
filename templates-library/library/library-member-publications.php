@@ -1,9 +1,8 @@
 
     <?php
-    $publications_page = ( get_query_var( 'publications_page' ) ) ? get_query_var( 'publications_page' ) : 1;
+    $member_publications_page = ( get_query_var( 'member_publications_page' ) ) ? get_query_var( 'member_publications_page' ) : 1;
 
-    $posts_per_page = 3;
-    $this_url = get_permalink();
+    $posts_per_page = 12;
 
     $member_authors = get_users( array('role'=>'member_role') );
     $member_author_ids = array();
@@ -16,20 +15,27 @@
 
     $q = new WP_Query(array(
       'post_type' => array('publication'),
-      'posts_per_page' => $posts_per_page,
+      'posts_per_page' => -1,
       'author__in' => $member_author_ids,
-      'paged' => $publications_page
+      'paged' => $member_publications_page
     )
     );
 
     $show_footer = true;
 
-    include(locate_template('templates/components/shared/publication-list.php'));
+    $query = $q;
 
-    ?>
+    include_once(locate_template('templates/components/post-map.php'));
+
+
+              ?>
 
 <footer>
 
-  <?php include(locate_template('templates/components/shared/pagination-menu.php')); ?>
+  <?php
+  // $page_var_name = 'member_publications_page';
+  // $page_var = $member_publications_page;
+  // include(locate_template('templates/components/shared/pagination-menu.php'));
+  ?>
 
 </footer>

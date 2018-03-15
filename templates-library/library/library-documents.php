@@ -2,15 +2,22 @@
   <ul id="library-document_list" class="document_list">
 
     <?php
-    $publications_page = ( get_query_var( 'publications_page' ) ) ? get_query_var( 'publications_page' ) : 1;
+    $documents_page = ( get_query_var( 'documents_page' ) ) ? get_query_var( 'documents_page' ) : 1;
 
-    $posts_per_page = 3;
-    $this_url = get_permalink();
+    $posts_per_page = 4;
 
     $q = new WP_Query(array(
-      'post_type' => array('publication'),
+      'post_type' => array('document'),
       'posts_per_page' => $posts_per_page,
-      'paged' => $publications_page
+      'tax_query' => array(
+        array(
+          'taxonomy' => 'document-type',
+          'field'    => 'slug',
+          'terms'    => array('biblioteca'),
+          'operator'  => 'IN'
+        ),
+      ),
+      'paged' => $documents_page
     )
     );
 
@@ -21,50 +28,43 @@
         $q->the_post();
 
         $title = apply_filters('the_title',get_the_title());
-        $image = get_the_post_thumbnail();
-        $publication_authors = get_post_meta( get_the_ID(), 'publication-info-authors', true );
-        $publication_year = date_i18n( 'Y', strtotime(get_post_meta( get_the_ID(), 'publication-info-date', true )));
+        $excerpt = wp_trim_words(apply_filters('the_excerpt',get_the_excerpt()),15);
+        $file = get_post_meta( get_the_ID(), 'document-file', true );
 
         ?>
 
         <article>
 
           <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
-            <div image-frame>
-              <?php echo $image; ?>
-            </div>
 
-            <div>
+            <h5 class="title">
+              <?php echo $title; ?>
+            </h5>
 
-              <h5>
-                <?php echo $title; ?>
-              </h5>
-
-              <div class="publication-info">
-
-                <div class="publication-author">
-
-                  <ul>
-                    <?php foreach ($publication_authors as $publication_author) :  ?>
-                    <li>
-                      <?php echo $publication_author; ?>
-                    </li>
-                    <?php endforeach; ?>
-
-                  </ul>
-                </div>
-
-                <div class="publication-year">
-                  <?php echo $publication_year; ?>
-                </div>
-
-              </div>
-
-              <?php #  article_footer(); ?>
-
-            </div>
+            <p class="excerpt">
+              <?php echo $excerpt; ?>
+            </p>
 
           </a>
+
+          <footer>
+
+            <?php if ($file) : ?>
+
+              <a href="<?php echo $file; ?>" download>
+                <button class="link-button">
+                  <i class="fa fa-download"></i>
+                </button>
+              </a>
+
+            <?php endif; ?>
+
+            <?php article_footer(); ?>
+
+          </footer>
+
+            </div>
+
         </article>
 
         <?php
@@ -78,6 +78,10 @@
 
 <footer>
 
-  <?php include(locate_template('templates/components/shared/pagination_menu.php')); ?>
+  <?php
+  $page_var_name = 'documents_page';
+  $page_var = $documents_page;
+  include(locate_template('templates/components/shared/pagination-menu.php'));
+  ?>
 
 </footer>

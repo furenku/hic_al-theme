@@ -1,41 +1,40 @@
-
 <?php
 
 
 
-library_media_content_list('Video');
-library_media_content_list('Fotografía');
-library_media_content_list('Audio');
+library_document_type_list('Mapa');
+library_document_type_list('Infográfico');
+library_document_type_list('Diseño');
 
-function library_media_content_list( $term_name ) {
+function library_document_type_list( $term_name ) {
 
   ?>
-  <section id="<?php echo name2slug($term_name); ?>-list" class="media_content-list">
+  <section id="<?php echo name2slug($term_name); ?>-list" class="document_type-list">
 
     <h2>
-      <?php echo $term_name; ?>
+      <?php echo $term_name . "s"; ?>
     </h2>
 
-    <ul id="library-media_content_list" class="media_content_list">
+    <ul class="library-document_list">
 
       <?php
       // $publications_page = ( get_query_var( 'publications_page' ) ) ? get_query_var( 'publications_page' ) : 1;
 
       $posts_per_page = 6;
 
-      $term = get_term_by( 'name', $term_name, 'media_content-type' );
+      $term = get_term_by( 'name', $term_name, 'document-type' );
 
 
-      $taxonomy_term_link = get_term_link( get_term_by('name',$term_name,'media_content-type') );
+      $taxonomy_term_link = get_term_link( get_term_by('name',$term_name,'document-type') );
       $taxonomy_term_name = $term->name;
 
       $q = new WP_Query(array(
-        'post_type' => array('media_content'),
+        'post_type' => array('document'),
         'posts_per_page' => $posts_per_page,
 
         'tax_query' => array(
         		array(
-        			'taxonomy' => 'media_content-type',
+        			'taxonomy' => 'document-type',
               'field' => 'term_id',
         			'terms'    => array($term->term_id)
         		),

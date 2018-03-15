@@ -1,4 +1,44 @@
 #library-document_list {
   article {
+
+    padding: $spacing / 2;
+
+    @extend .col-xs-6;
+    @extend .col-md-4;
+    @extend .col-lg-3;
+
+
+    .title,
+    .excerpt {
+      text-align: left;
+    }
+
+    .excerpt {
+      font-size: $font-s;
+    }
+
+    footer {
+      @extend .col-xs-12;
+      height: 56px;
+      text-align: right;
+      position: relative;
+      padding: 0 !important;
+
+      &>a {
+        @extend .col-xs-3;
+        @extend .col-xs-offset-9;
+        button {
+          @extend .link-button;
+          // float: right !important;
+        }
+
+      }
+    }
+
+    .article-footer {
+      position: relative;
+      padding: 0 !important;
+    }
+
   }
 }

@@ -8,6 +8,7 @@ Template Name: Library
 get_header();
 
 
+
 $publications_page = get_page_by_title("Publicaciones de HIC");
 $publications_name = apply_filters( 'the_title', $publications_page -> post_title );
 
@@ -53,6 +54,8 @@ if( have_posts() ) {
   while ( have_posts() ) {
     the_post();
 
+    global $parent_page_url;
+    $parent_page_url = get_permalink();
 
 ?>
 
@@ -124,6 +127,8 @@ if( have_posts() ) {
       </h2>
 
       <?php include_once( locate_template('templates-library/library/library-documents.php') ); ?>
+
+      <?php include_once( locate_template('templates-library/library/library-documents-special_types.php') ); ?>
 
     </section>
 

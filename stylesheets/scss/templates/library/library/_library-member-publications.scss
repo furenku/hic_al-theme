@@ -1,19 +1,32 @@
-#library-member-publication_list {
-  article {
-    @extend .col-md-6;
-    @extend .col-lg-4;
+#library-miembros {
 
-    [image-frame] {
-      height: $spacing * 8;
-    }
+  height: 80vh;
 
-    text-align: center;
-
-    padding: $spacing;
-
+  h2 {
+    margin-bottom: $spacing * 2;
+  }
+  .post-map {
+    height: 100%;
   }
 
-  &>footer {
-
-  }
 }
+
+// #library-member-publication_list {
+//   article {
+//     @extend .col-md-6;
+//     @extend .col-lg-4;
+//
+//     [image-frame] {
+//       height: $spacing * 8;
+//     }
+//
+//     text-align: center;
+//
+//     padding: $spacing;
+//
+//   }
+//
+//   &>footer {
+//
+//   }
+// }

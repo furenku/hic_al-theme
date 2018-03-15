@@ -3,6 +3,7 @@ $font-xs: 10px;
 $font-s: 12px;
 $font-m: 15px;
 $font-mm: 16px;
+$font-ml: 19px;
 $font-l: 23px;
 $font-xl: 28px;
 $font-xxl: 35px;
@@ -66,6 +67,32 @@ body, ul, li {
   height: auto;
 
 }
+
+
+.link-button {
+
+  // position: absolute;
+  //
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: center;
+  background: none;
+  //
+  // width: 56px;
+  height: 56px;
+
+  // top: 8px;
+  // right: 8px;
+
+  font-size: 40px;
+
+  color: $neutral_light;
+
+}
+
+
+
 
 .border_light {
   border: 1px solid $neutral_light;
