@@ -50,17 +50,17 @@ if( ! $query ) {
             $user = get_userdata( $author_id );
 
             if ( in_array( 'member_role', (array) $user->roles ) ) {
-              $latitude = esc_attr( get_the_author_meta( 'latitude' ) );
-              $longitude = esc_attr( get_the_author_meta( 'longitude' ) );
+              $latitude = esc_attr( get_the_author_meta( 'latitude', $user->ID ) );
+              $longitude = esc_attr( get_the_author_meta( 'longitude', $user->ID ) );
             }
           }
 
 
           if( ! $country || $location ) {
 
-            if ( in_array( 'member', (array) $user->roles ) ) {
-              $country = esc_attr( get_the_author_meta( 'country' ) );
-              $location = esc_attr( get_the_author_meta( 'location' ) );
+            if ( in_array( 'member_role', (array) $user->roles ) ) {
+              $country = esc_attr( get_the_author_meta( 'country', $user->ID ) );
+              $location = esc_attr( get_the_author_meta( 'location', $user->ID ) );
             }
 
           }
