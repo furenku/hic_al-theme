@@ -7,4 +7,9 @@
 
 #activity {
 
+  .page-section {
+    @extend .container;
+    // @extend .row;
+  }
+
 }

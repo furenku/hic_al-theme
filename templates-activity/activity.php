@@ -42,7 +42,7 @@ if( have_posts() ) {
 
 ?>
 
-<article id="activity" class="site_section">
+<section id="activity" class="site_section">
 
 
   <h1 class="section-title">
@@ -58,30 +58,30 @@ if( have_posts() ) {
 
   <section id="activity-sections" class="sections_list">
 
-    <section id="activity-<?php echo name2slug('Solidaridad'); ?>" class="activity-section">
+    <section id="activity-<?php echo name2slug('Solidaridad'); ?>" class="page-section">
       <?php include_once( locate_template('templates-activity/activity/activity-solidarity.php', true) ); ?>
     </section>
 
-    <section id="activity-<?php echo name2slug( $news_item_name ); ?>" class="activity-section">
+    <section id="activity-<?php echo name2slug( $news_item_name ); ?>" class="page-section">
       <?php include_once( locate_template('templates-activity/activity/activity-news.php', true) ); ?>
     </section>
 
-    <section id="activity-<?php echo name2slug( $open_call_name ); ?>" class="activity-section">
+    <section id="activity-<?php echo name2slug( $open_call_name ); ?>" class="page-section">
       <?php include_once( locate_template('templates-activity/activity/activity-open_calls.php', true) ); ?>
     </section>
 
-    <section id="activity-<?php echo name2slug( $event_name ); ?>" class="activity-section">
+    <section id="activity-<?php echo name2slug( $event_name ); ?>" class="page-section">
       <?php include_once( locate_template('templates-activity/activity/activity-events.php', true) ); ?>
     </section>
 
-    <section id="activity-<?php echo name2slug( $category_name ); ?>" class="activity-section">
+    <section id="activity-<?php echo name2slug( $category_name ); ?>" class="page-section">
       <?php include_once( locate_template('templates-activity/activity/activity-articles.php', true) ); ?>
     </section>
 
   </section>
 
 
-</article>
+</section>
 
 <?php
 

@@ -1,0 +1,18 @@
+#working_groups {
+
+  a.working_group-link {
+
+    @extend .col-md-4;
+
+    text-align: center;
+
+    height: $spacing * 12;
+
+
+    [image-frame] {
+      height: $spacing * 6;
+    }
+
+  }
+
+}

@@ -41,6 +41,7 @@ $component_min_height: 35vh;
 @import "components/hic_al-page";
 @import "components/hic_al-archive";
 @import "components/hic_al-search_form";
+@import "components/hic_al-working_group";
 
 @import "components/home/home-cover";
 @import "components/home/home-menu";
@@ -55,6 +56,7 @@ $component_min_height: 35vh;
 @import "components/shared/publication-list";
 @import "components/shared/pagination-menu";
 
+@import "templates/working_groups/working_groups";
 @import "templates/library/library";
 @import "templates/activity/activity";
 @import "templates/microsite/microsite";
