@@ -1,0 +1,208 @@
+#about_hic {
+  section {
+    @extend .row;
+  }
+  &>section {
+    @extend .row;
+    &.section_list {
+      &>section {
+        h3 {
+          @extend .header-bar;
+        }
+      }
+    }
+  }
+
+  nav li {
+    transition: all 0.2s ease-in-out;
+
+  }
+  nav li:hover {
+    background-color: $neutral_medium;
+
+    * {
+      color: #fff;
+    }
+
+  }
+  .content {
+
+    &,p {
+      font-size: $font-m;
+    }
+
+  }
+  #about_hic-areas_tematicas {
+
+    // height: 60vh;
+
+    &>section.text {
+      @extend .col-md-5;
+      @extend .col-lg-4;
+      // height: auto;
+
+    }
+
+    &>nav {
+
+      // height: auto;
+
+      @extend .col-md-6;
+      @extend .col-lg-7;
+      @extend .col-md-offset-1;
+      @extend .col-lg-offset-1;
+
+      ul {
+        @extend .col-xs-12;
+        height: auto;
+
+        li {
+
+          height: auto;
+
+          @extend .row;
+
+          padding: 0;
+
+
+          [image-frame] {
+            @extend .col-xs-2;
+            @extend .ratio-square;
+          }
+
+          .text {
+            @extend .col-xs-10;
+          }
+
+        }
+
+      }
+    }
+
+  }
+
+  #about_hic-la_coalicion {
+
+    .subpages_viewer {
+
+        &>nav,
+        &>.content {
+          //
+          // margin: $spacing / 2 0;
+          //
+          // @media screen and (min-width:960px) {
+          //   margin: $spacing 0;
+          // }
+          //
+          // @media screen and (min-width:960px) {
+          //   margin: $spacing * 1.5 0;
+          // }
+
+        }
+
+        &>nav {
+
+          @extend .col-md-6;
+          @extend .col-lg-5;
+
+          li {
+
+            padding: $spacing /2;
+
+            .title {
+              margin-top: 0;
+            }
+
+            p {
+              margin-bottom: 0;
+            }
+
+            &.active {
+              background-color: $neutral_light;
+            }
+
+            a {
+              color: #000;
+              width: 100%;
+              height: 100%;
+              display: block;
+            }
+
+          }
+
+        }
+
+        &>.content {
+
+          overflow-y: auto;
+
+          @extend .col-md-6;
+          @extend .col-lg-7;
+
+          padding: 0 $spacing;
+
+          @media screen and (min-width:960px) {
+            padding: 0 $spacing * 1.5;
+          }
+
+          @media screen and (min-width:1200px) {
+            padding: 0 $spacing * 2;
+          }
+
+
+        }
+
+
+    }
+  }
+
+
+  #about_hic-estructuras {
+
+    &>section {
+
+      @extend .col-md-6;
+      padding: $spacing;
+
+      &.links {
+
+      text-align: center;
+
+      font-size: $font-ml;
+      line-height: 2.5;
+
+      }
+
+      &.description {
+
+      font-size: $font-m;
+      line-height: 1.5;
+
+      }
+
+    }
+
+  }
+
+
+  #about_hic-boletin {
+
+    @extend .col-md-8;
+
+
+    &>section {
+
+      @extend .col-md-6;
+
+    }
+
+
+  }
+
+  #about_hic-contacto {
+
+    @extend .col-md-4;
+
+  }
+
+}

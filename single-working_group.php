@@ -43,7 +43,7 @@ if( have_posts() ) {
 
          <section class="dynamic-content-area">
 
-             <!-- <?php show_dynamic_contents(); ?> -->
+             <?php show_dynamic_contents(); ?>
 
          </section>
 

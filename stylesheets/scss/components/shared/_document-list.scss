@@ -1,4 +1,7 @@
-#library-document_list {
+.document-list {
+
+  @extend .col-xs-12 ;
+
   article {
 
     padding: $spacing / 2;

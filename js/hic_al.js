@@ -41,6 +41,8 @@ $(document).ready(function(){
 
   custom_toggles()
 
+  setup_subpages_viewer()
+
   console.log("HIC AL theme ready")
 
 })
@@ -377,5 +379,37 @@ function setup_section_menu() {
     return false
 
   })
+
+}
+
+
+
+function setup_subpages_viewer() {
+
+  if( $('.subpages_viewer').length > 0 ) {
+
+    $('.subpages_viewer nav li a').click(function(e){
+
+      e.preventDefault()
+
+      var index = $(this).parent().index()
+
+
+      $('.subpages_viewer .page_content').eq(index)
+      .show().addClass('visible')
+      .siblings().removeClass('visible').hide()
+
+      $(this).parent().addClass('active')
+      .siblings().removeClass('active')
+
+    })
+
+    $('.subpages_viewer .page_content').hide()
+    $('.subpages_viewer .page_content').first().show().addClass('visible')
+    $('.subpages_viewer nav li').first().addClass('active')
+
+    return false
+
+  }
 
 }

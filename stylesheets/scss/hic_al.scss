@@ -55,11 +55,17 @@ $component_min_height: 35vh;
 
 @import "components/shared/publication-list";
 @import "components/shared/pagination-menu";
+@import "components/shared/document-list";
+
+@import "templates/author/author";
 
 @import "templates/working_groups/working_groups";
 @import "templates/library/library";
 @import "templates/activity/activity";
 @import "templates/microsite/microsite";
+@import "templates/about_hic/about_hic";
+@import "templates/membership/membership";
+@import "templates/thematic_area/thematic_area";
 
 
 main {

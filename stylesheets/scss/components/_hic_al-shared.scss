@@ -101,7 +101,16 @@ body, ul, li {
 
 
 
+.header-bar {
 
+    padding: $spacing / 4;
+
+    background-color: $neutral_medium;
+    color: #fff;
+
+    text-align: center;
+
+}
 
 
 main > h3 {
@@ -111,12 +120,7 @@ main > h3 {
 main > h3,
 main > section > h3 {
 
-  padding: $spacing / 4;
-
-  background-color: $neutral_medium;
-  color: #fff;
-
-  text-align: center;
+  @extend .header-bar;
 
 }
 
@@ -406,7 +410,9 @@ a {
 
   transition: color 0.3s;
 
-  &:hover {
+  &:visited,
+  &:active,
+  &:focus {
     color: #000;
   }
 }

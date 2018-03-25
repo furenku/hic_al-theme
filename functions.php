@@ -82,6 +82,9 @@ function post_type_list( $post_type, $args = array() ) {
   if( $args['number'] ) {
      $post_number = $args['number'];
   }
+  if( $args['tax_query'] ) {
+     $tax_query = $args['tax_query'];
+  }
 
 
    $exclude = array();
@@ -102,10 +105,14 @@ function post_type_list( $post_type, $args = array() ) {
       <ul class="<?php echo $plural_slug; ?> post-list">
 
          <?php
+
          $q = new WP_Query( array(
             'post_type'=>$post_type,
             'post__not_in' => $exclude,
-            'posts_per_page' => $post_number
+            'posts_per_page' => $post_number,
+
+             'tax_query' => $tax_query,
+
          ));
 
          if( $q->have_posts() ) {

@@ -126,7 +126,21 @@ if( have_posts() ) {
         <?php echo $documents_name; ?>
       </h2>
 
-      <?php include_once( locate_template('templates-library/library/library-documents.php') ); ?>
+      <?php
+
+      $tax_query = array(
+        array(
+          'taxonomy' => 'document-type',
+          'field'    => 'slug',
+          'terms'    => array('biblioteca'),
+          'operator'  => 'IN'
+        ),
+      );
+
+      include_once( locate_template('templates/components/shared/document-list.php',true) );
+
+      ?>
+
 
       <?php include_once( locate_template('templates-library/library/library-documents-special_types.php') ); ?>
 
