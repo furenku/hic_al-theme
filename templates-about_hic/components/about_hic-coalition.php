@@ -39,6 +39,11 @@ ob_start();
   <h4 class="title">
     <?php echo apply_filters('the_title',$page -> post_title); ?>
   </h4>
+
+  <div image-frame>
+    <?php echo get_the_post_thumbnail( $page -> ID ); ?>
+  </div>
+
   <div class="content">
     <?php echo apply_filters('the_content',$page -> post_content); ?>
   </div>

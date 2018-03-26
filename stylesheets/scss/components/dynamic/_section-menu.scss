@@ -3,15 +3,12 @@
   @extend .container-fluid;
   height: auto;
 
-  ul {
-    @extend .container;
-  }
-
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 
   ul {
 
+    @extend .container;
     height: 100%;
 
     display: -webkit-flex;
@@ -46,6 +43,10 @@
 
       align-items: center;
 
+
+      &.active {
+        background-color: $neutral_light;
+      }
     }
 
   }

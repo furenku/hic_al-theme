@@ -364,6 +364,8 @@ function hic_al_query_vars_filter($vars) {
   $vars[] = "publications_page";
   $vars[] = "member_publications_page";
   $vars[] = "documents_page";
+  $vars[] = "member_activity_page";
+  $vars[] = "member_articles_page";
 
   return $vars;
 }

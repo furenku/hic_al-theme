@@ -1,0 +1,66 @@
+#membership {
+
+  height: auto;
+
+  #membership-sections,
+  #membership-map {
+  }
+
+  #membership-sections {
+    @extend .col-md-7;
+    @extend .col-lg-8;
+
+    // overflow-y: auto;
+
+
+    #membership-actividad {
+      article {
+        @extend .col-md-6;
+        // @extend .col-lg-4;
+      }
+    }
+
+    #membership-hic_en_al {
+
+      @extend .row;
+
+      ul {
+
+        .member {
+          @extend .col-sm-6;
+          @extend .col-md-4;
+          @extend .col-lg-3;
+
+          text-align: center;
+
+          [image-frame] {
+            width: 100%;
+            @extend .ratio-square;
+          }
+        }
+      }
+
+    }
+
+
+    #membership-member_articles {
+      article {
+        [image-frame] {
+          @extend .ratio-16-9;
+        }
+        @extend .col-md-6;
+        @extend .col-lg-4;
+      }
+    }
+
+
+  }
+
+  #membership-map {
+    height: 80vh;
+    @extend .col-md-5;
+    @extend .col-lg-4;
+  }
+
+
+}

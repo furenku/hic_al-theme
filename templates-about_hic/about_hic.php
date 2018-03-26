@@ -51,12 +51,10 @@ $subsections = array(
         <?php echo $featured_image; ?>
       </div>
 
-    <?php
-
+      <?php
       $prefix = "about_hic";
       include( locate_template('templates/components/shared/section-menu.php') );
-
-    ?>
+      ?>
 
 
 

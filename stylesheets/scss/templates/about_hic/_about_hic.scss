@@ -2,6 +2,7 @@
   section {
     @extend .row;
   }
+
   &>section {
     @extend .row;
     &.section_list {
@@ -27,9 +28,9 @@
   }
   .content {
 
-    &,p {
-      font-size: $font-m;
-    }
+    // &,p {
+    //   font-size: $font-m;
+    // }
 
   }
   #about_hic-areas_tematicas {
@@ -39,7 +40,13 @@
     &>section.text {
       @extend .col-md-5;
       @extend .col-lg-4;
+      @extend .col-lg-5;
       // height: auto;
+
+      p {
+        font-size: $font-ml;
+      }
+
 
     }
 
@@ -48,7 +55,7 @@
       // height: auto;
 
       @extend .col-md-6;
-      @extend .col-lg-7;
+      // @extend .col-lg-7;
       @extend .col-md-offset-1;
       @extend .col-lg-offset-1;
 
@@ -103,7 +110,7 @@
         &>nav {
 
           @extend .col-md-6;
-          @extend .col-lg-5;
+          @extend .col-lg-4;
 
           li {
 
@@ -134,10 +141,26 @@
 
         &>.content {
 
+          .title {
+            text-align: center;
+            font-size: $font-ml;
+          }
+
+          [image-frame] {
+            height: $spacing * 7;
+            margin: $spacing/2 0;
+          }
+
           overflow-y: auto;
 
+
+          p {
+            font-size: $font-ml;
+          }
+
+
           @extend .col-md-6;
-          @extend .col-lg-7;
+          @extend .col-lg-8;
 
           padding: 0 $spacing;
 
@@ -166,6 +189,7 @@
 
       &.links {
 
+      @extend .col-lg-7;
       text-align: center;
 
       font-size: $font-ml;
@@ -175,8 +199,13 @@
 
       &.description {
 
+      @extend .col-lg-5;
       font-size: $font-m;
       line-height: 1.5;
+
+        p {
+          font-size: $font-ml;
+        }
 
       }
 
@@ -194,14 +223,23 @@
 
       @extend .col-md-6;
 
+      // padding: $spacing;
+
+
     }
 
-
+    p {
+      font-size: $font-m;
+      margin: 0;
+      padding: 0;
+    }
   }
 
   #about_hic-contacto {
 
     @extend .col-md-4;
+
+    // padding: $spacing;
 
   }
 

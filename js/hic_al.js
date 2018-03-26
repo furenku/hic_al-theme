@@ -1,5 +1,9 @@
 $ = jQuery.noConflict()
 
+var membership_map
+var markerLayer
+var markersDictionary
+
 $(document).ready(function(){
 
   image_frames()
@@ -42,6 +46,9 @@ $(document).ready(function(){
   custom_toggles()
 
   setup_subpages_viewer()
+
+
+  setup_membership()
 
   console.log("HIC AL theme ready")
 
@@ -411,5 +418,113 @@ function setup_subpages_viewer() {
     return false
 
   }
+
+}
+
+
+function setup_membership() {
+
+  if( $('#membership').length > 0 ) {
+
+
+
+    // setup map
+
+    membership_map = L.map('membership-map').setView([0, 0], 1);
+
+
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        // attribution: ''
+    }).addTo(membership_map);
+
+
+    // setup membership space
+
+    $('#membership .section_list > section').hide()
+
+    load_membership_section(0);
+
+
+    $('#membership .section-menu li a').unbind('click').click(function(e){
+
+      e.preventDefault()
+
+      load_membership_section($(this).parent().index())
+
+      $(this).parent()
+      .addClass('active')
+      .siblings().removeClass('active')
+
+      return false
+
+    })
+
+
+
+  }
+
+}
+
+
+function load_membership_section( index ){
+
+  markersDictionary = {}
+
+  if( typeof(markerLayer) != "undefined" ) {    
+    membership_map.removeLayer(markerLayer)
+  }
+
+  markerLayer = L.markerClusterGroup({
+    maxClusterRadius: 30
+  });
+
+  next_section = $('#membership .section_list > section').eq(index)
+
+  next_section.show()
+  .addClass('visible')
+  .siblings().hide().removeClass('visible')
+
+  next_section.find('article').each(function(){
+
+    var lng = $(this).data('longitude')
+    var lat = $(this).data('latitude')
+    var post_id = $(this).data('id')
+    var title = $(this).find('.title').html()
+
+
+    PostMarker = L.Marker.extend({
+      post_id: post_id
+    });
+
+    var marker = new PostMarker([lat,lng], { post_id: post_id })//.addTo(membership_map)
+    .bindPopup( title )
+
+    markerLayer.addLayer( marker );
+
+    markersDictionary[post_id] = marker
+
+
+
+    marker.on('click', function(e) {
+
+      console.log("clicked marker!");
+      // var clicked_post_id =  e.sourceTarget.options.post_id
+      //
+      // var post = $('.post-map .post_list article[data-id='+clicked_post_id+']')
+      //
+      // post.get(0).scrollIntoView({
+      //   behavior: "smooth",
+      //   block: "start"
+      // })
+      //
+      // post.addClass('active').siblings().removeClass('active')
+
+
+    })
+
+  })
+
+  membership_map.addLayer(markerLayer)
+  membership_map.fitBounds(markerLayer.getBounds(), { padding: [50,50] });
 
 }
