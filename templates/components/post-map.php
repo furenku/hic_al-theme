@@ -16,7 +16,7 @@ if( ! $query ) {
   $query = new WP_Query( array(
      'post_type'=> $post_type,
      'posts_per_page' => $number,
-     'cat' => $category,
+     'cat' => $category
   ));
 
 }
