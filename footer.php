@@ -38,6 +38,7 @@ $legal_info = get_option('hic_al-legal_info');
 <script src="<?php echo $themeDir; ?>/bower_components/imgLiquid/js/imgLiquid-min.js"></script>
 <script src="<?php echo $themeDir; ?>/bower_components/leaflet/dist/leaflet.js"></script>
 <script src="<?php echo $themeDir; ?>/bower_components/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+<script src="<?php echo $themeDir; ?>//bower_components/slick-carousel/slick/slick.js"></script>
 <script src="<?php echo $themeDir; ?>/js/hic_al.js"></script>
 
 <script src="<?php echo $themeDir; ?>/js/components/text-box.js"></script>

@@ -1,0 +1,65 @@
+.post-slider {
+
+  width: 100%;
+  height: 60vh;
+
+  position: relative;
+
+  .slick-list {
+    width: 100%;
+    height: 100%;
+  }
+
+  article.post-slide {
+
+    width: 100%;
+    height: 60vh;
+
+    display: block;
+    position: relative;
+
+    [image-frame] {
+      width: 100%;
+      height: 100%;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+    }
+
+    .text {
+
+      width: 80%;
+
+      @media screen and (min-width: 768px) {
+        width: 65%;
+      }
+
+      @media screen and (min-width: 1200px) {
+        width: 50%;
+      }
+
+      position: absolute;
+      bottom: $spacing * 2;
+      right: 0;
+
+      height: auto !important;
+
+      background-color: rgba(80,80,80,0.7);
+      padding: $spacing;
+
+      * {
+        color: #fff;
+      }
+
+      footer {
+        padding: 0;
+        text-align: right;
+        padding-top: $spacing;
+      }
+
+    }
+  }
+
+}

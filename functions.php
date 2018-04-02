@@ -551,5 +551,35 @@ function name2slug( $name ) {
 
 
 
+add_filter( 'shortcode_atts_gallery', 'hic_al_gallery_atts', 10, 3 );
+
+/* Change attributes of wp gallery to modify image sizes for your needs */
+function hic_al_gallery_atts( $output, $pairs, $atts ) {
+
+	/* You can use these sizes:
+		- thumbnail
+		- medium
+		- large
+		- full
+	or, if your theme/plugin generate additional custom sizes you can use them as well
+	*/
+  $output['size'] = 'medium';
+
+	// if ( $atts['columns'] == 1 ) {
+	//     //if gallery has one column, use large size
+	//     $output['size'] = 'large';
+	// } else if ( $atts['columns'] &gt;= 2 &amp;&amp; $atts['columns'] &lt;= 4 ) {
+	//     //if gallery has between two and four columns, use medium size
+	//     $output['size'] = 'medium';
+	// } else {
+	//     //if gallery has more than four columns, use thumbnail size
+	//     $output['size'] = 'thumbnail';
+	// }
+
+	return $output;
+
+}
+
+
 
 ?>

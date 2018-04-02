@@ -2,6 +2,8 @@
 
   <?php
   $documents_page = ( get_query_var( 'documents_page' ) ) ? get_query_var( 'documents_page' ) : 1;
+  $page_var_name = 'documents_page';
+  $page_var = $documents_page;
 
   $posts_per_page = 4;
 
@@ -68,12 +70,9 @@
 
 </ul>
 
+
 <footer>
 
-<?php
-$page_var_name = 'documents_page';
-$page_var = $documents_page;
-include(locate_template('templates/components/shared/pagination-menu.php'));
-?>
+  <?php include(locate_template('templates/components/shared/pagination-menu.php')); ?>
 
 </footer>

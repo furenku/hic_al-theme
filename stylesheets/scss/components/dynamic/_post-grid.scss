@@ -1,6 +1,9 @@
 .post_grid.dynamic_component {
 
-  background-color: $neutral_lighter;
+  height: auto;
+  display: block;
+  clear: both;
+  min-height: 65vh;
 
   article {
 

@@ -1,0 +1,48 @@
+.page_hierarchy {
+
+  text-align: center;
+
+  padding: $spacing;
+  @extend .row ;
+  ul {
+
+    // margin: $spacing / 2 0;
+    padding: $spacing / 8;
+
+    li {
+      // width: 100%;
+
+    }
+
+  }
+
+  [image-frame]  {
+    display: none;
+  }
+  &>ul>li{
+    @extend .col-md-6;
+    @extend .col-lg-4;
+    float: left;
+
+    &>a>[image-frame]  {
+      display: block;
+      height: $spacing*6;
+      margin: $spacing/2 0;
+    }
+
+  }
+  &>ul>li {
+    font-size: $font-xl;
+    &>ul>li {
+      font-size: $font-l;
+      &>ul>li {
+        font-size: $font-ml;
+        &>ul>li {
+          font-size: $font-m + 1;
+
+        }
+      }
+    }
+  }
+
+}

@@ -1,7 +1,24 @@
+
 <section class="links">
+
   <?php
-  echo apply_filters('the_content', $page->post_content);
+
+  $hic_structure_users = get_users( array('role'=>'hic_structure_role') );
+
+  foreach( $hic_structure_users as $structure ) : ?>
+
+    <a href="<?php echo $structure->user_url; ?>" target="blank">
+      <h4>
+        <?php echo $structure->display_name; ?>
+      </h4>
+    </a>
+    <?php
+
+
+  endforeach;
+
   ?>
+
 </section>
 
 <section class="description">

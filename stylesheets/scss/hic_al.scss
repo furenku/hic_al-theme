@@ -28,6 +28,7 @@ $component_min_height: 35vh;
 @import "components/dynamic/post-list";
 @import "components/dynamic/post-grid";
 @import "components/dynamic/post-map";
+@import "components/dynamic/page-hierarchy";
 
 
 @import "components/dynamic/solidarity_item";
@@ -56,6 +57,7 @@ $component_min_height: 35vh;
 @import "components/shared/publication-list";
 @import "components/shared/pagination-menu";
 @import "components/shared/document-list";
+@import "components/shared/post-slider";
 
 @import "templates/author/author";
 

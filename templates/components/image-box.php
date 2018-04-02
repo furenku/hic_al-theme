@@ -8,10 +8,6 @@ alt_text
 
 
 
-if( ! $image ) {
-  $image = "http://fakeimg.pl/600x400?text=text-box";
-}
-
 $attributes = array();
 
 if( $contain ) {

@@ -17,42 +17,42 @@ if( have_posts() ) {
 
 ?>
 
-      <article id="single-microsite">
+  <article id="single-microsite">
 
-        <?php if( $microsite_thumb ) : ?>
+    <?php if( $microsite_thumb ) : ?>
 
-        <div class="article-cover-photo" image-frame="">
-          <?php echo $microsite_thumb; ?>
-        </div>
+    <div class="article-cover-photo" image-frame="">
+      <?php echo $microsite_thumb; ?>
+    </div>
 
-        <?php endif; ?>
-
-
-        <h1>
-           <?php echo $microsite_title; ?>
-        </h1>
+    <?php endif; ?>
 
 
-         <section class="content">
-            <?php echo $microsite_content; ?>
-         </section>
+    <h1>
+       <?php echo $microsite_title; ?>
+    </h1>
 
 
+     <section class="content">
+        <?php echo $microsite_content; ?>
+     </section>
 
 
 
-         <section class="dynamic-content-area">
-
-             <?php show_dynamic_contents(); ?>
-
-         </section>
 
 
+     <section class="dynamic-content-area">
 
-      </article>
+         <?php show_dynamic_contents(); ?>
 
-      <?php
+     </section>
 
 
-get_footer();
-?>
+
+  </article>
+
+  <?php
+
+
+  get_footer();
+  ?>

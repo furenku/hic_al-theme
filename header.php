@@ -15,6 +15,8 @@
     <link href="<?php echo get_stylesheet_directory_uri(); ?>/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="<?php echo get_stylesheet_directory_uri(); ?>/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet">
 
+    <link href="<?php echo get_stylesheet_directory_uri(); ?>/bower_components/slick-carousel/slick/slick.css" rel="stylesheet">
+    <link href="<?php echo get_stylesheet_directory_uri(); ?>/bower_components/slick-carousel/slick/slick-theme.css" rel="stylesheet">
     <link href="<?php echo get_stylesheet_directory_uri(); ?>/bower_components/leaflet/dist/leaflet.css" rel="stylesheet">
     <link href="<?php echo get_stylesheet_directory_uri(); ?>/bower_components/leaflet.markercluster/dist/MarkerCluster.css" rel="stylesheet">
     <link href="<?php echo get_stylesheet_directory_uri(); ?>/bower_components/leaflet.markercluster/dist/MarkerCluster.Default.css" rel="stylesheet">

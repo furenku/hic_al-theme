@@ -40,6 +40,7 @@ $(document).ready(function(){
   setup_datepickers()
 
   setup_post_map()
+  setup_post_slider()
 
   setup_section_menu()
 
@@ -167,6 +168,15 @@ function setup_datepickers() {
 }
 
 
+function setup_post_slider() {
+
+  if( $('.post-slider').length > 0 ) {
+
+    $('.post-slider').slick()
+
+  }
+
+}
 
 function setup_post_map() {
 
@@ -470,7 +480,7 @@ function load_membership_section( index ){
 
   markersDictionary = {}
 
-  if( typeof(markerLayer) != "undefined" ) {    
+  if( typeof(markerLayer) != "undefined" ) {
     membership_map.removeLayer(markerLayer)
   }
 
