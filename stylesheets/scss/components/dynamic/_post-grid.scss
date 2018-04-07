@@ -1,9 +1,16 @@
 .post_grid.dynamic_component {
 
-  height: auto;
+  min-height: 65vh;
+  height: auto !important;
   display: block;
   clear: both;
-  min-height: 65vh;
+
+  ul {
+    clear: both;
+    height: auto;
+    display: block;
+    @extend .row;
+  }
 
   article {
 
