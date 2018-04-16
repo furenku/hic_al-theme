@@ -244,3 +244,10 @@
   }
 
 }
+
+
+.newsletter-list {
+  padding: $spacing / 2;
+  height: 50vh;
+  overflow-y: auto;  
+}
