@@ -98,7 +98,7 @@
       <ul>
         <?php
 
-        $media_types = get_terms('media_content_type');
+        $media_types = get_terms('media_content-type');
         foreach( $media_types as $media_type ):
           switch( $media_type->name ) {
             case 'Audio':
