@@ -146,7 +146,7 @@
 
 <section id="home-about_hic-newsletter" class="more_link_footer">
    <?php
-   $page = get_page_by_title('Boletín De Noticias de HIC-AL');
+   $page = get_page_by_title('Boletín De Noticias');
    ?>
    <h4>
       <?php echo apply_filters('the_title',get_the_title($page->ID)); ?>

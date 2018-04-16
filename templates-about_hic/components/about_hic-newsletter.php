@@ -5,7 +5,7 @@ $page = get_page_by_title('Boletín De Noticias');
 <section class="text newsletter-subscription">
 
   <div class="content">
-    <?php echo apply_filters('the_content',$page->post_content); ?>
+    <?php echo $page->post_content; ?>
   </div>
 
   <div class="excerpt">

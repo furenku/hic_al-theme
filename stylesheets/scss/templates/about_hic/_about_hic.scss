@@ -246,8 +246,29 @@
 }
 
 .newsletter-subscription,
-.newsletter-list {
+.newsletter-list > ul {
   padding: $spacing;
-  height: 50vh;
+  height: 40vh;
   overflow-y: auto;
+
+  article {
+    footer {
+      position: relative;
+    }
+  }
+
+}
+
+.newsletter-subscription {
+  &> div {
+    @extend .col-xs-12;
+  }
+}
+
+.newsletter-list {
+  footer {
+    button {
+      @extend .more_link_button;
+    }
+  }
 }
