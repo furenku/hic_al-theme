@@ -8643,6 +8643,10 @@ a {
 .gallery a {
   display: block; }
 
+.section_list > [image-frame],
+.section_list .featured-image {
+  margin: 30px 0; }
+
 .dynamic-content-area {
   height: 65vh;
   padding: 0; }

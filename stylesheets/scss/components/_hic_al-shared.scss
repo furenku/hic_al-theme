@@ -598,8 +598,10 @@ a {
 
 
 
-// .section_list {
+.section_list {
+
+  &>[image-frame],
   .featured-image {
     margin: $spacing 0;
   }
-// }
+}
