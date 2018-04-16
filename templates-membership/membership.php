@@ -10,12 +10,14 @@ $page_1_name = "La palabra de miembros y amig@s";
 $page_2_name = "HIC en AL";
 $page_3_name = "HIC en el Mundo";
 $page_4_name = "Nuevos Miembros";
+$page_5_name = "Contribuciones";
 
 $page_0 = get_page_by_title( $page_0_name );
 $page_1 = get_page_by_title( $page_1_name );
 $page_2 = get_page_by_title( $page_2_name );
 $page_3 = get_page_by_title( $page_3_name );
 $page_4 = get_page_by_title( $page_4_name );
+$page_5 = get_page_by_title( $page_5_name );
 
 $subsections = array(
   $page_0_name,
@@ -23,6 +25,7 @@ $subsections = array(
   $page_2_name,
   $page_3_name,
   $page_4_name,
+  $page_5_name,
 );
 
 ?>
@@ -85,6 +88,16 @@ $subsections = array(
         <?php echo $page_4_name; ?>
       </h3>
       <?php include( locate_template('templates-membership/components/membership-registration.php')); ?>
+    </section>
+
+    <section id="membership-<?php echo name2slug($page_5_name); ?>">
+
+      <?php $page = $page_5; ?>
+
+      <h3>
+        <?php echo $page_5_name; ?>
+      </h3>
+      <?php include( locate_template('templates-membership/components/membership-contributions.php')); ?>
     </section>
 
   </section>

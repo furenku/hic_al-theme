@@ -1,19 +1,57 @@
 #membership {
+  h1 {
+    text-align: center;
+  }
 
   height: auto;
-
+  .section-menu {
+    li {
+      font-size: $font-s;
+    }
+    margin-bottom: $spacing / 2 ;
+  }
   #membership-sections,
   #membership-map {
+    @media screen and (min-width:768px) {
+      height: 70vh;
+    }
   }
 
   #membership-sections {
+
     @extend .col-md-7;
     @extend .col-lg-8;
 
     // overflow-y: auto;
+    h3 {
+      text-align: center;
+      margin-bottom: $spacing / 2;
+    }
 
+    &>*>ul {
+      height: 60vh;
+      @extend .col-xs-12;
+    }
 
     #membership-actividad {
+      height: 80%;
+      ul {
+        height: 100%;
+        display: block;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        article {
+          .image-container,
+          [image-frame] {
+            height: 100%;
+          }
+          footer {
+            padding: 0 $spacing / 2;
+          }
+        }
+      }
+
       article {
         @extend .col-md-6;
         // @extend .col-lg-4;
@@ -29,7 +67,7 @@
         .member {
           @extend .col-sm-6;
           @extend .col-md-4;
-          @extend .col-lg-3;
+          @extend .col-lg-2;
 
           text-align: center;
 
@@ -50,6 +88,10 @@
         }
         @extend .col-md-6;
         @extend .col-lg-4;
+
+        .article-footer {
+          position: relative;
+        }
       }
     }
 
@@ -63,4 +105,48 @@
   }
 
 
+  #membership-hic_en_el_mundo {
+
+    .content {
+      padding: $spacing;
+    }
+
+    .hic_structures {
+      padding-top: $spacing;
+      text-align: center;
+
+    }
+  }
+
+
+  #membership-member_registration,
+  #membership-hic_en_el_mundo,
+  #membership-member_contributions {
+
+    .content {
+      padding: $spacing;
+    }
+
+    h3 {
+      margin-bottom: $spacing;
+    }
+  }
+
+
+}
+
+
+
+#membership-member_contributions {
+
+  footer {
+    margin-top: $spacing;
+    button {
+
+      background-color: $neutral_dark;
+      color: white;
+      padding: $spacing / 4 $spacing / 2;
+      border: none;
+    }
+  }
 }

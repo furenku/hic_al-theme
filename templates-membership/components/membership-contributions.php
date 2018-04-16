@@ -1,5 +1,5 @@
 
-<section id="membership-member_registration" v-center>
+<section id="membership-member_contributions" v-center>
   <!--
    <div image-frame="">
       <?php echo get_the_post_thumbnail($page->ID,'medium'); ?>
@@ -10,7 +10,7 @@
    <div class="content">
 
       <h3>
-         ¿Cómo ser miembr@ de HIC?
+         Contribuciones de Contenido
       </h3>
 
       <div class="excerpt">
@@ -20,7 +20,12 @@
       <footer>
         <a href="<?php echo get_the_permalink($page->ID); ?>">
           <button>
-            Registra tu Organización
+            Ingresa
+          </button>
+        </a>
+        <a href="<?php echo get_the_permalink($page->ID); ?>">
+          <button>
+            Crear Cuenta
           </button>
         </a>
       </footer>

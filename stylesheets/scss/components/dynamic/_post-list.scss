@@ -6,7 +6,9 @@
   // ul {
   //   // height: 100%;
   // }
-
+  .post-list {
+    padding-top: $spacing / 2;
+  }
   article {
     @extend .list-item;
 
@@ -52,6 +54,8 @@
     height: 100%;
 
     text-align: left;
+
+    padding-right: 0;
 
   }
 

@@ -16,7 +16,7 @@ foreach ($authors as $author) {
 <ul class="<?php echo $plural_slug; ?>">
 
   <?php
-  $posts_per_page = 8;
+  $posts_per_page = 12;
   $q = new WP_Query( array(
      'post_type' => array( 'post', 'news_item', 'open_call', 'event', 'publication' ),
      'author__in' => $author_ids,
@@ -45,7 +45,7 @@ foreach ($authors as $author) {
         ?>
 
 
-        <article class="<?php echo $class ?> list-item"
+        <article class="list-item <?php echo $class ?>"
           data-id="<?php echo $id; ?>"
           data-longitude="<?php echo $longitude; ?>"
           data-latitude="<?php echo $latitude; ?>"

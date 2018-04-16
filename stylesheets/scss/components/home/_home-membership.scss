@@ -98,7 +98,7 @@
       // @extend .col-lg-5;
       height: $spacing * 20;
 
-      ul {
+      &>ul {
 
         overflow-y: auto;
         height: 82.5%;
@@ -116,6 +116,14 @@
               @extend .col-xs-3;
               height: $spacing * 4;
               margin-bottom: $spacing / 2 !important;
+            }
+
+            .title {
+              margin-top: 0;
+            }
+
+            .excerpt {
+              font-size: $font-s !important;
             }
           }
 

@@ -7,6 +7,7 @@ var markersDictionary
 $(document).ready(function(){
 
   image_frames()
+  gallery_images()
 
   // vcenter($('[vcenter]'))
   vcenter($('#secondary_menu-container nav ul li'))
@@ -134,6 +135,9 @@ function vcenter(contenedores){
       opacity:1
     })
 
+    contenedor.animate({
+      opacity:1
+    })
   })
 }
 
@@ -223,7 +227,7 @@ function setup_post_map_map() {
 
   if( $('#post-map-map').length > 0 ) {
 
-    var map = L.map('post-map-map').setView([0, 0], 1);
+    var map = L.map('post-map-map', {minZoom:3}).setView([0, 0], 1);
     var markersDictionary = {}
 
     var markers = L.markerClusterGroup({
@@ -260,10 +264,11 @@ function setup_post_map_map() {
 
         var post = $('.post-map .post_list article[data-id='+clicked_post_id+']')
 
-        post.get(0).scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        })
+        // post.get(0).scrollIntoView({
+        //   behavior: "smooth",
+        //   block: "start"
+        // })
+        $('.post-map-posts-container').animate({scrollTop:post.position().top})
 
         post.addClass('active').siblings().removeClass('active')
 
@@ -440,7 +445,7 @@ function setup_membership() {
 
     // setup map
 
-    membership_map = L.map('membership-map').setView([0, 0], 1);
+    membership_map = L.map('membership-map', {minZoom:2}).setView([0, 0], 1);
 
 
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -458,7 +463,15 @@ function setup_membership() {
     $('#membership .section-menu li a').unbind('click').click(function(e){
 
       e.preventDefault()
-
+      if( $(this).parent().index() < 3) {
+        $('#membership-map').animate({
+          opacity: 1
+        })
+      } else {
+        $('#membership-map').animate({
+          opacity: 0
+        })
+      }
       load_membership_section($(this).parent().index())
 
       $(this).parent()
@@ -536,5 +549,12 @@ function load_membership_section( index ){
 
   membership_map.addLayer(markerLayer)
   membership_map.fitBounds(markerLayer.getBounds(), { padding: [50,50] });
+
+}
+
+
+function gallery_images() {
+
+  $('.gallery a').imgLiquid()
 
 }

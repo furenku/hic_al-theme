@@ -15,7 +15,13 @@
    @extend .row;
 
    ul {
-      @extend .publication_list;      
+      @extend .publication_list;
+
+      article {
+        .text {
+          @extend .col-xs-6;
+        }
+      }
    }
 
    footer {

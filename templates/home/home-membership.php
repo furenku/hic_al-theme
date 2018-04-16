@@ -159,13 +159,13 @@ $membership_invitation_page = 'Nuevos Miembros';
 
                     <div>
 
-                       <h5>
+                       <h5 class="title">
                           <?php echo apply_filters('the_title', get_the_title( $id )); ?>
                        </h5>
 
-                       <p>
+                       <div class="excerpt">
                           <?php echo apply_filters('the_excerpt', wp_trim_words(get_the_excerpt( $id ),22)); ?>
-                       </p>
+                       </div>
 
                     </div>
                   </a>

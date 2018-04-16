@@ -5,7 +5,7 @@
   </h3>
 
 
-  <section id="home-library-publications" class="row">
+  <section id="home-library-publications" class="row publication_list">
 
     <ul>
 
@@ -33,7 +33,7 @@
               <?php echo $image; ?>
             </div>
 
-            <div>
+            <div class="text">
 
               <h5>
                 <?php echo $title; ?>

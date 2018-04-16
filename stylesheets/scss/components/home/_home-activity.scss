@@ -150,6 +150,10 @@
 
         padding: 0;
 
+        ul {
+          padding-top: $spacing / 2;
+        }
+
 
     }
 
@@ -159,6 +163,7 @@
 
 
   #home-activity-solidarity {
+
     ul {
 
       padding: 0;
@@ -166,6 +171,8 @@
       article {
 
         display: none;
+
+        padding: 0 !important;
 
         &:nth-child(1) {
           display: block;
@@ -177,6 +184,7 @@
         & > div {
           @extend .col-md-12;
           font-size: $font-s;
+          padding: 0 !important;
         }
         & > div[image-frame] {
           height: $spacing * 8;
