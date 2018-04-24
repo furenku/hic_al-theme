@@ -24,8 +24,10 @@
     // @extend .border_light;
 
     li {
-      @extend .col-md-6;
-      width: 20%;
+      @extend .col-xs-6;
+      @media screen and (min-width: 768px) {
+        width: 20%;
+      }
       text-align: center;
       [image-frame] {
         height: $spacing * 3;
@@ -98,9 +100,13 @@
       font-size: $font-m;
       padding: 0;
       &>div, &>ul {
-        padding: $spacing * 3;
-        line-height: 2.5;
+
         height: auto;
+        
+        @media screen and (min-width: 768px) {
+          padding: $spacing * 3;
+          line-height: 2.5;
+        }
       }
     }
 

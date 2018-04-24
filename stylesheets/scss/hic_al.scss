@@ -34,14 +34,15 @@ $component_min_height: 35vh;
 @import "components/dynamic/solidarity_item";
 
 
-@import "components/home/home-about_hic";
 @import "components/hic_al-header";
 @import "components/hic_al-footer";
 
 @import "components/hic_al-single";
 @import "components/hic_al-page";
+
 @import "components/hic_al-archive";
-@import "components/hic_al-search_form";
+@import "components/hic_al-archive-search_form";
+
 @import "components/hic_al-working_group";
 
 @import "components/home/home-cover";
@@ -67,6 +68,7 @@ $component_min_height: 35vh;
 @import "templates/microsite/microsite";
 @import "templates/about_hic/about_hic";
 @import "templates/membership/membership";
+@import "templates/membership/membership-contributions-dashboard";
 @import "templates/thematic_area/thematic_area";
 
 

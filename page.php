@@ -43,6 +43,7 @@ if( have_posts() ) {
 
 
            <?php echo apply_filters('the_content', get_the_content()); ?>
+           <?php #echo get_the_content(); ?>
 
          </section>
 

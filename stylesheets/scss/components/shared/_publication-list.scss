@@ -1,7 +1,8 @@
 .publication_list {
+
   article {
 
-    @extend .col-xs-4;
+    @extend .col-xs-12;
 
     padding: $spacing / 2;
 

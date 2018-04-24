@@ -9,8 +9,9 @@
   }
   article {
 
+    @extend .col-xs-12;
     @extend .col-md-6;
-    
+
     text-align: center;
     position: relative;
     height: auto;

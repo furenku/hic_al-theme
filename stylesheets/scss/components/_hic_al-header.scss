@@ -1,4 +1,12 @@
 
+#secondary_menu-container,
+#site_header nav, #site_header #form-container {
+  display: none;
+  @media screen and (min-width:768px) {
+    display: block;
+  }
+}
+
 
 #site_header {
 
@@ -13,6 +21,7 @@
 
       @extend .row;
       @extend .container-fluid;
+
 
       nav, ul, li {
          height: 100%;
@@ -167,7 +176,7 @@
                 height: auto;
                 &,a {
                   @extend .col-xs-12;
-                  padding: $spacing / 4;                  
+                  padding: $spacing / 4;
                 }
               }
 
