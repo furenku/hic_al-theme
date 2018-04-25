@@ -28,7 +28,9 @@
       @media screen and (min-width: 768px) {
         width: 20%;
       }
+
       text-align: center;
+
       [image-frame] {
         height: $spacing * 3;
       }
@@ -37,6 +39,8 @@
   }
 
   #home-about_hic-documents {
+
+     height: $spacing * 15;
 
      article {
 
@@ -56,7 +60,7 @@
 
      .content {
 
-       height: 80%;
+       height: 73.5%;
 
        input[type=text],
        input[type=email] {
@@ -72,6 +76,11 @@
          @extend .action_button;
        }
      }
+
+    footer {
+      bottom: $spacing
+    }
+
   }
 
   #home-about_hic > div > section {
@@ -87,10 +96,16 @@
     @extend .border_light;
 
     &#home-about_hic-structures {
-      background-color: $neutral_lighter;
+      background-color: $neutral_dark;
+      * {
+        color: #fff;
+      }
     }
     &#home-about_hic-coalition {
-      background-color: $neutral_lightest;
+      background-color: $neutral_darker;
+      * {
+        color: #fff;
+      }
     }
     &#home-about_hic-structures,
     &#home-about_hic-coalition {
@@ -102,12 +117,48 @@
       &>div, &>ul {
 
         height: auto;
-        
+
         @media screen and (min-width: 768px) {
           padding: $spacing * 3;
           line-height: 2.5;
         }
       }
+    }
+
+
+  }
+
+  #boletin_y_contacto {
+
+    @extend .col-md-8;
+    width: 66.666% !important;
+
+    padding: 0;
+    &>section {
+
+      padding: 0;
+
+      height: $spacing * 15;
+
+      h4 {
+
+        margin-top: 0;
+        margin-bottom: $spacing / 2;
+
+        padding: $spacing / 4;
+
+        background-color: $neutral_dark;
+        color: #fff;
+
+        text-align: center;
+
+
+      }
+
+      @extend .col-md-6;
+
+      border-right: 1px solid $neutral_light;
+
     }
 
   }

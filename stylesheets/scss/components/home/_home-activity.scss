@@ -36,7 +36,36 @@
     // padding-right: $spacing / 2;
   }
 
+.content_list_row {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  .content_list {
 
+      @extend .col-md-4;
+
+      outline: 1px solid $neutral_light;
+
+      margin-right: 1px;
+
+      padding: 0;
+
+      ul {
+        // &, article {
+          padding: $spacing / 2 !important;
+        // }
+      }
+
+
+  }
+
+  .solidarity_item {
+     h5 {
+       text-align: center;
+     }
+  }
+
+}
   & > section {
     // min-height: $spacing * 15;
     padding: 0;

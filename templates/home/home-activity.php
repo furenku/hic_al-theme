@@ -108,7 +108,7 @@
 
    </section>
 
-   <div class="row row-eq-height">
+   <div class="row content_list_row">
 
         <section id="home-activity-open_call" class="content_list">
 

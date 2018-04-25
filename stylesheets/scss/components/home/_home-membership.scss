@@ -44,7 +44,7 @@
    // }
    #home-membership-space {
 
-      height: $spacing * 15;
+      height: $spacing * 18;
 
       &>div{
          // @extend .col-xs-7;
@@ -73,7 +73,7 @@
 
    #home-membership-hic {
 
-      // height: $spacing * 15;
+      height: $spacing * 18;
 
       [image-frame] {
          height: $spacing * 7;
@@ -87,6 +87,8 @@
 
 
    #home-membership-peer_posts {
+
+     height: $spacing * 18;
 
       h3 {
         margin-top: $spacing / 2;

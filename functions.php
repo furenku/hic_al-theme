@@ -12,7 +12,7 @@ include_once 'hic_al-functions/template-functions.php';
 
 
 add_filter( 'the_excerpt', 'shortcode_unautop');
-// add_filter( 'the_excerpt', 'do_shortcode');
+add_filter( 'the_excerpt', 'do_shortcode');
 
 
 

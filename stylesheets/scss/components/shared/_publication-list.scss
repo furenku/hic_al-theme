@@ -3,6 +3,7 @@
   article {
 
     @extend .col-xs-12;
+    @extend .col-md-4;
 
     padding: $spacing / 2;
 
