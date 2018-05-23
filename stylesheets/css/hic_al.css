@@ -8863,6 +8863,8 @@ a {
         right: 15px; }
       .post-map .post-map-posts-container article.active {
         background-color: #eee; }
+      .post-map .post-map-posts-container article .more_link_button, .post-map .post-map-posts-container article .site_section .sections_list footer button, .site_section .sections_list footer .post-map .post-map-posts-container article button, .post-map .post-map-posts-container article .content_list button, .content_list .post-map .post-map-posts-container article button, .post-map .post-map-posts-container article #home-activity #home-activity-articles-news > section button, #home-activity #home-activity-articles-news > section .post-map .post-map-posts-container article button, .post-map .post-map-posts-container article #microsite-events > section > footer button, #microsite-events > section > footer .post-map .post-map-posts-container article button, .post-map .post-map-posts-container article .newsletter-list footer button, .newsletter-list footer .post-map .post-map-posts-container article button {
+        background-color: transparent; }
   .post-map .post-map-post-preview {
     display: none; }
     .post-map .post-map-post-preview .close-container {
