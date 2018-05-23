@@ -23,7 +23,7 @@
         $image = get_the_post_thumbnail();
         $publication_authors = get_post_meta( get_the_ID(), 'publication-info-authors', true );
         $publication_year = date_i18n( 'Y', strtotime(get_post_meta( get_the_ID(), 'publication-info-date', true )));
-      $download_link = get_post_meta( get_the_ID(), 'publication-file', true);
+        $download_link = get_post_meta( get_the_ID(), 'publication-file', true);
 
         ?>
 
@@ -293,6 +293,10 @@
 
     while ( $q->have_posts() ) :
       $q->the_post();
+
+      $download_link = get_post_meta( get_the_ID(), 'publication-file', true);
+
+
       ?>
 
       <article>
@@ -311,11 +315,24 @@
           <?php echo apply_filters('the_excerpt',wp_trim_words(get_the_excerpt(),21)); ?>
         </div>
 
-        <a href="<?php echo get_the_permalink(get_the_ID()); ?>" target="_blank">
-          <button>
-            Ver
-          </button>
-        </a>
+        <nav class="action-buttons">
+          <?php if( $download_link && $download_link != "" ) : ?>
+            <a href="<?php echo $download_link; ?>" class="download-button">
+            <button>
+              <i class="fa fa-download"></i>
+              <span>
+                Descargar
+              </span>
+              </button>
+            </a>
+          <?php endif; ?>
+
+          <a href="<?php echo get_the_permalink(get_the_ID()); ?>" target="_blank">
+            <button>
+              Ver
+            </button>
+          </a>
+        </nav>
 
       </article>
 

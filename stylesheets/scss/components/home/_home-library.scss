@@ -139,15 +139,20 @@
           height: $spacing * 2;
           border: none;
         }
-        a {
+        .action-buttons {
+          width: auto;
           position: absolute;
           bottom: $spacing ;
           right: $spacing / 4;
+          text-align: right;
+          a > button {
+            margin-left: $spacing/4;
+            width: auto;
+            float: left;
+             @extend .action_button;
+             padding: $spacing / 4 $spacing / 2;
+          }
         }
-         a > button {
-            @extend .action_button;
-            padding: $spacing / 4 $spacing / 2;
-         }
 
       }
 
