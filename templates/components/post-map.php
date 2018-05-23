@@ -100,6 +100,8 @@ if( ! $query ) {
               </p>
             <?php } ?>
 
+
+          <footer>
             <?php if( ! $post_components['link_disabled'] ) { ?>
             <a href="<?php echo get_the_permalink(get_the_ID()); ?>" class="more_link_button">
               <!-- <button> -->
@@ -107,8 +109,6 @@ if( ! $query ) {
               <!-- </button> -->
             </a>
             <?php } ?>
-
-          <footer>
             <div>
               <?php echo $country; ?>, <?php echo $location; ?>
             </div>

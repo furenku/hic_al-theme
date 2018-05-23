@@ -8855,13 +8855,17 @@ a {
         height: 120px; }
       .post-map .post-map-posts-container article .excerpt {
         display: none; }
-      .post-map .post-map-posts-container article footer > * {
-        padding: 0;
-        font-size: 12px; }
-      .post-map .post-map-posts-container article footer button {
+      .post-map .post-map-posts-container article footer {
         position: absolute;
-        bottom: 15px;
-        right: 15px; }
+        bottom: 0;
+        width: 100%; }
+        .post-map .post-map-posts-container article footer > * {
+          padding: 0;
+          font-size: 12px; }
+        .post-map .post-map-posts-container article footer button {
+          position: absolute;
+          bottom: 15px;
+          right: 15px; }
       .post-map .post-map-posts-container article.active {
         background-color: #eee; }
       .post-map .post-map-posts-container article .more_link_button, .post-map .post-map-posts-container article .site_section .sections_list footer button, .site_section .sections_list footer .post-map .post-map-posts-container article button, .post-map .post-map-posts-container article .content_list button, .content_list .post-map .post-map-posts-container article button, .post-map .post-map-posts-container article #home-activity #home-activity-articles-news > section button, #home-activity #home-activity-articles-news > section .post-map .post-map-posts-container article button, .post-map .post-map-posts-container article #microsite-events > section > footer button, #microsite-events > section > footer .post-map .post-map-posts-container article button, .post-map .post-map-posts-container article .newsletter-list footer button, .newsletter-list footer .post-map .post-map-posts-container article button {
