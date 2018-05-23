@@ -75,13 +75,38 @@ if( ! $query ) {
           data-longitude="<?php echo $longitude; ?>"
           >
 
-          <h4 class="title">
-            <?php echo apply_filters( 'the_title', get_the_title() ); ?>
-          </h4>
+            
+            <?php if( ! $post_components['thumbnail_disabled'] ) { ?>
+              <div image-frame>
+                <?php echo get_the_post_thumbnail(get_the_ID()); ?>
+              </div>
+            <?php } ?>
 
-          <p class="excerpt">
-            <?php echo apply_filters( 'the_excerpt', wp_trim_words(get_the_excerpt(),15) ); ?>
-          </p>
+            <?php if( ! $post_components['title_disabled'] ) { ?>
+              <h5>
+                <?php echo apply_filters('the_title',get_the_title()); ?>
+              </h5>
+            <?php } ?>
+
+            <?php if( ! $post_components['date_disabled'] ) { ?>
+              <div class="date">
+                <?php echo get_the_date(); ?>
+              </div>
+            <?php } ?>
+
+            <?php if( ! $post_components['excerpt_disabled'] ) { ?>
+              <p>
+                <?php echo apply_filters('the_excerpt',get_the_excerpt()); ?>
+              </p>
+            <?php } ?>
+
+            <?php if( ! $post_components['link_disabled'] ) { ?>
+            <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
+              <button>
+                  Ver más
+              </button>
+            </a>
+            <?php } ?>
 
           <footer>
             <div>
