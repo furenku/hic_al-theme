@@ -8848,6 +8848,7 @@ a {
     .post-map .post-map-posts-container .content {
       padding: 15px; }
     .post-map .post-map-posts-container article {
+      min-height: 300px;
       position: relative;
       padding: 15px; }
       .post-map .post-map-posts-container article [image-frame] {

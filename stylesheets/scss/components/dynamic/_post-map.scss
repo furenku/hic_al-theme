@@ -43,6 +43,8 @@
     article {
 
       @extend .col-md-6;
+
+      min-height: $spacing * 10;
       // @extend .col-lg-4;
 
       position: relative;
