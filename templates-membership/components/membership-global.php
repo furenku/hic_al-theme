@@ -25,7 +25,7 @@
     >
 
 
-      <a href="<?php echo $hic_structure->user_url; ?>">
+      <a href="<?php echo $hic_structure->user_url; ?>" target="_blank">
         <h4>
           <?php echo $hic_structure->display_name; ?>
         </h4>
