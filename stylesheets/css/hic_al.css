@@ -8656,9 +8656,18 @@ a {
 .section_list .featured-image {
   margin: 30px 0; }
 
+.slick-prev:before,
+.slick-next:before {
+  font-size: 24px;
+  color: #aaaaaa; }
+
 .dynamic-content-area {
   height: 65vh;
   padding: 0; }
+
+.dynamic-content-title {
+  margin-bottom: 30px;
+  text-align: center; }
 
 .dynamic_component {
   min-height: 35vh;

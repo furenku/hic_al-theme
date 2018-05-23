@@ -179,7 +179,7 @@ function setup_post_slider() {
 
   if( $('.post-slider').length > 0 ) {
 
-    $('.post-slider').slick()
+    $('.post-slider').slick({ dots: true })
 
   }
 

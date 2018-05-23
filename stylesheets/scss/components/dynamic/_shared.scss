@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+.dynamic-content-title {
+  margin-bottom: $spacing;
+  text-align: center;
+}
 
 .dynamic_component {
   min-height: $component_min_height;
