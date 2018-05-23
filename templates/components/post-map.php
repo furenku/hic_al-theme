@@ -96,7 +96,7 @@ if( ! $query ) {
 
             <?php if( ! $post_components['excerpt_disabled'] ) { ?>
               <p>
-                <?php echo apply_filters('the_excerpt',get_the_excerpt()); ?>
+                <?php echo wp_trim_words(apply_filters('the_excerpt',get_the_excerpt()),15); ?>
               </p>
             <?php } ?>
 
