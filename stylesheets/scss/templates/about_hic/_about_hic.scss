@@ -222,6 +222,8 @@
     &>section {
 
       @extend .col-md-6;
+      @extend .col-lg-6;
+
 
       // padding: $spacing;
 
@@ -245,11 +247,51 @@
 
 }
 
+.newsletter-subscription {
+  
+  padding: $spacing;
+  
+  padding-top: 0;
+
+  &,
+  &>div {
+    padding-left: 0;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-top: 0;
+  }
+  
+  .excerpt {
+    margin-top: $spacing;
+    &, p {
+      text-align: center;
+    }
+  }
+
+  input[type=text],
+  input[type=email] {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    background-color: #ddd;
+    padding: $spacing / 4;
+    color: #444;
+  }
+
+  input[type="submit"] {
+    @extend .action_button;
+      margin-left: auto;
+    margin-right: auto;
+    margin-top: $spacing;
+  }
+}
 .newsletter-subscription,
 .newsletter-list > ul {
-  padding: $spacing;
-  height: 40vh;
-  overflow-y: auto;
+
+  height: auto;
+  // overflow-y: auto;
 
   article {
     footer {
@@ -260,6 +302,8 @@
 }
 
 .newsletter-subscription {
+
+
   &> div {
     @extend .col-xs-12;
   }

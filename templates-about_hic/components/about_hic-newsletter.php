@@ -4,6 +4,10 @@ $page = get_page_by_title('Boletín De Noticias');
 
 <section class="text newsletter-subscription">
 
+  <h2>
+    Suscríbete
+  </h2>
+
   <div class="content">
     <?php echo $page->post_content; ?>
   </div>
