@@ -30,10 +30,12 @@
 
     .text {
 
-      width: 80%;
+      width: 100%;
+      bottom: 0;
 
       @media screen and (min-width: 768px) {
         width: 65%;
+        bottom: $spacing * 2;
       }
 
       @media screen and (min-width: 1200px) {
@@ -41,7 +43,6 @@
       }
 
       position: absolute;
-      bottom: $spacing * 2;
       right: 0;
 
       height: auto !important;
@@ -59,6 +60,11 @@
         padding-top: $spacing;
       }
 
+      @media screen and (max-width: 576px) {
+        p {
+          display: none;
+        }
+      }
     }
   }
 

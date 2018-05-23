@@ -8,6 +8,7 @@
     padding: $spacing / 2;
 
     & > .text {
+      @extend .col-xs-12;
       @extend .col-xs-7;
       text-align: left;
 
@@ -30,10 +31,19 @@
       }
     }
 
+    & > div {
+      height: auto;
+      @media screen and (min-width:768px) {
+        height: $spacing * 7;
+      }
+    }
+    & > a > div {
+      height: $spacing * 7;
+    }
     & > div,
     & > a > div {
 
-
+      
       height: $spacing * 7;
 
       footer {
@@ -47,7 +57,8 @@
     }
 
     & > a > [image-frame] {
-      @extend .col-xs-5;
+      @extend .col-xs-12;
+      @extend .col-md-5;
     }
 
     .publication-info {
