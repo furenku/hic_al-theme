@@ -56,7 +56,7 @@ if( $q -> have_posts() ) :
           </header>
 
           <p>
-            <?php echo get_the_excerpt(); ?>
+            <?php echo wp_trim_words( get_the_excerpt(),25); ?>
           </p>
 
         </a>

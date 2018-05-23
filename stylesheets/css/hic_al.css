@@ -9722,6 +9722,10 @@ article.single-microsite .article-cover-photo {
   .publication_list article > .text, #home-library #home-library-publications ul article > .text {
     text-align: left;
     position: relative; }
+    .publication_list article > .text .download-button, #home-library #home-library-publications ul article > .text .download-button {
+      position: absolute;
+      bottom: 0;
+      left: 15px; }
     .publication_list article > .text footer, #home-library #home-library-publications ul article > .text footer {
       position: absolute;
       bottom: 0;

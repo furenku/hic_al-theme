@@ -23,6 +23,7 @@
         $image = get_the_post_thumbnail();
         $publication_authors = get_post_meta( get_the_ID(), 'publication-info-authors', true );
         $publication_year = date_i18n( 'Y', strtotime(get_post_meta( get_the_ID(), 'publication-info-date', true )));
+      $download_link = get_post_meta( get_the_ID(), 'publication-file', true);
 
         ?>
 
@@ -56,6 +57,15 @@
                 <div class="publication-year">
                   <?php echo $publication_year; ?>
                 </div>
+
+                <?php if( $download_link && $download_link != "" ) : ?>
+                  <a href="<?php echo $download_link; ?>" class="download-button">
+                    <i class="fa fa-download"></i>
+                    <span>
+                      Descargar
+                    </span>
+                  </a>
+                <?php endif; ?>
 
               </div>
 

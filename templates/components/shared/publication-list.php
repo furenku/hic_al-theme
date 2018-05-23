@@ -15,7 +15,8 @@
       $image = get_the_post_thumbnail();
       $publication_authors = get_post_meta( get_the_ID(), 'publication-info-authors', true );
       $publication_year = date_i18n( 'Y', strtotime(get_post_meta( get_the_ID(), 'publication-info-date', true )));
-
+      $download_link = get_post_meta(get_the_ID(),'publication-file',true);
+      
       ?>
 
       <article>
@@ -40,11 +41,16 @@
               <div class="publication-author">
 
                 <ul>
-                  <?php foreach ($publication_authors as $publication_author) :  ?>
-                  <li>
-                    <?php echo $publication_author; ?>
-                  </li>
-                  <?php endforeach; ?>
+                  <?php if( $publication_authors ) : 
+                    foreach ($publication_authors as $publication_author) :
+                  ?>
+                      <li>
+                        <?php echo $publication_author; ?>
+                      </li>
+                  <?php
+                    endforeach;
+                  endif;
+                  ?>
 
                 </ul>
               </div>
@@ -52,6 +58,16 @@
               <div class="publication-year">
                 <?php echo $publication_year; ?>
               </div>
+
+              <?php if( $download_link && $download_link != "" ) : ?>
+                <a href="<?php echo $download_link; ?>" class="download-button">
+                  <i class="fa fa-download"></i>
+                  <span>
+                    Descargar
+                  </span>
+                </a>
+              <?php endif; ?>
+
 
               <?php if( $show_footer ) {
                 article_footer();
