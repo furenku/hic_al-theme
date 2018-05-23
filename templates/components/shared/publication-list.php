@@ -60,7 +60,7 @@
               </div>
 
               <?php if( $download_link && $download_link != "" ) : ?>
-                <a href="<?php echo $download_link; ?>" class="download-button">
+                <a href="<?php echo $download_link; ?>" class="download-button" target="_blank">
                   <i class="fa fa-download"></i>
                   <span>
                     Descargar
