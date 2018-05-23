@@ -85,3 +85,13 @@ article.single {
   }
 
 }
+
+
+
+.single-publication {
+  .publication-info {
+    &>* {
+      margin: $spacing / 2 0 ;
+    }
+  }
+}

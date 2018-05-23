@@ -8667,6 +8667,7 @@ a {
 
 .dynamic_content-title {
   margin-top: 60px;
+  margin-bottom: 0;
   text-align: center; }
 
 .dynamic_component {
@@ -9208,6 +9209,9 @@ article.single .content > header {
 article.page .content iframe, main > article .content iframe,
 article.single .content iframe {
   width: 100%; }
+
+.single-publication .publication-info > * {
+  margin: 15px 0; }
 
 section.archive {
   min-width: none;
