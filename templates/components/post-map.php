@@ -101,7 +101,7 @@ if( ! $query ) {
             <?php } ?>
 
             <?php if( ! $post_components['link_disabled'] ) { ?>
-            <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
+            <a href="<?php echo get_the_permalink(get_the_ID()); ?>" class="more_link_button">
               <button>
                   Ver más
               </button>
