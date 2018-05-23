@@ -44,7 +44,7 @@
 
       @extend .col-md-6;
       
-      min-height: $spacing * 9;
+      min-height: $spacing * 9.5;
       
       // @extend .col-lg-4;
 
@@ -61,7 +61,7 @@
       }
 
       footer {
-        padding-right: $spacing / 2;
+        padding-right: $spacing;
 
         position: absolute;
         bottom: 0;
