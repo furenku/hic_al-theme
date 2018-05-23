@@ -8848,7 +8848,7 @@ a {
     .post-map .post-map-posts-container .content {
       padding: 15px; }
     .post-map .post-map-posts-container article {
-      min-height: 285px;
+      min-height: 255px;
       position: relative;
       padding: 15px; }
       .post-map .post-map-posts-container article [image-frame] {
@@ -8858,7 +8858,7 @@ a {
       .post-map .post-map-posts-container article footer {
         padding-right: 30px;
         position: absolute;
-        bottom: 0;
+        bottom: 15px;
         width: 100%; }
         .post-map .post-map-posts-container article footer > * {
           padding: 0;

@@ -44,7 +44,7 @@
 
       @extend .col-md-6;
       
-      min-height: $spacing * 9.5;
+      min-height: $spacing * 8.5;
       
       // @extend .col-lg-4;
 
@@ -64,7 +64,7 @@
         padding-right: $spacing;
 
         position: absolute;
-        bottom: 0;
+        bottom: $spacing / 2;
         width: 100%;
         // text-align: center;
         &>*{
