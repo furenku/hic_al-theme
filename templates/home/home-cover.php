@@ -2,19 +2,24 @@
 $home = get_page_by_title("Inicio");
 
 $logoCover = wp_get_attachment_image_src( get_option('hic_al-logo-cover'), 'full')[0];
+$logoCoverMobile = wp_get_attachment_image_src( get_option('hic_al-logo-cover-mobile'), 'full')[0];
 $coverImage_0 = wp_get_attachment_image_src( get_option('hic_al-cover-image-0'), 'large')[0] ;
 
 ?>
 
 <section id="home-cover">
 
-   <div image-frame="">
+   <div class="cover_image" image-frame>
      <img src="<?php echo $coverImage_0; ?>" alt="">
    </div>
 
    <div class="content">
 
       <section class="presentation">
+        
+        <div class="logo-mobile" image-frame="" contain="">
+          <img src="<?php echo $logoCoverMobile; ?>" alt="">
+        </div>
 
          <section id="branding">
 

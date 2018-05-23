@@ -20,6 +20,8 @@ function hic_al_theme_settings() {
 
 	add_settings_field("hic_al-logo-header", "Logo Cabecera", "hic_al-logo-header", "hic_al_options_page");
 	add_settings_field("hic_al-logo-cover", "Logo Portada", "hic_al-logo-cover", "hic_al_options_page");
+	add_settings_field("hic_al-logo-cover-mobile", "Logo Portada Móvil", "hic_al-logo-cover-mobile", "hic_al_options_page");
+
 
 
    add_settings_field('hic_al-organization_title', 'Organization Title', 'hic_al-organization_title', "hic_al_options_page" );
@@ -56,6 +58,7 @@ function hic_al_theme_settings() {
 
 	register_setting( 'hic_al_options_page-grp', 'hic_al-logo-header');
 	register_setting( 'hic_al_options_page-grp', 'hic_al-logo-cover');
+	register_setting( 'hic_al_options_page-grp', 'hic_al-logo-cover-mobile');
 
 
    register_setting( 'hic_al_options_page-grp', 'hic_al-organization_title' );
@@ -113,15 +116,20 @@ function hic_al_options_page() {
 
 			<?php hic_al_image_uploader( 'hic_al-logo-cover', $width = 115, $height = 115 ); ?>
 
+			<h3>Logo Portada Móvil</h3>
+
+			<?php hic_al_image_uploader( 'hic_al-logo-cover-mobile', $width = 115, $height = 115 ); ?>
+
+
 			<h3>Imágenes de Portada</h3>
 
 			<?php
+
 			hic_al_image_uploader( 'hic_al-cover-image-0', $width = 115, $height = 115 );
 			hic_al_image_uploader( 'hic_al-cover-image-1', $width = 115, $height = 115 );
 			hic_al_image_uploader( 'hic_al-cover-image-2', $width = 115, $height = 115 );
 			hic_al_image_uploader( 'hic_al-cover-image-3', $width = 115, $height = 115 );
 			hic_al_image_uploader( 'hic_al-cover-image-4', $width = 115, $height = 115 );
-
 
 			?>
 

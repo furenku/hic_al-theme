@@ -5,58 +5,58 @@
   </h3>
 
 
-   <nav id="home-about_hic-thematic_areas-menu">
+  <nav id="home-about_hic-thematic_areas-menu">
 
-      <h2>
-         Áreas Temáticas
-      </h2>
+    <h2>
+      Áreas Temáticas
+    </h2>
 
-      <ul>
-         <?php
-         $q = new WP_Query(array(
-            'post_type' => array('thematic-area'),
-            'posts_per_page' => -1
-         )
-      );
-      if( $q->have_posts() ) :
-         while ( $q->have_posts() ) :
-            $q->the_post();
-            ?>
+    <ul>
+      <?php
+      $q = new WP_Query(array(
+        'post_type' => array('thematic-area'),
+        'posts_per_page' => -1
+      )
+    );
+    if( $q->have_posts() ) :
+      while ( $q->have_posts() ) :
+        $q->the_post();
+        ?>
 
-            <li>
+        <li>
 
-               <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
+          <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
 
-                  <div image-frame contain>
-                     <?php echo get_the_post_thumbnail(); ?>
-                  </div>
+            <div image-frame contain>
+              <?php echo get_the_post_thumbnail(); ?>
+            </div>
 
-                  <h4>
-                     <?php echo apply_filters('the_title',get_the_title()); ?>
-                  </h4>
+            <h4>
+              <?php echo apply_filters('the_title',get_the_title()); ?>
+            </h4>
 
-               </a>
-            </li>
+          </a>
+        </li>
 
-            <?php
+        <?php
 
-         endwhile;
-      endif;
+      endwhile;
+    endif;
 
-      ?>
+    ?>
 
-   </ul>
+  </ul>
 </nav>
 
 <div class="row row-eq-height">
 
-<section id="home-about_hic-coalition">
+  <section id="home-about_hic-coalition">
 
-   <h4>
+    <h4>
       La coalición
-   </h4>
+    </h4>
 
-   <ul>
+    <ul>
 
       <?php
       $parent = get_page_by_title('La coalición');
@@ -65,27 +65,27 @@
       foreach( $pages as $page ) : ?>
 
       <li>
-         <a href="<?php echo get_the_permalink($page->ID); ?>">
-            <?php echo ($page -> post_title) ?>
-         </a>
+        <a href="<?php echo get_the_permalink($page->ID); ?>">
+          <?php echo ($page -> post_title) ?>
+        </a>
       </li>
 
-   <?php endforeach; ?>
+    <?php endforeach; ?>
   </ul>
 </section>
 
 <section id="home-about_hic-structures">
 
-   <h4>
-      Estructuras
-   </h4>
+  <h4>
+    Estructuras
+  </h4>
 
-   <div class="content">
-      <?php
-      $page = get_page_by_title("Estructuras");
-      echo apply_filters('the_content', $page->post_content);
-      ?>
-   </div>
+  <div class="content">
+    <?php
+    $page = get_page_by_title("Estructuras");
+    echo apply_filters('the_content', $page->post_content);
+    ?>
+  </div>
 
 </section>
 
@@ -95,94 +95,97 @@
 
 <div class="row row-eq-height">
 
-<section id="home-about_hic-documents" class="more_link_footer">
+  <section id="home-about_hic-documents" class="more_link_footer">
 
-   <h4>
+    <h4>
       Documentos
-   </h4>
+    </h4>
 
-   <ul>
+    <ul>
       <?php
       $q = new WP_Query(array(
-         'post_type' => array('document'),
-         'posts_per_page' => 3,
+        'post_type' => array('document'),
+        'posts_per_page' => 3,
 
       )
-   );
-   if( $q->have_posts() ) :
+    );
+    if( $q->have_posts() ) :
       while ( $q->have_posts() ) :
-         $q->the_post();
-         ?>
-         <article>
+        $q->the_post();
+        ?>
+        <article>
 
-            <a href="#">
-               <h5>
-                  <?php echo apply_filters('the_title', get_the_title()); ?>
-               </h5>
+          <a href="#">
+            <h5>
+              <?php echo apply_filters('the_title', get_the_title()); ?>
+            </h5>
 
-               <?php article_footer(); ?>
-            </a>
+            <?php article_footer(); ?>
+          </a>
 
-         </article>
+        </article>
 
-         <?php
+        <?php
 
       endwhile;
-   endif;
+    endif;
 
-   ?>
+    ?>
 
-   </ul>
+  </ul>
 
-   <footer>
-     <a href="<?php echo get_post_type_archive_link('document'); ?>">
-        <button type="button" name="button" class="more_link_button">
-          Ver Más <b>Documentos de HIC</b>
-        </button>
-     </a>
-   </footer>
+  <footer>
+    <a href="<?php echo get_post_type_archive_link('document'); ?>">
+      <button type="button" name="button" class="more_link_button">
+        Ver Más <b>Documentos de HIC</b>
+      </button>
+    </a>
+  </footer>
 
 </section>
 
-<section id="home-about_hic-newsletter" class="more_link_footer">
-   <?php
-   $page = get_page_by_title('Boletín De Noticias');
-   ?>
-   <h4>
+<section id="boletin_y_contacto" data-scroll-id="boletin_y_contacto">
+  <section id="home-about_hic-newsletter" class="more_link_footer">
+    <?php
+    $page = get_page_by_title('Boletín De Noticias');
+    ?>
+    <h4>
       <?php echo apply_filters('the_title',get_the_title($page->ID)); ?>
-   </h4>
+    </h4>
 
-  <section class="content" v-center>
+    <section class="content" v-center>
 
-       <div>
-         <?php echo apply_filters('the_excerpt',get_the_excerpt($page->ID)); ?>
-       </div>
+      <div>
+        <?php echo apply_filters('the_excerpt',get_the_excerpt($page->ID)); ?>
+      </div>
+
+    </section>
+
+    <footer>
+      <a href="<?php echo get_term_link('newsletter','document-type'); ?>">
+        <button type="button" name="button" class="more_link_button">
+          Ver <b>Boletines de noticias</b> anteriores
+        </button>
+      </a>
+    </footer>
 
   </section>
 
-   <footer>
-     <a href="<?php echo get_term_link('newsletter','document-type'); ?>">
-        <button type="button" name="button" class="more_link_button">
-           Ver <b>Boletines de noticias</b> anteriores
-        </button>
-     </a>
-   </footer>
 
-</section>
+  <section id="home-about_hic-contact">
 
-
-<section id="home-about_hic-contact">
-
-   <h4>
+    <h4>
       Contacto
-   </h4>
+    </h4>
 
-   <div class="content">
+    <div class="content">
       <?php
       $page = get_page_by_title("Contacto");
       echo apply_filters('the_content', $page->post_content);
       ?>
-   </div>
+    </div>
+
+  </section>
 
 </section>
 

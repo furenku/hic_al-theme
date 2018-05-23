@@ -1,0 +1,21 @@
+#membership-contributions-dashboard {
+
+  h1 {
+    text-align: center;
+  }
+
+  nav {
+    &,ul {
+      width: 100%;
+      height: auto;
+
+      li {
+        @extend .col-xs-6;
+        @extend .col-md-4;
+        @extend .ratio-square;
+      }
+
+    }
+  }
+
+}

@@ -12,15 +12,97 @@
 
       @extend .col-md-4;
 
-      height: $spacing * 17.5;
+
+      height: auto;
+
+      [image-frame] {
+        @extend .col-xs-3;
+        height: $spacing * 3;
+      }
+      header, p {
+        @extend .col-xs-9;
+      }
+
+      p {
+        display: none;
+      }
+
+
+      @media screen and (max-width: 767px) {
+        header {
+          .post-type {
+            margin-top: 0;
+          }
+           .title-container {
+              h4 {
+                font-size: $font-ms;
+              }
+           }
+         }
+
+        .article-footer {
+          position: relative;
+          padding: 0;
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        height: $spacing * 17.5;
+
+        [image-frame],
+        header, p {
+          width: 100%;
+        }
+
+        p {
+          display: block;
+        }
+
+        header {
+           .title-container {
+
+              min-height: $spacing * 2;
+              height: auto;
+
+              display: block;
+
+              h4 {
+                 margin: 0;
+              }
+
+           }
+        }
+
+        &>div {
+          border: 1px solid $neutral_light;
+
+          height: 100%;
+        }
+
+        [image-frame] {
+           width: 100%;
+           height: $spacing * 7;
+           // position: absolute;
+           top: 0;
+        }
+
+        .footer-container {
+          width: 100%;
+          padding: 0 $spacing;
+          position: relative;
+          footer {
+
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+          }
+        }
+
+      }
 
       padding: $spacing / 2;
 
-
-      &>div {
-        @extend .border_light;
-        height: 100%;
-      }
 
       &>div>a {
          display: inline-block;
@@ -42,25 +124,8 @@
          color: $neutral_medium;
       }
 
-      [image-frame] {
-         height: $spacing * 7;
-         // position: absolute;
-         top: 0;
-      }
-      header {
-         .title-container {
 
-            min-height: $spacing * 2;
-            height: auto;
 
-            display: block;
-
-            h4 {
-               margin: 0;
-            }
-
-         }
-      }
       & > div > a {
 
          width: 100%;
@@ -77,29 +142,10 @@
          padding: $spacing / 6 $spacing / 2;
          text-align: left;
       }
-      .footer-container {
-        padding: 0 $spacing;
-        position: relative;
-      }
+
       footer {
 
          width: 100%;
-
-         position: absolute;
-         bottom: 0;
-         left: 0;
-
-
-
-         // & > div {
-         //    padding: 0;
-         //    @extend .col-xs-6;
-         // }
-         // & > div:last-child {
-         //    text-align: right;
-         // }
-
-
 
       }
 

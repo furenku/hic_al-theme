@@ -1,6 +1,7 @@
 .site_section {
 
   @extend .container-fluid;
+
   width: 100%;
   padding: 0;
 
@@ -24,19 +25,10 @@
 
       text-align: center;
 
-      // display: -webkit-flex;
-      // display: -ms-flex;
-      // display: flex;
-      //
-      // // align-items: center;
-      // justify-content: center;
-
-      // background-color: #eee;
-      // color: #fff;
-
       .post-list {
-        
+
         .list-item {
+          @extend .col-xs-12;
           @extend .col-md-6;
         }
 

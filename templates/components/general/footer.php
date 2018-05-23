@@ -18,9 +18,10 @@
   </div>
 
   <!--  -->
-  <div class="footer-widget">
+  <div class="footer-widget" image-frame contain>
 
     <!-- <a href="mapa.php"> -->
+
       <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/mapa-naranja-puntos-blancos.png" alt="" />
     <!-- </a> -->
 
@@ -35,11 +36,7 @@
 
     <div class="footer-widget-txt-2">
       <div id="legal-link">
-
-        <span class="w-a f-r p-0-1 p-t-0"><a href="#" class="color-blanco"><i class="p-0">Legal disclaimer</i></a></span>
-        <span class="w-a f-r p-0-1 p-t-0 color-blanco">/</span>
         <span class="w-a f-r p-0-1 p-t-0"><a href="#" class="color-blanco">Aviso legal</a> </span>
-
       </div>
 
     </div>

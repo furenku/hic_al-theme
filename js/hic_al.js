@@ -13,12 +13,15 @@ $(document).ready(function(){
   vcenter($('#secondary_menu-container nav ul li'))
   vcenter($('#primary_menu-container nav > ul > li'))
   vcenter($('.site-menu li'))
-  vcenter($('.description-calls_to_action'))
   vcenter($('#home-cover .presentation'))
   vcenter($('#microsite-calls_to_action'))
   vcenter($('[vcenter]'))
   vcenter($('[v-center]'))
   // vcenter($('#form-container'))
+
+  if($(window).width()>=768) {
+    vcenter($('.description-calls_to_action'))  
+  }
 
 
   // adjustCollapseView();
@@ -356,9 +359,19 @@ function site_menus() {
     var hash = $(this).attr('data-target')
 
     // var hash = $(this).getAttribute('data-target')
+    if( $(window).width() < 768 ) {
+
+      $('section[data-scroll-id]').hide()
+      $('section[data-scroll-id='+hash+']').show()
 
 
-    scrollViewTo( $('[data-scroll-id='+hash+']'), $('html,body') )
+      scrollViewTo( $('[data-scroll-id='+hash+']'), $('html,body') )
+
+    } else {
+      scrollViewTo( $('[data-scroll-id='+hash+']'), $('html,body') )
+    }
+
+
 
     return false
 
@@ -392,13 +405,17 @@ function setup_section_menu() {
 
     var href = $(this).attr('href')
 
+    var href = $(this).attr('href')
+    var sectionHeight = $(href).height() + $(href).prev()
 
-    scrollViewTo( $(href), $('html, body'), function(){
-      console.log("implement: add #anchor to url");
-    })
+    if( sectionHeight > $(window).height() ) {
+
+      scrollViewTo( $(href), $('html, body'), function(){})
+
+    }
 
     e.preventDefault()
-    return false
+    // return false
 
   })
 
@@ -437,120 +454,6 @@ function setup_subpages_viewer() {
 }
 
 
-function setup_membership() {
-
-  if( $('#membership').length > 0 ) {
-
-
-
-    // setup map
-
-    membership_map = L.map('membership-map', {minZoom:2}).setView([0, 0], 1);
-
-
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        // attribution: ''
-    }).addTo(membership_map);
-
-
-    // setup membership space
-
-    $('#membership .section_list > section').hide()
-
-    load_membership_section(0);
-
-
-    $('#membership .section-menu li a').unbind('click').click(function(e){
-
-      e.preventDefault()
-      if( $(this).parent().index() < 3) {
-        $('#membership-map').animate({
-          opacity: 1
-        })
-      } else {
-        $('#membership-map').animate({
-          opacity: 0
-        })
-      }
-      load_membership_section($(this).parent().index())
-
-      $(this).parent()
-      .addClass('active')
-      .siblings().removeClass('active')
-
-      return false
-
-    })
-
-
-
-  }
-
-}
-
-
-function load_membership_section( index ){
-
-  markersDictionary = {}
-
-  if( typeof(markerLayer) != "undefined" ) {
-    membership_map.removeLayer(markerLayer)
-  }
-
-  markerLayer = L.markerClusterGroup({
-    maxClusterRadius: 30
-  });
-
-  next_section = $('#membership .section_list > section').eq(index)
-
-  next_section.show()
-  .addClass('visible')
-  .siblings().hide().removeClass('visible')
-
-  next_section.find('article').each(function(){
-
-    var lng = $(this).data('longitude')
-    var lat = $(this).data('latitude')
-    var post_id = $(this).data('id')
-    var title = $(this).find('.title').html()
-
-
-    PostMarker = L.Marker.extend({
-      post_id: post_id
-    });
-
-    var marker = new PostMarker([lat,lng], { post_id: post_id })//.addTo(membership_map)
-    .bindPopup( title )
-
-    markerLayer.addLayer( marker );
-
-    markersDictionary[post_id] = marker
-
-
-
-    marker.on('click', function(e) {
-
-      console.log("clicked marker!");
-      // var clicked_post_id =  e.sourceTarget.options.post_id
-      //
-      // var post = $('.post-map .post_list article[data-id='+clicked_post_id+']')
-      //
-      // post.get(0).scrollIntoView({
-      //   behavior: "smooth",
-      //   block: "start"
-      // })
-      //
-      // post.addClass('active').siblings().removeClass('active')
-
-
-    })
-
-  })
-
-  membership_map.addLayer(markerLayer)
-  membership_map.fitBounds(markerLayer.getBounds(), { padding: [50,50] });
-
-}
 
 
 function gallery_images() {

@@ -41,8 +41,10 @@ $legal_info = get_option('hic_al-legal_info');
 <script src="<?php echo $themeDir; ?>//bower_components/slick-carousel/slick/slick.js"></script>
 <script src="<?php echo $themeDir; ?>/js/hic_al.js"></script>
 
-<script src="<?php echo $themeDir; ?>/js/components/text-box.js"></script>
 
+<script src="<?php echo $themeDir; ?>/js/templates/membership.js"></script>
+
+<script src="<?php echo $themeDir; ?>/js/components/text-box.js"></script>
 <script src="<?php echo $themeDir; ?>/js/components/post-grid.js"></script>
 <script src="<?php echo $themeDir; ?>/js/components/calls-to-action.js"></script>
 

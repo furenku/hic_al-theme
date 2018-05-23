@@ -21,16 +21,51 @@
 
 
   .row.row-eq-height {
+
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
 
+    flex-direction: column;
+
+    @media screen and ( min-width: 768px ) {
+      flex-direction: row;
+    }
     // padding-left: $spacing / 2;
     // padding-right: $spacing / 2;
   }
 
+.content_list_row {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  .content_list {
 
+      @extend .col-md-4;
+
+      outline: 1px solid $neutral_light;
+
+      margin-right: 1px;
+
+      padding: 0;
+
+      ul {
+        // &, article {
+          padding: $spacing / 2 !important;
+        // }
+      }
+
+
+  }
+
+  .solidarity_item {
+     h5 {
+       text-align: center;
+     }
+  }
+
+}
   & > section {
     // min-height: $spacing * 15;
     padding: 0;
@@ -38,7 +73,8 @@
 
   #home-activity-articles-news {
 
-    // @extend .row;
+    @extend .row;
+    // @extend .col-xs-12;
 
     &:after {
         clear: both;
@@ -49,6 +85,7 @@
 
     &>section {
 
+      @extend .col-xs-12;
       @extend .col-md-6;
 
       padding-bottom: $spacing / 2;

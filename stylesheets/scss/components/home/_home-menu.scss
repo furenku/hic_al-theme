@@ -1,94 +1,118 @@
 #home-menu {
 
-   @extend .container-fluid;
+  @extend .container-fluid;
 
-   padding: 0;
+  padding: 0;
 
   background-color: #ddd;
 
-   ul {
-      // margin-top: $spacing;
-   }
+  ul {
+    // margin-top: $spacing;
+  }
 
-   .site-menu {
-     li {
-       * > div {
-         display: block;
-         height: auto;
-         width: 100%;
-       }
-       a {
-         display: block;
-         height: auto;
-       }
-     }
-   }
+  .site-menu {
+    li {
 
-
-
-   li {
-
-
-      @extend .col-xs-12;
-
-      @media screen and (min-width:960px) {
-         width: 20%;
+      * > div {
+        display: block;
+        height: auto;
+        width: 100%;
       }
+      a {
+        display: block;
+        height: auto;
+      }
+    }
+  }
 
 
-      height: $spacing * 11;
+
+  li {
+
+
+    @extend .col-xs-6;
+    @extend .col-md-4;
+    @extend .col-lg-2;
+
+
+    h4 {
+      font-size: $font-m;
+    }
+    @media screen and (min-width:992px) {
+
+      h4 {
+        margin: $spacing / 2 0 !important;
+        font-size: $font-l;
+      }
 
       padding-left: $spacing;
       padding-right: $spacing;
 
-      text-align: center;
+    }
 
-      [image-frame] {
-         height: $spacing * 3;
+
+    height: $spacing * 5;
+
+    text-align: center;
+
+    [image-frame] {
+      height: $spacing * 3;
+    }
+
+
+
+    p {
+      display: none;
+    }
+    @media screen and (min-width: 768px) {
+
+      height: $spacing * 11;
+      p {
+        display: block;
       }
 
-      h4 {
-        margin: $spacing / 2 0 !important;
-      }
+    }
+    // a {
+    //   transition: color 0.4s ease-in-out;
+    // }
+    // &:hover {
+    //   * { color: #ddd !important; }
+    // }
 
-      // a {
-      //   transition: color 0.4s ease-in-out;
-      // }
-      // &:hover {
-      //   * { color: #ddd !important; }
-      // }
-
-      transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
 
 
-      &:nth-child(1):hover {
-        background-color: $neutral_darkest;
-      }
-      &:nth-child(2):hover {
-        background-color: $neutral_darkest;
-      }
-      &:nth-child(3):hover {
-        background-color: $neutral_darkest;
-      }
-      &:nth-child(4):hover {
-        background-color: $neutral_darkest;
-      }
-      &:nth-child(5):hover {
-        background-color: $neutral_darkest;
-      }
+    &:nth-child(1):hover {
+      background-color: $neutral_darkest;
+    }
+    &:nth-child(2):hover {
+      background-color: $neutral_darkest;
+    }
+    &:nth-child(3):hover {
+      background-color: $neutral_darkest;
+    }
+    &:nth-child(4):hover {
+      background-color: $neutral_darkest;
+    }
+    &:nth-child(5):hover {
+      background-color: $neutral_darkest;
+    }
+    &:nth-child(6):hover {
+      background-color: $neutral_darkest;
+    }
 
-        &:even {
-          background-color: $neutral_darkest;
-        }
-        &:odd {
-          background-color: $neutral_dark;
-        }
-        &:hover {
-          * {
-            color: #fff !important;
-          }
-        }
+    &:even {
+      background-color: $neutral_darkest;
+    }
+    &:odd {
+      background-color: $neutral_dark;
+    }
+    &:hover {
+      * {
+        color: #fff !important;
+      }
+    }
 
-	  }
+  }
 
 }

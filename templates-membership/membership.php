@@ -34,9 +34,9 @@ $subsections = array(
 
   <header>
 
-    <h1>
+    <h2>
       <?php echo apply_filters( 'the_title', get_the_title() ); ?>
-    </h1>
+    </h2>
 
     <?php
     $prefix = "membership";
@@ -97,7 +97,17 @@ $subsections = array(
       <h3>
         <?php echo $page_5_name; ?>
       </h3>
-      <?php include( locate_template('templates-membership/components/membership-contributions.php')); ?>
+
+      <?php
+      /* if logged in && member */
+      if( true ) {
+        include( locate_template('templates-membership/components/membership-contributions-dashboard.php'));
+      } else {
+        include( locate_template('templates-membership/components/membership-contributions-start.php'));
+      }
+
+      ?>
+
     </section>
 
   </section>
