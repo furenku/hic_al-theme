@@ -402,20 +402,19 @@ function scrollViewTo( target, parent, callback ) {
 function setup_section_menu() {
 
   $('.section-menu li a').click(function(e){
-
     var href = $(this).attr('href')
-
+    
     var href = $(this).attr('href')
-    var sectionHeight = $(href).height() + $(href).prev()
+    // var sectionHeight = $(href).height() + $(href).prev().height()
 
-    if( sectionHeight > $(window).height() ) {
+    // if( sectionHeight > $(window).height() ) {
 
-      scrollViewTo( $(href), $('html, body'), function(){})
+    scrollViewTo( $(href), $('html, body'), function(){})
 
-    }
+    // }
 
     e.preventDefault()
-    // return false
+    return false
 
   })
 
