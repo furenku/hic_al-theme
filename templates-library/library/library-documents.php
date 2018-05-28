@@ -54,6 +54,7 @@
               <a href="<?php echo $file; ?>" download>
                 <button class="link-button">
                   <i class="fa fa-download"></i>
+                  <span>Descargar</span>
                 </button>
               </a>
 

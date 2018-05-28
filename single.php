@@ -1,20 +1,27 @@
 <?php
 get_header();
+?>
+
+
+<?php if( get_the_post_thumbnail(get_the_ID(),'full') ) : ?>
+
+<div class="article-cover-photo" image-frame>
+  <?php echo get_the_post_thumbnail(get_the_ID(),'full'); ?>
+</div>
+
+<?php endif; ?>
+
+ <article class="single">
+
+
+<?php
 
 if( have_posts() ) {
    while ( have_posts() ) {
       the_post();
 
       ?>
-      <article class="single">
-
-        <?php if( get_the_post_thumbnail(get_the_ID(),'full') ) : ?>
-
-        <div class="article-cover-photo" image-frame contain>
-          <?php echo get_the_post_thumbnail(get_the_ID(),'full'); ?>
-        </div>
-
-        <?php endif; ?>
+     
 
          <header>
 
