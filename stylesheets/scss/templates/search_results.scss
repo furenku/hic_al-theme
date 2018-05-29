@@ -1,0 +1,44 @@
+#search_results {
+
+    padding: $spacing;
+
+    .search_result {
+
+        @extend .col-xs-12;
+
+        padding: $spacing 0;
+        
+        .image {
+            @extend .col-md-4;
+            @extend .col-lg-3;
+            @extend .ratio-16-9;
+            background-color: #eee;            
+        }
+        .text {
+            @extend .col-md-8;
+            @extend .col-lg-9;
+
+            padding: $spacing 0;
+
+            @media screen and (min-width:768px) {
+                padding-top: 0;
+                padding-left: $spacing;                
+            }
+
+            .title {
+                margin-top: 0;
+            }
+
+            .content {
+                padding-left: 0;
+                * {
+                    font-size: $font-m;
+                }
+            }
+
+            padding-bottom: 0;
+
+        }
+    }
+
+}

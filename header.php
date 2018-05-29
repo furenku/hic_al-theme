@@ -27,7 +27,7 @@
 
   </head>
 
-  <body>
+  <body class="wtf">
 
    <header id="site_header">
 
