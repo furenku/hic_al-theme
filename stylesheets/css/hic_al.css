@@ -12245,7 +12245,7 @@ article.single-microsite .article-cover-photo {
 }
 
 #home-solidarity {
-  margin-top: 90px;
+  margin-top: 105px;
   padding: 0;
   margin-bottom: 0;
   padding-bottom: 0;
@@ -12258,7 +12258,9 @@ article.single-microsite .article-cover-photo {
   padding: 7.5px 0;
 }
 #home-solidarity ul.article-list {
-  padding-right: 30px;
+  padding: 0 30px;
+  height: 70% !important;
+  margin-bottom: 0 !important;
 }
 #home-solidarity ul.article-list .solidarity_item, #home-solidarity ul.article-list .call_for_solidarity_list article, .call_for_solidarity_list #home-solidarity ul.article-list article {
   height: 80%;

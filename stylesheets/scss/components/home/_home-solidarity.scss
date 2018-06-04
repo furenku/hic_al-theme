@@ -23,8 +23,11 @@
     }
 
     ul.article-list {
-        padding-right: $spacing;
-        // height: calc( 100% - $spacing / 4 );
+        padding: 0 $spacing;
+
+        height: 70% !important;
+        margin-bottom: 0 !important;
+        // height: calc( 100% - $spacing / 4 ) !important;
         // width: 90%;
         // margin: 0 5%;
         
@@ -121,4 +124,5 @@
     .slick-next {
         right: $spacing / 3;
     }
+
 }

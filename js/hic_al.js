@@ -536,6 +536,7 @@ function resize() {
 
 function setup_solidarity_slider() {
   $('#home-solidarity ul').slick({
+    autoplay: true,
     dots: true
   })
 }
