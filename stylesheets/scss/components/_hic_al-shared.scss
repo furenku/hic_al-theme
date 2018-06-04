@@ -627,3 +627,18 @@ a {
     font-size: 24px;
     color: #aaaaaa;
 }
+
+
+.content_type_list {
+        
+  outline: 1px solid $neutral_light;
+  padding: 0;
+
+  ul {
+    // &, article {
+      padding: $spacing / 2 !important;
+    // }
+  }
+
+
+}

@@ -131,8 +131,8 @@
   #boletin_y_contacto {
 
     @extend .col-md-8;
-    width: 66.666% !important;
-
+    @extend .col-lg-12;
+    
     padding: 0;
     &>section {
 

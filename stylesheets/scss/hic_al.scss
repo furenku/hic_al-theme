@@ -48,6 +48,7 @@ $component_min_height: 35vh;
 @import "components/home/home-cover";
 @import "components/home/home-menu";
 @import "components/home/home-featured";
+@import "components/home/home-solidarity";
 @import "components/home/home-activity";
 @import "components/home/home-membership";
 @import "components/home/home-working_groups";
@@ -72,11 +73,14 @@ $component_min_height: 35vh;
 @import "templates/membership/membership-contributions-dashboard";
 @import "templates/thematic_area/thematic_area";
 
+@import "vcenter";
+@import "image_frames";
+
 
 main {
-
+  
   min-height: 80vh;
-
+  
   & > section {
     @extend .row;
   }

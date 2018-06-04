@@ -27,23 +27,24 @@
          height: 100%;
          margin: 0;
       }
-      li {
+      
+    }
+    
+    li {
 
-         font-weight: 500;
-         min-height: 100%;
-         height: auto;
+       font-weight: 500;
+       min-height: 100%;
+       height: auto;
 
-         a {
-            height: auto;
-            padding: 0;
-            margin: 0;
-            @extend .col-xs-12;
-         }
+       a {
+          height: auto;
+          padding: 0;
+          margin: 0;
+          color: #fff;
+          @extend .col-xs-12;
+       }
 
-      }
-
-   }
-
+    }
 
    #secondary_menu-container {
       background-color: $neutral_darker;
@@ -83,10 +84,12 @@
       li {
 
          &:first-child {
-            @extend .col-md-offset-8;
+            @extend .col-sm-offset-6;
+            @extend .col-lg-offset-8;
          }
 
-         @extend .col-md-2;
+         @extend .col-sm-3;
+         @extend .col-lg-2;
 
          text-align: right;
 
@@ -139,7 +142,7 @@
       @extend .col-lg-7;
 
       li {
-         background-color: $neutral_dark;
+        //  background-color: $neutral_dark;
          transition: background-color 0.4s ease-in-out;
       }
 

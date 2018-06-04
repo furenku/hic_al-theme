@@ -4,26 +4,17 @@ var membership_map
 var markerLayer
 var markersDictionary
 
+var resizing = false
+
 $(document).ready(function(){
 
-  image_frames()
-  gallery_images()
+  image_frames($('.gallery a'))
+  image_frames($('[image-frame]'))
 
-  // vcenter($('[vcenter]'))
-  vcenter($('#secondary_menu-container nav ul li'))
-  vcenter($('#primary_menu-container nav > ul > li'))
-  vcenter($('.site-menu li'))
-  vcenter($('#home-cover .presentation'))
-  vcenter($('#microsite-calls_to_action'))
-  vcenter($('[vcenter]'))
-  vcenter($('[v-center]'))
-  // vcenter($('#form-container'))
-
-  if($(window).width()>=768) {
-    vcenter($('.description-calls_to_action'))  
-  }
-
-
+  
+  
+  $(window).on('resize',resize);
+  $(window).trigger('resize');
   // adjustCollapseView();
   // $(window).on("resize", function(){
   //     adjustCollapseView();
@@ -39,10 +30,17 @@ $(document).ready(function(){
     // }
   })
 
+
+  
+  setTimeout(function() { setup_solidarity_slider() }, 200 );
+
+  
+  
   site_menus()
-
+  
   setup_datepickers()
-
+  
+  setup_home_map()
   setup_post_map()
   setup_post_slider()
 
@@ -59,9 +57,10 @@ $(document).ready(function(){
 
 })
 
-function image_frames() {
+function image_frames(images) {
 
-  $('[image-frame]').each(function(){
+  
+  images.each(function(){
 
     // if( ! $(this).find('img').hasClass('b-lazy') ) {
     //
@@ -86,11 +85,20 @@ function image_frames() {
 
     }
 
+    $(this).css({
+      opacity: 0,
+      visibility: 'visible'
+    }, 400)
+    
     //
     // }
-
+    
   })
+  
 
+  setTimeout(function(){
+    images.animate({opacity: 1}, 1000)
+  },250)
 }
 
 
@@ -142,6 +150,8 @@ function vcenter(contenedores){
       opacity:1
     })
   })
+
+
 }
 
 
@@ -223,6 +233,39 @@ function setup_post_map_posts() {
       return false;
 
     })
+}
+
+
+function setup_home_map() {
+  
+  if( $('#home-membership-map').length > 0 ) {
+
+    var map = L.map('home-membership-map', /*{minZoom:3}*/).setView([0, 0], 1);
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        // attribution: ''
+    }).addTo(map);
+
+    $('#home-membership-space .location_list .location_item').each(function(){
+
+      var lat = $(this).attr('data-latitude');
+      var lng = $(this).attr('data-longitude');
+      var title = $(this).find('.title').html();
+      var post_id = $(this).attr('data-id');
+
+      PostMarker = L.Marker.extend({
+         post_id: post_id
+      });
+
+      var marker =  new PostMarker([lat,lng], { post_id: post_id }).addTo(map)
+      .bindPopup( title )
+      // .openPopup()
+      markers.addLayer( marker );
+
+      markersDictionary[post_id] = marker
+
+    })
+
+  }
 }
 
 
@@ -455,8 +498,44 @@ function setup_subpages_viewer() {
 
 
 
-function gallery_images() {
 
-  $('.gallery a').imgLiquid()
 
+
+
+function resize() {
+
+  if( ! resizing ) {
+
+    resizing = setTimeout(function(){
+            
+    vcenter($('#secondary_menu-container nav ul li'))
+    vcenter($('#primary_menu-container nav > ul > li'))
+    vcenter($('.site-menu li'))
+    vcenter($('#microsite-calls_to_action'))
+    vcenter($('.vcenter'))
+    vcenter($('.v-center'))
+    vcenter($('[vcenter]'))
+    vcenter($('[v-center]'))
+    vcenter($('#home-cover .presentation'))
+    // vcenter($('#form-container'))
+    
+    if($(window).width()>=768) {
+      vcenter($('.description-calls_to_action'))  
+    }
+
+    resizing = false
+
+    console.log("resize");
+
+    }, 50 )      
+
+  }
+}
+
+
+
+function setup_solidarity_slider() {
+  $('#home-solidarity ul').slick({
+    dots: true
+  })
 }

@@ -1,7 +1,6 @@
 <section id="home-featured">
 
   <?php
-
   $q = new WP_Query( array(
     'post_type' => array(
       'news_item',
@@ -11,7 +10,7 @@
       'document',
       'publication',
     ),
-    'posts_per_page' => 3,
+    'posts_per_page' => 3-min(1,$posts_number),
     'tax_query' => array(
       array(
         'taxonomy' => 'site_hierarchy',

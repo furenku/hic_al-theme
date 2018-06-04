@@ -37,33 +37,28 @@
   }
 
 .content_list_row {
+  
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
+
+  flex-direction: column;
+
+  @media screen and ( min-width: 768px ) {
+    flex-direction: row;
+  }
+  
   .content_list {
 
-      @extend .col-md-4;
-
-      outline: 1px solid $neutral_light;
+      @extend .col-md-4;      
+      
+      @extend .content_type_list;
 
       margin-right: 1px;
 
-      padding: 0;
-
-      ul {
-        // &, article {
-          padding: $spacing / 2 !important;
-        // }
-      }
-
-
   }
 
-  .solidarity_item {
-     h5 {
-       text-align: center;
-     }
-  }
+  
 
 }
   & > section {
@@ -179,18 +174,10 @@
 
     .content_list {
 
-        @extend .col-md-4;
+      @extend .col-md-4;
+      @extend .content_type_list;
 
-        outline: 1px solid $neutral_light;
-
-        margin-right: 1px;
-
-        padding: 0;
-
-        ul {
-          padding-top: $spacing / 2;
-        }
-
+      margin-right: 1px;
 
     }
 
@@ -199,63 +186,6 @@
 
 
 
-  #home-activity-solidarity {
-
-    ul {
-
-      padding: 0;
-
-      article {
-
-        display: none;
-
-        padding: 0 !important;
-
-        &:nth-child(1) {
-          display: block;
-        }
-
-        // height: 100%;
-        height: $spacing * 14;
-
-        & > div {
-          @extend .col-md-12;
-          font-size: $font-s;
-          padding: 0 !important;
-        }
-        & > div[image-frame] {
-          height: $spacing * 8;
-        }
-
-        p {
-          margin-bottom: 0;
-        }
-
-        margin-bottom: 22px;
-
-      }
-
-      .button-container {
-        @extend .col-xs-12;
-        text-align: center;
-        a {
-          @extend .col-xs-12;
-
-        }
-        button {
-          @extend .button-action;
-          margin-left: 10%;
-          margin-right: 10%;
-        }
-      }
-
-
-      footer {
-        position: relative;
-      }
-
-    }
-  }
 
 
 }

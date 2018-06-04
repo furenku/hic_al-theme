@@ -1,0 +1,21 @@
+// #form-container,
+#secondary_menu-container nav ul li,
+#primary_menu-container nav > ul > li,
+.site-menu li,
+#home-cover .presentation,
+#microsite-calls_to_action,
+[vcenter],
+[v-center],
+.vcenter,
+.v-center,
+[vcenter],
+[v-center]
+{
+    opacity: 0;
+}
+
+@media screen and (min-width:768px) {
+    .description-calls_to_action {
+        opacity: 0;
+    }    
+}

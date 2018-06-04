@@ -11,15 +11,16 @@ $coverImage_0 = wp_get_attachment_image_src( get_option('hic_al-cover-image-0'),
 
    <div class="cover_image" image-frame>
      <img src="<?php echo $coverImage_0; ?>" alt="">
-   </div>
+    </div>
+    
+    <div class="logo-mobile" image-frame="" contain="">
+      <img src="<?php echo $logoCoverMobile; ?>" alt="">
+    </div>
 
    <div class="content">
 
       <section class="presentation">
         
-        <div class="logo-mobile" image-frame="" contain="">
-          <img src="<?php echo $logoCoverMobile; ?>" alt="">
-        </div>
 
          <section id="branding">
 
