@@ -25,14 +25,19 @@
     ul.article-list {
         padding: 0 $spacing;
 
-        height: 70% !important;
+        height: 60% !important;
         margin-bottom: 0 !important;
+        padding: 0 !important;
         // height: calc( 100% - $spacing / 4 ) !important;
         // width: 90%;
         // margin: 0 5%;
-        
+        ul {
+            padding: 0 !important;
+        }
         .solidarity_item {
-            height: 80%;
+            height: 75%;
+
+            padding: $spacing / 2;
             .title {
                 text-align: center;
                 height: $spacing * 2;                
@@ -49,9 +54,9 @@
         }
 
     }
-    .slick-dots {
-        bottom: $spacing * 2.25;
-    }
+    // .slick-dots {
+    //     bottom: $spacing * 2.25;
+    // }
     &>footer {
         position: absolute;
         bottom: 0;
@@ -63,7 +68,9 @@
     }
 
     
-    
+    .categories {
+        display: none;
+    }
     ul {
         
         padding: 0;

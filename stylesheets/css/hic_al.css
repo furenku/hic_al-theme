@@ -12259,11 +12259,16 @@ article.single-microsite .article-cover-photo {
 }
 #home-solidarity ul.article-list {
   padding: 0 30px;
-  height: 70% !important;
+  height: 60% !important;
   margin-bottom: 0 !important;
+  padding: 0 !important;
+}
+#home-solidarity ul.article-list ul {
+  padding: 0 !important;
 }
 #home-solidarity ul.article-list .solidarity_item, #home-solidarity ul.article-list .call_for_solidarity_list article, .call_for_solidarity_list #home-solidarity ul.article-list article {
-  height: 80%;
+  height: 75%;
+  padding: 15px;
 }
 #home-solidarity ul.article-list .solidarity_item .title, #home-solidarity ul.article-list .call_for_solidarity_list article .title, .call_for_solidarity_list #home-solidarity ul.article-list article .title {
   text-align: center;
@@ -12278,9 +12283,6 @@ article.single-microsite .article-cover-photo {
 #home-solidarity ul.article-list .solidarity_item footer, #home-solidarity ul.article-list .call_for_solidarity_list article footer, .call_for_solidarity_list #home-solidarity ul.article-list article footer {
   position: relative;
 }
-#home-solidarity .slick-dots {
-  bottom: 67.5px;
-}
 #home-solidarity > footer {
   position: absolute;
   bottom: 0;
@@ -12289,6 +12291,9 @@ article.single-microsite .article-cover-photo {
 #home-solidarity > footer button {
   margin: 0 !important;
   border-bottom: none !important;
+}
+#home-solidarity .categories {
+  display: none;
 }
 #home-solidarity ul {
   padding: 0;

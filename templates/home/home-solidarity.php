@@ -2,9 +2,9 @@
 
 <section id="home-solidarity" class="content_list">
 
-  <!-- <h4 class="title">
+  <h4 class="title">
     Solidaridad
-  </h4> -->
+  </h4>
 
   <ul class="article-list">
     <?php
