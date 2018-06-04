@@ -1,166 +1,100 @@
 #home-about_hic {
-
-    .row > section
-    {
-      padding-left: 0;
-      padding-right: 0;
-
-      ul,.content {
-        padding: $spacing;
-      }
+  .row>section {
+    padding-left: 0;
+    padding-right: 0;
+    ul,
+    .content {
+      padding: $spacing;
     }
-
-    margin-bottom: $spacing * 2;
-
+  }
+  margin-bottom: $spacing * 2;
 }
 
-
-
-  #home-about_hic-thematic_areas-menu {
-
-    padding: $spacing;
-
-    @extend .row;
-    // @extend .border_light;
-
-    li {
-      @extend .col-xs-6;
-      @media screen and (min-width: 768px) {
-        width: 20%;
-      }
-
-      text-align: center;
-
-      [image-frame] {
-        height: $spacing * 3;
-      }
-
+#home-about_hic-thematic_areas-menu {
+  padding: $spacing;
+  @extend .row; // @extend .border_light;
+  li {
+    @extend .col-xs-6;
+    @media screen and (min-width: 768px) {
+      width: 20%;
+    }
+    text-align: center;
+    [image-frame] {
+      height: $spacing * 3;
     }
   }
+}
 
-  #home-about_hic-documents {
-
-     height: $spacing * 15;
-
-     article {
-
-       @extend .list-item;
-
-       height: $spacing * 3;
-       position: relative;
-
-       footer {
-         position: relative;
-       }
-
-     }
-  }
-
-  #home-about_hic-newsletter {
-
-     .content {
-
-       height: 73.5%;
-
-       input[type=text],
-       input[type=email] {
-         width: 100%;
-         border: none;
-         border-radius: 0;
-         background-color: #ddd;
-         padding: $spacing / 4;
-         color: #444;
-       }
-
-       input[type="submit"] {
-         @extend .action_button;
-       }
-     }
-
+#home-about_hic-documents {
+  height: $spacing * 15;
+  article {
+    @extend .list-item;
+    height: $spacing * 3;
+    position: relative;
     footer {
-      bottom: $spacing
+      position: relative;
     }
-
   }
+}
 
-  #home-about_hic > div > section {
-
-    // height: $spacing * 11;
-
-    h2, h3 {
-      text-align: center;
+#home-about_hic-newsletter {
+  .content {
+    height: 73.5%;
+    input[type=text],
+    input[type=email] {
+      width: 100%;
+      border: none;
+      border-radius: 0;
+      background-color: #ddd;
+      padding: $spacing / 4;
+      color: #444;
     }
+    input[type="submit"] {
+      @extend .action_button;
+    }
+  }
+  footer {
+    bottom: $spacing
+  }
+}
 
+#home-about_hic>div>section {
+  // height: $spacing * 11;
+  h2,
+  h3 {
+    text-align: center;
+  }
+  @extend .col-md-6;
+  @extend .col-lg-4;
+  @extend .border_light;
+  &#home-about_hic-structures {
+    background-color: $neutral_dark;
+    * {
+      color: #fff;
+    }
+  }
+  &#home-about_hic-coalition {
+    background-color: $neutral_darker;
+    * {
+      color: #fff;
+    }
+  }
+  &#home-about_hic-structures,
+  &#home-about_hic-coalition {
     @extend .col-md-6;
-    @extend .col-lg-4;
-    @extend .border_light;
-
-    &#home-about_hic-structures {
-      background-color: $neutral_dark;
-      * {
-        color: #fff;
-      }
-    }
-    &#home-about_hic-coalition {
-      background-color: $neutral_darker;
-      * {
-        color: #fff;
-      }
-    }
-    &#home-about_hic-structures,
-    &#home-about_hic-coalition {
-      @extend .col-md-6;
-      @extend .col-lg-6;
-      text-align: center;
-      font-size: $font-m;
-      padding: 0;
-      &>div, &>ul {
-
-        height: auto;
-
-        @media screen and (min-width: 768px) {
-          padding: $spacing * 3;
-          line-height: 2.5;
-        }
-      }
-    }
-
-
-  }
-
-  #boletin_y_contacto {
-
-    @extend .col-md-8;
-    @extend .col-lg-12;
-    
+    @extend .col-lg-6;
+    text-align: center;
+    font-size: $font-m;
     padding: 0;
-    &>section {
-
-      padding: 0;
-
-      height: $spacing * 15;
-
-      h4 {
-
-        margin-top: 0;
-        margin-bottom: $spacing / 2;
-
-        padding: $spacing / 4;
-
-        background-color: $neutral_dark;
-        color: #fff;
-
-        text-align: center;
-
-
+    &>div,
+    &>ul {
+      height: auto;
+      @media screen and (min-width: 768px) {
+        padding: $spacing * 3;
+        line-height: 2.5;
       }
-
-      @extend .col-md-6;
-
-      border-right: 1px solid $neutral_light;
-
     }
-
   }
+}
 
 // }

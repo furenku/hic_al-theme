@@ -1,11 +1,12 @@
 <footer id="footer-full" class="header columns h-a color-gris-naranja-claro color-naranja-bg p-1">
 
+    
   <!--  -->
   <div class="footer-widget">
 
     <div id="footer-img-1">
       <div class="logo columns small-6 h-sm-100 ">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo-50-2x-blanco.png" alt="" />
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo-50-2x.png" alt="" />
       </div>
       <div class="logo-text columns small-6 color-blanco">
         <h6>
@@ -15,17 +16,24 @@
       HIC - Red global por el derecho al hábitat y la justicia social
     </div>
 
+    <!-- <div class="background_image" image-frame contain>
+      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/map-dark-grey-dots.png" alt="" />
+    </div> -->
+
   </div>
 
   <!--  -->
-  <div class="footer-widget" image-frame contain>
+  <div id="footer-newsletter-contact" class="footer-widget">
 
-    <!-- <a href="mapa.php"> -->
 
-      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/mapa-naranja-puntos-blancos.png" alt="" />
-    <!-- </a> -->
+    <div class="row row-eq-height">
+      <?php include(locate_template( 'templates/components/general/footer-newsletter.php', false, true ) ); ?>
+      <?php include(locate_template( 'templates/components/general/footer-contact.php', false, true ) ); ?>
+    </div>
 
+    
   </div>
+
 
   <!--  -->
   <div id="legal-info" class="footer-widget">
@@ -42,5 +50,9 @@
     </div>
 
   </div>
+
+
+
+
 
 </footer>

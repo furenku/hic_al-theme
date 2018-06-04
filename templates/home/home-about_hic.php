@@ -93,56 +93,5 @@
 </div>
 <!-- .row-eq-height -->
 
-<div class="row row-eq-height">
-
-<?php # get_template_part( 'templates/home/components/home-documents' ); ?>
-
-<section id="boletin_y_contacto" data-scroll-id="boletin_y_contacto">
-  <section id="home-about_hic-newsletter" class="more_link_footer">
-    <?php
-    $page = get_page_by_title('Boletín De Noticias');
-    ?>
-    <h4>
-      <?php echo apply_filters('the_title',get_the_title($page->ID)); ?>
-    </h4>
-
-    <section class="content" v-center>
-
-      <div>
-        <?php echo apply_filters('the_excerpt',get_the_excerpt($page->ID)); ?>
-      </div>
-
-    </section>
-
-    <footer>
-      <a href="<?php echo get_term_link('newsletter','document-type'); ?>">
-        <button type="button" name="button" class="more_link_button">
-          Ver <b>Boletines de noticias</b> anteriores
-        </button>
-      </a>
-    </footer>
-
-  </section>
-
-
-  <section id="home-about_hic-contact">
-
-    <h4>
-      Contacto
-    </h4>
-
-    <div class="content">
-      <?php
-      $page = get_page_by_title("Contacto");
-      echo apply_filters('the_content', $page->post_content);
-      ?>
-    </div>
-
-  </section>
-
-</section>
-
-</div>
-<!-- .row-eq-height -->
 
 </section>
