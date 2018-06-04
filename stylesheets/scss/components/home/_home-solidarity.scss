@@ -2,7 +2,7 @@
     @extend .col-md-4;
     
     margin-top: $spacing * 3.5;
-    margin-bottom: $spacing * 2;
+    // margin-bottom: $spacing * 2;
     
     padding: 0;
     
@@ -10,6 +10,9 @@
     // height: $spacing * 16.5;
     
     @extend .content_type_list;
+
+    margin-bottom: 0;
+    padding-bottom: 0;
     
     &>.title {
         background-color: $neutral_darkest;
@@ -21,7 +24,7 @@
 
     ul.article-list {
         padding-right: $spacing;
-        height: calc( 100% - $spacing / 4 );
+        // height: calc( 100% - $spacing / 4 );
         // width: 90%;
         // margin: 0 5%;
         

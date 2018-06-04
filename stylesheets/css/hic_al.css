@@ -12245,10 +12245,10 @@ article.single-microsite .article-cover-photo {
 }
 
 #home-solidarity {
-  margin-top: 105px;
-  margin-bottom: 60px;
+  margin-top: 90px;
   padding: 0;
-  height: 495px;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 #home-solidarity > .title {
   background-color: #272726;
@@ -12259,7 +12259,6 @@ article.single-microsite .article-cover-photo {
 }
 #home-solidarity ul.article-list {
   padding-right: 30px;
-  height: calc( 100% - $spacing / 4 );
 }
 #home-solidarity ul.article-list .solidarity_item, #home-solidarity ul.article-list .call_for_solidarity_list article, .call_for_solidarity_list #home-solidarity ul.article-list article {
   height: 80%;
